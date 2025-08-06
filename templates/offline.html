@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offline - OralHealth</title>
+    <link rel="stylesheet" href="/static/css/xera-unified-theme.css">
+    <link rel="stylesheet" href="/static/css/themes/oralhealth-theme.css">
+    <link rel="stylesheet" href="/static/css/dark-theme.css">
+    <style>
+        .offline-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .offline-content {
+            max-width: 500px;
+        }
+        
+        .offline-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            opacity: 0.6;
+        }
+        
+        .retry-btn {
+            margin-top: 1rem;
+        }
+        
+        .cached-links {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        .cached-links h4 {
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+        }
+        
+        .cached-links a {
+            display: inline-block;
+            margin: 0.25rem;
+            padding: 0.5rem 1rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 0.25rem;
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: all 0.2s ease;
+        }
+        
+        .cached-links a:hover {
+            background: var(--bg-accent);
+            transform: translateY(-1px);
+        }
+    </style>
+</head>
+<body>
+    <div class="offline-container">
+        <div class="offline-content">
+            <div class="offline-icon">📡</div>
+            <h1>You're Offline</h1>
+            <p class="text-muted">
+                It looks like you don't have an internet connection right now. 
+                Don't worry - you can still access some cached content.
+            </p>
+            
+            <button class="btn btn-primary retry-btn" onclick="window.location.reload()">
+                🔄 Try Again
+            </button>
+            
+            <div class="cached-links">
+                <h4>Available Offline</h4>
+                <a href="/">🏠 Home</a>
+                <a href="/recommendations/">📋 Recommendations</a>
+                <a href="/guidelines/">📚 Guidelines</a>
+                <a href="/cochrane/">🔬 Cochrane</a>
+                <a href="/search/">🔍 Search</a>
+            </div>
+            
+            <div class="mt-4">
+                <small class="text-muted">
+                    💡 Tip: Install this app on your device for better offline access
+                </small>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/dark-theme.js"></script>
+    <script>
+        // Check for connection and auto-retry
+        function checkConnection() {
+            if (navigator.onLine) {
+                window.location.reload();
+            }
+        }
+        
+        // Listen for online event
+        window.addEventListener('online', checkConnection);
+        
+        // Periodically check connection
+        setInterval(checkConnection, 5000);
+        
+        // Update UI based on connection status
+        function updateConnectionStatus() {
+            const statusEl = document.createElement('div');
+            statusEl.className = 'connection-status';
+            statusEl.style.cssText = `
+                position: fixed;
+                bottom: 20px;
+                left: 50%;
+                transform: translateX(-50%);
+                padding: 0.5rem 1rem;
+                border-radius: 2rem;
+                font-size: 0.875rem;
+                z-index: 1000;
+            `;
+            
+            if (navigator.onLine) {
+                statusEl.innerHTML = '🟢 Connection restored';
+                statusEl.style.background = '#d4edda';
+                statusEl.style.color = '#155724';
+                statusEl.style.border = '1px solid #c3e6cb';
+            } else {
+                statusEl.innerHTML = '🔴 No connection';
+                statusEl.style.background = '#f8d7da';
+                statusEl.style.color = '#721c24';
+                statusEl.style.border = '1px solid #f5c6cb';
+            }
+            
+            document.body.appendChild(statusEl);
+            
+            // Remove after 3 seconds
+            setTimeout(() => {
+                if (statusEl.parentNode) {
+                    statusEl.remove();
+                }
+            }, 3000);
+        }
+        
+        window.addEventListener('online', updateConnectionStatus);
+        window.addEventListener('offline', updateConnectionStatus);
+    </script>
+</body>
+</html>

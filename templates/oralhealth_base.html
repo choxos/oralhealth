@@ -27,7 +27,31 @@
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/xera-unified-theme.css' %}">
     <link rel="stylesheet" href="{% static 'css/themes/oralhealth-theme.css' %}">
+    <link rel="stylesheet" href="{% static 'css/dark-theme.css' %}">
     <link rel="stylesheet" href="{% static 'css/translation.css' %}">
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#00d4aa">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="OralHealth">
+    <meta name="application-name" content="OralHealth">
+    <meta name="mobile-web-app-capable" content="yes">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="{% static 'manifest.json' %}">
+    
+    <!-- Apple Touch Icons -->
+    <link rel="apple-touch-icon" sizes="152x152" href="{% static 'images/icon-152x152.png' %}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/icon-192x192.png' %}">
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/icon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/icon-16x16.png' %}">
+    
+    <!-- Microsoft Tiles -->
+    <meta name="msapplication-TileColor" content="#00d4aa">
+    <meta name="msapplication-TileImage" content="{% static 'images/icon-144x144.png' %}">
     
     {% block extra_css %}{% endblock %}
     
@@ -240,6 +264,8 @@
     
     <!-- Translation functionality -->
     <script src="{% static 'js/translation.js' %}"></script>
+    <script src="{% static 'js/dark-theme.js' %}"></script>
+    <script src="{% static 'js/pwa.js' %}"></script>
     
     {% block extra_js %}{% endblock %}
     
