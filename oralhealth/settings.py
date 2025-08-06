@@ -129,7 +129,7 @@ if not DEBUG:
     json.loads = orjson.loads
 
 # Application-specific settings
-APP_NAME = 'OralHealth'
+APP_NAME = 'Oral Health Recommendations'
 APP_DESCRIPTION = 'Comprehensive oral health recommendations database'
 APP_VERSION = '1.0.0'
 APP_DOMAIN = 'oralhealth.xeradb.com'

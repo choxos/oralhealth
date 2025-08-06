@@ -134,8 +134,8 @@
                     <i class="fas fa-tooth"></i>
                 </div>
                 <div class="xera-app-name">
-                    <div class="xera-app-title">OralHealth</div>
-                    <div class="xera-app-subtitle">Evidence-Based Oral Health Recommendations</div>
+                    <div class="xera-app-title">Oral Health Recommendations</div>
+                    <div class="xera-app-subtitle">Evidence-Based Clinical Guidelines</div>
                 </div>
             </a>
             
@@ -158,6 +158,11 @@
                 <a href="/api/" class="xera-nav-link" target="_blank">
                     <i class="fas fa-code me-1"></i>API
                 </a>
+                
+                <!-- Translation Toggle -->
+                <button class="xera-nav-link translation-toggle-btn" id="simpleTranslationToggle" style="background: none; border: none; color: inherit;">
+                    <i class="fas fa-globe me-1"></i>🌍
+                </button>
             </nav>
         </div>
     </header>
@@ -313,6 +318,33 @@
     <script src="{% static 'js/translation.js' %}"></script>
     <script src="{% static 'js/dark-theme.js' %}"></script>
     <script src="{% static 'js/pwa.js' %}"></script>
+    
+    <!-- Simple Translation Toggle -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const translationBtn = document.getElementById('simpleTranslationToggle');
+        if (translationBtn) {
+            translationBtn.addEventListener('click', function() {
+                // Simple language cycling
+                const currentLang = document.documentElement.lang || 'en';
+                const languages = ['en', 'es', 'fr', 'de'];
+                const currentIndex = languages.indexOf(currentLang);
+                const nextIndex = (currentIndex + 1) % languages.length;
+                const nextLang = languages[nextIndex];
+                
+                // Add language parameter to current URL
+                const url = new URL(window.location);
+                if (nextLang === 'en') {
+                    url.searchParams.delete('lang');
+                } else {
+                    url.searchParams.set('lang', nextLang);
+                }
+                
+                window.location.href = url.toString();
+            });
+        }
+    });
+    </script>
     
     {% block extra_js %}{% endblock %}
     

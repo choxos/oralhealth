@@ -344,7 +344,15 @@ class OralHealthTranslator {
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     // Check if translation should be enabled
-    if (window.supportedLanguages && Object.keys(window.supportedLanguages).length > 1) {
-        new OralHealthTranslator();
+    try {
+        if (window.supportedLanguages && Object.keys(window.supportedLanguages).length > 1) {
+            console.log('Initializing OralHealth Translator...');
+            new OralHealthTranslator();
+        } else {
+            console.log('Translation disabled: supportedLanguages not found or insufficient languages');
+            console.log('supportedLanguages:', window.supportedLanguages);
+        }
+    } catch (error) {
+        console.error('Error initializing translator:', error);
     }
 });

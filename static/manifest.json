@@ -1,6 +1,6 @@
 {
-  "name": "OralHealth - Evidence-Based Recommendations",
-  "short_name": "OralHealth",
+  "name": "Oral Health Recommendations - Evidence-Based Clinical Guidelines",
+  "short_name": "Oral Health Rec",
   "description": "Comprehensive database of evidence-based oral health recommendations from UK guidelines and Cochrane reviews",
   "start_url": "/",
   "display": "standalone",
