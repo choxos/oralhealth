@@ -136,6 +136,7 @@ media/
 # Database
 *.sqlite3
 *.db
+db.sqlite3
 
 # IDE specific files
 .vscode/
