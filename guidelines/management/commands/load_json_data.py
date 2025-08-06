@@ -37,48 +37,53 @@ class Command(BaseCommand):
             defaults={'code': 'UK'}
         )
         
+        # Create organization
+        org, created = Organization.objects.get_or_create(
+            name=data['organization'],
+            country=country,
+            defaults={'website': 'https://www.gov.uk'}
+        )
+        
         # Create guideline
         guideline, created = Guideline.objects.get_or_create(
             title=data['guideline_title'],
-            country=country,
+            organization=org,
             defaults={
-                'organization': data['organization'],
-                'year': data['year'],
-                'url': 'https://www.gov.uk/government/publications/delivering-better-oral-health-an-evidence-based-toolkit-for-prevention'
+                'publication_year': data['year'],
+                'url': data['source_url']
             }
         )
         
         recommendation_count = 0
         
-        for chapter in data['chapters']:
-            for rec_data in chapter['recommendations']:
-                # Create topic
-                topic, created = Topic.objects.get_or_create(
-                    name=rec_data['topic']
-                )
-                
-                # Create recommendation
-                recommendation, created = Recommendation.objects.get_or_create(
-                    text=rec_data['text'],
+        for rec_data in data['recommendations']:
+            # Create topic
+            topic, created = Topic.objects.get_or_create(
+                name=rec_data['topic']
+            )
+            
+            # Create recommendation
+            recommendation, created = Recommendation.objects.get_or_create(
+                text=rec_data['text'],
+                defaults={
+                    'guideline': guideline,
+                    'topic': topic,
+                    'strength': rec_data['strength'],
+                    'evidence_quality': rec_data['evidence_quality']
+                }
+            )
+            
+            if created:
+                # Create reference
+                RecommendationReference.objects.get_or_create(
+                    recommendation=recommendation,
                     defaults={
-                        'guideline': guideline,
-                        'topic': topic,
-                        'strength': rec_data['strength'],
-                        'evidence_quality': rec_data['evidence_quality']
+                        'title': f"{rec_data.get('table_context', 'UK Guidelines')} - {data['guideline_title']}",
+                        'url': rec_data['source_url'],
+                        'citation': f"{data['organization']} ({data['year']}). {rec_data.get('table_context', 'Evidence Tables')}."
                     }
                 )
-                
-                if created:
-                    # Create reference
-                    RecommendationReference.objects.get_or_create(
-                        recommendation=recommendation,
-                        defaults={
-                            'title': f"{chapter['title']} - {data['guideline_title']}",
-                            'url': rec_data['source_url'],
-                            'citation': f"{data['organization']} ({data['year']}). {chapter['title']}."
-                        }
-                    )
-                    recommendation_count += 1
+                recommendation_count += 1
         
         self.stdout.write(
             self.style.SUCCESS(f'Successfully loaded {recommendation_count} recommendations from UK guidelines')
