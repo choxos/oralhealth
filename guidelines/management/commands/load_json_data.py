@@ -1,5 +1,5 @@
 from django.core.management.base import BaseCommand
-import json
+import json as stdlib_json
 import os
 from pathlib import Path
 from guidelines.models import (
@@ -28,7 +28,7 @@ class Command(BaseCommand):
             return
             
         with open(json_file, 'r', encoding='utf-8') as f:
-            data = json.load(f)
+            data = stdlib_json.load(f)
         
         # Create country
         country, created = Country.objects.get_or_create(
@@ -91,7 +91,7 @@ class Command(BaseCommand):
             return
             
         with open(json_file, 'r', encoding='utf-8') as f:
-            data = json.load(f)
+            data = stdlib_json.load(f)
         
         review_count = 0
         entry_count = 0
