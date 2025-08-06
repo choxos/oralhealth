@@ -186,6 +186,9 @@ EOL
 sudo supervisorctl reread
 sudo supervisorctl update
 sudo supervisorctl start oralhealth
+
+# Check status
+sudo supervisorctl status oralhealth
 ```
 
 ### Step 8: Configure Nginx
@@ -251,11 +254,42 @@ EOL
 
 # Enable site
 sudo ln -sf /etc/nginx/sites-available/oralhealth.xeradb.com /etc/nginx/sites-enabled/
+
+# Remove default site if exists
+sudo rm -f /etc/nginx/sites-enabled/default
+
+# Test and start nginx
 sudo nginx -t
+sudo systemctl enable nginx
+sudo systemctl start nginx
 sudo systemctl reload nginx
 ```
 
-### Step 9: SSL Certificate with Let's Encrypt
+### Step 9: Start Services
+
+```bash
+# Enable and start PostgreSQL
+sudo systemctl enable postgresql
+sudo systemctl start postgresql
+sudo systemctl status postgresql
+
+# Enable and start Supervisor
+sudo systemctl enable supervisor
+sudo systemctl start supervisor
+sudo systemctl status supervisor
+
+# Start the application
+sudo supervisorctl start oralhealth
+sudo supervisorctl status
+
+# Check application is running
+curl http://localhost:8013
+
+# Check nginx is serving
+curl http://oralhealth.xeradb.com
+```
+
+### Step 10: SSL Certificate with Let's Encrypt
 
 ```bash
 # Install Certbot
@@ -268,7 +302,7 @@ sudo certbot --nginx -d oralhealth.xeradb.com
 sudo certbot renew --dry-run
 ```
 
-### Step 10: Create Update Script
+### Step 11: Create Update Script
 
 ```bash
 # Create deployment script
@@ -315,7 +349,7 @@ sudo chmod +x /var/www/oralhealth/deploy.sh
 sudo chown xeradb:xeradb /var/www/oralhealth/deploy.sh
 ```
 
-### Step 11: Database Backup Script
+### Step 12: Database Backup Script
 
 ```bash
 # Create backup script
@@ -348,7 +382,7 @@ sudo chmod +x /var/www/oralhealth/backup_db.sh
 sudo crontab -l | { cat; echo "0 2 * * * /var/www/oralhealth/backup_db.sh"; } | sudo crontab -
 ```
 
-### Step 12: Monitoring and Logs
+### Step 13: Monitoring and Logs
 
 ```bash
 # View application logs
@@ -358,25 +392,79 @@ sudo tail -f /var/log/oralhealth/supervisor.log
 sudo tail -f /var/log/nginx/access.log
 sudo tail -f /var/log/nginx/error.log
 
-# Check application status
+# Check all service statuses
+sudo systemctl status postgresql
+sudo systemctl status nginx
+sudo systemctl status supervisor
 sudo supervisorctl status oralhealth
 
-# Restart application
+# Restart services
+sudo systemctl restart postgresql
+sudo systemctl restart nginx
+sudo systemctl restart supervisor
 sudo supervisorctl restart oralhealth
+
+# Check if application is responding
+curl -I http://localhost:8013
+curl -I http://oralhealth.xeradb.com
 ```
 
 ### Troubleshooting
 
-1. **Database connection issues:**
+1. **Service startup issues:**
+   ```bash
+   # Check all services are running
+   sudo systemctl status postgresql nginx supervisor
+   sudo supervisorctl status oralhealth
+   
+   # Start services if not running
+   sudo systemctl start postgresql
+   sudo systemctl start nginx
+   sudo systemctl start supervisor
+   sudo supervisorctl start oralhealth
+   ```
+
+2. **Database connection issues:**
    ```bash
    # Check PostgreSQL status
    sudo systemctl status postgresql
    
    # Test database connection
    sudo -u xeradb psql -h localhost -U oralhealth_user -d oralhealth_production
+   
+   # Restart PostgreSQL if needed
+   sudo systemctl restart postgresql
    ```
 
-2. **Permission issues:**
+3. **Application not responding:**
+   ```bash
+   # Check if gunicorn is running on port 8013
+   sudo netstat -tlnp | grep 8013
+   
+   # Check supervisor logs
+   sudo tail -f /var/log/oralhealth/supervisor.log
+   sudo tail -f /var/log/oralhealth/supervisor_error.log
+   
+   # Restart application
+   sudo supervisorctl restart oralhealth
+   ```
+
+4. **Nginx not serving:**
+   ```bash
+   # Check nginx status
+   sudo systemctl status nginx
+   
+   # Test nginx configuration
+   sudo nginx -t
+   
+   # Restart nginx
+   sudo systemctl restart nginx
+   
+   # Check if port 80 is open
+   sudo netstat -tlnp | grep :80
+   ```
+
+5. **Permission issues:**
    ```bash
    # Fix ownership
    sudo chown -R xeradb:xeradb /var/www/oralhealth
@@ -386,14 +474,16 @@ sudo supervisorctl restart oralhealth
    sudo chmod 600 /var/www/oralhealth/.env
    ```
 
-3. **Static files not loading:**
+6. **Static files not loading:**
    ```bash
    # Activate virtual environment and collect static files
+   cd /var/www/oralhealth
    source venv/bin/activate
    python manage.py collectstatic --noinput
    
    # Check nginx configuration
    sudo nginx -t
+   sudo systemctl reload nginx
    ```
 
 ### Maintenance
