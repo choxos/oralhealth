@@ -28,7 +28,8 @@ class Command(BaseCommand):
             return
             
         with open(json_file, 'r', encoding='utf-8') as f:
-            data = stdlib_json.load(f)
+            content = f.read()
+            data = stdlib_json.loads(content)
         
         # Create country
         country, created = Country.objects.get_or_create(
@@ -91,7 +92,8 @@ class Command(BaseCommand):
             return
             
         with open(json_file, 'r', encoding='utf-8') as f:
-            data = stdlib_json.load(f)
+            content = f.read()
+            data = stdlib_json.loads(content)
         
         review_count = 0
         entry_count = 0
