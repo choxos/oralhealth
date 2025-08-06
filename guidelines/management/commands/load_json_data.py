@@ -4,8 +4,9 @@ import os
 from pathlib import Path
 from guidelines.models import (
     Country, Guideline, Topic, Recommendation, 
-    RecommendationReference, CochraneReview, CochraneSoFEntry
+    RecommendationReference
 )
+from cochrane.models import CochraneReview, CochraneSoFEntry
 
 class Command(BaseCommand):
     help = 'Load guidelines and Cochrane data from JSON files'
