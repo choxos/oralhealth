@@ -35,6 +35,11 @@ class ThemeManager {
         const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
         this.setTheme(newTheme);
         
+        // Track theme change for analytics
+        if (window.trackThemeChange) {
+            window.trackThemeChange(newTheme);
+        }
+        
         // Smooth transition animation
         document.body.style.transition = 'all 0.3s ease';
         setTimeout(() => {

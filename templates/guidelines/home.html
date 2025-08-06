@@ -19,7 +19,7 @@
             </p>
             
             <!-- Search Form -->
-            <form method="get" action="{% url 'guidelines:recommendation_list' %}" class="oralhealth-filter-group justify-content-center">
+            <form method="get" action="{% url 'guidelines:recommendation_list' %}" class="oralhealth-filter-group justify-content-center" onsubmit="trackSearchForm()">
                 <div class="xera-form-group">
                     {{ search_form.search }}
                 </div>
@@ -223,6 +223,31 @@
 
 {% block extra_js %}
 <script>
+// Track search form submission
+function trackSearchForm() {
+    const searchInput = document.querySelector('input[name="search"]');
+    const countrySelect = document.querySelector('select[name="country"]');
+    const topicSelect = document.querySelector('select[name="topic"]');
+    
+    const query = searchInput ? searchInput.value : '';
+    const country = countrySelect ? countrySelect.value : '';
+    const topic = topicSelect ? topicSelect.value : '';
+    
+    if (window.trackSearch && query) {
+        window.trackSearch(query, 0); // Will be updated with actual results count later
+    }
+    
+    // Track filter usage
+    if (window.trackEvent) {
+        if (country) {
+            window.trackEvent('filter_country', 'engagement', country);
+        }
+        if (topic) {
+            window.trackEvent('filter_topic', 'engagement', topic);
+        }
+    }
+}
+
 // Add some interactive functionality
 document.addEventListener('DOMContentLoaded', function() {
     // Auto-focus search input
@@ -240,6 +265,11 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     });
+    
+    // Track page load
+    if (window.trackEvent) {
+        window.trackEvent('page_view', 'navigation', 'home');
+    }
 });
 </script>
 {% endblock %}
