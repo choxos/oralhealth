@@ -1,6 +1,5 @@
 """
-Models for oral health guidelines and recommendations.
-Supports UK, US, Canada, Australia, and New Zealand guidelines.
+Optimized models for guidelines app - focused on performance.
 """
 
 from django.db import models
@@ -9,198 +8,184 @@ from django.utils.text import slugify
 
 
 class Country(models.Model):
-    """Countries that have oral health guidelines."""
-    name = models.CharField(max_length=100, unique=True)
-    code = models.CharField(max_length=3, unique=True)  # UK, US, CA, AU, NZ
-    flag_emoji = models.CharField(max_length=10, blank=True)
+    """Country model with optimized indexing."""
+    name = models.CharField(max_length=100, unique=True, db_index=True)
+    code = models.CharField(max_length=10, unique=True, db_index=True)
     
     class Meta:
+        verbose_name_plural = "Countries"
         ordering = ['name']
-        verbose_name_plural = 'Countries'
-    
+        indexes = [
+            models.Index(fields=['code']),
+            models.Index(fields=['name']),
+        ]
+
     def __str__(self):
         return self.name
 
 
 class Organization(models.Model):
-    """Organizations that publish oral health guidelines."""
-    name = models.CharField(max_length=200)
-    country = models.ForeignKey(Country, on_delete=models.CASCADE)
+    """Healthcare organization."""
+    name = models.CharField(max_length=200, db_index=True)
+    country = models.ForeignKey(Country, on_delete=models.CASCADE, related_name='organizations')
     website = models.URLField(blank=True)
-    description = models.TextField(blank=True)
     
     class Meta:
-        ordering = ['country', 'name']
-    
+        ordering = ['name']
+        indexes = [
+            models.Index(fields=['name']),
+            models.Index(fields=['country']),
+        ]
+
     def __str__(self):
         return f"{self.name} ({self.country.code})"
 
 
-class Guideline(models.Model):
-    """Oral health guidelines from various countries."""
-    title = models.CharField(max_length=500)
-    organization = models.ForeignKey(Organization, on_delete=models.CASCADE)
-    publication_year = models.PositiveIntegerField()
-    version = models.CharField(max_length=50, blank=True)
-    url = models.URLField()
-    description = models.TextField()
-    last_updated = models.DateField()
-    is_active = models.BooleanField(default=True)
-    
-    class Meta:
-        ordering = ['-publication_year', 'title']
-    
-    def __str__(self):
-        return f"{self.title} ({self.organization.country.code} {self.publication_year})"
-    
-    def get_absolute_url(self):
-        return reverse('guidelines:guideline_detail', kwargs={'pk': self.pk})
-
-
-class Chapter(models.Model):
-    """Chapters within guidelines."""
-    guideline = models.ForeignKey(Guideline, on_delete=models.CASCADE, related_name='chapters')
-    number = models.PositiveIntegerField()
-    title = models.CharField(max_length=500)
-    url = models.URLField(blank=True)
-    content = models.TextField()
-    summary = models.TextField(blank=True)
-    
-    class Meta:
-        ordering = ['guideline', 'number']
-        unique_together = ['guideline', 'number']
-    
-    def __str__(self):
-        return f"{self.guideline.title} - Chapter {self.number}: {self.title}"
-
-
 class Topic(models.Model):
-    """Topics covered in oral health recommendations."""
-    name = models.CharField(max_length=200, unique=True)
-    slug = models.SlugField(max_length=200, unique=True, blank=True)
+    """Topic categories for recommendations."""
+    name = models.CharField(max_length=255, unique=True, db_index=True)
+    slug = models.SlugField(max_length=255, unique=True, db_index=True)
     description = models.TextField(blank=True)
-    parent = models.ForeignKey('self', on_delete=models.CASCADE, null=True, blank=True, related_name='subtopics')
+    parent = models.ForeignKey('self', null=True, blank=True, on_delete=models.CASCADE, related_name='children')
     
     class Meta:
         ordering = ['name']
-    
-    def __str__(self):
-        return self.name
-    
+        indexes = [
+            models.Index(fields=['slug']),
+            models.Index(fields=['name']),
+            models.Index(fields=['parent']),
+        ]
+
     def save(self, *args, **kwargs):
         if not self.slug:
             self.slug = slugify(self.name)
         super().save(*args, **kwargs)
-    
+
+    def __str__(self):
+        return self.name
+
     def get_absolute_url(self):
         return reverse('guidelines:topic_detail', kwargs={'slug': self.slug})
 
 
 class RecommendationStrength(models.Model):
-    """Strength of recommendations (Strong, Weak, Good Practice Point)."""
-    name = models.CharField(max_length=100, unique=True)
-    code = models.CharField(max_length=20, unique=True)  # STRONG, WEAK, GPP
-    description = models.TextField()
-    color_class = models.CharField(max_length=50, help_text="CSS class for styling")
+    """Recommendation strength levels."""
+    name = models.CharField(max_length=50, unique=True)
+    description = models.TextField(blank=True)
+    order = models.PositiveIntegerField(default=0)
     
     class Meta:
-        ordering = ['name']
-    
+        ordering = ['order', 'name']
+
     def __str__(self):
         return self.name
 
 
 class EvidenceQuality(models.Model):
-    """Quality of evidence using GRADE system."""
-    name = models.CharField(max_length=100, unique=True)
-    grade = models.CharField(max_length=20, unique=True)  # HIGH, MODERATE, LOW, VERY_LOW
-    description = models.TextField()
-    color_class = models.CharField(max_length=50, help_text="CSS class for styling")
+    """GRADE evidence quality levels."""
+    name = models.CharField(max_length=50, unique=True)
+    description = models.TextField(blank=True)
+    order = models.PositiveIntegerField(default=0)
     
     class Meta:
-        ordering = ['name']
-        verbose_name_plural = 'Evidence Qualities'
-    
+        ordering = ['order', 'name']
+
     def __str__(self):
         return self.name
 
 
-class Recommendation(models.Model):
-    """Individual recommendations from oral health guidelines."""
+class Guideline(models.Model):
+    """Clinical guidelines."""
+    title = models.CharField(max_length=500, db_index=True)
+    organization = models.ForeignKey(Organization, on_delete=models.CASCADE, related_name='guidelines')
+    publication_year = models.PositiveIntegerField(db_index=True)
+    last_updated = models.DateField(null=True, blank=True)
+    url = models.URLField(max_length=1000)
+    description = models.TextField(blank=True)
+    is_active = models.BooleanField(default=True, db_index=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    
+    class Meta:
+        ordering = ['-publication_year', 'title']
+        indexes = [
+            models.Index(fields=['publication_year']),
+            models.Index(fields=['is_active']),
+            models.Index(fields=['organization']),
+            models.Index(fields=['-created_at']),
+        ]
+
+    def __str__(self):
+        return f"{self.title} ({self.organization.country.code}, {self.publication_year})"
+
+    def get_absolute_url(self):
+        return reverse('guidelines:guideline_detail', kwargs={'pk': self.pk})
+
+
+class Chapter(models.Model):
+    """Guideline chapters."""
+    guideline = models.ForeignKey(Guideline, on_delete=models.CASCADE, related_name='chapters')
     title = models.CharField(max_length=500)
+    number = models.PositiveIntegerField()
+    content = models.TextField(blank=True)
+    
+    class Meta:
+        ordering = ['number']
+        unique_together = ['guideline', 'number']
+
+    def __str__(self):
+        return f"Chapter {self.number}: {self.title}"
+
+
+class Recommendation(models.Model):
+    """Clinical recommendations - optimized for search and filtering."""
+    title = models.CharField(max_length=500, db_index=True)
     text = models.TextField()
     guideline = models.ForeignKey(Guideline, on_delete=models.CASCADE, related_name='recommendations')
-    chapter = models.ForeignKey(Chapter, on_delete=models.CASCADE, null=True, blank=True, related_name='recommendations')
-    topics = models.ManyToManyField(Topic, related_name='recommendations')
+    chapter = models.ForeignKey(Chapter, null=True, blank=True, on_delete=models.SET_NULL, related_name='recommendations')
+    topics = models.ManyToManyField(Topic, related_name='recommendations', blank=True)
+    strength = models.ForeignKey(RecommendationStrength, null=True, blank=True, on_delete=models.SET_NULL, related_name='recommendations')
+    evidence_quality = models.ForeignKey(EvidenceQuality, null=True, blank=True, on_delete=models.SET_NULL, related_name='recommendations')
     
-    # Recommendation metadata
-    strength = models.ForeignKey(RecommendationStrength, on_delete=models.CASCADE)
-    evidence_quality = models.ForeignKey(EvidenceQuality, on_delete=models.CASCADE)
-    
-    # Population and context
+    # Additional fields for enhanced search
+    keywords = models.CharField(max_length=1000, blank=True, help_text="Comma-separated keywords for search")
     target_population = models.CharField(max_length=500, blank=True)
-    age_group = models.CharField(max_length=200, blank=True)
-    clinical_context = models.TextField(blank=True)
+    clinical_context = models.CharField(max_length=500, blank=True)
     
-    # URLs and references
-    guideline_url = models.URLField(blank=True, help_text="Direct link to this recommendation in the guideline")
-    page_number = models.CharField(max_length=50, blank=True)
+    # URLs and metadata
+    source_url = models.URLField(max_length=1000, blank=True)
+    page_number = models.PositiveIntegerField(null=True, blank=True)
     
-    # Search and filtering
-    keywords = models.TextField(blank=True, help_text="Keywords for search, comma-separated")
-    
-    # Timestamps
-    created_at = models.DateTimeField(auto_now_add=True)
+    created_at = models.DateTimeField(auto_now_add=True, db_index=True)
     updated_at = models.DateTimeField(auto_now=True)
     
     class Meta:
         ordering = ['-created_at']
-    
-    def __str__(self):
-        return f"{self.title} ({self.guideline.organization.country.code})"
-    
-    def get_absolute_url(self):
-        return reverse('guidelines:recommendation_detail', kwargs={'pk': self.pk})
-    
-    def get_search_keywords(self):
-        """Get keywords as a list."""
-        if self.keywords:
-            return [kw.strip() for kw in self.keywords.split(',') if kw.strip()]
-        return []
+        indexes = [
+            models.Index(fields=['title']),
+            models.Index(fields=['strength']),
+            models.Index(fields=['evidence_quality']),
+            models.Index(fields=['guideline']),
+            models.Index(fields=['-created_at']),
+            models.Index(fields=['keywords']),
+        ]
 
-
-class Reference(models.Model):
-    """References supporting recommendations."""
-    recommendation = models.ForeignKey(Recommendation, on_delete=models.CASCADE, related_name='references')
-    title = models.CharField(max_length=500)
-    authors = models.TextField(blank=True)
-    journal = models.CharField(max_length=200, blank=True)
-    year = models.PositiveIntegerField(null=True, blank=True)
-    volume = models.CharField(max_length=50, blank=True)
-    pages = models.CharField(max_length=100, blank=True)
-    doi = models.CharField(max_length=200, blank=True)
-    pmid = models.CharField(max_length=50, blank=True)
-    url = models.URLField(blank=True)
-    reference_type = models.CharField(max_length=100, default='Journal Article')
-    
-    class Meta:
-        ordering = ['year', 'title']
-    
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        return reverse('guidelines:recommendation_detail', kwargs={'pk': self.pk})
+
+
+class RecommendationReference(models.Model):
+    """References for recommendations."""
+    recommendation = models.ForeignKey(Recommendation, on_delete=models.CASCADE, related_name='references')
+    text = models.TextField()
+    url = models.URLField(max_length=1000, blank=True)
+    pmid = models.CharField(max_length=20, blank=True, help_text="PubMed ID")
+    doi = models.CharField(max_length=100, blank=True)
     
-    def get_citation(self):
-        """Generate a formatted citation."""
-        citation_parts = []
-        if self.authors:
-            citation_parts.append(self.authors)
-        if self.title:
-            citation_parts.append(self.title)
-        if self.journal and self.year:
-            journal_part = f"{self.journal}. {self.year}"
-            if self.volume:
-                journal_part += f";{self.volume}"
-            if self.pages:
-                journal_part += f":{self.pages}"
-            citation_parts.append(journal_part)
-        return '. '.join(citation_parts) + '.'
+    class Meta:
+        ordering = ['id']
+
+    def __str__(self):
+        return f"Reference for {self.recommendation.title}"

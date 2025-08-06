@@ -29,19 +29,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.humanize',
-    'corsheaders',
-    'widget_tweaks',
-    'crispy_forms',
-    'crispy_bootstrap5',
-    'django_extensions',
-    'rest_framework',
     'guidelines',  # UK guidelines app
     'cochrane',    # Cochrane reviews app
     'search',      # Search functionality
 ]
 
 MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -128,31 +121,15 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# Crispy forms configuration
-CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
-CRISPY_TEMPLATE_PACK = "bootstrap5"
+# JSON Configuration - Use orjson for faster JSON processing
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# CORS settings
-CORS_ALLOW_ALL_ORIGINS = DEBUG
-CORS_ALLOWED_ORIGINS = [
-    "https://oralhealth.xeradb.com",
-    "https://ost.xeradb.com",
-    "https://prct.xeradb.com",
-    "https://ttedb.xeradb.com",
-]
-
-# REST Framework configuration
-REST_FRAMEWORK = {
-    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 20,
-    'DEFAULT_RENDERER_CLASSES': [
-        'rest_framework.renderers.JSONRenderer',
-        'rest_framework.renderers.BrowsableAPIRenderer',
-    ],
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.AllowAny',
-    ],
-}
+# Use orjson for better performance
+if not DEBUG:
+    import orjson
+    import json
+    json.dumps = lambda obj, **kwargs: orjson.dumps(obj).decode()
+    json.loads = orjson.loads
 
 # Application-specific settings
 APP_NAME = 'OralHealth'
@@ -164,14 +141,48 @@ APP_DOMAIN = 'oralhealth.xeradb.com'
 GOOGLE_TRANSLATE_API_KEY = config('GOOGLE_TRANSLATE_API_KEY', default=None)
 LIBRETRANSLATE_URL = config('LIBRETRANSLATE_URL', default='https://libretranslate.de')
 
-# Cache configuration
+# High-performance cache configuration
 CACHES = {
     'default': {
         'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
-        'LOCATION': 'oralhealth-cache',
-        'TIMEOUT': 60 * 60 * 24,  # 24 hours default
+        'LOCATION': 'oralhealth-fast-cache',
+        'TIMEOUT': 60 * 60 * 2,  # 2 hours for frequent updates
+        'OPTIONS': {
+            'MAX_ENTRIES': 1000,
+            'CULL_FREQUENCY': 3,
+        }
+    },
+    'long_term': {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+        'LOCATION': 'oralhealth-long-cache',
+        'TIMEOUT': 60 * 60 * 24 * 7,  # 7 days for translations
+        'OPTIONS': {
+            'MAX_ENTRIES': 5000,
+            'CULL_FREQUENCY': 4,
+        }
     }
 }
+
+# Session optimization
+SESSION_ENGINE = 'django.contrib.sessions.backends.cached_db'
+SESSION_CACHE_ALIAS = 'default'
+
+# Template optimization
+TEMPLATES[0]['OPTIONS']['loaders'] = [
+    ('django.template.loaders.cached.Loader', [
+        'django.template.loaders.filesystem.Loader',
+        'django.template.loaders.app_directories.Loader',
+    ]),
+] if not DEBUG else TEMPLATES[0]['OPTIONS'].get('loaders', [])
+
+# Static files optimization
+STATICFILES_FINDERS = [
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+]
+
+# Compress static files aggressively
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
 # Logging configuration
 LOGGING = {

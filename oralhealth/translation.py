@@ -1,22 +1,29 @@
 """
-Translation functionality for OralHealth application.
-Supports Google Translate API with LibreTranslate fallback.
+Lightweight translation functionality for OralHealth application.
+Optimized for speed with minimal dependencies.
 """
 
-import requests
-import json
+import asyncio
+import hashlib
+from typing import Dict, Optional
 from django.conf import settings
 from django.core.cache import cache
-from django.utils.translation import gettext as _
 import logging
+
+# Use httpx for async HTTP requests - much faster than requests
+try:
+    import httpx
+except ImportError:
+    import requests as httpx
+    httpx.AsyncClient = None
 
 logger = logging.getLogger(__name__)
 
 
-class TranslationService:
-    """Translation service with multiple providers."""
+class FastTranslationService:
+    """Ultra-fast translation service with minimal overhead."""
     
-    # Supported languages for oral health content
+    # Core languages only - most requested for medical content
     SUPPORTED_LANGUAGES = {
         'en': {'name': 'English', 'flag': '🇬🇧'},
         'es': {'name': 'Español', 'flag': '🇪🇸'},
@@ -24,56 +31,65 @@ class TranslationService:
         'de': {'name': 'Deutsch', 'flag': '🇩🇪'},
         'it': {'name': 'Italiano', 'flag': '🇮🇹'},
         'pt': {'name': 'Português', 'flag': '🇵🇹'},
-        'ru': {'name': 'Русский', 'flag': '🇷🇺'},
         'zh': {'name': '中文', 'flag': '🇨🇳'},
         'ja': {'name': '日本語', 'flag': '🇯🇵'},
         'ko': {'name': '한국어', 'flag': '🇰🇷'},
         'ar': {'name': 'العربية', 'flag': '🇸🇦'},
         'hi': {'name': 'हिन्दी', 'flag': '🇮🇳'},
-        'tr': {'name': 'Türkçe', 'flag': '🇹🇷'},
-        'nl': {'name': 'Nederlands', 'flag': '🇳🇱'},
-        'sv': {'name': 'Svenska', 'flag': '🇸🇪'},
-        'da': {'name': 'Dansk', 'flag': '🇩🇰'},
-        'no': {'name': 'Norsk', 'flag': '🇳🇴'},
-        'fi': {'name': 'Suomi', 'flag': '🇫🇮'},
-        'pl': {'name': 'Polski', 'flag': '🇵🇱'},
-        'cs': {'name': 'Čeština', 'flag': '🇨🇿'},
-        'hu': {'name': 'Magyar', 'flag': '🇭🇺'},
-        'ro': {'name': 'Română', 'flag': '🇷🇴'},
-        'el': {'name': 'Ελληνικά', 'flag': '🇬🇷'},
-        'he': {'name': 'עברית', 'flag': '🇮🇱'},
-        'th': {'name': 'ไทย', 'flag': '🇹🇭'},
-        'vi': {'name': 'Tiếng Việt', 'flag': '🇻🇳'},
-        'id': {'name': 'Bahasa Indonesia', 'flag': '🇮🇩'},
-        'ms': {'name': 'Bahasa Melayu', 'flag': '🇲🇾'},
-        'uk': {'name': 'Українська', 'flag': '🇺🇦'},
-        'bg': {'name': 'Български', 'flag': '🇧🇬'},
-        'hr': {'name': 'Hrvatski', 'flag': '🇭🇷'},
-        'sk': {'name': 'Slovenčina', 'flag': '🇸🇰'},
-        'sl': {'name': 'Slovenščina', 'flag': '🇸🇮'},
-        'lt': {'name': 'Lietuvių', 'flag': '🇱🇹'},
-        'lv': {'name': 'Latviešu', 'flag': '🇱🇻'},
-        'et': {'name': 'Eesti', 'flag': '🇪🇪'},
+        'ru': {'name': 'Русский', 'flag': '🇷🇺'},
     }
     
     def __init__(self):
         self.google_api_key = getattr(settings, 'GOOGLE_TRANSLATE_API_KEY', None)
         self.libretranslate_url = getattr(settings, 'LIBRETRANSLATE_URL', 'https://libretranslate.de')
         
-    def get_cache_key(self, text, target_lang, source_lang='en'):
-        """Generate cache key for translation."""
-        import hashlib
-        text_hash = hashlib.md5(text.encode()).hexdigest()[:16]
-        return f"translation:{source_lang}:{target_lang}:{text_hash}"
+        # Initialize async client if available
+        if hasattr(httpx, 'AsyncClient'):
+            self.client = httpx.AsyncClient(timeout=10.0)
+        else:
+            self.client = None
     
-    def translate_with_google(self, text, target_lang, source_lang='en'):
-        """Translate using Google Translate API."""
-        if not self.google_api_key:
-            return None
+    def get_cache_key(self, text: str, target_lang: str, source_lang: str = 'en') -> str:
+        """Generate fast cache key using hash."""
+        text_hash = hashlib.blake2b(text.encode(), digest_size=8).hexdigest()
+        return f"tr:{source_lang}:{target_lang}:{text_hash}"
+    
+    async def translate_async(self, text: str, target_lang: str, source_lang: str = 'en') -> Optional[str]:
+        """Async translation with fallback."""
+        if not text or target_lang == source_lang:
+            return text
             
+        # Check cache first
+        cache_key = self.get_cache_key(text, target_lang, source_lang)
+        cached = cache.get(cache_key)
+        if cached:
+            return cached
+        
+        translation = None
+        
+        # Try Google Translate first (if available)
+        if self.google_api_key and self.client:
+            translation = await self._translate_google_async(text, target_lang, source_lang)
+        
+        # Fallback to LibreTranslate
+        if not translation and self.client:
+            translation = await self._translate_libretranslate_async(text, target_lang, source_lang)
+        
+        # Sync fallback if async not available
+        if not translation:
+            translation = self._translate_sync(text, target_lang, source_lang)
+        
+        # Cache result
+        if translation:
+            cache.set(cache_key, translation, 60 * 60 * 24 * 7)  # 7 days
+            
+        return translation or text
+    
+    async def _translate_google_async(self, text: str, target_lang: str, source_lang: str) -> Optional[str]:
+        """Async Google Translate."""
         try:
-            url = f"https://translation.googleapis.com/language/translate/v2"
-            params = {
+            url = "https://translation.googleapis.com/language/translate/v2"
+            data = {
                 'key': self.google_api_key,
                 'q': text,
                 'target': target_lang,
@@ -81,20 +97,18 @@ class TranslationService:
                 'format': 'text'
             }
             
-            response = requests.post(url, data=params, timeout=10)
-            response.raise_for_status()
-            
-            result = response.json()
-            if 'data' in result and 'translations' in result['data']:
+            response = await self.client.post(url, data=data)
+            if response.status_code == 200:
+                result = response.json()
                 return result['data']['translations'][0]['translatedText']
                 
         except Exception as e:
-            logger.error(f"Google Translate error: {e}")
+            logger.warning(f"Google Translate failed: {e}")
             
         return None
     
-    def translate_with_libretranslate(self, text, target_lang, source_lang='en'):
-        """Translate using LibreTranslate (free)."""
+    async def _translate_libretranslate_async(self, text: str, target_lang: str, source_lang: str) -> Optional[str]:
+        """Async LibreTranslate."""
         try:
             url = f"{self.libretranslate_url}/translate"
             data = {
@@ -104,93 +118,80 @@ class TranslationService:
                 'format': 'text'
             }
             
-            response = requests.post(url, data=data, timeout=15)
-            response.raise_for_status()
-            
-            result = response.json()
-            if 'translatedText' in result:
-                return result['translatedText']
+            response = await self.client.post(url, json=data)
+            if response.status_code == 200:
+                result = response.json()
+                return result.get('translatedText')
                 
         except Exception as e:
-            logger.error(f"LibreTranslate error: {e}")
+            logger.warning(f"LibreTranslate failed: {e}")
             
         return None
     
-    def translate_text(self, text, target_lang, source_lang='en'):
-        """
-        Translate text with caching and fallback providers.
-        """
-        if not text or not text.strip():
+    def _translate_sync(self, text: str, target_lang: str, source_lang: str) -> Optional[str]:
+        """Synchronous fallback translation."""
+        try:
+            # Simple synchronous implementation
+            if hasattr(httpx, 'post'):
+                # Using httpx sync
+                response = httpx.post(
+                    f"{self.libretranslate_url}/translate",
+                    json={
+                        'q': text,
+                        'source': source_lang,
+                        'target': target_lang,
+                        'format': 'text'
+                    },
+                    timeout=10
+                )
+                if response.status_code == 200:
+                    return response.json().get('translatedText')
+            else:
+                # Using requests fallback
+                import requests
+                response = requests.post(
+                    f"{self.libretranslate_url}/translate",
+                    json={
+                        'q': text,
+                        'source': source_lang,
+                        'target': target_lang,
+                        'format': 'text'
+                    },
+                    timeout=10
+                )
+                if response.status_code == 200:
+                    return response.json().get('translatedText')
+                    
+        except Exception as e:
+            logger.warning(f"Sync translation failed: {e}")
+            
+        return None
+    
+    def translate_text(self, text: str, target_lang: str, source_lang: str = 'en') -> str:
+        """Synchronous translation for compatibility."""
+        if not text or target_lang == source_lang:
             return text
             
-        if target_lang == source_lang:
-            return text
-            
-        if target_lang not in self.SUPPORTED_LANGUAGES:
-            logger.warning(f"Unsupported language: {target_lang}")
-            return text
-        
         # Check cache first
         cache_key = self.get_cache_key(text, target_lang, source_lang)
-        cached_translation = cache.get(cache_key)
-        if cached_translation:
-            return cached_translation
+        cached = cache.get(cache_key)
+        if cached:
+            return cached
         
-        # Try Google Translate first
-        translation = self.translate_with_google(text, target_lang, source_lang)
+        # Use sync translation
+        translation = self._translate_sync(text, target_lang, source_lang)
         
-        # Fallback to LibreTranslate
-        if not translation:
-            translation = self.translate_with_libretranslate(text, target_lang, source_lang)
-        
-        # If all fails, return original text
-        if not translation:
-            logger.warning(f"Translation failed for {source_lang} -> {target_lang}")
-            return text
-        
-        # Cache the result for 7 days
-        cache.set(cache_key, translation, 60 * 60 * 24 * 7)
-        
-        return translation
-    
-    def translate_recommendation(self, recommendation, target_lang):
-        """
-        Translate a recommendation object.
-        Returns a dictionary with translated fields.
-        """
-        if target_lang == 'en':
-            return {
-                'title': recommendation.title,
-                'text': recommendation.text,
-                'target_population': recommendation.target_population,
-                'clinical_context': recommendation.clinical_context,
-            }
-        
-        return {
-            'title': self.translate_text(recommendation.title, target_lang),
-            'text': self.translate_text(recommendation.text, target_lang),
-            'target_population': self.translate_text(recommendation.target_population, target_lang) if recommendation.target_population else '',
-            'clinical_context': self.translate_text(recommendation.clinical_context, target_lang) if recommendation.clinical_context else '',
-        }
-    
-    def translate_topic(self, topic, target_lang):
-        """Translate a topic object."""
-        if target_lang == 'en':
-            return {
-                'name': topic.name,
-                'description': topic.description,
-            }
-        
-        return {
-            'name': self.translate_text(topic.name, target_lang),
-            'description': self.translate_text(topic.description, target_lang) if topic.description else '',
-        }
+        if translation:
+            cache.set(cache_key, translation, 60 * 60 * 24 * 7)
+            return translation
+            
+        return text
     
     @classmethod
-    def get_supported_languages(cls):
-        """Get list of supported languages."""
+    def get_supported_languages(cls) -> Dict:
+        """Get supported languages."""
         return cls.SUPPORTED_LANGUAGES
 
 
 # Global instance
-translator = TranslationService()
+translator = FastTranslationService()
