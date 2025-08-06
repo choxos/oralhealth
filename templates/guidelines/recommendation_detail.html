@@ -1,0 +1,395 @@
+{% extends 'oralhealth_base.html' %}
+{% load static %}
+
+{% block page_title %}{{ recommendation.title|truncatechars:80 }} | {{ block.super }}{% endblock %}
+
+{% block page_description %}{{ recommendation.text|truncatewords:30 }}{% endblock %}
+
+{% block main_content %}
+<div class="container">
+    <!-- Breadcrumb Navigation -->
+    <nav aria-label="breadcrumb" class="mb-4">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="{% url 'guidelines:home' %}">
+                    <i class="fas fa-home me-1"></i>Home
+                </a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="{% url 'guidelines:recommendation_list' %}">
+                    <i class="fas fa-list-alt me-1"></i>Recommendations
+                </a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">
+                {{ recommendation.title|truncatechars:50 }}
+            </li>
+        </ol>
+    </nav>
+
+    <div class="row">
+        <!-- Main Content -->
+        <div class="col-lg-8">
+            <!-- Recommendation Header -->
+            <div class="xera-card mb-4">
+                <div class="xera-card-header">
+                    <div class="d-flex justify-content-between align-items-start">
+                        <div class="flex-grow-1">
+                            <h1 class="xera-card-title mb-3">
+                                {{ recommendation.title }}
+                            </h1>
+                            
+                            <!-- Meta Information -->
+                            <div class="d-flex flex-wrap gap-2 mb-3">
+                                <span class="xera-badge xera-badge-primary">
+                                    {{ recommendation.guideline.organization.country.flag_emoji }} 
+                                    {{ recommendation.guideline.organization.country.name }}
+                                </span>
+                                
+                                {% if recommendation.strength %}
+                                <span class="xera-badge xera-badge-success">
+                                    <i class="fas fa-thumbs-up me-1"></i>
+                                    {{ recommendation.strength.name }} Recommendation
+                                </span>
+                                {% endif %}
+                                
+                                {% if recommendation.evidence_quality %}
+                                <span class="xera-badge xera-badge-info">
+                                    <i class="fas fa-microscope me-1"></i>
+                                    {{ recommendation.evidence_quality.name }} Evidence
+                                </span>
+                                {% endif %}
+                            </div>
+                            
+                            <!-- Topics -->
+                            {% if recommendation.topics.all %}
+                            <div class="mb-3">
+                                <strong class="text-muted small">Topics:</strong>
+                                <div class="mt-1">
+                                    {% for topic in recommendation.topics.all %}
+                                    <a href="{% url 'guidelines:topic_detail' topic.slug %}" class="xera-badge xera-badge-light text-decoration-none me-1">
+                                        <i class="fas fa-tag me-1"></i>{{ topic.name }}
+                                    </a>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            {% endif %}
+                        </div>
+                        
+                        <!-- Translation Toggle -->
+                        {% if supported_languages|length > 1 %}
+                        <div class="dropdown">
+                            <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                                <i class="fas fa-globe me-1"></i>
+                                {% if current_language and current_language != 'en' %}
+                                    Translate
+                                {% else %}
+                                    English
+                                {% endif %}
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="?">🇬🇧 English</a></li>
+                                {% for lang_code, lang_info in supported_languages.items %}
+                                    {% if lang_code != 'en' %}
+                                    <li><a class="dropdown-item" href="?lang={{ lang_code }}">{{ lang_info.flag }} {{ lang_info.name }}</a></li>
+                                    {% endif %}
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+                
+                <div class="xera-card-body">
+                    <!-- Recommendation Text -->
+                    <div class="recommendation-content">
+                        {% if translated_recommendation %}
+                        <div class="alert alert-info">
+                            <i class="fas fa-language me-2"></i>
+                            <strong>Translated Content:</strong> This recommendation has been automatically translated. 
+                            <a href="?" class="alert-link">View original</a>
+                        </div>
+                        <p class="lead">{{ translated_recommendation.text }}</p>
+                        {% else %}
+                        <p class="lead">{{ recommendation.text }}</p>
+                        {% endif %}
+                    </div>
+                    
+                    <!-- Keywords -->
+                    {% if recommendation.keywords %}
+                    <div class="mt-4">
+                        <h6 class="text-muted">Keywords:</h6>
+                        <p class="small text-secondary">{{ recommendation.keywords }}</p>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+            
+            <!-- References Section -->
+            {% if recommendation.references.all %}
+            <div class="xera-card mb-4">
+                <div class="xera-card-header">
+                    <h3 class="xera-card-title">
+                        <i class="fas fa-bookmark me-2"></i>References
+                    </h3>
+                </div>
+                <div class="xera-card-body">
+                    <div class="references-list">
+                        {% for reference in recommendation.references.all %}
+                        <div class="reference-item mb-3 p-3 border-start border-primary border-3 bg-light">
+                            <p class="mb-2">{{ reference.text }}</p>
+                            {% if reference.url %}
+                            <a href="{{ reference.url }}" target="_blank" class="btn btn-sm btn-outline-primary">
+                                <i class="fas fa-external-link-alt me-1"></i>View Source
+                            </a>
+                            {% endif %}
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            
+            <!-- Related Recommendations -->
+            {% if related_recommendations %}
+            <div class="xera-card">
+                <div class="xera-card-header">
+                    <h3 class="xera-card-title">
+                        <i class="fas fa-lightbulb me-2"></i>Related Recommendations
+                    </h3>
+                </div>
+                <div class="xera-card-body">
+                    <div class="row">
+                        {% for related in related_recommendations %}
+                        <div class="col-md-6 mb-3">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h6 class="card-title">
+                                        <a href="{{ related.get_absolute_url }}" class="text-decoration-none">
+                                            {{ related.title|truncatechars:60 }}
+                                        </a>
+                                    </h6>
+                                    <p class="card-text small text-muted">
+                                        {{ related.text|truncatewords:15 }}
+                                    </p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <small class="text-muted">
+                                            {{ related.guideline.organization.country.flag_emoji }} 
+                                            {{ related.guideline.organization.country.name }}
+                                        </small>
+                                        <a href="{{ related.get_absolute_url }}" class="btn btn-sm btn-outline-primary">
+                                            Read More
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+        
+        <!-- Sidebar -->
+        <div class="col-lg-4">
+            <!-- Source Information -->
+            <div class="xera-card mb-4">
+                <div class="xera-card-header">
+                    <h4 class="xera-card-title">
+                        <i class="fas fa-info-circle me-2"></i>Source Information
+                    </h4>
+                </div>
+                <div class="xera-card-body">
+                    <table class="table table-sm table-borderless">
+                        <tr>
+                            <td class="text-muted"><strong>Country:</strong></td>
+                            <td>
+                                {{ recommendation.guideline.organization.country.flag_emoji }} 
+                                {{ recommendation.guideline.organization.country.name }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-muted"><strong>Organization:</strong></td>
+                            <td>{{ recommendation.guideline.organization.name }}</td>
+                        </tr>
+                        <tr>
+                            <td class="text-muted"><strong>Guideline:</strong></td>
+                            <td>
+                                <a href="{{ recommendation.guideline.get_absolute_url }}" class="text-decoration-none">
+                                    {{ recommendation.guideline.title }}
+                                </a>
+                            </td>
+                        </tr>
+                        {% if recommendation.guideline.publication_year %}
+                        <tr>
+                            <td class="text-muted"><strong>Year:</strong></td>
+                            <td>{{ recommendation.guideline.publication_year }}</td>
+                        </tr>
+                        {% endif %}
+                        {% if recommendation.chapter %}
+                        <tr>
+                            <td class="text-muted"><strong>Chapter:</strong></td>
+                            <td>{{ recommendation.chapter.title }}</td>
+                        </tr>
+                        {% endif %}
+                    </table>
+                    
+                    <!-- Links -->
+                    <div class="mt-3">
+                        {% if recommendation.source_url %}
+                        <a href="{{ recommendation.source_url }}" target="_blank" class="btn btn-outline-primary btn-sm me-2 mb-2">
+                            <i class="fas fa-external-link-alt me-1"></i>Original Source
+                        </a>
+                        {% endif %}
+                        {% if recommendation.guideline.url %}
+                        <a href="{{ recommendation.guideline.url }}" target="_blank" class="btn btn-outline-secondary btn-sm mb-2">
+                            <i class="fas fa-book me-1"></i>Full Guideline
+                        </a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Evidence Quality Information -->
+            {% if recommendation.evidence_quality or recommendation.strength %}
+            <div class="xera-card mb-4">
+                <div class="xera-card-header">
+                    <h4 class="xera-card-title">
+                        <i class="fas fa-chart-bar me-2"></i>Evidence Assessment
+                    </h4>
+                </div>
+                <div class="xera-card-body">
+                    {% if recommendation.evidence_quality %}
+                    <div class="mb-3">
+                        <h6 class="text-muted">Evidence Quality:</h6>
+                        <span class="badge bg-info fs-6">
+                            <i class="fas fa-microscope me-1"></i>
+                            {{ recommendation.evidence_quality.name }}
+                        </span>
+                        {% if recommendation.evidence_quality.description %}
+                        <p class="small text-muted mt-2">{{ recommendation.evidence_quality.description }}</p>
+                        {% endif %}
+                    </div>
+                    {% endif %}
+                    
+                    {% if recommendation.strength %}
+                    <div class="mb-3">
+                        <h6 class="text-muted">Recommendation Strength:</h6>
+                        <span class="badge bg-success fs-6">
+                            <i class="fas fa-thumbs-up me-1"></i>
+                            {{ recommendation.strength.name }}
+                        </span>
+                        {% if recommendation.strength.description %}
+                        <p class="small text-muted mt-2">{{ recommendation.strength.description }}</p>
+                        {% endif %}
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+            {% endif %}
+            
+            <!-- Quick Actions -->
+            <div class="xera-card">
+                <div class="xera-card-header">
+                    <h4 class="xera-card-title">
+                        <i class="fas fa-tools me-2"></i>Quick Actions
+                    </h4>
+                </div>
+                <div class="xera-card-body">
+                    <div class="d-grid gap-2">
+                        <a href="{% url 'guidelines:recommendation_list' %}?country={{ recommendation.guideline.organization.country.id }}" 
+                           class="btn btn-outline-primary btn-sm">
+                            <i class="fas fa-flag me-1"></i>
+                            More from {{ recommendation.guideline.organization.country.name }}
+                        </a>
+                        
+                        {% if recommendation.topics.all %}
+                        {% for topic in recommendation.topics.all|slice:":2" %}
+                        <a href="{% url 'guidelines:topic_detail' topic.slug %}" 
+                           class="btn btn-outline-secondary btn-sm">
+                            <i class="fas fa-tag me-1"></i>
+                            More on {{ topic.name }}
+                        </a>
+                        {% endfor %}
+                        {% endif %}
+                        
+                        <button class="btn btn-outline-info btn-sm" onclick="shareRecommendation()">
+                            <i class="fas fa-share me-1"></i>Share This
+                        </button>
+                        
+                        <button class="btn btn-outline-dark btn-sm" onclick="printRecommendation()">
+                            <i class="fas fa-print me-1"></i>Print
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+// Track recommendation view on page load
+document.addEventListener('DOMContentLoaded', function() {
+    if (window.trackRecommendationView) {
+        window.trackRecommendationView(
+            {{ recommendation.id }},
+            '{{ recommendation.guideline.organization.country.code }}'
+        );
+    }
+    
+    // Track page view event
+    if (window.trackEvent) {
+        window.trackEvent('page_view', 'recommendation_detail', 'rec_{{ recommendation.id }}');
+    }
+});
+
+// Share functionality
+function shareRecommendation() {
+    if (navigator.share) {
+        navigator.share({
+            title: '{{ recommendation.title|addslashes }}',
+            text: '{{ recommendation.text|truncatewords:20|addslashes }}',
+            url: window.location.href
+        }).catch(console.error);
+    } else {
+        // Fallback: copy URL to clipboard
+        navigator.clipboard.writeText(window.location.href).then(function() {
+            alert('URL copied to clipboard!');
+        });
+    }
+    
+    // Track sharing
+    if (window.trackEvent) {
+        window.trackEvent('share_recommendation', 'engagement', 'rec_{{ recommendation.id }}');
+    }
+}
+
+// Print functionality
+function printRecommendation() {
+    window.print();
+    
+    // Track printing
+    if (window.trackEvent) {
+        window.trackEvent('print_recommendation', 'engagement', 'rec_{{ recommendation.id }}');
+    }
+}
+
+// Print styles
+const printStyles = `
+@media print {
+    .xera-header, .xera-footer, .breadcrumb, 
+    .dropdown, .btn, #related-recommendations { 
+        display: none !important; 
+    }
+    .container { max-width: 100% !important; }
+    .xera-card { border: 1px solid #ddd !important; box-shadow: none !important; }
+}`;
+
+// Add print styles to head
+const styleSheet = document.createElement('style');
+styleSheet.textContent = printStyles;
+document.head.appendChild(styleSheet);
+</script>
+{% endblock %}
