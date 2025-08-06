@@ -8,6 +8,6 @@ from . import views
 app_name = 'search'
 
 urlpatterns = [
-    path('', views.search_view, name='search'),
+    path('', views.search_results, name='search_results'),
     path('api/', views.search_api, name='search_api'),
 ]

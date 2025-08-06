@@ -8,7 +8,7 @@ from . import views
 app_name = 'guidelines'
 
 urlpatterns = [
-    path('', views.home, name='home'),
+    path('', views.home_view, name='home'),
     
     # Recommendations
     path('recommendations/', views.RecommendationListView.as_view(), name='recommendation_list'),

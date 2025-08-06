@@ -18,6 +18,10 @@ from .forms import RecommendationSearchForm
 from oralhealth.translation import translator
 
 
+def home_view(request):
+    """Home page view."""
+    return home(request)
+
 def home(request):
     """Home page with overview statistics and search."""
     # Get statistics
