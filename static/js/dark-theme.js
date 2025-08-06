@@ -45,10 +45,11 @@ class ThemeManager {
     createToggleButton() {
         const toggleButton = document.createElement('button');
         toggleButton.className = 'theme-toggle';
-        toggleButton.setAttribute('aria-label', 'Toggle dark mode');
+        toggleButton.id = 'themeToggle';
+        toggleButton.setAttribute('aria-label', 'Toggle theme');
         toggleButton.innerHTML = `
-            <span class="icon sun-icon">☀️</span>
-            <span class="icon moon-icon">🌙</span>
+            <i class="fas fa-sun sun-icon"></i>
+            <i class="fas fa-moon moon-icon"></i>
         `;
         
         toggleButton.addEventListener('click', () => this.toggleTheme());
