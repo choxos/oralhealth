@@ -21,7 +21,34 @@ class Country(models.Model):
         ]
 
     def __str__(self):
-        return self.name
+        return f"{self.flag_emoji} {self.name}"
+    
+    @property
+    def flag_emoji(self):
+        """Return flag emoji for country."""
+        flag_map = {
+            'UK': '🇬🇧',
+            'US': '🇺🇸', 
+            'CA': '🇨🇦',
+            'AU': '🇦🇺',
+            'NZ': '🇳🇿',
+            'FR': '🇫🇷',
+            'DE': '🇩🇪',
+            'IT': '🇮🇹',
+            'ES': '🇪🇸',
+            'NL': '🇳🇱',
+            'SE': '🇸🇪',
+            'NO': '🇳🇴',
+            'DK': '🇩🇰',
+            'FI': '🇫🇮',
+            'JP': '🇯🇵',
+            'KR': '🇰🇷',
+            'CN': '🇨🇳',
+            'IN': '🇮🇳',
+            'BR': '🇧🇷',
+            'MX': '🇲🇽',
+        }
+        return flag_map.get(self.code, '🏥')
 
 
 class Organization(models.Model):

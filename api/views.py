@@ -114,6 +114,8 @@ def recommendations_api(request):
                 'country': {
                     'name': rec.guideline.organization.country.name,
                     'code': rec.guideline.organization.country.code,
+                    'flag_emoji': rec.guideline.organization.country.flag_emoji,
+                    'display_name': f"{rec.guideline.organization.country.flag_emoji} {rec.guideline.organization.country.name}",
                 },
                 'publication_year': rec.guideline.publication_year,
                 'url': rec.guideline.url,
@@ -214,6 +216,8 @@ def guidelines_api(request):
                 'country': {
                     'name': guideline.organization.country.name,
                     'code': guideline.organization.country.code,
+                    'flag_emoji': guideline.organization.country.flag_emoji,
+                    'display_name': f"{guideline.organization.country.flag_emoji} {guideline.organization.country.name}",
                 }
             },
             'publication_year': guideline.publication_year,
@@ -320,11 +324,18 @@ def stats_api(request):
     stats = {
         'recommendations': {
             'total': Recommendation.objects.count(),
-            'by_country': list(
-                Country.objects.annotate(
+            'by_country': [
+                {
+                    'name': country.name,
+                    'code': country.code,
+                    'flag_emoji': country.flag_emoji,
+                    'display_name': f"{country.flag_emoji} {country.name}",
+                    'count': country.count,
+                }
+                for country in Country.objects.annotate(
                     count=Count('organizations__guidelines__recommendations')
-                ).filter(count__gt=0).values('name', 'code', 'count')
-            ),
+                ).filter(count__gt=0)
+            ],
             'by_topic': list(
                 Topic.objects.annotate(
                     count=Count('recommendations')
@@ -333,11 +344,18 @@ def stats_api(request):
         },
         'guidelines': {
             'total': Guideline.objects.filter(is_active=True).count(),
-            'by_country': list(
-                Country.objects.annotate(
+            'by_country': [
+                {
+                    'name': country.name,
+                    'code': country.code,
+                    'flag_emoji': country.flag_emoji,
+                    'display_name': f"{country.flag_emoji} {country.name}",
+                    'count': country.count,
+                }
+                for country in Country.objects.annotate(
                     count=Count('organizations__guidelines', filter=Q(organizations__guidelines__is_active=True))
-                ).filter(count__gt=0).values('name', 'code', 'count')
-            ),
+                ).filter(count__gt=0)
+            ],
         },
         'cochrane': {
             'total_reviews': CochraneReview.objects.count(),
@@ -358,9 +376,16 @@ def metadata_api(request):
     """
     
     metadata = {
-        'countries': list(
-            Country.objects.values('id', 'name', 'code')
-        ),
+        'countries': [
+            {
+                'id': country.id,
+                'name': country.name,
+                'code': country.code,
+                'flag_emoji': country.flag_emoji,
+                'display_name': f"{country.flag_emoji} {country.name}",
+            }
+            for country in Country.objects.all()
+        ],
         'topics': list(
             Topic.objects.values('id', 'name', 'slug', 'description')
         ),
