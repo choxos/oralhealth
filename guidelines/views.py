@@ -32,10 +32,34 @@ def home(request):
         'total_topics': Topic.objects.count(),
     }
     
-    # Get recent recommendations
-    recent_recommendations = Recommendation.objects.select_related(
-        'guideline__organization__country'
-    ).prefetch_related('topics')[:5]
+    # Get highest evidence quality recommendations
+    from django.db.models import Case, When, IntegerField
+    
+    # Define evidence quality ordering (highest to lowest)
+    evidence_order = Case(
+        When(evidence_quality__name='High', then=1),
+        When(evidence_quality__name='Moderate', then=2),
+        When(evidence_quality__name='Low', then=3),
+        When(evidence_quality__name='Very Low', then=4),
+        default=5,
+        output_field=IntegerField()
+    )
+    
+    # Define strength ordering (strongest to weakest)
+    strength_order = Case(
+        When(strength__name='Strong', then=1),
+        When(strength__name='Moderate', then=2),
+        When(strength__name='Weak', then=3),
+        default=4,
+        output_field=IntegerField()
+    )
+    
+    top_recommendations = Recommendation.objects.select_related(
+        'guideline__organization__country', 'strength', 'evidence_quality'
+    ).prefetch_related('topics').annotate(
+        evidence_priority=evidence_order,
+        strength_priority=strength_order
+    ).order_by('evidence_priority', 'strength_priority', '-created_at')[:10]
     
     # Get featured countries
     countries = Country.objects.annotate(
@@ -47,11 +71,11 @@ def home(request):
     
     context = {
         'stats': stats,
-        'recent_recommendations': recent_recommendations,
+        'top_recommendations': top_recommendations,
         'countries': countries,
         'search_form': search_form,
-        'page_title': 'OralHealth - Evidence-Based Oral Health Recommendations',
-        'page_description': 'Comprehensive database of oral health recommendations from UK, US, Canada, Australia, and New Zealand guidelines.',
+        'page_title': 'Oral Health Recommendations - Evidence-Based Clinical Guidelines',
+        'page_description': 'Comprehensive database of oral health recommendations from UK, Scotland, and international guidelines.',
         'supported_languages': translator.get_supported_languages(),
     }
     

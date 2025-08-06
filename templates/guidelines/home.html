@@ -111,62 +111,75 @@
     </div>
 </div>
 
-<!-- Recent Recommendations -->
+<!-- Top Evidence-Based Recommendations -->
 <div class="row mb-5">
     <div class="col-12">
         <div class="d-flex justify-content-between align-items-center mb-4">
             <h2>
-                <i class="fas fa-clock me-2 oralhealth-icon"></i>
-                Recent Recommendations
+                <i class="fas fa-star me-2 oralhealth-icon"></i>
+                Highest Evidence Recommendations
             </h2>
             <a href="{% url 'guidelines:recommendation_list' %}" class="xera-btn xera-btn-outline">
                 <i class="fas fa-list me-1"></i>View All
             </a>
         </div>
         
-        {% for recommendation in recent_recommendations %}
-        <div class="oralhealth-recommendation-card">
-            <div class="oralhealth-recommendation-header">
-                <h5 class="oralhealth-recommendation-title">
-                    <a href="{{ recommendation.get_absolute_url }}" class="text-decoration-none">
-                        {{ recommendation.title }}
-                    </a>
-                </h5>
-                <div class="oralhealth-recommendation-meta">
-                    <span class="xera-badge oralhealth-source-{{ recommendation.guideline.organization.country.code|lower }}">
-                        {{ recommendation.guideline.organization.country.flag_emoji }} {{ recommendation.guideline.organization.country.name }}
-                    </span>
-                    <span class="xera-badge oralhealth-strength-{{ recommendation.strength.code|lower }}">
-                        {{ recommendation.strength.name }}
-                    </span>
-                    <span class="xera-badge oralhealth-evidence-{{ recommendation.evidence_quality.grade|lower }}">
-                        {{ recommendation.evidence_quality.name }} Evidence
-                    </span>
+        {% if top_recommendations %}
+        <div class="row">
+            {% for recommendation in top_recommendations %}
+            <div class="col-lg-6 mb-4">
+                <div class="oralhealth-recommendation-card h-100">
+                    <div class="oralhealth-recommendation-header">
+                        <h5 class="oralhealth-recommendation-title">
+                            <a href="{{ recommendation.get_absolute_url }}" class="text-decoration-none">
+                                {{ recommendation.title|truncatechars:80 }}
+                            </a>
+                        </h5>
+                        <div class="oralhealth-recommendation-meta">
+                            <span class="xera-badge oralhealth-source-{{ recommendation.guideline.organization.country.code|lower }}">
+                                {{ recommendation.guideline.organization.country.flag_emoji }} {{ recommendation.guideline.organization.country.name }}
+                            </span>
+                            {% if recommendation.strength %}
+                            <span class="xera-badge xera-badge-success">
+                                <i class="fas fa-thumbs-up me-1"></i>{{ recommendation.strength.name }}
+                            </span>
+                            {% endif %}
+                            {% if recommendation.evidence_quality %}
+                            <span class="xera-badge xera-badge-primary">
+                                <i class="fas fa-microscope me-1"></i>{{ recommendation.evidence_quality.name }} Evidence
+                            </span>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="oralhealth-recommendation-body">
+                        <p class="oralhealth-recommendation-text">
+                            {{ recommendation.text|truncatewords:25 }}
+                        </p>
+                        {% if recommendation.topics.all %}
+                        <div class="mb-2">
+                            {% for topic in recommendation.topics.all %}
+                                <span class="xera-badge xera-badge-light me-1">
+                                    <i class="fas fa-tag me-1"></i>{{ topic.name }}
+                                </span>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                    </div>
+                    <div class="oralhealth-recommendation-footer">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <small class="text-muted">
+                                <i class="fas fa-book me-1"></i>{{ recommendation.guideline.title|truncatewords:6 }}
+                            </small>
+                            <a href="{{ recommendation.get_absolute_url }}" class="xera-btn xera-btn-sm xera-btn-primary">
+                                <i class="fas fa-arrow-right me-1"></i>Read More
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="oralhealth-recommendation-body">
-                <p class="oralhealth-recommendation-text">
-                    {{ recommendation.text|truncatewords:30 }}
-                </p>
-                {% if recommendation.topics.all %}
-                <div class="mb-2">
-                    <strong>Topics:</strong>
-                    {% for topic in recommendation.topics.all %}
-                        <span class="xera-badge xera-badge-secondary me-1">{{ topic.name }}</span>
-                    {% endfor %}
-                </div>
-                {% endif %}
-            </div>
-            <div class="oralhealth-recommendation-footer">
-                <small class="text-muted">
-                    <i class="fas fa-book me-1"></i>{{ recommendation.guideline.title|truncatewords:8 }}
-                </small>
-                <a href="{{ recommendation.get_absolute_url }}" class="xera-btn xera-btn-sm xera-btn-primary">
-                    <i class="fas fa-arrow-right me-1"></i>Read More
-                </a>
-            </div>
+            {% endfor %}
         </div>
-        {% empty %}
+        {% else %}
         <div class="xera-card">
             <div class="xera-card-body text-center">
                 <i class="fas fa-info-circle fa-3x text-muted mb-3"></i>
@@ -174,7 +187,7 @@
                 <p class="text-muted">Recommendations will appear here as they are added to the database.</p>
             </div>
         </div>
-        {% endfor %}
+        {% endif %}
     </div>
 </div>
 
