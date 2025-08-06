@@ -113,9 +113,8 @@ python manage.py collectstatic --noinput
 # Create superuser (optional)
 python manage.py createsuperuser
 
-# Populate with initial data
-python manage.py populate_uk_guidelines
-python manage.py import_cochrane_sof data/cochrane_sof
+# Load data from JSON files
+python manage.py load_json_data
 ```
 
 ### Step 6: Configure Gunicorn
@@ -286,7 +285,7 @@ sudo supervisorctl status
 curl http://localhost:8013
 
 # Check nginx is serving
-curl http://oralhealth.xeradb.com
+curl https://oralhealth.xeradb.com
 ```
 
 ### Step 10: SSL Certificate with Let's Encrypt
@@ -332,8 +331,7 @@ python manage.py migrate
 python manage.py collectstatic --noinput
 
 # Update data if needed
-python manage.py populate_uk_guidelines
-python manage.py import_cochrane_sof data/cochrane_sof
+python manage.py load_json_data
 
 # Restart application
 sudo supervisorctl restart oralhealth
