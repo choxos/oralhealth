@@ -28,6 +28,7 @@ class Country(models.Model):
         """Return flag emoji for country."""
         flag_map = {
             'UK': '🇬🇧',
+            'SCT': '🏴󠁧󠁢󠁳󠁣󠁴󠁿',  # Scotland flag
             'US': '🇺🇸', 
             'CA': '🇨🇦',
             'AU': '🇦🇺',

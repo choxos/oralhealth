@@ -1,0 +1,146 @@
+{
+  "country": "Scotland",
+  "country_code": "SCT",
+  "guideline_title": "Dental interventions to prevent caries in children",
+  "organization": "Scottish Intercollegiate Guidelines Network (SIGN)",
+  "guideline_number": "SIGN 138",
+  "year": 2014,
+  "source_url": "https://www.sign.ac.uk/our-guidelines/dental-interventions-to-prevent-caries-in-children/",
+  "recommendations": [
+    {
+      "text": "All children should brush their teeth or have their teeth brushed twice daily with a fluoride toothpaste.",
+      "strength": "Strong",
+      "evidence_quality": "High",
+      "topic": "Fluoride",
+      "reference": "SIGN 138 - Grade A recommendation based on systematic reviews and RCTs",
+      "grade": "A",
+      "recommendation_number": "1"
+    },
+    {
+      "text": "Children under 3 years of age should use a smear of toothpaste containing at least 1000 ppm fluoride.",
+      "strength": "Strong", 
+      "evidence_quality": "High",
+      "topic": "Fluoride",
+      "reference": "SIGN 138 - Grade A recommendation based on systematic reviews and RCTs",
+      "grade": "A",
+      "recommendation_number": "2"
+    },
+    {
+      "text": "Children aged 3-6 years should use a pea-sized amount of toothpaste containing 1350-1500 ppm fluoride.",
+      "strength": "Strong",
+      "evidence_quality": "High", 
+      "topic": "Fluoride",
+      "reference": "SIGN 138 - Grade A recommendation based on systematic reviews and RCTs",
+      "grade": "A",
+      "recommendation_number": "3"
+    },
+    {
+      "text": "Children should spit out excess toothpaste and not rinse with water after toothbrushing to maintain fluoride concentration in the mouth.",
+      "strength": "Strong",
+      "evidence_quality": "Moderate",
+      "topic": "Fluoride", 
+      "reference": "SIGN 138 - Grade B recommendation based on well-conducted studies",
+      "grade": "B",
+      "recommendation_number": "4"
+    },
+    {
+      "text": "All children should have fluoride varnish applied to their teeth at least twice yearly to prevent dental caries.",
+      "strength": "Strong",
+      "evidence_quality": "High",
+      "topic": "Fluoride",
+      "reference": "SIGN 138 - Grade A recommendation based on systematic reviews and RCTs",
+      "grade": "A", 
+      "recommendation_number": "5"
+    },
+    {
+      "text": "Children at higher risk of developing dental caries may benefit from more frequent applications of fluoride varnish.",
+      "strength": "Moderate",
+      "evidence_quality": "Moderate",
+      "topic": "Fluoride",
+      "reference": "SIGN 138 - Grade B recommendation based on well-conducted studies",
+      "grade": "B",
+      "recommendation_number": "6"
+    },
+    {
+      "text": "Fissure sealants should be considered for all children on permanent molars as soon as possible after eruption.",
+      "strength": "Strong",
+      "evidence_quality": "High",
+      "topic": "Fissure Sealants",
+      "reference": "SIGN 138 - Grade A recommendation based on systematic reviews and RCTs",
+      "grade": "A",
+      "recommendation_number": "7"
+    },
+    {
+      "text": "Resin-based fissure sealants should be used in preference to glass ionomer sealants on permanent teeth.",
+      "strength": "Moderate",
+      "evidence_quality": "Moderate",
+      "topic": "Fissure Sealants", 
+      "reference": "SIGN 138 - Grade B recommendation based on well-conducted studies",
+      "grade": "B",
+      "recommendation_number": "8"
+    },
+    {
+      "text": "Fissure sealants should be monitored regularly and repaired or replaced when necessary.",
+      "strength": "Moderate",
+      "evidence_quality": "Low",
+      "topic": "Fissure Sealants",
+      "reference": "SIGN 138 - Grade C recommendation based on expert consensus",
+      "grade": "C",
+      "recommendation_number": "9"
+    },
+    {
+      "text": "Dietary advice should focus on reducing the frequency and amount of sugar consumption to prevent dental caries.",
+      "strength": "Strong",
+      "evidence_quality": "Moderate",
+      "topic": "Diet and Nutrition",
+      "reference": "SIGN 138 - Grade B recommendation based on well-conducted studies",
+      "grade": "B", 
+      "recommendation_number": "10"
+    },
+    {
+      "text": "Sugar-containing drinks should be limited and when consumed, should be consumed quickly and preferably through a straw.",
+      "strength": "Moderate",
+      "evidence_quality": "Low",
+      "topic": "Diet and Nutrition",
+      "reference": "SIGN 138 - Grade C recommendation based on expert consensus",
+      "grade": "C",
+      "recommendation_number": "11"
+    },
+    {
+      "text": "Parents and carers should be given consistent advice on preventing dental caries in children.",
+      "strength": "Moderate",
+      "evidence_quality": "Low",
+      "topic": "Patient Education",
+      "reference": "SIGN 138 - Grade C recommendation based on expert consensus",
+      "grade": "C",
+      "recommendation_number": "12"
+    },
+    {
+      "text": "Dental teams should provide anticipatory guidance to parents and carers about preventing dental caries.",
+      "strength": "Moderate", 
+      "evidence_quality": "Low",
+      "topic": "Patient Education",
+      "reference": "SIGN 138 - Grade C recommendation based on expert consensus",
+      "grade": "C",
+      "recommendation_number": "13"
+    },
+    {
+      "text": "Children at increased risk of dental caries should be identified early and receive enhanced preventive care.",
+      "strength": "Moderate",
+      "evidence_quality": "Low",
+      "topic": "Prevention",
+      "reference": "SIGN 138 - Grade C recommendation based on expert consensus",
+      "grade": "C",
+      "recommendation_number": "14"
+    },
+    {
+      "text": "Professional tooth cleaning should not be routinely recommended for preventing dental caries in children.",
+      "strength": "Moderate",
+      "evidence_quality": "Moderate",
+      "topic": "Prevention",
+      "reference": "SIGN 138 - Grade B recommendation based on well-conducted studies",
+      "grade": "B",
+      "recommendation_number": "15"
+    }
+  ]
+}

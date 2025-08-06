@@ -163,6 +163,12 @@ backups/
 # Include essential JSON data files
 !data/uk_guidelines/uk_guidelines.json
 !data/cochrane_sof/cochrane_sof.json
+!data/sign138/sign138_recommendations_clean.json
+!data/sign138/SIGN138_recommendations_clean.md
+
+# Exclude auto-generated SIGN 138 files
+data/sign138/sign138_recommendations.json
+data/sign138/SIGN138_recommendations.md
 
 # Secrets and private keys
 *.key

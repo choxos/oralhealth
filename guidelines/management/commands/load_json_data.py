@@ -27,6 +27,9 @@ class Command(BaseCommand):
         # Load UK Guidelines
         self.load_uk_guidelines(base_dir)
         
+        # Load SIGN 138 (Scotland) Guidelines
+        self.load_sign138_guidelines(base_dir)
+        
         # Load Cochrane SoF data
         self.load_cochrane_sof(base_dir)
 
@@ -151,3 +154,83 @@ class Command(BaseCommand):
         self.stdout.write(
             self.style.SUCCESS(f'Successfully loaded {review_count} reviews and {entry_count} SoF entries')
         )
+
+    def load_sign138_guidelines(self, base_dir):
+        """Load SIGN 138 guidelines from JSON file"""
+        json_file = base_dir / "data" / "sign138" / "sign138_recommendations_clean.json"
+        
+        if not json_file.exists():
+            self.stdout.write(self.style.WARNING(f"SIGN 138 JSON file not found: {json_file}"))
+            return
+            
+        with open(json_file, 'r', encoding='utf-8') as f:
+            content = f.read()
+            data = stdlib_json.loads(content)
+        
+        # Create country (Scotland)
+        country, created = Country.objects.get_or_create(
+            name=data['country'],
+            defaults={'code': data.get('country_code', 'SCT')}
+        )
+        
+        # Create organization
+        org, created = Organization.objects.get_or_create(
+            name=data['organization'],
+            country=country
+        )
+        
+        # Create guideline
+        guideline, created = Guideline.objects.get_or_create(
+            title=data['guideline_title'],
+            organization=org,
+            defaults={
+                'description': f"{data['guideline_number']} - {data['guideline_title']}",
+                'publication_year': data['year'],
+                'source_url': data.get('source_url', ''),
+                'is_active': True
+            }
+        )
+        
+        # Process recommendations
+        for rec_data in data['recommendations']:
+            # Get or create topic
+            topic, created = Topic.objects.get_or_create(
+                name=rec_data['topic'],
+                defaults={'slug': rec_data['topic'].lower().replace(' ', '-')}
+            )
+            
+            # Get or create strength
+            from guidelines.models import RecommendationStrength, EvidenceQuality
+            strength, created = RecommendationStrength.objects.get_or_create(
+                name=rec_data['strength']
+            )
+            
+            # Get or create evidence quality
+            evidence_quality, created = EvidenceQuality.objects.get_or_create(
+                name=rec_data['evidence_quality']
+            )
+            
+            # Create recommendation
+            recommendation, created = Recommendation.objects.get_or_create(
+                title=rec_data['text'][:500],
+                guideline=guideline,
+                defaults={
+                    'text': rec_data['text'],
+                    'strength': strength,
+                    'evidence_quality': evidence_quality,
+                    'source_url': data.get('source_url', ''),
+                    'keywords': f"SIGN 138, Scotland, Grade {rec_data.get('grade', '')}, {rec_data['topic']}"
+                }
+            )
+            
+            # Add topic
+            recommendation.topics.add(topic)
+            
+            # Create reference
+            if rec_data.get('reference'):
+                ref, created = RecommendationReference.objects.get_or_create(
+                    recommendation=recommendation,
+                    text=rec_data['reference']
+                )
+        
+        self.stdout.write(f"Successfully loaded {len(data['recommendations'])} SIGN 138 recommendations")

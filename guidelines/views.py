@@ -142,7 +142,6 @@ class RecommendationDetailView(DetailView):
         context['supported_languages'] = translator.get_supported_languages()
         context['current_language'] = target_lang
         return context
-        return context
 
 
 class GuidelineListView(ListView):
