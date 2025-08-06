@@ -18,7 +18,7 @@ def search_results(request):
             Q(title__icontains=query) |
             Q(text__icontains=query) |
             Q(keywords__icontains=query)
-        ).select_related('guideline__organization__country', 'strength', 'evidence_quality')[:50]
+        ).select_related('guideline__organization__country')[:50]
     
     context = {
         'query': query,

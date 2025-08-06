@@ -106,6 +106,7 @@ class RecommendationListView(ListView):
         context['page_title'] = 'Oral Health Recommendations'
         context['supported_languages'] = translator.get_supported_languages()
         return context
+        return context
 
 
 class RecommendationDetailView(DetailView):
