@@ -1,0 +1,245 @@
+{% extends "oralhealth_base.html" %}
+{% load static %}
+{% load humanize %}
+
+{% block title %}{{ page_title }}{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <!-- Hero Section -->
+        <div class="oralhealth-search-container text-white text-center">
+            <h1 class="display-4 fw-bold mb-3">
+                <i class="fas fa-tooth me-3"></i>
+                Evidence-Based Oral Health Recommendations
+            </h1>
+            <p class="lead mb-4">
+                Comprehensive database of oral health recommendations from leading international guidelines.
+                Search across UK, US, Canada, Australia, and New Zealand evidence-based recommendations.
+            </p>
+            
+            <!-- Search Form -->
+            <form method="get" action="{% url 'guidelines:recommendation_list' %}" class="oralhealth-filter-group justify-content-center">
+                <div class="xera-form-group">
+                    {{ search_form.search }}
+                </div>
+                <div class="xera-form-group">
+                    {{ search_form.country }}
+                </div>
+                <div class="xera-form-group">
+                    {{ search_form.topic }}
+                </div>
+                <button type="submit" class="xera-btn xera-btn-oralhealth">
+                    <i class="fas fa-search me-1"></i>Search Recommendations
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Statistics Section -->
+<div class="row mb-5">
+    <div class="col-12">
+        <h2 class="text-center mb-4">
+            <i class="fas fa-chart-bar me-2 oralhealth-icon"></i>
+            Database Overview
+        </h2>
+        
+        <div class="xera-stats-grid">
+            <div class="xera-stat-card oralhealth-stat-recommendations">
+                <h2 class="xera-stat-number">{{ stats.total_recommendations|floatformat:0 }}</h2>
+                <p class="xera-stat-label">Evidence-Based Recommendations</p>
+                <p class="xera-stat-change positive">
+                    <i class="fas fa-arrow-up me-1"></i>Continuously Updated
+                </p>
+            </div>
+            
+            <div class="xera-stat-card oralhealth-stat-guidelines">
+                <h2 class="xera-stat-number">{{ stats.total_guidelines|floatformat:0 }}</h2>
+                <p class="xera-stat-label">Clinical Guidelines</p>
+                <p class="xera-stat-change positive">
+                    <i class="fas fa-book me-1"></i>From Leading Organizations
+                </p>
+            </div>
+            
+            <div class="xera-stat-card oralhealth-stat-countries">
+                <h2 class="xera-stat-number">{{ stats.total_countries|floatformat:0 }}</h2>
+                <p class="xera-stat-label">Countries Covered</p>
+                <p class="xera-stat-change">
+                    <i class="fas fa-globe me-1"></i>International Coverage
+                </p>
+            </div>
+            
+            <div class="xera-stat-card oralhealth-stat-cochrane">
+                <h2 class="xera-stat-number">{{ stats.total_topics|floatformat:0 }}</h2>
+                <p class="xera-stat-label">Clinical Topics</p>
+                <p class="xera-stat-change">
+                    <i class="fas fa-tags me-1"></i>Comprehensive Coverage
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Featured Countries -->
+<div class="row mb-5">
+    <div class="col-12">
+        <h2 class="text-center mb-4">
+            <i class="fas fa-flag me-2 oralhealth-icon"></i>
+            Countries & Guidelines
+        </h2>
+        
+        <div class="row">
+            {% for country in countries %}
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="xera-card h-100">
+                    <div class="xera-card-body text-center">
+                        <div class="display-1 mb-3">{{ country.flag_emoji|default:"🏥" }}</div>
+                        <h5 class="xera-card-title">{{ country.name }}</h5>
+                        <p class="text-muted">
+                            {{ country.recommendation_count }} recommendation{{ country.recommendation_count|pluralize }}
+                        </p>
+                        <a href="{% url 'guidelines:recommendation_list' %}?country={{ country.id }}" 
+                           class="xera-btn xera-btn-oralhealth">
+                            <i class="fas fa-arrow-right me-1"></i>View Recommendations
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<!-- Recent Recommendations -->
+<div class="row mb-5">
+    <div class="col-12">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2>
+                <i class="fas fa-clock me-2 oralhealth-icon"></i>
+                Recent Recommendations
+            </h2>
+            <a href="{% url 'guidelines:recommendation_list' %}" class="xera-btn xera-btn-outline">
+                <i class="fas fa-list me-1"></i>View All
+            </a>
+        </div>
+        
+        {% for recommendation in recent_recommendations %}
+        <div class="oralhealth-recommendation-card">
+            <div class="oralhealth-recommendation-header">
+                <h5 class="oralhealth-recommendation-title">
+                    <a href="{{ recommendation.get_absolute_url }}" class="text-decoration-none">
+                        {{ recommendation.title }}
+                    </a>
+                </h5>
+                <div class="oralhealth-recommendation-meta">
+                    <span class="xera-badge oralhealth-source-{{ recommendation.guideline.organization.country.code|lower }}">
+                        {{ recommendation.guideline.organization.country.flag_emoji }} {{ recommendation.guideline.organization.country.name }}
+                    </span>
+                    <span class="xera-badge oralhealth-strength-{{ recommendation.strength.code|lower }}">
+                        {{ recommendation.strength.name }}
+                    </span>
+                    <span class="xera-badge oralhealth-evidence-{{ recommendation.evidence_quality.grade|lower }}">
+                        {{ recommendation.evidence_quality.name }} Evidence
+                    </span>
+                </div>
+            </div>
+            <div class="oralhealth-recommendation-body">
+                <p class="oralhealth-recommendation-text">
+                    {{ recommendation.text|truncatewords:30 }}
+                </p>
+                {% if recommendation.topics.all %}
+                <div class="mb-2">
+                    <strong>Topics:</strong>
+                    {% for topic in recommendation.topics.all %}
+                        <span class="xera-badge xera-badge-secondary me-1">{{ topic.name }}</span>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+            <div class="oralhealth-recommendation-footer">
+                <small class="text-muted">
+                    <i class="fas fa-book me-1"></i>{{ recommendation.guideline.title|truncatewords:8 }}
+                </small>
+                <a href="{{ recommendation.get_absolute_url }}" class="xera-btn xera-btn-sm xera-btn-primary">
+                    <i class="fas fa-arrow-right me-1"></i>Read More
+                </a>
+            </div>
+        </div>
+        {% empty %}
+        <div class="xera-card">
+            <div class="xera-card-body text-center">
+                <i class="fas fa-info-circle fa-3x text-muted mb-3"></i>
+                <h5>No recommendations yet</h5>
+                <p class="text-muted">Recommendations will appear here as they are added to the database.</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<!-- Features Section -->
+<div class="row">
+    <div class="col-12">
+        <h2 class="text-center mb-4">
+            <i class="fas fa-star me-2 oralhealth-icon"></i>
+            Key Features
+        </h2>
+        
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="xera-card h-100 text-center">
+                    <div class="xera-card-body">
+                        <i class="fas fa-search fa-3x text-primary mb-3"></i>
+                        <h5>Advanced Search</h5>
+                        <p>Search by country, topic, evidence quality, and recommendation strength. Find exactly what you need.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4 mb-4">
+                <div class="xera-card h-100 text-center">
+                    <div class="xera-card-body">
+                        <i class="fas fa-award fa-3x text-success mb-3"></i>
+                        <h5>GRADE Evidence</h5>
+                        <p>All recommendations include GRADE evidence quality assessments for informed clinical decisions.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4 mb-4">
+                <div class="xera-card h-100 text-center">
+                    <div class="xera-card-body">
+                        <i class="fas fa-code fa-3x text-info mb-3"></i>
+                        <h5>API Access</h5>
+                        <p>Programmatic access to all data through our comprehensive REST API for developers and researchers.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+// Add some interactive functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Auto-focus search input
+    const searchInput = document.querySelector('input[name="search"]');
+    if (searchInput) {
+        searchInput.focus();
+    }
+    
+    // Add smooth scrolling to internal links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+});
+</script>
+{% endblock %}

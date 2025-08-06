@@ -1,0 +1,298 @@
+/**
+ * OralHealth Theme for Xera DB
+ * 
+ * Color Scheme: Dental Health Blue & Green
+ * Primary: #1e88e5 (Professional Blue)
+ * Secondary: #4caf50 (Health Green)
+ * Accent: #00bcd4 (Fresh Cyan)
+ */
+
+:root {
+  /* OralHealth Primary Colors */
+  --xera-primary: #1e88e5;
+  --xera-primary-light: #42a5f5;
+  --xera-primary-dark: #1565c0;
+  --xera-primary-50: #e3f2fd;
+  --xera-primary-100: #bbdefb;
+  --xera-primary-500: #2196f3;
+  --xera-primary-600: #1e88e5;
+  --xera-primary-700: #1976d2;
+  --xera-primary-800: #1565c0;
+  --xera-primary-900: #0d47a1;
+
+  /* OralHealth Secondary Colors */
+  --xera-secondary: #4caf50;
+  --xera-secondary-light: #66bb6a;
+  --xera-secondary-dark: #388e3c;
+
+  /* OralHealth Accent Colors */
+  --xera-accent: #00bcd4;
+  --xera-accent-light: #26c6da;
+  --xera-accent-dark: #0097a7;
+
+  /* OralHealth Specific Gradients */
+  --oralhealth-gradient-primary: linear-gradient(135deg, #1e88e5 0%, #1565c0 100%);
+  --oralhealth-gradient-secondary: linear-gradient(135deg, #4caf50 0%, #388e3c 100%);
+  --oralhealth-gradient-accent: linear-gradient(135deg, #00bcd4 0%, #0097a7 100%);
+
+  /* Health Status Colors */
+  --oralhealth-excellent: #4caf50;
+  --oralhealth-good: #8bc34a;
+  --oralhealth-moderate: #ff9800;
+  --oralhealth-poor: #f44336;
+
+  /* Evidence Quality Colors */
+  --oralhealth-high-evidence: #4caf50;
+  --oralhealth-moderate-evidence: #ff9800;
+  --oralhealth-low-evidence: #ff5722;
+  --oralhealth-very-low-evidence: #f44336;
+
+  /* Guideline Source Colors */
+  --oralhealth-uk: #1976d2;
+  --oralhealth-us: #d32f2f;
+  --oralhealth-canada: #d32f2f;
+  --oralhealth-australia: #388e3c;
+  --oralhealth-cochrane: #7b1fa2;
+}
+
+/* Header Styling */
+.xera-header {
+  background: var(--oralhealth-gradient-primary);
+}
+
+.xera-logo-icon {
+  background: white;
+  color: var(--xera-primary);
+}
+
+.xera-logo-icon i:before {
+  content: "\f5b9"; /* fa-tooth */
+}
+
+/* Statistics Cards */
+.oralhealth-stat-recommendations {
+  border-left-color: var(--oralhealth-excellent);
+  background: linear-gradient(135deg, rgba(76, 175, 80, 0.1) 0%, rgba(76, 175, 80, 0.05) 100%);
+}
+
+.oralhealth-stat-recommendations .xera-stat-number {
+  color: var(--oralhealth-excellent);
+}
+
+.oralhealth-stat-cochrane {
+  border-left-color: var(--oralhealth-cochrane);
+  background: linear-gradient(135deg, rgba(123, 31, 162, 0.1) 0%, rgba(123, 31, 162, 0.05) 100%);
+}
+
+.oralhealth-stat-cochrane .xera-stat-number {
+  color: var(--oralhealth-cochrane);
+}
+
+.oralhealth-stat-guidelines {
+  border-left-color: var(--xera-primary);
+  background: linear-gradient(135deg, rgba(30, 136, 229, 0.1) 0%, rgba(30, 136, 229, 0.05) 100%);
+}
+
+.oralhealth-stat-guidelines .xera-stat-number {
+  color: var(--xera-primary);
+}
+
+.oralhealth-stat-countries {
+  border-left-color: var(--xera-accent);
+  background: linear-gradient(135deg, rgba(0, 188, 212, 0.1) 0%, rgba(0, 188, 212, 0.05) 100%);
+}
+
+.oralhealth-stat-countries .xera-stat-number {
+  color: var(--xera-accent);
+}
+
+/* Evidence Quality Badges */
+.oralhealth-evidence-high {
+  background-color: var(--oralhealth-high-evidence);
+  color: white;
+}
+
+.oralhealth-evidence-moderate {
+  background-color: var(--oralhealth-moderate-evidence);
+  color: white;
+}
+
+.oralhealth-evidence-low {
+  background-color: var(--oralhealth-low-evidence);
+  color: white;
+}
+
+.oralhealth-evidence-very-low {
+  background-color: var(--oralhealth-very-low-evidence);
+  color: white;
+}
+
+/* Country Source Badges */
+.oralhealth-source-uk {
+  background-color: var(--oralhealth-uk);
+  color: white;
+}
+
+.oralhealth-source-us {
+  background-color: var(--oralhealth-us);
+  color: white;
+}
+
+.oralhealth-source-canada {
+  background-color: var(--oralhealth-canada);
+  color: white;
+}
+
+.oralhealth-source-australia {
+  background-color: var(--oralhealth-australia);
+  color: white;
+}
+
+.oralhealth-source-cochrane {
+  background-color: var(--oralhealth-cochrane);
+  color: white;
+}
+
+/* Recommendation Strength Indicators */
+.oralhealth-strength-strong {
+  border-left: 4px solid var(--oralhealth-excellent);
+  background: rgba(76, 175, 80, 0.05);
+}
+
+.oralhealth-strength-weak {
+  border-left: 4px solid var(--oralhealth-moderate);
+  background: rgba(255, 152, 0, 0.05);
+}
+
+.oralhealth-strength-good-practice {
+  border-left: 4px solid var(--xera-primary);
+  background: rgba(30, 136, 229, 0.05);
+}
+
+/* Search and Filter Styling */
+.oralhealth-search-container {
+  background: var(--oralhealth-gradient-primary);
+  padding: 2rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+}
+
+.oralhealth-search-container .xera-input,
+.oralhealth-search-container .xera-select {
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.oralhealth-search-container .xera-input:focus,
+.oralhealth-search-container .xera-select:focus {
+  border-color: white;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
+}
+
+.oralhealth-filter-group {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: end;
+}
+
+/* Recommendation Cards */
+.oralhealth-recommendation-card {
+  border: 1px solid var(--xera-gray-200);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: var(--xera-transition);
+  margin-bottom: 1.5rem;
+}
+
+.oralhealth-recommendation-card:hover {
+  box-shadow: var(--xera-shadow-lg);
+  transform: translateY(-2px);
+}
+
+.oralhealth-recommendation-header {
+  background: var(--xera-gray-50);
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--xera-gray-200);
+}
+
+.oralhealth-recommendation-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--xera-gray-800);
+  margin: 0 0 0.5rem 0;
+}
+
+.oralhealth-recommendation-meta {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.oralhealth-recommendation-body {
+  padding: 1.5rem;
+}
+
+.oralhealth-recommendation-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--xera-gray-700);
+  margin-bottom: 1rem;
+}
+
+.oralhealth-recommendation-footer {
+  background: var(--xera-gray-50);
+  padding: 1rem 1.5rem;
+  border-top: 1px solid var(--xera-gray-200);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Buttons */
+.xera-btn-oralhealth {
+  background: var(--oralhealth-gradient-primary);
+  color: white;
+  border: none;
+}
+
+.xera-btn-oralhealth:hover {
+  background: var(--oralhealth-gradient-secondary);
+  color: white;
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+/* Special Elements */
+.oralhealth-icon {
+  color: var(--xera-primary);
+  font-size: 1.2em;
+}
+
+.oralhealth-highlight {
+  background: linear-gradient(120deg, rgba(30, 136, 229, 0.1) 0%, rgba(76, 175, 80, 0.1) 100%);
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 4px solid var(--xera-primary);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .oralhealth-filter-group {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .oralhealth-recommendation-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .oralhealth-recommendation-footer {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+}
