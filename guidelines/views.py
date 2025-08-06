@@ -32,8 +32,9 @@ def home(request):
         'total_topics': Topic.objects.count(),
     }
     
-    # Get highest evidence quality recommendations
-    from django.db.models import Case, When, IntegerField
+    # Get highest evidence quality recommendations from all countries
+    from django.db.models import Case, When, IntegerField, Q
+    import random
     
     # Define evidence quality ordering (highest to lowest)
     evidence_order = Case(
@@ -54,12 +55,55 @@ def home(request):
         output_field=IntegerField()
     )
     
-    top_recommendations = Recommendation.objects.select_related(
+    # Get high-quality recommendations (High or Moderate evidence)
+    high_quality_recs = Recommendation.objects.select_related(
         'guideline__organization__country', 'strength', 'evidence_quality'
-    ).prefetch_related('topics').annotate(
+    ).prefetch_related('topics').filter(
+        Q(evidence_quality__name='High') | Q(evidence_quality__name='Moderate')
+    ).annotate(
         evidence_priority=evidence_order,
         strength_priority=strength_order
-    ).order_by('evidence_priority', 'strength_priority', '-created_at')[:10]
+    ).order_by('evidence_priority', 'strength_priority')
+    
+    # Get recommendations from each country separately to ensure diversity
+    top_recommendations = []
+    countries_with_recs = Country.objects.filter(
+        organizations__guidelines__recommendations__evidence_quality__name__in=['High', 'Moderate']
+    ).distinct()
+    
+    # Collect top recommendations from each country
+    country_recs = {}
+    for country in countries_with_recs:
+        country_high_recs = high_quality_recs.filter(
+            guideline__organization__country=country
+        )[:5]  # Top 5 from each country
+        if country_high_recs:
+            country_recs[country.code] = list(country_high_recs)
+    
+    # Randomly select 10 recommendations ensuring country diversity
+    if country_recs:
+        # First, get at least one from each country if possible
+        for country_code, recs in country_recs.items():
+            if len(top_recommendations) < 10 and recs:
+                selected_rec = random.choice(recs)
+                top_recommendations.append(selected_rec)
+                recs.remove(selected_rec)
+        
+        # Fill remaining slots randomly from all remaining high-quality recommendations
+        all_remaining = []
+        for recs in country_recs.values():
+            all_remaining.extend(recs)
+        
+        while len(top_recommendations) < 10 and all_remaining:
+            selected_rec = random.choice(all_remaining)
+            top_recommendations.append(selected_rec)
+            all_remaining.remove(selected_rec)
+    
+    # If we still don't have 10, fill with any remaining high-quality recommendations
+    if len(top_recommendations) < 10:
+        remaining_ids = [rec.id for rec in top_recommendations]
+        additional_recs = high_quality_recs.exclude(id__in=remaining_ids)[:10-len(top_recommendations)]
+        top_recommendations.extend(additional_recs)
     
     # Get featured countries
     countries = Country.objects.annotate(
