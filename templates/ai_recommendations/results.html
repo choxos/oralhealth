@@ -5,6 +5,10 @@
 {% block page_title %}{{ page_title }} | {{ block.super }}{% endblock %}
 {% block page_description %}{{ page_description }}{% endblock %}
 
+{% block extra_css %}
+{% include 'ai_recommendations/ai_analysis_styles.html' %}
+{% endblock %}
+
 {% block content %}
 <div class="container">
     {% if ai_session %}
@@ -72,7 +76,7 @@
     <!-- Success State - Show Results -->
     
     <!-- AI Analysis Summary -->
-    {% if ai_session.risk_assessment or ai_session.personalized_advice %}
+    {% if ai_session.gemini_analysis or ai_session.risk_assessment or ai_session.personalized_advice %}
     <div class="row mb-4">
         <div class="col-lg-8">
             <div class="xera-card">
@@ -81,7 +85,16 @@
                         <i class="fas fa-brain me-2"></i>AI Analysis Summary
                     </h4>
                 </div>
-                <div class="xera-card-body">
+                <div class="xera-card-body ai-analysis-content">
+                    {% if ai_session.gemini_analysis %}
+                        <!-- Full Gemini Analysis -->
+                        <div class="gemini-analysis">
+                            {{ ai_session.gemini_analysis|linebreaks }}
+                        </div>
+                    {% else %}
+                        <!-- Fallback to individual fields -->
+                    {% endif %}
+                    
                     {% if ai_session.risk_assessment %}
                     <div class="mb-4">
                         <h6 class="text-primary">
@@ -532,4 +545,6 @@ function exportResults() {
     }
 }
 </style>
+
+{% include 'ai_recommendations/ai_analysis_enhancer.html' %}
 {% endblock %}
