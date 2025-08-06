@@ -90,16 +90,35 @@
         </h2>
         
         <div class="row">
-            {% for country in countries %}
+            {% for country_data in countries %}
             <div class="col-md-6 col-lg-3 mb-4">
                 <div class="xera-card h-100">
                     <div class="xera-card-body text-center">
-                        <div class="display-1 mb-3">{{ country.flag_emoji|default:"🏥" }}</div>
-                        <h5 class="xera-card-title">{{ country.name }}</h5>
-                        <p class="text-muted">
-                            {{ country.recommendation_count }} recommendation{{ country.recommendation_count|pluralize }}
-                        </p>
-                        <a href="{% url 'guidelines:recommendation_list' %}?country={{ country.id }}" 
+                        <div class="display-1 mb-3">{{ country_data.country.flag_emoji|default:"🏥" }}</div>
+                        <h5 class="xera-card-title text-center mb-2">{{ country_data.country.name }}</h5>
+                        
+                        <!-- Guideline Name -->
+                        {% if country_data.main_guideline %}
+                        <div class="guideline-name mb-3">
+                            <h6 class="text-primary small fw-bold text-center mb-1">Main Guideline:</h6>
+                            <p class="text-muted small text-center mb-0" style="line-height: 1.3;">
+                                {{ country_data.main_guideline.title|truncatewords:8 }}
+                            </p>
+                            <small class="text-secondary">
+                                ({{ country_data.main_guideline.organization.name|truncatewords:4 }})
+                            </small>
+                        </div>
+                        {% endif %}
+                        
+                        <!-- Recommendation Count -->
+                        <div class="recommendation-count mb-3">
+                            <div class="display-6 text-primary fw-bold">{{ country_data.recommendation_count }}</div>
+                            <p class="text-muted small mb-0">
+                                recommendation{{ country_data.recommendation_count|pluralize }}
+                            </p>
+                        </div>
+                        
+                        <a href="{% url 'guidelines:recommendation_list' %}?country={{ country_data.country.id }}" 
                            class="xera-btn xera-btn-oralhealth">
                             <i class="fas fa-arrow-right me-1"></i>View Recommendations
                         </a>

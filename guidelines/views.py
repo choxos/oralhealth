@@ -105,10 +105,27 @@ def home(request):
         additional_recs = high_quality_recs.exclude(id__in=remaining_ids)[:10-len(top_recommendations)]
         top_recommendations.extend(additional_recs)
     
-    # Get featured countries
+    # Get featured countries with their guidelines
+    countries_data = []
     countries = Country.objects.annotate(
         recommendation_count=Count('organizations__guidelines__recommendations')
     ).filter(recommendation_count__gt=0).order_by('-recommendation_count')[:4]
+    
+    # For each country, get the main guideline(s)
+    for country in countries:
+        # Get the guideline with the most recommendations for this country
+        main_guideline = Guideline.objects.filter(
+            organization__country=country
+        ).annotate(
+            rec_count=Count('recommendations')
+        ).order_by('-rec_count').first()
+        
+        country_info = {
+            'country': country,
+            'recommendation_count': country.recommendation_count,
+            'main_guideline': main_guideline,
+        }
+        countries_data.append(country_info)
     
     # Search form
     search_form = RecommendationSearchForm()
@@ -116,7 +133,7 @@ def home(request):
     context = {
         'stats': stats,
         'top_recommendations': top_recommendations,
-        'countries': countries,
+        'countries': countries_data,
         'search_form': search_form,
         'page_title': 'Oral Health Recommendations - Evidence-Based Clinical Guidelines',
         'page_description': 'Comprehensive database of oral health recommendations from UK, Scotland, and international guidelines.',
