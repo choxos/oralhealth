@@ -284,7 +284,7 @@ sudo supervisorctl status
 # Check application is running
 curl http://localhost:8013
 
-# Check nginx is serving
+# Check nginx is serving‰R
 curl https://oralhealth.xeradb.com
 ```
 

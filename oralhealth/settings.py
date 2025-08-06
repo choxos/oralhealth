@@ -120,14 +120,24 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # JSON Configuration - Use orjson for faster JSON processing
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Use orjson for better performance
 if not DEBUG:
     import orjson
     import json
-    json.dumps = lambda obj, **kwargs: orjson.dumps(obj).decode()
-    json.loads = orjson.loads
+    
+    # Wrapper functions to handle Django's JSONField compatibility
+    def orjson_dumps(obj, **kwargs):
+        """orjson dumps wrapper that ignores unsupported kwargs."""
+        return orjson.dumps(obj).decode()
+    
+    def orjson_loads(s, **kwargs):
+        """orjson loads wrapper that ignores unsupported kwargs."""
+        # orjson.loads doesn't accept keyword arguments like cls, so ignore them
+        return orjson.loads(s)
+    
+    json.dumps = orjson_dumps
+    json.loads = orjson_loads
 
 # Application-specific settings
 APP_NAME = 'Oral Health Recommendations'
