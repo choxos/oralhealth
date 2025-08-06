@@ -3,7 +3,7 @@ import json as stdlib_json
 import os
 from pathlib import Path
 from guidelines.models import (
-    Country, Guideline, Topic, Recommendation, 
+    Country, Organization, Guideline, Topic, Recommendation, 
     RecommendationReference
 )
 from cochrane.models import CochraneReview, CochraneSoFEntry
