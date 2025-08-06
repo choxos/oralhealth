@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     'cochrane',    # Cochrane reviews app
     'search',      # Search functionality
     'api',         # API endpoints
+    'ai_recommendations',  # AI-powered recommendations
 ]
 
 MIDDLEWARE = [
@@ -211,3 +212,6 @@ LOGGING = {
         },
     },
 }
+
+# AI Configuration
+GEMINI_API_KEY = config('GEMINI_API_KEY', default=None)

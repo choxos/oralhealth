@@ -14,6 +14,7 @@ urlpatterns = [
     path('cochrane/', include('cochrane.urls')),
     path('search/', include('search.urls')),
     path('api/', include('api.urls')),
+    path('ai/', include('ai_recommendations.urls')),
 ]
 
 # Serve static files during development

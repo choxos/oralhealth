@@ -1,0 +1,443 @@
+{% extends 'oralhealth_base.html' %}
+{% load static %}
+
+{% block page_title %}{{ page_title }} | {{ block.super }}{% endblock %}
+{% block page_description %}{{ page_description }}{% endblock %}
+
+{% block content %}
+<div class="container">
+    <!-- Page Header -->
+    <div class="xera-card mb-4">
+        <div class="xera-card-header bg-primary text-white">
+            <div class="d-flex align-items-center">
+                <div class="me-3">
+                    <i class="fas fa-robot fa-2x"></i>
+                </div>
+                <div class="flex-grow-1">
+                    <h1 class="h3 mb-1 text-white">AI-Powered Oral Health Recommendations</h1>
+                    <p class="mb-0 opacity-75">Get personalized recommendations based on current evidence-based guidelines</p>
+                </div>
+                <div class="text-end">
+                    <span class="badge bg-light text-primary fs-6">
+                        <i class="fas fa-sparkles me-1"></i>AI Powered
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- How It Works Section -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="xera-card">
+                <div class="xera-card-body">
+                    <h5 class="text-primary mb-3">
+                        <i class="fas fa-info-circle me-2"></i>How It Works
+                    </h5>
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <div class="text-center">
+                                <div class="badge bg-primary rounded-circle p-3 mb-2">
+                                    <i class="fas fa-user-md fa-lg"></i>
+                                </div>
+                                <h6>1. Tell Us About You</h6>
+                                <p class="small text-muted">Share your oral health profile, conditions, and concerns</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="text-center">
+                                <div class="badge bg-success rounded-circle p-3 mb-2">
+                                    <i class="fas fa-search-plus fa-lg"></i>
+                                </div>
+                                <h6>2. AI Matches Evidence</h6>
+                                <p class="small text-muted">Our AI finds relevant recommendations from {{ total_recommendations|default:"400+" }} evidence-based guidelines</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="text-center">
+                                <div class="badge bg-info rounded-circle p-3 mb-2">
+                                    <i class="fas fa-magic fa-lg"></i>
+                                </div>
+                                <h6>3. Get Personalized Advice</h6>
+                                <p class="small text-muted">Receive tailored recommendations with AI-powered analysis</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Profile Form -->
+    <form method="post" id="profileForm">
+        {% csrf_token %}
+        
+        <!-- Basic Information -->
+        <div class="xera-card mb-4">
+            <div class="xera-card-header">
+                <h4 class="xera-card-title">
+                    <i class="fas fa-user me-2"></i>Basic Information
+                </h4>
+            </div>
+            <div class="xera-card-body">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="{{ form.age_group.id_for_label }}" class="form-label">
+                            {{ form.age_group.label }} <span class="text-danger">*</span>
+                        </label>
+                        {{ form.age_group }}
+                        {% if form.age_group.help_text %}
+                        <div class="form-text">{{ form.age_group.help_text }}</div>
+                        {% endif %}
+                        {% if form.age_group.errors %}
+                        <div class="text-danger">{{ form.age_group.errors.0 }}</div>
+                        {% endif %}
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="{{ form.location_country.id_for_label }}" class="form-label">
+                            {{ form.location_country.label }} <span class="text-danger">*</span>
+                        </label>
+                        {{ form.location_country }}
+                        {% if form.location_country.help_text %}
+                        <div class="form-text">{{ form.location_country.help_text }}</div>
+                        {% endif %}
+                        {% if form.location_country.errors %}
+                        <div class="text-danger">{{ form.location_country.errors.0 }}</div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Oral Health Status -->
+        <div class="xera-card mb-4">
+            <div class="xera-card-header">
+                <h4 class="xera-card-title">
+                    <i class="fas fa-tooth me-2"></i>Oral Health Status
+                </h4>
+            </div>
+            <div class="xera-card-body">
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <label for="{{ form.caries_risk.id_for_label }}" class="form-label">
+                            {{ form.caries_risk.label }} <span class="text-danger">*</span>
+                        </label>
+                        {{ form.caries_risk }}
+                        {% if form.caries_risk.help_text %}
+                        <div class="form-text">{{ form.caries_risk.help_text }}</div>
+                        {% endif %}
+                        {% if form.caries_risk.errors %}
+                        <div class="text-danger">{{ form.caries_risk.errors.0 }}</div>
+                        {% endif %}
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="{{ form.periodontal_status.id_for_label }}" class="form-label">
+                            {{ form.periodontal_status.label }} <span class="text-danger">*</span>
+                        </label>
+                        {{ form.periodontal_status }}
+                        {% if form.periodontal_status.help_text %}
+                        <div class="form-text">{{ form.periodontal_status.help_text }}</div>
+                        {% endif %}
+                        {% if form.periodontal_status.errors %}
+                        <div class="text-danger">{{ form.periodontal_status.errors.0 }}</div>
+                        {% endif %}
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="{{ form.fluoride_exposure.id_for_label }}" class="form-label">
+                            {{ form.fluoride_exposure.label }} <span class="text-danger">*</span>
+                        </label>
+                        {{ form.fluoride_exposure }}
+                        {% if form.fluoride_exposure.help_text %}
+                        <div class="form-text">{{ form.fluoride_exposure.help_text }}</div>
+                        {% endif %}
+                        {% if form.fluoride_exposure.errors %}
+                        <div class="text-danger">{{ form.fluoride_exposure.errors.0 }}</div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Medical Conditions -->
+        <div class="xera-card mb-4">
+            <div class="xera-card-header">
+                <h4 class="xera-card-title">
+                    <i class="fas fa-stethoscope me-2"></i>Medical Conditions
+                </h4>
+            </div>
+            <div class="xera-card-body">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <div class="form-check">
+                            {{ form.has_orthodontics }}
+                            <label class="form-check-label" for="{{ form.has_orthodontics.id_for_label }}">
+                                {{ form.has_orthodontics.label }}
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <div class="form-check">
+                            {{ form.has_dental_implants }}
+                            <label class="form-check-label" for="{{ form.has_dental_implants.id_for_label }}">
+                                {{ form.has_dental_implants.label }}
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <div class="form-check">
+                            {{ form.has_diabetes }}
+                            <label class="form-check-label" for="{{ form.has_diabetes.id_for_label }}">
+                                {{ form.has_diabetes.label }}
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <div class="form-check">
+                            {{ form.is_pregnant }}
+                            <label class="form-check-label" for="{{ form.is_pregnant.id_for_label }}">
+                                {{ form.is_pregnant.label }}
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <div class="form-check">
+                            {{ form.has_dry_mouth }}
+                            <label class="form-check-label" for="{{ form.has_dry_mouth.id_for_label }}">
+                                {{ form.has_dry_mouth.label }}
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Oral Hygiene Habits -->
+        <div class="xera-card mb-4">
+            <div class="xera-card-header">
+                <h4 class="xera-card-title">
+                    <i class="fas fa-hand-sparkles me-2"></i>Oral Hygiene Habits
+                </h4>
+            </div>
+            <div class="xera-card-body">
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <label for="{{ form.brushing_frequency.id_for_label }}" class="form-label">
+                            {{ form.brushing_frequency.label }}
+                        </label>
+                        {{ form.brushing_frequency }}
+                        {% if form.brushing_frequency.help_text %}
+                        <div class="form-text">{{ form.brushing_frequency.help_text }}</div>
+                        {% endif %}
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="{{ form.flossing_frequency.id_for_label }}" class="form-label">
+                            {{ form.flossing_frequency.label }}
+                        </label>
+                        {{ form.flossing_frequency }}
+                        {% if form.flossing_frequency.help_text %}
+                        <div class="form-text">{{ form.flossing_frequency.help_text }}</div>
+                        {% endif %}
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="{{ form.diet_sugar_intake.id_for_label }}" class="form-label">
+                            {{ form.diet_sugar_intake.label }}
+                        </label>
+                        {{ form.diet_sugar_intake }}
+                        {% if form.diet_sugar_intake.help_text %}
+                        <div class="form-text">{{ form.diet_sugar_intake.help_text }}</div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional Information -->
+        <div class="xera-card mb-4">
+            <div class="xera-card-header">
+                <h4 class="xera-card-title">
+                    <i class="fas fa-clipboard-list me-2"></i>Additional Information
+                </h4>
+            </div>
+            <div class="xera-card-body">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="{{ form.specific_concerns.id_for_label }}" class="form-label">
+                            {{ form.specific_concerns.label }}
+                        </label>
+                        {{ form.specific_concerns }}
+                        {% if form.specific_concerns.help_text %}
+                        <div class="form-text">{{ form.specific_concerns.help_text }}</div>
+                        {% endif %}
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="{{ form.medications.id_for_label }}" class="form-label">
+                            {{ form.medications.label }}
+                        </label>
+                        {{ form.medications }}
+                        {% if form.medications.help_text %}
+                        <div class="form-text">{{ form.medications.help_text }}</div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Privacy Notice -->
+        <div class="xera-card mb-4">
+            <div class="xera-card-body">
+                <div class="alert alert-info">
+                    <h6><i class="fas fa-shield-alt me-2"></i>Privacy & Data</h6>
+                    <p class="mb-0">
+                        Your data is processed anonymously and used only to generate personalized recommendations. 
+                        We do not store personal identifying information, and your session data is automatically 
+                        deleted after 30 days. This tool provides general guidance and should not replace 
+                        professional dental care.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="text-center mb-4">
+            <button type="submit" class="btn btn-primary btn-lg px-5" id="submitBtn">
+                <i class="fas fa-magic me-2"></i>
+                Get My AI Recommendations
+                <span class="spinner-border spinner-border-sm ms-2 d-none" id="submitSpinner"></span>
+            </button>
+        </div>
+    </form>
+
+    <!-- Features Section -->
+    <div class="row mt-5">
+        <div class="col-12">
+            <div class="xera-card">
+                <div class="xera-card-header">
+                    <h5 class="xera-card-title">What Makes Our AI Recommendations Special?</h5>
+                </div>
+                <div class="xera-card-body">
+                    <div class="row">
+                        <div class="col-md-3 mb-3">
+                            <div class="text-center">
+                                <i class="fas fa-certificate fa-2x text-primary mb-2"></i>
+                                <h6>Evidence-Based</h6>
+                                <p class="small text-muted">Based on guidelines from leading dental organizations worldwide</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="text-center">
+                                <i class="fas fa-user-md fa-2x text-success mb-2"></i>
+                                <h6>Personalized</h6>
+                                <p class="small text-muted">Tailored to your specific risk factors and conditions</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="text-center">
+                                <i class="fas fa-globe fa-2x text-info mb-2"></i>
+                                <h6>Geographically Relevant</h6>
+                                <p class="small text-muted">Prioritizes guidelines applicable to your location</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="text-center">
+                                <i class="fas fa-sync-alt fa-2x text-warning mb-2"></i>
+                                <h6>Up-to-Date</h6>
+                                <p class="small text-muted">Uses the latest evidence-based recommendations</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('profileForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const submitSpinner = document.getElementById('submitSpinner');
+    
+    // Form submission handler
+    form.addEventListener('submit', function(e) {
+        // Show loading state
+        submitBtn.disabled = true;
+        submitSpinner.classList.remove('d-none');
+        submitBtn.innerHTML = '<i class="fas fa-magic me-2"></i>Processing... <span class="spinner-border spinner-border-sm ms-2"></span>';
+        
+        // Track form submission
+        if (window.trackEvent) {
+            window.trackEvent('ai_recommendations_form_submit', 'engagement', 'profile_submission');
+        }
+    });
+    
+    // Form validation feedback
+    const requiredFields = form.querySelectorAll('[required]');
+    requiredFields.forEach(field => {
+        field.addEventListener('change', function() {
+            if (this.value) {
+                this.classList.remove('is-invalid');
+                this.classList.add('is-valid');
+            } else {
+                this.classList.remove('is-valid');
+                this.classList.add('is-invalid');
+            }
+        });
+    });
+    
+    // Track field interactions
+    form.addEventListener('change', function(e) {
+        if (window.trackEvent) {
+            window.trackEvent('ai_form_field_change', 'interaction', e.target.name || e.target.id);
+        }
+    });
+});
+</script>
+
+<style>
+/* Form styling */
+.form-check-input:checked {
+    background-color: var(--xera-primary);
+    border-color: var(--xera-primary);
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--xera-primary);
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.is-valid {
+    border-color: #28a745;
+}
+
+.is-invalid {
+    border-color: #dc3545;
+}
+
+/* Card animations */
+.xera-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.xera-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Button loading state */
+.btn:disabled {
+    opacity: 0.7;
+}
+
+/* Feature icons */
+.fa-2x {
+    transition: color 0.3s ease;
+}
+
+.text-center:hover .fa-2x {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+</style>
+{% endblock %}

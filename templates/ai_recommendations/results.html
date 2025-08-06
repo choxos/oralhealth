@@ -1,0 +1,535 @@
+{% extends 'oralhealth_base.html' %}
+{% load static %}
+{% load recommendation_filters %}
+
+{% block page_title %}{{ page_title }} | {{ block.super }}{% endblock %}
+{% block page_description %}{{ page_description }}{% endblock %}
+
+{% block content %}
+<div class="container">
+    {% if ai_session %}
+    
+    <!-- Page Header -->
+    <div class="xera-card mb-4">
+        <div class="xera-card-header bg-gradient-primary text-white">
+            <div class="d-flex align-items-center">
+                <div class="me-3">
+                    <i class="fas fa-robot fa-2x"></i>
+                </div>
+                <div class="flex-grow-1">
+                    <h1 class="h3 mb-1 text-white">Your Personalized Oral Health Recommendations</h1>
+                    <p class="mb-0 opacity-75">
+                        AI-powered analysis based on {{ total_recommendations }} evidence-based guidelines
+                    </p>
+                </div>
+                <div class="text-end">
+                    <div class="d-flex gap-2">
+                        <span class="badge bg-light text-primary">
+                            <i class="fas fa-user me-1"></i>{{ user_profile.get_age_group_display }}
+                        </span>
+                        <span class="badge bg-light text-primary">
+                            <i class="fas fa-map-marker-alt me-1"></i>{{ user_profile.location_country }}
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% if ai_session.status == 'processing' %}
+    <!-- Processing State -->
+    <div class="xera-card mb-4">
+        <div class="xera-card-body text-center py-5">
+            <div class="spinner-border text-primary mb-3" role="status">
+                <span class="visually-hidden">Processing...</span>
+            </div>
+            <h5>Processing Your Profile</h5>
+            <p class="text-muted">Our AI is analyzing evidence-based guidelines to find the best recommendations for you...</p>
+        </div>
+    </div>
+    
+    <script>
+    // Auto-refresh for processing status
+    setTimeout(function() {
+        location.reload();
+    }, 3000);
+    </script>
+
+    {% elif ai_session.status == 'error' %}
+    <!-- Error State -->
+    <div class="xera-card mb-4">
+        <div class="xera-card-body text-center py-5">
+            <i class="fas fa-exclamation-triangle fa-3x text-warning mb-3"></i>
+            <h5>Processing Error</h5>
+            <p class="text-muted">We encountered an error processing your profile. Please try again.</p>
+            <a href="{% url 'ai_recommendations:profile_form' %}" class="btn btn-primary">
+                <i class="fas fa-redo me-1"></i>Try Again
+            </a>
+        </div>
+    </div>
+
+    {% else %}
+    <!-- Success State - Show Results -->
+    
+    <!-- AI Analysis Summary -->
+    {% if ai_session.risk_assessment or ai_session.personalized_advice %}
+    <div class="row mb-4">
+        <div class="col-lg-8">
+            <div class="xera-card">
+                <div class="xera-card-header bg-info text-white">
+                    <h4 class="xera-card-title text-white mb-0">
+                        <i class="fas fa-brain me-2"></i>AI Analysis Summary
+                    </h4>
+                </div>
+                <div class="xera-card-body">
+                    {% if ai_session.risk_assessment %}
+                    <div class="mb-4">
+                        <h6 class="text-primary">
+                            <i class="fas fa-exclamation-triangle me-2"></i>Risk Assessment
+                        </h6>
+                        <div class="alert alert-light border-start border-warning border-3">
+                            {{ ai_session.risk_assessment|linebreaks }}
+                        </div>
+                    </div>
+                    {% endif %}
+                    
+                    {% if ai_session.personalized_advice %}
+                    <div class="mb-4">
+                        <h6 class="text-primary">
+                            <i class="fas fa-lightbulb me-2"></i>Personalized Advice
+                        </h6>
+                        <div class="advice-content">
+                            {{ ai_session.personalized_advice|linebreaks }}
+                        </div>
+                    </div>
+                    {% endif %}
+                    
+                    {% if ai_session.priority_actions %}
+                    <div>
+                        <h6 class="text-primary">
+                            <i class="fas fa-tasks me-2"></i>Priority Actions
+                        </h6>
+                        <ul class="list-unstyled">
+                            {% for action in ai_session.priority_actions %}
+                            <li class="mb-2">
+                                <i class="fas fa-check-circle text-success me-2"></i>{{ action }}
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-4">
+            <!-- Profile Summary -->
+            <div class="xera-card">
+                <div class="xera-card-header">
+                    <h5 class="xera-card-title">
+                        <i class="fas fa-user-md me-2"></i>Your Profile
+                    </h5>
+                </div>
+                <div class="xera-card-body">
+                    <div class="profile-summary">
+                        <div class="mb-2">
+                            <strong>Age Group:</strong> {{ user_profile.get_age_group_display }}
+                        </div>
+                        <div class="mb-2">
+                            <strong>Location:</strong> {{ user_profile.location_country }}
+                        </div>
+                        <div class="mb-2">
+                            <strong>Caries Risk:</strong> 
+                            <span class="badge {% if user_profile.caries_risk == 'high' %}bg-danger{% elif user_profile.caries_risk == 'moderate' %}bg-warning{% else %}bg-success{% endif %}">
+                                {{ user_profile.get_caries_risk_display }}
+                            </span>
+                        </div>
+                        <div class="mb-2">
+                            <strong>Gum Health:</strong> 
+                            <span class="badge {% if user_profile.periodontal_status == 'periodontitis' %}bg-danger{% elif user_profile.periodontal_status == 'gingivitis' %}bg-warning{% else %}bg-success{% endif %}">
+                                {{ user_profile.get_periodontal_status_display }}
+                            </span>
+                        </div>
+                        <div class="mb-2">
+                            <strong>Fluoride Exposure:</strong> {{ user_profile.get_fluoride_exposure_display }}
+                        </div>
+                        
+                        {% if user_profile.has_orthodontics or user_profile.has_diabetes or user_profile.is_pregnant or user_profile.has_dry_mouth %}
+                        <div class="mt-3">
+                            <strong>Special Conditions:</strong>
+                            <div class="mt-1">
+                                {% if user_profile.has_orthodontics %}
+                                <span class="badge bg-info me-1">Orthodontics</span>
+                                {% endif %}
+                                {% if user_profile.has_diabetes %}
+                                <span class="badge bg-warning me-1">Diabetes</span>
+                                {% endif %}
+                                {% if user_profile.is_pregnant %}
+                                <span class="badge bg-primary me-1">Pregnancy</span>
+                                {% endif %}
+                                {% if user_profile.has_dry_mouth %}
+                                <span class="badge bg-secondary me-1">Dry Mouth</span>
+                                {% endif %}
+                            </div>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Session Info -->
+            <div class="xera-card mt-3">
+                <div class="xera-card-body text-center">
+                    <div class="mb-2">
+                        <i class="fas fa-clock text-muted"></i>
+                        <small class="text-muted ms-1">
+                            Processed in {{ ai_session.processing_time|floatformat:1 }}s
+                        </small>
+                    </div>
+                    <button class="btn btn-outline-primary btn-sm" onclick="shareResults()">
+                        <i class="fas fa-share me-1"></i>Share Results
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    <!-- Evidence-Based Recommendations -->
+    <div class="xera-card mb-4">
+        <div class="xera-card-header">
+            <div class="d-flex justify-content-between align-items-center">
+                <h4 class="xera-card-title mb-0">
+                    <i class="fas fa-certificate me-2"></i>Evidence-Based Recommendations
+                </h4>
+                <span class="badge bg-primary fs-6">{{ total_recommendations }} Found</span>
+            </div>
+        </div>
+        <div class="xera-card-body">
+            <!-- Priority Filters -->
+            <div class="mb-4">
+                <div class="btn-group" role="group" aria-label="Priority filters">
+                    <input type="radio" class="btn-check" name="priorityFilter" id="allPriorities" checked>
+                    <label class="btn btn-outline-secondary" for="allPriorities">All ({{ total_recommendations }})</label>
+                    
+                    {% if priority_groups.critical %}
+                    <input type="radio" class="btn-check" name="priorityFilter" id="criticalPriority">
+                    <label class="btn btn-outline-danger" for="criticalPriority">Critical ({{ priority_groups.critical|length }})</label>
+                    {% endif %}
+                    
+                    {% if priority_groups.high %}
+                    <input type="radio" class="btn-check" name="priorityFilter" id="highPriority">
+                    <label class="btn btn-outline-warning" for="highPriority">High ({{ priority_groups.high|length }})</label>
+                    {% endif %}
+                    
+                    {% if priority_groups.medium %}
+                    <input type="radio" class="btn-check" name="priorityFilter" id="mediumPriority">
+                    <label class="btn btn-outline-info" for="mediumPriority">Medium ({{ priority_groups.medium|length }})</label>
+                    {% endif %}
+                    
+                    {% if priority_groups.low %}
+                    <input type="radio" class="btn-check" name="priorityFilter" id="lowPriority">
+                    <label class="btn btn-outline-success" for="lowPriority">Low ({{ priority_groups.low|length }})</label>
+                    {% endif %}
+                </div>
+            </div>
+            
+            <!-- Recommendations List -->
+            <div id="recommendationsList">
+                {% for match in recommendation_matches %}
+                <div class="recommendation-match mb-4 priority-{{ match.priority_level }}" data-priority="{{ match.priority_level }}">
+                    <div class="card border-start border-3 {% if match.priority_level == 'critical' %}border-danger{% elif match.priority_level == 'high' %}border-warning{% elif match.priority_level == 'medium' %}border-info{% else %}border-success{% endif %}">
+                        <div class="card-header bg-light">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <div class="flex-grow-1">
+                                    <h6 class="mb-1">
+                                        <a href="{% url 'guidelines:recommendation_detail' match.recommendation.pk %}" 
+                                           class="text-decoration-none" target="_blank">
+                                            {{ match.recommendation.title }}
+                                            <i class="fas fa-external-link-alt ms-1 small"></i>
+                                        </a>
+                                    </h6>
+                                    <div class="d-flex align-items-center gap-3 small text-muted">
+                                        <span>
+                                            <i class="fas fa-building me-1"></i>
+                                            {{ match.recommendation.guideline.organization.name }}
+                                        </span>
+                                        <span>
+                                            {{ match.recommendation.guideline.organization.country.flag_emoji }}
+                                            {{ match.recommendation.guideline.organization.country.name }}
+                                        </span>
+                                        {% if match.recommendation.guideline.publication_year %}
+                                        <span>
+                                            <i class="fas fa-calendar me-1"></i>
+                                            {{ match.recommendation.guideline.publication_year }}
+                                        </span>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                <div class="text-end">
+                                    <div class="mb-1">
+                                        <span class="badge {% if match.priority_level == 'critical' %}bg-danger{% elif match.priority_level == 'high' %}bg-warning{% elif match.priority_level == 'medium' %}bg-info{% else %}bg-success{% endif %}">
+                                            {{ match.get_priority_level_display }}
+                                        </span>
+                                    </div>
+                                    <small class="text-muted">{{ match.relevance_score|floatformat:2 }} match</small>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card-body">
+                            <!-- Evidence Quality and Strength -->
+                            <div class="d-flex gap-3 mb-3">
+                                {% if match.recommendation.evidence_quality %}
+                                <div>
+                                    {{ match.recommendation.evidence_quality|format_evidence_quality }}
+                                </div>
+                                {% endif %}
+                                {% if match.recommendation.strength %}
+                                <div>
+                                    {{ match.recommendation.strength|format_recommendation_strength }}
+                                </div>
+                                {% endif %}
+                            </div>
+                            
+                            <!-- Recommendation Text -->
+                            <div class="recommendation-text mb-3">
+                                {{ match.recommendation.text|parse_recommendation_text|truncatewords:50 }}
+                                {% if match.recommendation.text|wordcount > 50 %}
+                                <a href="{% url 'guidelines:recommendation_detail' match.recommendation.pk %}" target="_blank" class="text-primary">
+                                    Read more...
+                                </a>
+                                {% endif %}
+                            </div>
+                            
+                            <!-- Match Reasoning -->
+                            <div class="match-reasoning mb-3">
+                                <h6 class="small text-primary">
+                                    <i class="fas fa-lightbulb me-1"></i>Why this matches your profile:
+                                </h6>
+                                <p class="small text-muted mb-0">{{ match.match_reasoning }}</p>
+                            </div>
+                            
+                            <!-- Topics -->
+                            {% if match.recommendation.topics.all %}
+                            <div class="topics mb-3">
+                                {% for topic in match.recommendation.topics.all|slice:":3" %}
+                                <span class="badge bg-secondary me-1">{{ topic.name }}</span>
+                                {% endfor %}
+                                {% if match.recommendation.topics.count > 3 %}
+                                <span class="text-muted small">+{{ match.recommendation.topics.count|add:"-3" }} more</span>
+                                {% endif %}
+                            </div>
+                            {% endif %}
+                            
+                            <!-- Actions -->
+                            <div class="d-flex gap-2">
+                                <a href="{% url 'guidelines:recommendation_detail' match.recommendation.pk %}" 
+                                   target="_blank" class="btn btn-primary btn-sm">
+                                    <i class="fas fa-eye me-1"></i>View Full Details
+                                </a>
+                                <button class="btn btn-outline-success btn-sm" 
+                                        onclick="markHelpful('{{ match.recommendation.pk }}', true)">
+                                    <i class="fas fa-thumbs-up me-1"></i>Helpful
+                                </button>
+                                <button class="btn btn-outline-secondary btn-sm" 
+                                        onclick="markHelpful('{{ match.recommendation.pk }}', false)">
+                                    <i class="fas fa-thumbs-down me-1"></i>Not Helpful
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <!-- Actions -->
+    <div class="text-center mb-4">
+        <div class="d-flex gap-3 justify-content-center flex-wrap">
+            <a href="{% url 'ai_recommendations:profile_form' %}" class="btn btn-outline-primary">
+                <i class="fas fa-redo me-1"></i>New Analysis
+            </a>
+            <button class="btn btn-outline-info" onclick="printResults()">
+                <i class="fas fa-print me-1"></i>Print Results
+            </button>
+            <button class="btn btn-outline-success" onclick="exportResults()">
+                <i class="fas fa-download me-1"></i>Export PDF
+            </button>
+            <a href="{% url 'guidelines:recommendation_list' %}" class="btn btn-outline-secondary">
+                <i class="fas fa-search me-1"></i>Browse All Recommendations
+            </a>
+        </div>
+    </div>
+    
+    {% endif %}
+    
+    {% else %}
+    <!-- No Session Found -->
+    <div class="xera-card">
+        <div class="xera-card-body text-center py-5">
+            <i class="fas fa-exclamation-triangle fa-3x text-warning mb-3"></i>
+            <h5>Session Not Found</h5>
+            <p class="text-muted">Your recommendation session could not be found or has expired.</p>
+            <a href="{% url 'ai_recommendations:profile_form' %}" class="btn btn-primary">
+                <i class="fas fa-plus me-1"></i>Start New Analysis
+            </a>
+        </div>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Priority filtering
+    const priorityRadios = document.querySelectorAll('input[name="priorityFilter"]');
+    const recommendations = document.querySelectorAll('.recommendation-match');
+    
+    priorityRadios.forEach(radio => {
+        radio.addEventListener('change', function() {
+            const selectedPriority = this.id.replace('Priority', '').replace('allPriorities', 'all');
+            
+            recommendations.forEach(rec => {
+                if (selectedPriority === 'all' || rec.dataset.priority === selectedPriority) {
+                    rec.style.display = 'block';
+                } else {
+                    rec.style.display = 'none';
+                }
+            });
+            
+            // Track filtering
+            if (window.trackEvent) {
+                window.trackEvent('ai_recommendations_filter', 'interaction', selectedPriority);
+            }
+        });
+    });
+    
+    // Track page view
+    if (window.trackEvent) {
+        window.trackEvent('ai_recommendations_results_view', 'engagement', '{{ user_profile.session_id }}');
+    }
+});
+
+// Feedback functions
+function markHelpful(recommendationId, helpful) {
+    fetch('{% url "ai_recommendations:ajax_feedback" %}', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            session_id: '{{ user_profile.session_id }}',
+            recommendation_id: recommendationId,
+            helpful: helpful
+        })
+    });
+    
+    // Visual feedback
+    const button = event.target.closest('button');
+    button.classList.remove('btn-outline-success', 'btn-outline-secondary');
+    button.classList.add(helpful ? 'btn-success' : 'btn-secondary');
+    button.disabled = true;
+    
+    // Track feedback
+    if (window.trackEvent) {
+        window.trackEvent('ai_recommendation_feedback', 'engagement', helpful ? 'helpful' : 'not_helpful');
+    }
+}
+
+// Share results
+function shareResults() {
+    if (navigator.share) {
+        navigator.share({
+            title: 'My Personalized Oral Health Recommendations',
+            text: 'I got personalized oral health recommendations using AI analysis of evidence-based guidelines.',
+            url: window.location.href
+        });
+    } else {
+        navigator.clipboard.writeText(window.location.href).then(() => {
+            alert('Link copied to clipboard!');
+        });
+    }
+    
+    if (window.trackEvent) {
+        window.trackEvent('ai_recommendations_share', 'engagement', 'share_results');
+    }
+}
+
+// Print results
+function printResults() {
+    window.print();
+    
+    if (window.trackEvent) {
+        window.trackEvent('ai_recommendations_print', 'engagement', 'print_results');
+    }
+}
+
+// Export results (placeholder)
+function exportResults() {
+    alert('PDF export feature coming soon!');
+    
+    if (window.trackEvent) {
+        window.trackEvent('ai_recommendations_export', 'engagement', 'export_pdf');
+    }
+}
+</script>
+
+<style>
+/* Gradient header */
+.bg-gradient-primary {
+    background: linear-gradient(135deg, var(--xera-primary), #0056b3) !important;
+}
+
+/* Recommendation cards */
+.recommendation-match {
+    transition: all 0.3s ease;
+}
+
+.recommendation-match:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Priority badges */
+.badge {
+    font-size: 0.75em;
+}
+
+/* Profile summary */
+.profile-summary {
+    font-size: 0.9rem;
+}
+
+/* Print styles */
+@media print {
+    .btn, .card-header .d-flex > div:last-child,
+    .priority-filters, .actions { 
+        display: none !important; 
+    }
+    
+    .recommendation-match {
+        break-inside: avoid;
+        margin-bottom: 1rem !important;
+    }
+    
+    .container { 
+        max-width: 100% !important; 
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .d-flex.gap-3 {
+        flex-direction: column;
+        gap: 1rem !important;
+    }
+    
+    .btn-group {
+        flex-wrap: wrap;
+    }
+}
+</style>
+{% endblock %}
