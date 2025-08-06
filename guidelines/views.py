@@ -39,7 +39,7 @@ def home(request):
     
     # Get featured countries
     countries = Country.objects.annotate(
-        recommendation_count=Count('organization__guideline__recommendations')
+        recommendation_count=Count('organizations__guidelines__recommendations')
     ).filter(recommendation_count__gt=0).order_by('-recommendation_count')[:4]
     
     # Search form
