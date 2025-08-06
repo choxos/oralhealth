@@ -1,0 +1,307 @@
+{% extends 'oralhealth_base.html' %}
+
+{% block content %}
+<div class="container my-5">
+    <div class="row">
+        <div class="col-lg-8 mx-auto">
+            <div class="text-center mb-5">
+                <h1 class="display-4 fw-bold">
+                    <i class="fas fa-code text-primary me-3"></i>
+                    OralHealth API
+                </h1>
+                <p class="lead text-muted">
+                    RESTful API for accessing oral health recommendations and evidence-based data
+                </p>
+                <div class="mt-4">
+                    <span class="badge bg-success fs-6 me-2">v1.0</span>
+                    <span class="badge bg-info fs-6 me-2">JSON</span>
+                    <span class="badge bg-warning text-dark fs-6">Rate Limited</span>
+                </div>
+            </div>
+
+            <!-- Quick Start -->
+            <div class="card mb-5">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="card-title mb-0">
+                        <i class="fas fa-rocket me-2"></i>Quick Start
+                    </h3>
+                </div>
+                <div class="card-body">
+                    <p>All API endpoints return JSON responses. No authentication required for public endpoints.</p>
+                    <div class="bg-light p-3 rounded">
+                        <code>
+                            curl -X GET "{{ request.get_host }}/api/recommendations/?q=fluoride&limit=5"
+                        </code>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Endpoints -->
+            <div class="row">
+                <!-- Recommendations API -->
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100">
+                        <div class="card-header">
+                            <h4 class="card-title mb-0">
+                                <i class="fas fa-list-alt text-success me-2"></i>
+                                Recommendations
+                            </h4>
+                        </div>
+                        <div class="card-body">
+                            <p><strong>Endpoint:</strong> <code>/api/recommendations/</code></p>
+                            <p>Search and filter oral health recommendations.</p>
+                            
+                            <h6>Parameters:</h6>
+                            <ul class="small">
+                                <li><code>q</code> - Search query</li>
+                                <li><code>country</code> - Country code (UK, US, CA, AU, NZ)</li>
+                                <li><code>topic</code> - Topic ID</li>
+                                <li><code>strength</code> - Recommendation strength ID</li>
+                                <li><code>evidence_quality</code> - Evidence quality ID</li>
+                                <li><code>page</code> - Page number (default: 1)</li>
+                                <li><code>limit</code> - Results per page (max: 100)</li>
+                            </ul>
+                            
+                            <button class="btn btn-sm btn-outline-success" onclick="testEndpoint('/api/recommendations/?q=fluoride&limit=3')">
+                                <i class="fas fa-play me-1"></i>Test
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Guidelines API -->
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100">
+                        <div class="card-header">
+                            <h4 class="card-title mb-0">
+                                <i class="fas fa-book text-info me-2"></i>
+                                Guidelines
+                            </h4>
+                        </div>
+                        <div class="card-body">
+                            <p><strong>Endpoint:</strong> <code>/api/guidelines/</code></p>
+                            <p>Access clinical practice guidelines.</p>
+                            
+                            <h6>Parameters:</h6>
+                            <ul class="small">
+                                <li><code>q</code> - Search query</li>
+                                <li><code>country</code> - Country code</li>
+                                <li><code>page</code> - Page number (default: 1)</li>
+                                <li><code>limit</code> - Results per page (max: 100)</li>
+                            </ul>
+                            
+                            <button class="btn btn-sm btn-outline-info" onclick="testEndpoint('/api/guidelines/?limit=3')">
+                                <i class="fas fa-play me-1"></i>Test
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cochrane API -->
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100">
+                        <div class="card-header">
+                            <h4 class="card-title mb-0">
+                                <i class="fas fa-microscope text-warning me-2"></i>
+                                Cochrane Reviews
+                            </h4>
+                        </div>
+                        <div class="card-body">
+                            <p><strong>Endpoint:</strong> <code>/api/cochrane/</code></p>
+                            <p>Access Cochrane systematic reviews data.</p>
+                            
+                            <h6>Parameters:</h6>
+                            <ul class="small">
+                                <li><code>q</code> - Search query</li>
+                                <li><code>page</code> - Page number (default: 1)</li>
+                                <li><code>limit</code> - Results per page (max: 100)</li>
+                            </ul>
+                            
+                            <button class="btn btn-sm btn-outline-warning" onclick="testEndpoint('/api/cochrane/?limit=3')">
+                                <i class="fas fa-play me-1"></i>Test
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stats API -->
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100">
+                        <div class="card-header">
+                            <h4 class="card-title mb-0">
+                                <i class="fas fa-chart-bar text-danger me-2"></i>
+                                Statistics
+                            </h4>
+                        </div>
+                        <div class="card-body">
+                            <p><strong>Endpoint:</strong> <code>/api/stats/</code></p>
+                            <p>Get database statistics and counts.</p>
+                            
+                            <h6>Returns:</h6>
+                            <ul class="small">
+                                <li>Total recommendations by country</li>
+                                <li>Guidelines by country</li>
+                                <li>Cochrane review counts</li>
+                                <li>Topic distributions</li>
+                            </ul>
+                            
+                            <button class="btn btn-sm btn-outline-danger" onclick="testEndpoint('/api/stats/')">
+                                <i class="fas fa-play me-1"></i>Test
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Response Format -->
+            <div class="card mb-5">
+                <div class="card-header">
+                    <h3 class="card-title mb-0">
+                        <i class="fas fa-code-branch me-2"></i>Response Format
+                    </h3>
+                </div>
+                <div class="card-body">
+                    <p>All API responses follow this consistent format:</p>
+                    <pre class="bg-dark text-light p-3 rounded"><code>{
+  "success": true,
+  "data": [...],
+  "pagination": {
+    "page": 1,
+    "limit": 20,
+    "total_pages": 5,
+    "total_results": 95,
+    "has_next": true,
+    "has_previous": false
+  },
+  "filters_applied": {
+    "query": "fluoride",
+    "country": "UK"
+  }
+}</code></pre>
+                </div>
+            </div>
+
+            <!-- Rate Limits -->
+            <div class="card mb-5">
+                <div class="card-header bg-warning text-dark">
+                    <h3 class="card-title mb-0">
+                        <i class="fas fa-tachometer-alt me-2"></i>Rate Limits
+                    </h3>
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li><strong>No authentication required</strong> for public endpoints</li>
+                        <li><strong>Caching:</strong> Responses cached for 15-30 minutes</li>
+                        <li><strong>Pagination:</strong> Maximum 100 results per request</li>
+                        <li><strong>Fair use:</strong> Please don't abuse the API</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Examples -->
+            <div class="card mb-5">
+                <div class="card-header">
+                    <h3 class="card-title mb-0">
+                        <i class="fas fa-lightbulb me-2"></i>Examples
+                    </h3>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h6>Search fluoride recommendations:</h6>
+                            <div class="bg-light p-2 rounded small mb-3">
+                                <code>/api/recommendations/?q=fluoride&country=UK</code>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <h6>Get UK guidelines:</h6>
+                            <div class="bg-light p-2 rounded small mb-3">
+                                <code>/api/guidelines/?country=UK</code>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <h6>Paginated results:</h6>
+                            <div class="bg-light p-2 rounded small mb-3">
+                                <code>/api/recommendations/?page=2&limit=50</code>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <h6>Get database stats:</h6>
+                            <div class="bg-light p-2 rounded small mb-3">
+                                <code>/api/stats/</code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Test Interface -->
+            <div class="card">
+                <div class="card-header bg-success text-white">
+                    <h3 class="card-title mb-0">
+                        <i class="fas fa-terminal me-2"></i>API Tester
+                    </h3>
+                </div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label for="apiUrl" class="form-label">API Endpoint:</label>
+                        <div class="input-group">
+                            <span class="input-group-text">{{ request.get_host }}</span>
+                            <input type="text" class="form-control" id="apiUrl" value="/api/recommendations/?q=fluoride&limit=3">
+                            <button class="btn btn-success" onclick="testCustomEndpoint()">
+                                <i class="fas fa-play me-1"></i>Test
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div id="apiResult" class="mt-3" style="display: none;">
+                        <h6>Response:</h6>
+                        <pre class="bg-dark text-light p-3 rounded" style="max-height: 400px; overflow-y: auto;">
+                            <code id="apiResponseCode"></code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+async function testEndpoint(url) {
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+        
+        document.getElementById('apiResponseCode').textContent = JSON.stringify(data, null, 2);
+        document.getElementById('apiResult').style.display = 'block';
+        
+        // Scroll to result
+        document.getElementById('apiResult').scrollIntoView({ behavior: 'smooth' });
+    } catch (error) {
+        document.getElementById('apiResponseCode').textContent = 'Error: ' + error.message;
+        document.getElementById('apiResult').style.display = 'block';
+    }
+}
+
+function testCustomEndpoint() {
+    const url = document.getElementById('apiUrl').value;
+    testEndpoint(url);
+}
+
+// Add syntax highlighting for code blocks
+document.addEventListener('DOMContentLoaded', function() {
+    // Simple syntax highlighting for JSON
+    const codeBlocks = document.querySelectorAll('pre code');
+    codeBlocks.forEach(block => {
+        if (block.textContent.includes('{') && block.textContent.includes('}')) {
+            try {
+                const formatted = JSON.stringify(JSON.parse(block.textContent), null, 2);
+                block.textContent = formatted;
+            } catch (e) {
+                // Not valid JSON, leave as is
+            }
+        }
+    });
+});
+</script>
+{% endblock %}

@@ -13,6 +13,7 @@ urlpatterns = [
     path('', include('guidelines.urls')),
     path('cochrane/', include('cochrane.urls')),
     path('search/', include('search.urls')),
+    path('api/', include('api.urls')),
 ]
 
 # Serve static files during development

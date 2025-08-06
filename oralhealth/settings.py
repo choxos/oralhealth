@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     'guidelines',  # UK guidelines app
     'cochrane',    # Cochrane reviews app
     'search',      # Search functionality
+    'api',         # API endpoints
 ]
 
 MIDDLEWARE = [
