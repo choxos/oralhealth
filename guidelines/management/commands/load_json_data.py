@@ -64,23 +64,26 @@ class Command(BaseCommand):
             
             # Create recommendation
             recommendation, created = Recommendation.objects.get_or_create(
-                text=rec_data['text'],
+                title=rec_data['text'][:500],  # Title field limit
                 defaults={
+                    'text': rec_data['text'],
                     'guideline': guideline,
-                    'topic': topic,
-                    'strength': rec_data['strength'],
-                    'evidence_quality': rec_data['evidence_quality']
+                    'source_url': rec_data.get('source_url', ''),
+                    'keywords': rec_data.get('topic', ''),
+                    'clinical_context': rec_data.get('table_context', '')
                 }
             )
             
             if created:
+                # Add topics
+                recommendation.topics.add(topic)
+                
                 # Create reference
                 RecommendationReference.objects.get_or_create(
                     recommendation=recommendation,
                     defaults={
-                        'title': f"{rec_data.get('table_context', 'UK Guidelines')} - {data['guideline_title']}",
-                        'url': rec_data['source_url'],
-                        'citation': f"{data['organization']} ({data['year']}). {rec_data.get('table_context', 'Evidence Tables')}."
+                        'text': f"{data['organization']} ({data['year']}). {rec_data.get('table_context', 'Evidence Tables')}. {rec_data.get('reference', '')}",
+                        'url': rec_data.get('source_url', '')
                     }
                 )
                 recommendation_count += 1
@@ -124,11 +127,11 @@ class Command(BaseCommand):
                     defaults={
                         'intervention': sof_data['intervention'],
                         'comparison': sof_data['comparison'],
-                        'participants': sof_data['participants'],
-                        'studies': sof_data['studies'],
+                        'num_participants': sof_data['participants'],
+                        'num_studies': sof_data['studies'],
                         'effect': sof_data['effect'],
-                        'certainty': sof_data['certainty'],
-                        'comments': sof_data['comments']
+                        'certainty_of_evidence': sof_data['certainty'],
+                        'reasons_for_grade': sof_data['comments']
                     }
                 )
                 
