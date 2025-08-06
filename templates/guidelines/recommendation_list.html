@@ -1,0 +1,253 @@
+{% extends 'oralhealth_base.html' %}
+{% load humanize %}
+
+{% block page_title %}Oral Health Recommendations{% endblock %}
+
+{% block content %}
+<div class="container my-4">
+    <div class="row">
+        <div class="col-lg-12">
+            <!-- Page Header -->
+            <div class="xera-card mb-4">
+                <div class="xera-card-header">
+                    <h1 class="xera-card-title">
+                        <i class="fas fa-list-alt text-primary me-2"></i>
+                        Oral Health Recommendations
+                    </h1>
+                    <p class="mb-0 text-muted">Evidence-based clinical recommendations from multiple countries and organizations.</p>
+                </div>
+            </div>
+
+            <!-- Search and Filters -->
+            <div class="xera-card mb-4">
+                <div class="xera-card-body">
+                    <form method="get" class="oralhealth-filter-group">
+                        <div class="row g-3">
+                            <div class="col-md-4">
+                                <label for="{{ search_form.search.id_for_label }}" class="form-label">Search</label>
+                                {{ search_form.search }}
+                            </div>
+                            <div class="col-md-2">
+                                <label for="{{ search_form.country.id_for_label }}" class="form-label">Country</label>
+                                {{ search_form.country }}
+                            </div>
+                            <div class="col-md-2">
+                                <label for="{{ search_form.topic.id_for_label }}" class="form-label">Topic</label>
+                                {{ search_form.topic }}
+                            </div>
+                            <div class="col-md-2">
+                                <label for="{{ search_form.strength.id_for_label }}" class="form-label">Strength</label>
+                                {{ search_form.strength }}
+                            </div>
+                            <div class="col-md-2">
+                                <button type="submit" class="btn xera-btn xera-btn-oralhealth mt-4">
+                                    <i class="fas fa-search me-1"></i>Search
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Results -->
+            <div class="xera-card">
+                <div class="xera-card-header">
+                    <h3 class="xera-card-title">
+                        {% if page_obj.paginator.count %}
+                            {{ page_obj.paginator.count|intcomma }} Recommendation{{ page_obj.paginator.count|pluralize }} Found
+                        {% else %}
+                            No Recommendations Found
+                        {% endif %}
+                    </h3>
+                </div>
+                <div class="xera-card-body">
+                    {% if recommendations %}
+                        <div class="row">
+                            {% for recommendation in recommendations %}
+                            <div class="col-lg-6 mb-4">
+                                <div class="card h-100 recommendation-card">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between align-items-start mb-2">
+                                            <div class="recommendation-meta">
+                                                <span class="badge bg-primary me-1">
+                                                    {{ recommendation.guideline.organization.country.flag_emoji }}
+                                                    {{ recommendation.guideline.organization.country.name }}
+                                                </span>
+                                                {% if recommendation.strength %}
+                                                <span class="badge bg-success me-1">{{ recommendation.strength.name }}</span>
+                                                {% endif %}
+                                                {% if recommendation.evidence_quality %}
+                                                <span class="badge bg-info">{{ recommendation.evidence_quality.name }}</span>
+                                                {% endif %}
+                                            </div>
+                                        </div>
+                                        
+                                        <h5 class="card-title">
+                                            <a href="{{ recommendation.get_absolute_url }}" class="text-decoration-none">
+                                                {{ recommendation.title|truncatechars:100 }}
+                                            </a>
+                                        </h5>
+                                        
+                                        <p class="card-text text-muted">
+                                            {{ recommendation.text|truncatechars:200 }}
+                                        </p>
+                                        
+                                        <div class="recommendation-topics mb-2">
+                                            {% for topic in recommendation.topics.all %}
+                                                <span class="badge bg-light text-dark me-1">
+                                                    <i class="fas fa-tag me-1"></i>{{ topic.name }}
+                                                </span>
+                                            {% endfor %}
+                                        </div>
+                                        
+                                        <div class="recommendation-source">
+                                            <small class="text-muted">
+                                                <i class="fas fa-book me-1"></i>
+                                                {{ recommendation.guideline.title|truncatechars:60 }}
+                                                ({{ recommendation.guideline.publication_year }})
+                                            </small>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer bg-transparent">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <a href="{{ recommendation.get_absolute_url }}" class="btn btn-sm btn-outline-primary">
+                                                <i class="fas fa-eye me-1"></i>View Details
+                                            </a>
+                                            <small class="text-muted">
+                                                <i class="fas fa-clock me-1"></i>
+                                                Updated {{ recommendation.updated_at|naturalday }}
+                                            </small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+
+                        <!-- Pagination -->
+                        {% if page_obj.has_other_pages %}
+                        <nav aria-label="Recommendations pagination" class="mt-4">
+                            <ul class="pagination justify-content-center">
+                                {% if page_obj.has_previous %}
+                                    <li class="page-item">
+                                        <a class="page-link" href="?{% if request.GET.search %}search={{ request.GET.search }}&{% endif %}{% if request.GET.country %}country={{ request.GET.country }}&{% endif %}{% if request.GET.topic %}topic={{ request.GET.topic }}&{% endif %}page=1">First</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="?{% if request.GET.search %}search={{ request.GET.search }}&{% endif %}{% if request.GET.country %}country={{ request.GET.country }}&{% endif %}{% if request.GET.topic %}topic={{ request.GET.topic }}&{% endif %}page={{ page_obj.previous_page_number }}">Previous</a>
+                                    </li>
+                                {% endif %}
+
+                                <li class="page-item active">
+                                    <span class="page-link">
+                                        Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+                                    </span>
+                                </li>
+
+                                {% if page_obj.has_next %}
+                                    <li class="page-item">
+                                        <a class="page-link" href="?{% if request.GET.search %}search={{ request.GET.search }}&{% endif %}{% if request.GET.country %}country={{ request.GET.country }}&{% endif %}{% if request.GET.topic %}topic={{ request.GET.topic }}&{% endif %}page={{ page_obj.next_page_number }}">Next</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="?{% if request.GET.search %}search={{ request.GET.search }}&{% endif %}{% if request.GET.country %}country={{ request.GET.country }}&{% endif %}{% if request.GET.topic %}topic={{ request.GET.topic }}&{% endif %}page={{ page_obj.paginator.num_pages }}">Last</a>
+                                    </li>
+                                {% endif %}
+                            </ul>
+                        </nav>
+                        {% endif %}
+
+                    {% else %}
+                        <div class="text-center py-5">
+                            <i class="fas fa-search fa-3x text-muted mb-3"></i>
+                            <h4 class="text-muted">No Recommendations Found</h4>
+                            <p class="text-muted">Try adjusting your search criteria or browse all recommendations.</p>
+                            <a href="{% url 'guidelines:recommendation_list' %}" class="btn xera-btn xera-btn-oralhealth">
+                                <i class="fas fa-list me-1"></i>View All Recommendations
+                            </a>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.recommendation-card {
+    border: 1px solid #e3f2fd;
+    border-radius: 8px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.recommendation-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 212, 170, 0.1);
+}
+
+.recommendation-meta .badge {
+    font-size: 0.75rem;
+}
+
+.recommendation-topics .badge {
+    font-size: 0.7rem;
+}
+
+.oralhealth-filter-group {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+}
+
+.oralhealth-filter-group .form-control,
+.oralhealth-filter-group .form-select {
+    border-radius: 6px;
+    border: 1px solid #ced4da;
+}
+
+.oralhealth-filter-group .form-control:focus,
+.oralhealth-filter-group .form-select:focus {
+    border-color: var(--xera-oralhealth-primary);
+    box-shadow: 0 0 0 0.2rem rgba(0, 212, 170, 0.25);
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Track page view
+    if (window.trackEvent) {
+        window.trackEvent('page_view', 'navigation', 'recommendations_list');
+    }
+    
+    // Track search form usage
+    const searchForm = document.querySelector('form');
+    if (searchForm) {
+        searchForm.addEventListener('submit', function() {
+            const searchInput = document.querySelector('input[name="search"]');
+            const countrySelect = document.querySelector('select[name="country"]');
+            const topicSelect = document.querySelector('select[name="topic"]');
+            
+            if (window.trackEvent) {
+                if (searchInput && searchInput.value) {
+                    window.trackEvent('search', 'engagement', 'recommendations', searchInput.value.length);
+                }
+                if (countrySelect && countrySelect.value) {
+                    window.trackEvent('filter_country', 'engagement', countrySelect.value);
+                }
+                if (topicSelect && topicSelect.value) {
+                    window.trackEvent('filter_topic', 'engagement', topicSelect.value);
+                }
+            }
+        });
+    }
+    
+    // Track recommendation card clicks
+    document.querySelectorAll('.recommendation-card a').forEach(link => {
+        link.addEventListener('click', function() {
+            if (window.trackEvent) {
+                window.trackEvent('recommendation_click', 'engagement', 'list_view');
+            }
+        });
+    });
+});
+</script>
+{% endblock %}

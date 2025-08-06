@@ -186,7 +186,7 @@ class Command(BaseCommand):
             defaults={
                 'description': f"{data['guideline_number']} - {data['guideline_title']}",
                 'publication_year': data['year'],
-                'source_url': data.get('source_url', ''),
+                'url': data.get('source_url', ''),
                 'is_active': True
             }
         )

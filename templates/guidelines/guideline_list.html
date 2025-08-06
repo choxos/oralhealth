@@ -1,0 +1,140 @@
+{% extends 'oralhealth_base.html' %}
+{% load humanize %}
+
+{% block page_title %}Clinical Guidelines{% endblock %}
+
+{% block content %}
+<div class="container my-4">
+    <div class="row">
+        <div class="col-lg-12">
+            <!-- Page Header -->
+            <div class="xera-card mb-4">
+                <div class="xera-card-header">
+                    <h1 class="xera-card-title">
+                        <i class="fas fa-book text-primary me-2"></i>
+                        Clinical Guidelines
+                    </h1>
+                    <p class="mb-0 text-muted">Evidence-based clinical practice guidelines from leading healthcare organizations worldwide.</p>
+                </div>
+            </div>
+
+            <!-- Guidelines List -->
+            <div class="xera-card">
+                <div class="xera-card-header">
+                    <h3 class="xera-card-title">
+                        {% if guidelines %}
+                            {{ guidelines|length }} Guideline{{ guidelines|length|pluralize }} Available
+                        {% else %}
+                            No Guidelines Found
+                        {% endif %}
+                    </h3>
+                </div>
+                <div class="xera-card-body">
+                    {% if guidelines %}
+                        <div class="row">
+                            {% for guideline in guidelines %}
+                            <div class="col-lg-6 mb-4">
+                                <div class="card h-100 guideline-card">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between align-items-start mb-3">
+                                            <div class="guideline-meta">
+                                                <span class="badge bg-primary me-2">
+                                                    {{ guideline.organization.country.flag_emoji }}
+                                                    {{ guideline.organization.country.name }}
+                                                </span>
+                                                <span class="badge bg-secondary">{{ guideline.publication_year }}</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <h5 class="card-title">
+                                            <a href="{{ guideline.get_absolute_url }}" class="text-decoration-none">
+                                                {{ guideline.title }}
+                                            </a>
+                                        </h5>
+                                        
+                                        <p class="card-text text-muted">
+                                            {{ guideline.description|truncatechars:150 }}
+                                        </p>
+                                        
+                                        <div class="guideline-organization mb-2">
+                                            <small class="text-muted">
+                                                <i class="fas fa-building me-1"></i>
+                                                {{ guideline.organization.name }}
+                                            </small>
+                                        </div>
+                                        
+                                        <div class="guideline-stats">
+                                            <span class="badge bg-light text-dark me-2">
+                                                <i class="fas fa-clipboard-list me-1"></i>
+                                                {{ guideline.recommendation_count|default:0 }} Recommendation{{ guideline.recommendation_count|default:0|pluralize }}
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer bg-transparent">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <a href="{{ guideline.get_absolute_url }}" class="btn btn-sm btn-outline-primary">
+                                                <i class="fas fa-eye me-1"></i>View Guideline
+                                            </a>
+                                            {% if guideline.url %}
+                                            <a href="{{ guideline.url }}" target="_blank" class="btn btn-sm btn-outline-secondary">
+                                                <i class="fas fa-external-link-alt me-1"></i>Source
+                                            </a>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        <div class="text-center py-5">
+                            <i class="fas fa-book fa-3x text-muted mb-3"></i>
+                            <h4 class="text-muted">No Guidelines Found</h4>
+                            <p class="text-muted">Guidelines are currently being loaded into the database.</p>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.guideline-card {
+    border: 1px solid #e3f2fd;
+    border-radius: 8px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.guideline-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 212, 170, 0.1);
+}
+
+.guideline-meta .badge {
+    font-size: 0.75rem;
+}
+
+.guideline-stats .badge {
+    font-size: 0.7rem;
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Track page view
+    if (window.trackEvent) {
+        window.trackEvent('page_view', 'navigation', 'guidelines_list');
+    }
+    
+    // Track guideline card clicks
+    document.querySelectorAll('.guideline-card a').forEach(link => {
+        link.addEventListener('click', function() {
+            if (window.trackEvent) {
+                window.trackEvent('guideline_click', 'engagement', 'list_view');
+            }
+        });
+    });
+});
+</script>
+{% endblock %}
