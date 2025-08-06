@@ -1,5 +1,6 @@
 {% extends 'oralhealth_base.html' %}
 {% load static %}
+{% load recommendation_filters %}
 
 {% block page_title %}{{ recommendation.title|truncatechars:80 }} | {{ block.super }}{% endblock %}
 
@@ -26,99 +27,98 @@
         </ol>
     </nav>
 
+    <!-- Main Content - 2 Column Layout -->
     <div class="row">
-        <!-- Main Content -->
+        <!-- Left Column - Main Recommendation Content -->
         <div class="col-lg-8">
-            <!-- Recommendation Header -->
+            <!-- Recommendation Overview -->
             <div class="xera-card mb-4">
-                <div class="xera-card-header">
+                <div class="xera-card-header bg-primary text-white">
                     <div class="d-flex justify-content-between align-items-start">
                         <div class="flex-grow-1">
-                            <h1 class="xera-card-title mb-3">
-                                {{ recommendation.title }}
+                            <h1 class="h3 mb-2 text-white">
+                                <i class="fas fa-clipboard-check me-2"></i>
+                                Clinical Recommendation
                             </h1>
-                            
-                            <!-- Meta Information -->
-                            <div class="d-flex flex-wrap gap-2 mb-3">
-                                <span class="xera-badge xera-badge-primary">
-                                    {{ recommendation.guideline.organization.country.flag_emoji }} 
-                                    {{ recommendation.guideline.organization.country.name }}
-                                </span>
-                                
-                                {% if recommendation.strength %}
-                                <span class="xera-badge xera-badge-success">
-                                    <i class="fas fa-thumbs-up me-1"></i>
-                                    {{ recommendation.strength.name }} Recommendation
-                                </span>
-                                {% endif %}
-                                
-                                {% if recommendation.evidence_quality %}
-                                <span class="xera-badge xera-badge-info">
-                                    <i class="fas fa-microscope me-1"></i>
-                                    {{ recommendation.evidence_quality.name }} Evidence
-                                </span>
-                                {% endif %}
+                            <p class="mb-0 small opacity-75">
+                                {{ recommendation.guideline.organization.country.flag_emoji }} 
+                                {{ recommendation.guideline.organization.country.name }} • 
+                                {{ recommendation.guideline.organization.name }}
+                            </p>
+                        </div>
+                        
+                        <!-- Quick Quality Indicators -->
+                        <div class="text-end">
+                            {% if recommendation.evidence_quality %}
+                            <div class="mb-1">
+                                {{ recommendation.evidence_quality|format_evidence_quality }}
                             </div>
-                            
-                            <!-- Topics -->
-                            {% if recommendation.topics.all %}
-                            <div class="mb-3">
-                                <strong class="text-muted small">Topics:</strong>
-                                <div class="mt-1">
-                                    {% for topic in recommendation.topics.all %}
-                                    <a href="{% url 'guidelines:topic_detail' topic.slug %}" class="xera-badge xera-badge-light text-decoration-none me-1">
-                                        <i class="fas fa-tag me-1"></i>{{ topic.name }}
-                                    </a>
-                                    {% endfor %}
-                                </div>
+                            {% endif %}
+                            {% if recommendation.strength %}
+                            <div>
+                                {{ recommendation.strength|format_recommendation_strength }}
                             </div>
                             {% endif %}
                         </div>
-                        
-                        <!-- Translation Toggle -->
-                        {% if supported_languages|length > 1 %}
-                        <div class="dropdown">
-                            <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                                <i class="fas fa-globe me-1"></i>
-                                {% if current_language and current_language != 'en' %}
-                                    Translate
-                                {% else %}
-                                    English
-                                {% endif %}
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="?">🇬🇧 English</a></li>
-                                {% for lang_code, lang_info in supported_languages.items %}
-                                    {% if lang_code != 'en' %}
-                                    <li><a class="dropdown-item" href="?lang={{ lang_code }}">{{ lang_info.flag }} {{ lang_info.name }}</a></li>
-                                    {% endif %}
-                                {% endfor %}
-                            </ul>
-                        </div>
-                        {% endif %}
                     </div>
                 </div>
                 
                 <div class="xera-card-body">
-                    <!-- Recommendation Text -->
-                    <div class="recommendation-content">
+                    <!-- Recommendation Title -->
+                    <div class="mb-4">
+                        <h2 class="h4 text-primary mb-3">
+                            <i class="fas fa-quote-left me-2"></i>
+                            Recommendation Statement
+                        </h2>
+                        <div class="recommendation-title-box p-3 bg-light border-start border-primary border-4">
+                            <h3 class="h5 mb-0 text-dark">{{ recommendation.title }}</h3>
+                        </div>
+                    </div>
+                    
+                    <!-- Parsed Recommendation Text -->
+                    <div class="recommendation-content mb-4">
                         {% if translated_recommendation %}
                         <div class="alert alert-info">
                             <i class="fas fa-language me-2"></i>
                             <strong>Translated Content:</strong> This recommendation has been automatically translated. 
                             <a href="?" class="alert-link">View original</a>
                         </div>
-                        <p class="lead">{{ translated_recommendation.text }}</p>
+                        <div class="recommendation-text-parsed">
+                            {{ translated_recommendation.text|parse_recommendation_text }}
+                        </div>
                         {% else %}
-                        <p class="lead">{{ recommendation.text }}</p>
+                        <div class="recommendation-text-parsed">
+                            {{ recommendation.text|parse_recommendation_text }}
+                        </div>
                         {% endif %}
                     </div>
                     
+                    <!-- Topics Section -->
+                    {% if recommendation.topics.all %}
+                    <div class="mb-4">
+                        <h5 class="text-primary mb-3">
+                            <i class="fas fa-tags me-2"></i>
+                            Clinical Topics
+                        </h5>
+                        <div class="d-flex flex-wrap gap-2">
+                            {% for topic in recommendation.topics.all %}
+                            <a href="{% url 'guidelines:topic_detail' topic.slug %}" 
+                               class="btn btn-outline-primary btn-sm text-decoration-none">
+                                <i class="fas fa-tag me-1"></i>{{ topic.name }}
+                            </a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% endif %}
+                    
                     <!-- Keywords -->
                     {% if recommendation.keywords %}
-                    <div class="mt-4">
-                        <h6 class="text-muted">Keywords:</h6>
-                        <p class="small text-secondary">{{ recommendation.keywords }}</p>
+                    <div class="mb-4">
+                        <h5 class="text-primary mb-3">
+                            <i class="fas fa-key me-2"></i>
+                            Keywords
+                        </h5>
+                        <p class="text-muted">{{ recommendation.keywords }}</p>
                     </div>
                     {% endif %}
                 </div>
@@ -190,103 +190,197 @@
             {% endif %}
         </div>
         
-        <!-- Sidebar -->
+        <!-- Right Column - Detailed Information -->
         <div class="col-lg-4">
-            <!-- Source Information -->
+            <!-- Evidence Quality & Strength -->
             <div class="xera-card mb-4">
-                <div class="xera-card-header">
-                    <h4 class="xera-card-title">
-                        <i class="fas fa-info-circle me-2"></i>Source Information
+                <div class="xera-card-header bg-success text-white">
+                    <h4 class="xera-card-title mb-0 text-white">
+                        <i class="fas fa-award me-2"></i>Evidence Assessment
                     </h4>
                 </div>
                 <div class="xera-card-body">
-                    <table class="table table-sm table-borderless">
-                        <tr>
-                            <td class="text-muted"><strong>Country:</strong></td>
-                            <td>
-                                {{ recommendation.guideline.organization.country.flag_emoji }} 
-                                {{ recommendation.guideline.organization.country.name }}
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="text-muted"><strong>Organization:</strong></td>
-                            <td>{{ recommendation.guideline.organization.name }}</td>
-                        </tr>
-                        <tr>
-                            <td class="text-muted"><strong>Guideline:</strong></td>
-                            <td>
-                                <a href="{{ recommendation.guideline.get_absolute_url }}" class="text-decoration-none">
-                                    {{ recommendation.guideline.title }}
-                                </a>
-                            </td>
-                        </tr>
-                        {% if recommendation.guideline.publication_year %}
-                        <tr>
-                            <td class="text-muted"><strong>Year:</strong></td>
-                            <td>{{ recommendation.guideline.publication_year }}</td>
-                        </tr>
+                    <!-- Evidence Quality -->
+                    {% if recommendation.evidence_quality %}
+                    <div class="evidence-quality-section mb-4">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h6 class="text-muted mb-0">Quality of Evidence:</h6>
+                            {{ recommendation.evidence_quality|format_evidence_quality }}
+                        </div>
+                        {% if recommendation.evidence_quality.description %}
+                        <p class="small text-muted">{{ recommendation.evidence_quality.description }}</p>
+                        {% else %}
+                        <div class="small text-muted">
+                            {% if recommendation.evidence_quality.name == 'High' %}
+                            We are very confident that the true effect lies close to that of the estimate of the effect.
+                            {% elif recommendation.evidence_quality.name == 'Moderate' %}
+                            We are moderately confident in the effect estimate: the true effect is likely to be close to the estimate of the effect.
+                            {% elif recommendation.evidence_quality.name == 'Low' %}
+                            Our confidence in the effect estimate is limited: the true effect may be substantially different from the estimate of the effect.
+                            {% elif recommendation.evidence_quality.name == 'Very Low' %}
+                            We have very little confidence in the effect estimate: the true effect is likely to be substantially different from the estimate of effect.
+                            {% endif %}
+                        </div>
                         {% endif %}
-                        {% if recommendation.chapter %}
-                        <tr>
-                            <td class="text-muted"><strong>Chapter:</strong></td>
-                            <td>{{ recommendation.chapter.title }}</td>
-                        </tr>
-                        {% endif %}
-                    </table>
+                    </div>
+                    {% endif %}
                     
-                    <!-- Links -->
-                    <div class="mt-3">
-                        {% if recommendation.source_url %}
-                        <a href="{{ recommendation.source_url }}" target="_blank" class="btn btn-outline-primary btn-sm me-2 mb-2">
-                            <i class="fas fa-external-link-alt me-1"></i>Original Source
-                        </a>
+                    <!-- Recommendation Strength -->
+                    {% if recommendation.strength %}
+                    <div class="recommendation-strength-section mb-4">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h6 class="text-muted mb-0">Strength of Recommendation:</h6>
+                            {{ recommendation.strength|format_recommendation_strength }}
+                        </div>
+                        {% if recommendation.strength.description %}
+                        <p class="small text-muted">{{ recommendation.strength.description }}</p>
+                        {% else %}
+                        <div class="small text-muted">
+                            {% if recommendation.strength.name == 'Strong' %}
+                            Most well-informed people would want the recommended course of action.
+                            {% elif recommendation.strength.name == 'Moderate' %}
+                            Most well-informed people would want the recommended course of action, but a substantial minority would not.
+                            {% elif recommendation.strength.name == 'Weak' %}
+                            Well-informed people would make different choices about whether to follow this recommendation.
+                            {% endif %}
+                        </div>
                         {% endif %}
-                        {% if recommendation.guideline.url %}
-                        <a href="{{ recommendation.guideline.url }}" target="_blank" class="btn btn-outline-secondary btn-sm mb-2">
-                            <i class="fas fa-book me-1"></i>Full Guideline
-                        </a>
-                        {% endif %}
+                    </div>
+                    {% endif %}
+                    
+                    <!-- GRADE Information -->
+                    <div class="grade-info-box p-3 bg-light rounded">
+                        <h6 class="small text-primary mb-2">
+                            <i class="fas fa-info-circle me-1"></i>About GRADE Assessment
+                        </h6>
+                        <p class="small text-muted mb-0">
+                            GRADE (Grading of Recommendations Assessment, Development and Evaluation) is a systematic approach to 
+                            rating the quality of evidence and strength of recommendations in clinical practice guidelines.
+                        </p>
                     </div>
                 </div>
             </div>
             
-            <!-- Evidence Quality Information -->
-            {% if recommendation.evidence_quality or recommendation.strength %}
+            <!-- Source Information -->
             <div class="xera-card mb-4">
-                <div class="xera-card-header">
-                    <h4 class="xera-card-title">
-                        <i class="fas fa-chart-bar me-2"></i>Evidence Assessment
+                <div class="xera-card-header bg-info text-white">
+                    <h4 class="xera-card-title mb-0 text-white">
+                        <i class="fas fa-book-open me-2"></i>Source Details
                     </h4>
                 </div>
                 <div class="xera-card-body">
-                    {% if recommendation.evidence_quality %}
-                    <div class="mb-3">
-                        <h6 class="text-muted">Evidence Quality:</h6>
-                        <span class="badge bg-info fs-6">
-                            <i class="fas fa-microscope me-1"></i>
-                            {{ recommendation.evidence_quality.name }}
-                        </span>
-                        {% if recommendation.evidence_quality.description %}
-                        <p class="small text-muted mt-2">{{ recommendation.evidence_quality.description }}</p>
+                    <div class="source-info-grid">
+                        <!-- Country -->
+                        <div class="info-item mb-3">
+                            <div class="info-label text-muted small">Country/Region</div>
+                            <div class="info-value h6 mb-1">
+                                {{ recommendation.guideline.organization.country.flag_emoji }} 
+                                {{ recommendation.guideline.organization.country.name }}
+                            </div>
+                        </div>
+                        
+                        <!-- Organization -->
+                        <div class="info-item mb-3">
+                            <div class="info-label text-muted small">Issuing Organization</div>
+                            <div class="info-value h6 mb-1">{{ recommendation.guideline.organization.name }}</div>
+                        </div>
+                        
+                        <!-- Guideline -->
+                        <div class="info-item mb-3">
+                            <div class="info-label text-muted small">Source Guideline</div>
+                            <div class="info-value">
+                                <a href="{{ recommendation.guideline.get_absolute_url }}" 
+                                   class="text-decoration-none fw-bold">
+                                    {{ recommendation.guideline.title|truncatewords:8 }}
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- Publication Year -->
+                        {% if recommendation.guideline.publication_year %}
+                        <div class="info-item mb-3">
+                            <div class="info-label text-muted small">Publication Year</div>
+                            <div class="info-value h6 mb-1">{{ recommendation.guideline.publication_year }}</div>
+                        </div>
                         {% endif %}
+                        
+                        <!-- Chapter/Section -->
+                        {% if recommendation.chapter %}
+                        <div class="info-item mb-3">
+                            <div class="info-label text-muted small">Chapter/Section</div>
+                            <div class="info-value">{{ recommendation.chapter.title }}</div>
+                        </div>
+                        {% endif %}
+                    </div>
+                    
+                    <!-- External Links -->
+                    <div class="mt-4 pt-3 border-top">
+                        <h6 class="small text-muted mb-3">External Resources</h6>
+                        <div class="d-grid gap-2">
+                            {% if recommendation.source_url %}
+                            <a href="{{ recommendation.source_url }}" target="_blank" class="btn btn-outline-primary btn-sm">
+                                <i class="fas fa-external-link-alt me-1"></i>View Original Source
+                            </a>
+                            {% endif %}
+                            {% if recommendation.guideline.url %}
+                            <a href="{{ recommendation.guideline.url }}" target="_blank" class="btn btn-outline-info btn-sm">
+                                <i class="fas fa-book me-1"></i>Full Guideline Document
+                            </a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Translation & Sharing -->
+            <div class="xera-card mb-4">
+                <div class="xera-card-header bg-warning text-dark">
+                    <h4 class="xera-card-title mb-0">
+                        <i class="fas fa-tools me-2"></i>Tools & Actions
+                    </h4>
+                </div>
+                <div class="xera-card-body">
+                    <!-- Translation -->
+                    {% if supported_languages|length > 1 %}
+                    <div class="mb-3">
+                        <h6 class="small text-muted mb-2">Language Options</h6>
+                        <div class="dropdown d-grid">
+                            <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                                <i class="fas fa-globe me-1"></i>
+                                {% if current_language and current_language != 'en' %}
+                                    Translate ({{ current_language|upper }})
+                                {% else %}
+                                    English (Original)
+                                {% endif %}
+                            </button>
+                            <ul class="dropdown-menu w-100">
+                                <li><a class="dropdown-item" href="?">🇬🇧 English (Original)</a></li>
+                                {% for lang_code, lang_info in supported_languages.items %}
+                                    {% if lang_code != 'en' %}
+                                    <li><a class="dropdown-item" href="?lang={{ lang_code }}">{{ lang_info.flag }} {{ lang_info.name }}</a></li>
+                                    {% endif %}
+                                {% endfor %}
+                            </ul>
+                        </div>
                     </div>
                     {% endif %}
                     
-                    {% if recommendation.strength %}
-                    <div class="mb-3">
-                        <h6 class="text-muted">Recommendation Strength:</h6>
-                        <span class="badge bg-success fs-6">
-                            <i class="fas fa-thumbs-up me-1"></i>
-                            {{ recommendation.strength.name }}
-                        </span>
-                        {% if recommendation.strength.description %}
-                        <p class="small text-muted mt-2">{{ recommendation.strength.description }}</p>
-                        {% endif %}
+                    <!-- Action Buttons -->
+                    <div class="d-grid gap-2">
+                        <button class="btn btn-outline-success btn-sm" onclick="shareRecommendation()">
+                            <i class="fas fa-share me-1"></i>Share Recommendation
+                        </button>
+                        
+                        <button class="btn btn-outline-dark btn-sm" onclick="printRecommendation()">
+                            <i class="fas fa-print me-1"></i>Print/Save as PDF
+                        </button>
+                        
+                        <button class="btn btn-outline-info btn-sm" onclick="copyRecommendation()">
+                            <i class="fas fa-copy me-1"></i>Copy Text
+                        </button>
                     </div>
-                    {% endif %}
                 </div>
             </div>
-            {% endif %}
             
             <!-- Quick Actions -->
             <div class="xera-card">
@@ -326,6 +420,142 @@
         </div>
     </div>
 </div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+/* Recommendation text parsing styles */
+.recommendation-text-parsed {
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+.recommendation-text-parsed p {
+    margin-bottom: 1rem;
+}
+
+.recommendation-text-parsed .recommendation-bullets {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+}
+
+.recommendation-text-parsed .recommendation-bullets li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+.recommendation-text-parsed .recommendation-bullets li::marker {
+    color: var(--xera-primary);
+    font-weight: bold;
+}
+
+/* Title box styling */
+.recommendation-title-box {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 8px;
+}
+
+/* Info grid styling */
+.source-info-grid .info-item {
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 0.75rem;
+}
+
+.source-info-grid .info-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.info-label {
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.75rem;
+}
+
+.info-value {
+    font-size: 0.95rem;
+}
+
+/* Evidence quality and strength styling */
+.evidence-quality-section,
+.recommendation-strength-section {
+    border-left: 4px solid #28a745;
+    padding-left: 1rem;
+    background: rgba(40, 167, 69, 0.05);
+    border-radius: 0 8px 8px 0;
+}
+
+/* GRADE info box */
+.grade-info-box {
+    border-left: 4px solid #007bff;
+    background: rgba(0, 123, 255, 0.05);
+}
+
+/* Card header colors */
+.xera-card-header.bg-primary {
+    background: linear-gradient(135deg, #007bff, #0056b3) !important;
+}
+
+.xera-card-header.bg-success {
+    background: linear-gradient(135deg, #28a745, #1e7e34) !important;
+}
+
+.xera-card-header.bg-info {
+    background: linear-gradient(135deg, #17a2b8, #117a8b) !important;
+}
+
+.xera-card-header.bg-warning {
+    background: linear-gradient(135deg, #ffc107, #e0a800) !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+    .col-lg-4 {
+        margin-top: 2rem;
+    }
+    
+    .recommendation-text-parsed {
+        font-size: 1rem;
+    }
+}
+
+/* Print styles */
+@media print {
+    .xera-header, .xera-footer, .breadcrumb, 
+    .dropdown, .btn, .d-grid, #related-recommendations,
+    .xera-card-header.bg-warning, .xera-card-header.bg-info { 
+        display: none !important; 
+    }
+    
+    .container { 
+        max-width: 100% !important; 
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    .xera-card { 
+        border: 1px solid #ddd !important; 
+        box-shadow: none !important; 
+        margin-bottom: 1rem !important;
+    }
+    
+    .xera-card-header {
+        background: #f8f9fa !important;
+        color: #333 !important;
+    }
+    
+    .col-lg-8, .col-lg-4 {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    .recommendation-text-parsed {
+        font-size: 12pt;
+        line-height: 1.4;
+    }
+}
+</style>
 {% endblock %}
 
 {% block extra_js %}
@@ -373,6 +603,44 @@ function printRecommendation() {
     // Track printing
     if (window.trackEvent) {
         window.trackEvent('print_recommendation', 'engagement', 'rec_{{ recommendation.id }}');
+    }
+}
+
+// Copy recommendation text
+function copyRecommendation() {
+    const recommendationText = `{{ recommendation.title|addslashes }}
+
+{{ recommendation.text|addslashes }}
+
+Source: {{ recommendation.guideline.title|addslashes }}
+Organization: {{ recommendation.guideline.organization.name|addslashes }}
+Country: {{ recommendation.guideline.organization.country.name|addslashes }}
+Evidence Quality: {% if recommendation.evidence_quality %}{{ recommendation.evidence_quality.name }}{% else %}Not assessed{% endif %}
+Recommendation Strength: {% if recommendation.strength %}{{ recommendation.strength.name }}{% else %}Not assessed{% endif %}
+
+URL: ${window.location.href}`;
+
+    navigator.clipboard.writeText(recommendationText).then(function() {
+        // Show success message
+        const button = event.target.closest('button');
+        const originalText = button.innerHTML;
+        button.innerHTML = '<i class="fas fa-check me-1"></i>Copied!';
+        button.classList.remove('btn-outline-info');
+        button.classList.add('btn-success');
+        
+        setTimeout(() => {
+            button.innerHTML = originalText;
+            button.classList.remove('btn-success');
+            button.classList.add('btn-outline-info');
+        }, 2000);
+    }).catch(function(err) {
+        console.error('Failed to copy text: ', err);
+        alert('Failed to copy text to clipboard');
+    });
+    
+    // Track copying
+    if (window.trackEvent) {
+        window.trackEvent('copy_recommendation', 'engagement', 'rec_{{ recommendation.id }}');
     }
 }
 
