@@ -13,3 +13,6 @@ httpx==0.26.0
 
 # Fast JSON handling
 orjson==3.9.10
+
+# AI and ML packages
+google-generativeai==0.3.2
