@@ -1,0 +1,433 @@
+{% extends 'oralhealth_base.html' %}
+{% load static %}
+
+{% block page_title %}Oral Health Topics | {{ block.super }}{% endblock %}
+
+{% block page_description %}Browse oral health topics and find evidence-based recommendations by category. Explore dental caries prevention, fluoride use, periodontal health, and more.{% endblock %}
+
+{% block main_content %}
+<div class="container">
+    <!-- Page Header -->
+    <div class="xera-card mb-4">
+        <div class="xera-card-header">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <h1 class="xera-card-title mb-2">
+                        <i class="fas fa-tags me-2 text-primary"></i>
+                        Oral Health Topics
+                    </h1>
+                    <p class="mb-0 text-muted">
+                        Explore evidence-based recommendations organized by clinical topics and areas of practice.
+                    </p>
+                </div>
+                <div class="text-end">
+                    <div class="badge bg-primary fs-6">
+                        {{ topics|length }} Topics
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Search and Filter Section -->
+    <div class="xera-card mb-4">
+        <div class="xera-card-body">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <div class="input-group">
+                        <span class="input-group-text">
+                            <i class="fas fa-search"></i>
+                        </span>
+                        <input type="text" 
+                               class="form-control" 
+                               id="topicSearch" 
+                               placeholder="Search topics (e.g., fluoride, caries, periodontal)..."
+                               onkeyup="filterTopics()">
+                    </div>
+                </div>
+                <div class="col-md-4 mt-2 mt-md-0">
+                    <select class="form-select" id="sortTopics" onchange="sortTopics()">
+                        <option value="name">Sort by Name (A-Z)</option>
+                        <option value="recommendations">Sort by Recommendations Count</option>
+                        <option value="name-desc">Sort by Name (Z-A)</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Topics Grid -->
+    <div class="row" id="topicsContainer">
+        {% for topic in topics %}
+        <div class="col-lg-4 col-md-6 mb-4 topic-card" 
+             data-name="{{ topic.name|lower }}" 
+             data-count="{{ topic.recommendation_count }}">
+            <div class="xera-card h-100 topic-item">
+                <div class="xera-card-body d-flex flex-column">
+                    <!-- Topic Header -->
+                    <div class="d-flex justify-content-between align-items-start mb-3">
+                        <div class="flex-grow-1">
+                            <h5 class="xera-card-title mb-2">
+                                <a href="{% url 'guidelines:topic_detail' topic.slug %}" 
+                                   class="text-decoration-none">
+                                    <i class="fas fa-tag me-2 text-primary"></i>
+                                    {{ topic.name }}
+                                </a>
+                            </h5>
+                            {% if topic.description %}
+                            <p class="text-muted small mb-2">
+                                {{ topic.description|truncatewords:20 }}
+                            </p>
+                            {% endif %}
+                        </div>
+                        <span class="badge bg-success ms-2">
+                            {{ topic.recommendation_count }}
+                        </span>
+                    </div>
+
+                    <!-- Topic Stats -->
+                    <div class="row text-center mb-3 small">
+                        <div class="col-4">
+                            <div class="border-end">
+                                <strong class="d-block text-primary">{{ topic.recommendation_count }}</strong>
+                                <span class="text-muted small">Recommendation{{ topic.recommendation_count|pluralize }}</span>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="border-end">
+                                <strong class="d-block text-info">
+                                    {% firstof topic.recommendation_count 0 %}
+                                </strong>
+                                <span class="text-muted small">Available</span>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <strong class="d-block text-warning">
+                                {% if topic.recommendations.all %}
+                                    {{ topic.recommendations.all.count }}
+                                {% else %}
+                                    0
+                                {% endif %}
+                            </strong>
+                            <span class="text-muted small">Total</span>
+                        </div>
+                    </div>
+
+                    <!-- Recent Recommendations Preview -->
+                    {% with recent_recs=topic.recommendations.all|slice:":3" %}
+                    {% if recent_recs %}
+                    <div class="mb-3">
+                        <h6 class="text-muted small mb-2">Recent Recommendations:</h6>
+                        {% for rec in recent_recs %}
+                        <div class="border-start border-primary border-2 ps-2 mb-2 small">
+                            <a href="{{ rec.get_absolute_url }}" class="text-decoration-none">
+                                {{ rec.title|truncatechars:80 }}
+                            </a>
+                            <br>
+                            <small class="text-muted">
+                                {{ rec.guideline.organization.country.flag_emoji }} 
+                                {{ rec.guideline.organization.country.name }}
+                                {% if rec.strength %}
+                                | {{ rec.strength.name }}
+                                {% endif %}
+                            </small>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                    {% endwith %}
+
+                    <!-- Action Buttons -->
+                    <div class="mt-auto">
+                        <div class="d-flex gap-2">
+                            <a href="{% url 'guidelines:topic_detail' topic.slug %}" 
+                               class="btn btn-primary btn-sm flex-grow-1">
+                                <i class="fas fa-eye me-1"></i>
+                                View Topic
+                            </a>
+                            <a href="{% url 'guidelines:recommendation_list' %}?topic={{ topic.id }}" 
+                               class="btn btn-outline-secondary btn-sm flex-grow-1">
+                                <i class="fas fa-list me-1"></i>
+                                All Recommendations
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <div class="col-12">
+            <div class="xera-card">
+                <div class="xera-card-body text-center py-5">
+                    <i class="fas fa-tags fa-3x text-muted mb-3"></i>
+                    <h5>No Topics Found</h5>
+                    <p class="text-muted">Topics will appear here as recommendations are added to the database.</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <!-- No Results Message (Hidden by default) -->
+    <div id="noResults" class="text-center py-5" style="display: none;">
+        <div class="xera-card">
+            <div class="xera-card-body">
+                <i class="fas fa-search fa-3x text-muted mb-3"></i>
+                <h5>No Topics Found</h5>
+                <p class="text-muted">Try adjusting your search terms or filters.</p>
+                <button class="btn btn-outline-primary" onclick="clearFilters()">
+                    <i class="fas fa-refresh me-1"></i>Clear Filters
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Statistics Section -->
+    {% if topics %}
+    <div class="row mt-5">
+        <div class="col-12">
+            <div class="xera-card">
+                <div class="xera-card-header">
+                    <h3 class="xera-card-title">
+                        <i class="fas fa-chart-bar me-2"></i>
+                        Topic Statistics
+                    </h3>
+                </div>
+                <div class="xera-card-body">
+                    <div class="row text-center">
+                        <div class="col-md-3 mb-3">
+                            <div class="stat-box">
+                                <h4 class="text-primary mb-1">{{ topics|length }}</h4>
+                                <p class="text-muted mb-0">Total Topics</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="stat-box">
+                                <h4 class="text-success mb-1">
+                                    {{ topics.count }}
+                                </h4>
+                                <p class="text-muted mb-0">Active Topics</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="stat-box">
+                                <h4 class="text-info mb-1">
+                                    {% if topics %}
+                                        {{ topics.first.recommendation_count|default:"0" }}
+                                    {% else %}
+                                        0
+                                    {% endif %}
+                                </h4>
+                                <p class="text-muted mb-0">Top Topic Count</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="stat-box">
+                                <h4 class="text-warning mb-1">
+                                    {% if topics %}
+                                        {{ topics|length }}
+                                    {% else %}
+                                        0
+                                    {% endif %}
+                                </h4>
+                                <p class="text-muted mb-0">Categories</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+/* Topic cards styling */
+.topic-item {
+    transition: all 0.3s ease;
+    border: 1px solid #e9ecef;
+}
+
+.topic-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    border-color: var(--xera-primary);
+}
+
+.topic-item .xera-card-title a {
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+.topic-item:hover .xera-card-title a {
+    color: var(--xera-primary);
+}
+
+/* Statistics styling */
+.stat-box {
+    padding: 1rem;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    transition: all 0.3s ease;
+}
+
+.stat-box:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Search and filter styling */
+.input-group-text {
+    background: var(--xera-primary);
+    color: white;
+    border-color: var(--xera-primary);
+}
+
+#topicSearch:focus {
+    border-color: var(--xera-primary);
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .topic-item .row.text-center > div {
+        margin-bottom: 0.5rem;
+    }
+    
+    .topic-item .row.text-center .border-end {
+        border-right: none !important;
+        border-bottom: 1px solid #dee2e6;
+        padding-bottom: 0.5rem;
+    }
+    
+    .topic-item .row.text-center > div:last-child .border-end {
+        border-bottom: none !important;
+    }
+}
+
+/* Animation for topic cards */
+.topic-card {
+    animation: fadeInUp 0.6s ease forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.topic-card:nth-child(1) { animation-delay: 0.1s; }
+.topic-card:nth-child(2) { animation-delay: 0.2s; }
+.topic-card:nth-child(3) { animation-delay: 0.3s; }
+.topic-card:nth-child(4) { animation-delay: 0.4s; }
+.topic-card:nth-child(5) { animation-delay: 0.5s; }
+.topic-card:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+</style>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+// Track page view
+document.addEventListener('DOMContentLoaded', function() {
+    if (window.trackEvent) {
+        window.trackEvent('page_view', 'navigation', 'topics');
+    }
+});
+
+// Search functionality
+function filterTopics() {
+    const searchTerm = document.getElementById('topicSearch').value.toLowerCase();
+    const topicCards = document.querySelectorAll('.topic-card');
+    let visibleCount = 0;
+
+    topicCards.forEach(card => {
+        const topicName = card.getAttribute('data-name');
+        const topicText = card.textContent.toLowerCase();
+        
+        if (topicName.includes(searchTerm) || topicText.includes(searchTerm)) {
+            card.style.display = 'block';
+            visibleCount++;
+        } else {
+            card.style.display = 'none';
+        }
+    });
+
+    // Show/hide no results message
+    const noResults = document.getElementById('noResults');
+    if (visibleCount === 0 && searchTerm.length > 0) {
+        noResults.style.display = 'block';
+    } else {
+        noResults.style.display = 'none';
+    }
+
+    // Track search
+    if (window.trackSearch && searchTerm.length > 2) {
+        window.trackSearch(searchTerm, visibleCount);
+    }
+}
+
+// Sort functionality
+function sortTopics() {
+    const sortBy = document.getElementById('sortTopics').value;
+    const container = document.getElementById('topicsContainer');
+    const cards = Array.from(container.querySelectorAll('.topic-card'));
+
+    cards.sort((a, b) => {
+        switch(sortBy) {
+            case 'name':
+                return a.getAttribute('data-name').localeCompare(b.getAttribute('data-name'));
+            case 'name-desc':
+                return b.getAttribute('data-name').localeCompare(a.getAttribute('data-name'));
+            case 'recommendations':
+                return parseInt(b.getAttribute('data-count')) - parseInt(a.getAttribute('data-count'));
+            default:
+                return 0;
+        }
+    });
+
+    // Clear container and re-append sorted cards
+    container.innerHTML = '';
+    cards.forEach(card => container.appendChild(card));
+
+    // Track sorting
+    if (window.trackEvent) {
+        window.trackEvent('sort_topics', 'engagement', sortBy);
+    }
+}
+
+// Clear filters
+function clearFilters() {
+    document.getElementById('topicSearch').value = '';
+    document.getElementById('sortTopics').value = 'name';
+    filterTopics();
+    sortTopics();
+    
+    if (window.trackEvent) {
+        window.trackEvent('clear_filters', 'engagement', 'topics');
+    }
+}
+
+// Keyboard shortcut for search
+document.addEventListener('keydown', function(e) {
+    if (e.ctrlKey && e.key === 'f') {
+        e.preventDefault();
+        document.getElementById('topicSearch').focus();
+    }
+});
+
+// Track topic clicks
+document.addEventListener('click', function(e) {
+    if (e.target.closest('a[href*="/topics/"]')) {
+        const topicName = e.target.closest('.topic-card')?.getAttribute('data-name');
+        if (window.trackEvent && topicName) {
+            window.trackEvent('topic_click', 'navigation', topicName);
+        }
+    }
+});
+</script>
+{% endblock %}
