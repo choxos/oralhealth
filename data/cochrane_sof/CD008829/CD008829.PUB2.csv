@@ -1,0 +1,14 @@
+Population,Intervention,Comparison,Outcome,Measure,Effect,CI Lower,CI Upper,Significant,Number of participants,Number of studies,Certainty of the evidence (GRADE),Reasons for GRADE if not High,Risk of bias,Imprecision,Inconsistency,Indirectness,Publication bias
+everyday self-care,flossing plus toothbrushing,toothbrushing alone,Gingivitis,MD,-0.13,-0.23,-0.02,TRUE,489,7,very low," Sensitivity analysis excluding a high risk of bias study (Vogel 1975) did not show a significant change in results.
+ I2 = 60%
+Only one study had more than 40 subjects in a study arm and one study had less than 10 subjects per study arm.
+ Most of the included studies were small, industry?sponsored studies. A few had inadequately reported outcomes.",TRUE,TRUE,TRUE,FALSE,TRUE
+everyday self-care,flossing plus toothbrushing,toothbrushing alone,Interproximal caries,NA,NA,NA,NA,NA,0,0,NA,NA,NA,NA,NA,NA,NA
+everyday self-care,flossing plus toothbrushing,toothbrushing alone,Harms and adverse effects,NA,NA,NA,NA,NA,NA,5,NA,NA,NA,NA,NA,NA,NA
+everyday self-care,flossing plus toothbrushing,toothbrushing alone,Plaque,MD,-0.19,-0.42,-0.05,TRUE,416,5,very low,"Sensitivity analysis excluding a high risk of bias study (Vogel 1975) did not show a significant change in results.
+Most of the included studies were small, industry?sponsored studies. A few had inadequately reported outcomes.
+ I2 = 51%
+Only one study had more than 40 subjects in a study arm.",TRUE,TRUE,TRUE,FALSE,TRUE
+everyday self-care,flossing plus toothbrushing,toothbrushing alone,Calculus,NA,NA,NA,NA,NA,0,0,NA,NA,NA,NA,NA,NA,NA
+everyday self-care,flossing plus toothbrushing,toothbrushing alone,Clinical attachment loss,NA,NA,NA,NA,NA,0,0,NA,NA,NA,NA,NA,NA,NA
+everyday self-care,flossing plus toothbrushing,toothbrushing alone,Quality of life,NA,NA,NA,NA,NA,0,0,NA,NA,NA,NA,NA,NA,NA

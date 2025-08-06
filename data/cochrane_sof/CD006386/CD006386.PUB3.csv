@@ -1,0 +1,10 @@
+Population,Intervention,Comparison,Outcome,Measure,Effect,CI Lower,CI Upper,Significant,Number of participants,Number of studies,Certainty of the evidence (GRADE),Reasons for GRADE if not High,Risk of bias,Imprecision,Inconsistency,Indirectness,Publication bias
+patients with oral cavity and oropharyngeal cancer,induction chemotherapy plus locoregional treatment (LRT),locoregional treatment,Total Mortality,HR,0.92,0.84,1,FALSE,4051,25,Very low,"Four studies at low risk of bias, 12 are unclear and 9 are at high risk of bias
+Studies included patients with other head and neck cancers",TRUE,FALSE,FALSE,TRUE,FALSE
+patients with oral cavity and oropharyngeal cancer,induction chemotherapy plus locoregional treatment (LRT),locoregional treatment,Total Mortality,HR,0.8,0.67,0.97,TRUE,968,4,Moderate,Studies included patients with other head and neck cancers,FALSE,FALSE,FALSE,TRUE,FALSE
+patients with oral cavity and oropharyngeal cancer,surgery +/- RT + chemotherapy,surgery +/- RT alone,Total Mortality,HR,0.88,0.79,0.99,TRUE,2017,10,Low,"Four studies are at low risk of bias and 6 are at unclear risk of bias
+Studies included patients with other head and neck cancers",TRUE,FALSE,FALSE,TRUE,FALSE
+patients with oral cavity and oropharyngeal cancer,surgery +/- RT + chemotherapy,surgery +/- RT alone,Total Mortality,HR,0.88,0.74,1.05,FALSE,758,4,Moderate,Studies included patients with other head and neck cancers,FALSE,FALSE,FALSE,TRUE,FALSE
+patients with oral cavity and oropharyngeal cancer,concomitant chemoradiotherapy,radiotherapy alone,Total Mortality,HR,0.78,0.73,0.83,TRUE,4734,26,Low,"Nine trials are at low risk of bias, and remaining 17 at unclear risk of bias
+Trials include patients with other head and neck cancers",TRUE,FALSE,FALSE,TRUE,FALSE
+patients with oral cavity and oropharyngeal cancer,concomitant chemoradiotherapy,radiotherapy alone,Total Mortality,HR,0.87,0.79,0.95,TRUE,2266,9,Moderate,Trials include patients with other head and neck cancers,FALSE,FALSE,FALSE,TRUE,FALSE

@@ -1,0 +1,25 @@
+Population,Intervention,Comparison,Outcome,Measure,Effect,CI Lower,CI Upper,Significant,Number of participants,Number of studies,Certainty of the evidence (GRADE),Reasons for GRADE if not High,Risk of bias,Imprecision,Inconsistency,Indirectness,Publication bias
+orthodontic patients (any age),fluoride varnish,non-fluoride (placebo) varnish,Number of participants with new DLs,RR,0.52,0.14,1.93,FALSE,405,2,LOW,"Downgraded 1 level for indirectness (evidence from only 2 studies) (Stecksén?Blicks 2007; Sonesson 2019).
+Downgraded 1 level for imprecision (insufficient number of participants with new DLs (guideline 300 to 400 events)).",FALSE,TRUE,FALSE,TRUE,FALSE
+orthodontic patients (any age),fluoride varnish,non-fluoride (placebo) varnish,Number of participants with more severe DLs,RR,0.46,0.22,0.95,TRUE,148,1,LOW,"Downgraded 1 level for imprecision (insufficient number of participants with the more severe DLs (guideline 300 to 400 events)).
+Downgraded 1 level for indirectness (evidence from only 1 study) ",FALSE,TRUE,FALSE,TRUE,FALSE
+orthodontic patients (any age),fluoride varnish,non-fluoride (placebo) varnish,Number of participants with adverse effects,NA,NA,NA,NA,NA,148,1,LOW,"Downgraded 1 level for indirectness (evidence from only 1 study) (Sonesson 2019).
+Downgraded 1 level for imprecision (insufficient number with adverse events and not clear if directly related to the intervention).",FALSE,TRUE,FALSE,TRUE,FALSE
+orthodontic patients (any age),12300 ppm F APF foam,0 ppm F placebo foam,Number of participants with new DLs,RR,0.26,0.11,0.57,TRUE,95,1,LOW,"Although effect size is large this was only for 1 study at unclear risk of bias and therefore downgraded 1 level (Jiang 2013).
+Downgraded 1 level for imprecision (insufficient number of participants with new DLs (guideline 300 to 400 events)).",TRUE,TRUE,FALSE,FALSE,FALSE
+orthodontic patients (any age),12300 ppm F APF foam,0 ppm F placebo foam,Number of participants with more severe DLs,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+orthodontic patients (any age),12300 ppm F APF foam,0 ppm F placebo foam,Number of participants with adverse effects,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+orthodontic patients (any age),5000 ppm F toothpaste,1450 ppm F toothpaste,Number of participants with new DLs,RR,0.68,0.46,1,TRUE,380,1,LOW,"Downgraded 1 level due to single study at unclear risk of bias (Sonesson 2014).
+Downgraded 1 level for imprecision (insufficient number of participants with new DLs (guideline 300 to 400 events)).",TRUE,TRUE,FALSE,FALSE,FALSE
+orthodontic patients (any age),5000 ppm F toothpaste,1450 ppm F toothpaste,Number of participants with more severe DLs,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+orthodontic patients (any age),5000 ppm F toothpaste,1450 ppm F toothpaste,Number of participants with adverse effects,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+orthodontic patients (any age),250 ppm F mouthrinse (100 ppm amine F/150 ppm NaF),0 ppm F placebo mouthrinse,Number of participants with new DLs,RR,0.65,0.37,1.17,FALSE,81,1,VERY LOW,"Downgraded 2 levels: single study with a relatively small number of participants (81), at high risk of bias due to high attrition (33%) (van der Kaaij 2015).
+Downgraded 1 level for imprecision (insufficient number of participants with new DLs (guidance 300 to 400 events)).",TRUE,TRUE,FALSE,FALSE,FALSE
+orthodontic patients (any age),250 ppm F mouthrinse (100 ppm amine F/150 ppm NaF),0 ppm F placebo mouthrinse,Number of participants with more severe DLs,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+orthodontic patients (any age),250 ppm F mouthrinse (100 ppm amine F/150 ppm NaF),0 ppm F placebo mouthrinse,Number of participants with adverse effects,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+orthodontic patients (any age),resin-modified glass ionomer cement,light-cured composite resin,Number of participants with new DLs,RR,1.17,0.69,1.99,FALSE,173,1,LOW,"Downgraded 1 level: single study at unclear risk of bias (Benson 2019).
+Downgraded 1 level for imprecision (insufficient number of participants with new DLs or more severe DLs (guidance 300 to 400 events)).",TRUE,TRUE,FALSE,FALSE,FALSE
+orthodontic patients (any age),resin-modified glass ionomer cement,light-cured composite resin,Number of participants with more severe DLs of aesthetic concern,RR,1.18,0.45,3.12,FALSE,173,1,LOW,"Downgraded 1 level: single study at unclear risk of bias (Benson 2019).
+Downgraded 1 level for imprecision (insufficient number of participants with new DLs or more severe DLs (guidance 300 to 400 events)).",TRUE,TRUE,FALSE,FALSE,FALSE
+orthodontic patients (any age),resin-modified glass ionomer cement,light-cured composite resin,Number of participants with adverse effects,NA,NA,NA,NA,NA,173,1,LOW,"Downgraded 1 level: single study at unclear risk of bias (Benson 2019).
+Downgraded 1 level for imprecision (insufficient number of participants with new DLs or more severe DLs (guidance 300 to 400 events)).",TRUE,TRUE,FALSE,FALSE,FALSE

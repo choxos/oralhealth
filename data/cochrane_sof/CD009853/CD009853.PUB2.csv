@@ -1,0 +1,172 @@
+Population,Intervention,Comparison,Outcome,Measure,Effect,CI Lower,CI Upper,Significant,Number of participants,Number of studies,Certainty of the evidence (GRADE),Reasons for GRADE if not High,Risk of bias,Imprecision,Inconsistency,Indirectness,Publication bias
+Dentists seeing children with erupted second permanent molars,Fee-for-service remuneration,No specific intervention,Measures of clinical activity: mean percentage of 12- to 14-year-olds receiving fissure sealants for second permanent molars per dentist (weighted by number of children seen) – adjusted,RD,9.8,1.8,17.8,TRUE,133,1,Very low,"Risk of bias: high
+
+Inconsistency: undetected (single study)
+
+Indirectness: yes
+
+The dentists only received the fee‐for‐service remuneration in the first six months of the study but the data were collected 18 months after the start of the trial. The effects of the fee‐for‐service remuneration would have been attenuated if 18‐month data were analysed
+
+The fee‐for‐service remuneration did not affect National Health Service capitation payments which were GBP 2.76 per month to age 12 and GBP 4.01 thereafter, so it is not possible to show the effect of fee‐for‐service remuneration compared to capitation (only fee‐for‐service and capitation compared to capitation)
+
+The authors suggested that the dentists may have found it too inconvenient to claim a fee from the research team, rather than via the routine National Health Service channel, which would normally be the route for claiming fee‐for‐service remuneration
+
+The average age at baseline was from 13.2 years in the education arm to 13.3 years in the both fee‐for‐service and education arm, and the data on fissure sealant placement was collected up to 18 months after this baseline so some of the children may have already started to experience decay if their second permanent molars erupted at around 12 years old. Attempting to place fissure sealants soon after the eruption of second permanent molars is considered preferable to waiting a fairly long time after eruption, so the percentage of children with fissure sealants at the end of the study may have been attenuated (this could apply across all of the study arms). Records of any caries already present or any restorations placed would be useful as this could impact on the proportion of fissure sealants placed i.e. dentists in the study may have placed restorations instead of sealant. The authors noted that only two‐thirds of eligible dentists claimed a fee, perhaps due to the fact that the child already had caries in their second permanent molars
+
+The dentists were working in deprived areas of Scotland, which would have different levels of need compared to Scotland as a whole
+
+The economic evaluation does not take into account the payments from the state (i.e. the fee‐for‐service remuneration in one arm and the capitation payments in both arms, which would be difficult to include as they are paid for dental care as a whole) so the only costs taken into account are the costs to the dental practices (in terms of staff time and consumables) and the costs to parents. An alternative perspective would be to investigate the cost‐effectiveness from the point of view of the state which pays the fee‐for‐service (in place of the dental practices) and parents
+
+Imprecision: potentially ‐ the total sample size is lower than the required sample size calculated by the authors
+
+Publication bias: undetected (single study)
+
+Large effect: not relevant (applies to studies with no threats to validity)
+
+Plausible confounding would change the effect: not relevant (applies to studies with no threats to validity)
+
+Dose response gradient: not relevant (applies to studies with no threats to validity)",TRUE,TRUE,FALSE,TRUE,FALSE
+Dentists seeing children with erupted second permanent molars,Fee-for-service remuneration,No specific intervention,Measures of clinical activity: mean percentage of 12- to 14-year-olds receiving fissure sealants for second permanent molars per dentist (weighted by number of children seen) – unadjusted,RD,7.1,-1.9,16.1,FALSE,133,1,Very low,"Risk of bias: high
+
+Inconsistency: undetected (single study)
+
+Indirectness: yes
+
+The dentists only received the fee‐for‐service remuneration in the first six months of the study but the data were collected 18 months after the start of the trial. The effects of the fee‐for‐service remuneration would have been attenuated if 18‐month data were analysed
+
+The fee‐for‐service remuneration did not affect National Health Service capitation payments which were GBP 2.76 per month to age 12 and GBP 4.01 thereafter, so it is not possible to show the effect of fee‐for‐service remuneration compared to capitation (only fee‐for‐service and capitation compared to capitation)
+
+The authors suggested that the dentists may have found it too inconvenient to claim a fee from the research team, rather than via the routine National Health Service channel, which would normally be the route for claiming fee‐for‐service remuneration
+
+The average age at baseline was from 13.2 years in the education arm to 13.3 years in the both fee‐for‐service and education arm, and the data on fissure sealant placement was collected up to 18 months after this baseline so some of the children may have already started to experience decay if their second permanent molars erupted at around 12 years old. Attempting to place fissure sealants soon after the eruption of second permanent molars is considered preferable to waiting a fairly long time after eruption, so the percentage of children with fissure sealants at the end of the study may have been attenuated (this could apply across all of the study arms). Records of any caries already present or any restorations placed would be useful as this could impact on the proportion of fissure sealants placed i.e. dentists in the study may have placed restorations instead of sealant. The authors noted that only two‐thirds of eligible dentists claimed a fee, perhaps due to the fact that the child already had caries in their second permanent molars
+
+The dentists were working in deprived areas of Scotland, which would have different levels of need compared to Scotland as a whole
+
+The economic evaluation does not take into account the payments from the state (i.e. the fee‐for‐service remuneration in one arm and the capitation payments in both arms, which would be difficult to include as they are paid for dental care as a whole) so the only costs taken into account are the costs to the dental practices (in terms of staff time and consumables) and the costs to parents. An alternative perspective would be to investigate the cost‐effectiveness from the point of view of the state which pays the fee‐for‐service (in place of the dental practices) and parents
+
+Imprecision: potentially ‐ the total sample size is lower than the required sample size calculated by the authors
+
+Publication bias: undetected (single study)
+
+Large effect: not relevant (applies to studies with no threats to validity)
+
+Plausible confounding would change the effect: not relevant (applies to studies with no threats to validity)
+
+Dose response gradient: not relevant (applies to studies with no threats to validity)",TRUE,TRUE,FALSE,TRUE,FALSE
+Dentists seeing children with erupted second permanent molars,Fee-for-service remuneration,No specific intervention,"Healthcare costs: cost-effectiveness of fee-for-service vs. control (reported as the ""% change in outcome per £[GBP]"" – currency year NR)",NA,0.1,NA,NA,NA,68,1,Very low,"Risk of bias: high
+
+Inconsistency: undetected (single study)
+
+Indirectness: yes
+
+The dentists only received the fee‐for‐service remuneration in the first six months of the study but the data were collected 18 months after the start of the trial. The effects of the fee‐for‐service remuneration would have been attenuated if 18‐month data were analysed
+
+The fee‐for‐service remuneration did not affect National Health Service capitation payments which were GBP 2.76 per month to age 12 and GBP 4.01 thereafter, so it is not possible to show the effect of fee‐for‐service remuneration compared to capitation (only fee‐for‐service and capitation compared to capitation)
+
+The authors suggested that the dentists may have found it too inconvenient to claim a fee from the research team, rather than via the routine National Health Service channel, which would normally be the route for claiming fee‐for‐service remuneration
+
+The average age at baseline was from 13.2 years in the education arm to 13.3 years in the both fee‐for‐service and education arm, and the data on fissure sealant placement was collected up to 18 months after this baseline so some of the children may have already started to experience decay if their second permanent molars erupted at around 12 years old. Attempting to place fissure sealants soon after the eruption of second permanent molars is considered preferable to waiting a fairly long time after eruption, so the percentage of children with fissure sealants at the end of the study may have been attenuated (this could apply across all of the study arms). Records of any caries already present or any restorations placed would be useful as this could impact on the proportion of fissure sealants placed i.e. dentists in the study may have placed restorations instead of sealant. The authors noted that only two‐thirds of eligible dentists claimed a fee, perhaps due to the fact that the child already had caries in their second permanent molars
+
+The dentists were working in deprived areas of Scotland, which would have different levels of need compared to Scotland as a whole
+
+The economic evaluation does not take into account the payments from the state (i.e. the fee‐for‐service remuneration in one arm and the capitation payments in both arms, which would be difficult to include as they are paid for dental care as a whole) so the only costs taken into account are the costs to the dental practices (in terms of staff time and consumables) and the costs to parents. An alternative perspective would be to investigate the cost‐effectiveness from the point of view of the state which pays the fee‐for‐service (in place of the dental practices) and parents
+
+Imprecision: potentially ‐ the total sample size is lower than the required sample size calculated by the authors
+
+Publication bias: undetected (single study)
+
+Large effect: not relevant (applies to studies with no threats to validity)
+
+Plausible confounding would change the effect: not relevant (applies to studies with no threats to validity)
+
+Dose response gradient: not relevant (applies to studies with no threats to validity)",TRUE,TRUE,FALSE,TRUE,FALSE
+Children undergoing routine continuing dental care at 354 dental practices,Capitation remuneration,Fee-for-service remuneration,Measures of health service utilisation: mean number of visits per 0- to 15-year-old,MD,-0.4,NA,NA,NA,2250,1,Low,"Risk of bias: high
+
+Inconsistency: undetected (single study)
+
+Indirectness: no
+
+Imprecision: undetected (95% CIs were not reported)
+
+Publication bias: undetected (single study)
+
+Large effect: not relevant (applies to studies with no threats to validity)
+
+Plausible confounding would change the effect: not relevant (applies to studies with no threats to validity)
+
+Dose response gradient: not relevant (applies to studies with no threats to validity)",TRUE,FALSE,FALSE,TRUE,FALSE
+Children undergoing routine continuing dental care at 354 dental practices,Capitation remuneration,Fee-for-service remuneration,Patient outcomes: mean number of filled teeth per 0- to 15-year-old,MD,-0.18,NA,NA,NA,2250,1,Low,"Risk of bias: high
+
+Inconsistency: undetected (single study)
+
+Indirectness: no
+
+Imprecision: undetected (95% CIs were not reported)
+
+Publication bias: undetected (single study)
+
+Large effect: not relevant (applies to studies with no threats to validity)
+
+Plausible confounding would change the effect: not relevant (applies to studies with no threats to validity)
+
+Dose response gradient: not relevant (applies to studies with no threats to validity)",TRUE,FALSE,FALSE,TRUE,FALSE
+Children undergoing routine continuing dental care at 354 dental practices,Capitation remuneration,Fee-for-service remuneration,Patient outcomes: mean percentage of 0- to 15-year-olds having one or more teeth extracted,RR,-28,NA,NA,NA,2250,1,Low,"Risk of bias: high
+
+Inconsistency: undetected (single study)
+
+Indirectness: no
+
+Imprecision: undetected (95% CIs were not reported)
+
+Publication bias: undetected (single study)
+
+Large effect: not relevant (applies to studies with no threats to validity)
+
+Plausible confounding would change the effect: not relevant (applies to studies with no threats to validity)
+
+Dose response gradient: not relevant (applies to studies with no threats to validity)",TRUE,FALSE,FALSE,TRUE,FALSE
+Children undergoing routine continuing dental care at 354 dental practices,Capitation remuneration,Fee-for-service remuneration,Patient outcomes: mean number of decayed teeth per 14- to 15-year-old (data for 0- to 15-year-olds NR),MD,0.16,NA,NA,NA,1919,1,Low,"Risk of bias: high
+
+Inconsistency: undetected (single study)
+
+Indirectness: no
+
+Imprecision: undetected (95% CIs were not reported)
+
+Publication bias: undetected (single study)
+
+Large effect: not relevant (applies to studies with no threats to validity)
+
+Plausible confounding would change the effect: not relevant (applies to studies with no threats to validity)
+
+Dose response gradient: not relevant (applies to studies with no threats to validity)",TRUE,FALSE,FALSE,TRUE,FALSE
+Children undergoing routine continuing dental care at 354 dental practices,Capitation remuneration,Fee-for-service remuneration,Measures of clinical activity: mean percentage of 0- to 15-year-olds receiving active preventive advice,RR,142,NA,NA,NA,2250,1,Low,"Risk of bias: high
+
+Inconsistency: undetected (single study)
+
+Indirectness: no
+
+Imprecision: undetected (95% CIs were not reported)
+
+Publication bias: undetected (single study)
+
+Large effect: not relevant (applies to studies with no threats to validity)
+
+Plausible confounding would change the effect: not relevant (applies to studies with no threats to validity)
+
+Dose response gradient: not relevant (applies to studies with no threats to validity)",TRUE,FALSE,FALSE,TRUE,FALSE
+Children undergoing routine continuing dental care at 354 dental practices,Capitation remuneration,Fee-for-service remuneration,Healthcare costs: mean expenditure in GBP (currency year NR) per 0- to 15-year-old,MD,4.22,NA,NA,NA,276414,1,Low,"Risk of bias: high
+
+Inconsistency: undetected (single study)
+
+Indirectness: no
+
+Imprecision: undetected (95% CIs were not reported)
+
+Publication bias: undetected (single study)
+
+Large effect: not relevant (applies to studies with no threats to validity)
+
+Plausible confounding would change the effect: not relevant (applies to studies with no threats to validity)
+
+Dose response gradient: not relevant (applies to studies with no threats to validity)",TRUE,FALSE,FALSE,TRUE,FALSE

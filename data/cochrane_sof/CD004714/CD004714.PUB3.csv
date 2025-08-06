@@ -1,0 +1,5 @@
+Population,Intervention,Comparison,Outcome,Measure,Effect,CI Lower,CI Upper,Significant,Number of participants,Number of studies,Certainty of the evidence (GRADE),Reasons for GRADE if not High,Risk of bias,Imprecision,Inconsistency,Indirectness,Publication bias
+Patients with diabetes mellitus,Periodontal therapy,Usual care/no active treatment,HbA1c (3-4 months follow-up),MD,-0.29,-0.48,-0.1,TRUE,1499,14,Low,"High risk of bias, largely due to lack of blinding: quality of evidence downgraded once. Moderate heterogeneity (I2 = 53%): quality of evidence downgraded once",TRUE,FALSE,TRUE,FALSE,FALSE
+Patients with diabetes mellitus,Periodontal therapy,Usual care/no active treatment,Adverse effects,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Patients with diabetes mellitus,SRP plus antimicrobial,SRP,HbA1c (3-4 months follow-up),MD,0,-0.22,0.22,FALSE,450,12,Very low,Moderate to high risk of bias across domains: quality of evidence downgraded twice. Downgraded once due to imprecision,TRUE,TRUE,FALSE,FALSE,FALSE
+Patients with diabetes mellitus,Periodontal therapy,Alternative periodontal therapy,Adverse effects,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA

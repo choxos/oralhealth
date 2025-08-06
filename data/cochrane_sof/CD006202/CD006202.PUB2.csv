@@ -1,0 +1,118 @@
+Population,Intervention,Comparison,Outcome,Measure,Effect,CI Lower,CI Upper,Significant,Number of participants,Number of studies,Certainty of the evidence (GRADE),Reasons for GRADE if not High,Risk of bias,Imprecision,Inconsistency,Indirectness,Publication bias
+Adults undergoing bleaching,10% CP gel in tray,Placebo,Tooth whitening - 6 months,RR,6.74,3.15,14.4,TRUE,109,2,Very low,"Downgraded for risk of bias. unclear risk of bias due to lack of allocation concealment, performance, and detection bias. Downgraded for imprecision, low sample size and event rate",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults undergoing bleaching,5% CP gel in tray,Placebo,Tooth whitening - 2 weeks,MD,4.56,1.52,7.59,TRUE,21,1,Very low,"Downgraded for risk of bias. unclear risk of bias due to lack of allocation concealment, performance, and detection bias. Downgraded for imprecision, low sample size and event rate",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults undergoing bleaching,10% CP gel with desensitiser,Placebo,Tooth whitening - 2 weeks,MD,4.7,3.28,6.12,TRUE,37,1,Very low,"Downgraded for risk of bias. unclear risk of bias due to lack of allocation concealment, performance, and detection bias. Downgraded for imprecision, low sample size and event rate",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults undergoing bleaching,10% CP gel (lighter shade),Placebo,Tooth whitening - 2 weeks,MD,4.5,4.04,4.96,TRUE,179,1,Very low,"Downgraded for risk of bias. unclear risk of bias due to lack of allocation concealment, performance, and detection bias. Downgraded for imprecision, low sample size and event rate",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults undergoing bleaching,10% CP gel (medium dark shade),Placebo,Tooth whitening - 2 weeks,MD,9.3,8.75,9.85,TRUE,172,1,Very low,"Downgraded for risk of bias. unclear risk of bias due to lack of allocation concealment, performance, and detection bias. Downgraded for imprecision, low sample size and event rate",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults undergoing bleaching,10% CP gel (dark shade),Placebo,Tooth whitening - 2 weeks,MD,10,9.44,10.56,TRUE,176,1,Very low,"Downgraded for risk of bias. unclear risk of bias due to lack of allocation concealment, performance, and detection bias. Downgraded for imprecision, low sample size and event rate",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults undergoing bleaching,CP gel in tray,Placebo,Adverse effects,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Adults undergoing bleaching,6% HP gel,Placebo,Tooth whitening - 14 days,MD,3.08,2.28,3.88,TRUE,49,1,Very low,"Downgraded for risk of bias, unclear risk of bias due to selection, performance and detection bias.
+Downgraded for imprecision, single trial and low sample and event rate.",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults undergoing bleaching,6% HP gel,Placebo,Adverse effects,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Adults undergoing bleaching,10% HP strips,Placebo,Tooth whitening - 8 days,MD,2.24,1.72,2.76,TRUE,36,1,Very low,"Downgraded for risk of bias, unclear risk of bias due to selection, performance, detection bias.
+Downgraded for imprecision, low sample size and event rate.",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults undergoing bleaching,6% HP strips,Placebo,Tooth whitening - 2 weeks,MD,2.24,1.83,2.66,TRUE,195,4,Low,"Downgraded for risk of bias, unclear risk of bias due to selection, performance, detection bias.
+Downgraded for imprecision, low sample size and event rate.",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults undergoing bleaching,10% HP strips,Placebo,Tooth whitening - 15 days,MD,1.93,1.34,2.52,TRUE,40,1,Very low,"Downgraded for risk of bias, unclear risk of bias due to selection, performance, detection bias.
+Downgraded for imprecision, low sample size and event rate.",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults undergoing bleaching,14% HP strips,Placebo,Tooth whitening - 3 weeks,MD,7.6,6.18,9.02,TRUE,28,1,Very low,"Downgraded for risk of bias, unclear risk of bias due to selection, performance, detection bias.
+Downgraded for imprecision, low sample size and event rate.",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults undergoing bleaching,6% HP strips,Placebo,Tooth whitening - 6 weeks,MD,2.9,1.73,4.07,TRUE,37,1,Very low,"Downgraded for risk of bias, unclear risk of bias due to selection, performance, detection bias.
+Downgraded for imprecision, low sample size and event rate.",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults undergoing bleaching,14% HP strips,Placebo,Tooth whitening - 6 weeks,MD,5.16,4.21,6.11,TRUE,35,1,Very low,"Downgraded for risk of bias, unclear risk of bias due to selection, performance, detection bias.
+Downgraded for imprecision, low sample size and event rate.",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults undergoing bleaching,5.3% HP strips,Placebo,Tooth whitening - 6 months,MD,1.21,0.67,1.75,TRUE,52,1,Very low,"Downgraded for risk of bias, unclear risk of bias due to selection, performance, detection bias.
+Downgraded for imprecision, low sample size and event rate.",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults undergoing bleaching,HP strips,Placebo,Adverse effects,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Adults undergoing bleaching,18% CP paint-on gel,Placebo,Tooth whitening - 3 weeks,MD,3.5,3.12,3.88,TRUE,77,1,Very low,"Downgraded for risk of bias ‐ unclear risk of bias due to selection and detection bias.
+Downgraded for imprecision ‐ single trial and low sample and event rate.",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults undergoing bleaching,18% CP paint-on gel,Placebo,Adverse effects,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Adults undergoing bleaching,6% HP paint-on gel,Placebo,Tooth whitening - 2 weeks,SMD,0.67,0.19,1.14,TRUE,148,2,Very low,"Downgraded for risk of bias ‐ unclear risk of bias due to selection and detection bias.
+Downgraded for imprecision ‐ single trial and low sample and event rate.",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults undergoing bleaching,6% HP paint-on gel,Placebo,Adverse effects,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Adults undergoing bleaching,7.5% SHMP chewing gum,Placebo,Tooth whitening - 2 days,MD,0.89,0.77,1.01,TRUE,37,1,Very low,"Downgraded for risk of bias ‐ unclear risk of bias due to selection and detection bias.
+Downgraded for imprecision ‐ single trial and low sample and event rate.",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults undergoing bleaching,5.6% SHMP chewing gum,Placebo,Tooth whitening - 3 days,MD,2.6,1.45,3.75,TRUE,20,1,Very low,"Downgraded for risk of bias ‐ unclear risk of bias due to selection and detection bias.
+Downgraded for imprecision ‐ single trial and low sample and event rate.",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults undergoing bleaching,4% SHMP chewing gum,Placebo,Tooth whitening - 12 weeks,MD,-0.14,-0.38,0.1,FALSE,108,1,Very low,"Downgraded for risk of bias ‐ unclear risk of bias due to selection and detection bias.
+Downgraded for imprecision ‐ single trial and low sample and event rate.",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults undergoing bleaching,SHMP chewing gum,Placebo,Adverse effects,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Adults undergoing bleaching,1% STPP chewing gum,Placebo,Tooth whitening - 6 weeks,MD,0.18,0.1,0.26,TRUE,108,1,Very low,"Downgraded for risk of bias ‐ unclear risk of bias due to selection and detection bias.
+Downgraded for imprecision ‐ single trial and low sample and event rate.",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults undergoing bleaching,STPP chewing gum,Placebo,Adverse effects,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Adults undergoing bleaching,1.5% HP + 0.05% HF mouthwash,Placebo,Tooth whitening - 6 months,OR,10.89,5.08,23.35,TRUE,78,1,Very low,"Downgraded for risk of bias ‐ unclear risk of bias due to selection and detection bias.
+Downgraded for imprecision ‐ single trial and low sample and event rate.",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults undergoing bleaching,HP mouthwash,Placebo,Adverse effects,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Adults undergoing bleaching,10% CP gel in tray,10% CP gel in tray,Tooth whitening - 2 weeks,RR,1.03,0.9,1.18,FALSE,66,1,Very low,"Downgraded for risk of bias ‐ unclear risk of bias due to selection and detection bias.
+Downgraded for imprecision ‐ single trial and low sample and event rate.",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults undergoing bleaching,16% CP gel in tray,10% CP gel in tray,Tooth whitening - 2-year follow-up,MD,1.2,-0.35,2.75,FALSE,81,1,Very low,"Downgraded for risk of bias ‐ unclear risk of bias due to selection and detection bias.
+Downgraded for imprecision ‐ single trial and low sample and event rate.",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults undergoing bleaching,16% CP + ACP gel in tray,16% CP gel in tray,Tooth whitening - 6 months,MD,0.78,0.37,1.19,TRUE,27,1,Low,Downgraded for imprecision ‐ single trial and low sample and event rate.,FALSE,TRUE,FALSE,FALSE,FALSE
+Adults undergoing bleaching,5% CP gel in tray,10% CP gel in tray,Tooth whitening - 2 weeks,MD,0.41,-2.17,2.98,FALSE,21,1,Very low,"Downgraded for risk of bias ‐ unclear risk of bias due to selection and detection bias.
+Downgraded for imprecision ‐ single trial and low sample and event rate.",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults undergoing bleaching,15% CP gel in tray,10% CP gel in tray,Tooth whitening - 2 weeks,MD,2.22,1.29,3.15,TRUE,25,1,Very low,"Downgraded for risk of bias ‐ unclear risk of bias due to selection and detection bias.
+Downgraded for imprecision ‐ single trial and low sample and event rate.",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults undergoing bleaching,10% CP + KN + NaF gel in tray,10% CP gel in tray,Tooth whitening - 2 weeks,SMD,0.32,-0.2,0.84,FALSE,58,2,Very low,"Downgraded for risk of bias ‐ unclear risk of bias due to selection and detection bias.
+Downgraded for imprecision ‐ single trial and low sample and event rate.",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults undergoing bleaching,17% CP gel in tray,10% CP gel in tray,Tooth whitening - 3 weeks (patient-reported),MD,2.6,2.57,2.63,TRUE,20,1,Very low,"Downgraded for risk of bias ‐ unclear risk of bias due to selection and detection bias.
+Downgraded for imprecision ‐ single trial and low sample and event rate.",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults undergoing bleaching,CP gel in tray,CP gel in tray,Adverse effects,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Adults undergoing bleaching,7.5% HP gel in tray,10% CP gel in tray,Tooth whitening - 2 weeks,MD,-1,-2.86,0.86,FALSE,48,1,Very low,"Downgraded for risk of bias ‐ unclear risk of bias due to selection and detection bias.
+Downgraded for imprecision ‐ single trial and low sample and event rate.",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults undergoing bleaching,9% HP gel in tray,20% CP gel in tray,Tooth whitening - 2 weeks,MD,-0.58,-8.01,6.85,FALSE,37,1,Very low,"Downgraded for risk of bias ‐ unclear risk of bias due to selection and detection bias.
+Downgraded for imprecision ‐ single trial and low sample and event rate.",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults undergoing bleaching,7.5% HP gel in tray,20% CP gel in tray,Tooth whitening - 12 days,MD,-0.99,-2.32,0.34,FALSE,56,1,Very low,"Downgraded for risk of bias ‐ unclear risk of bias due to selection and detection bias.
+Downgraded for imprecision ‐ single trial and low sample and event rate.",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults undergoing bleaching,7.5% HP gel in tray,20% CP gel in tray,Tooth whitening - 12 weeks,MD,-0.25,-0.4,-0.1,TRUE,24,1,Very low,"Downgraded for risk of bias ‐ unclear risk of bias due to selection and detection bias.
+Downgraded for imprecision ‐ single trial and low sample and event rate.",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults undergoing bleaching,6% HP gel in tray,10% CP gel in tray,Tooth whitening - 2 weeks (darker shade),MD,-4.3,-5.02,-3.58,TRUE,164,1,Very low,"Downgraded for risk of bias ‐ unclear risk of bias due to selection and detection bias.
+Downgraded for imprecision ‐ single trial and low sample and event rate.",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults undergoing bleaching,6% HP gel in tray,10% CP gel in tray,Tooth whitening - 2 weeks (medium dark and lighter shade),MD,-2.22,-2.63,-1.81,TRUE,349,1,Very low,"Downgraded for risk of bias ‐ unclear risk of bias due to selection and detection bias.
+Downgraded for imprecision ‐ single trial and low sample and event rate.",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults undergoing bleaching,CP gel in tray,HP gel in tray,Adverse effects,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Adults undergoing bleaching,6% HP strips,5% CP + 5% KN gel in tray,Tooth whitening - 1 week,MD,0.71,-1.35,-0.07,TRUE,32,1,Very low,"Downgraded for risk of bias ‐ unclear risk of bias due to selection and detection bias.
+Downgraded for imprecision ‐ single trial and low sample and event rate.",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults undergoing bleaching,6% HP strips,10% CP gel in tray,Tooth whitening - 2 weeks,MD,0.42,-0.92,0.09,FALSE,149,4,Very low,"Downgraded for risk of bias ‐ unclear risk of bias due to selection and detection bias.
+Downgraded for imprecision ‐ single trial and low sample and event rate.",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults undergoing bleaching,14% HP strips,35% CP gel in tray,Tooth whitening - 30 days,MD,-0.58,-0.61,1.77,FALSE,24,1,Very low,"Downgraded for risk of bias ‐ unclear risk of bias due to selection and detection bias.
+Downgraded for imprecision ‐ single trial and low sample and event rate.",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults undergoing bleaching,6% HP strips,10% CP gel in tray,Tooth whitening - 6 weeks,MD,0.3,-0.95,0.35,FALSE,36,1,Very low,"Downgraded for risk of bias ‐ unclear risk of bias due to selection and detection bias.
+Downgraded for imprecision ‐ single trial and low sample and event rate.",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults undergoing bleaching,6.5% HP strips,15% CP gel in tray,Tooth whitening - 3 months,MD,-3.15,-0.15,-6.45,TRUE,24,1,Very low,"Downgraded for risk of bias ‐ unclear risk of bias due to selection and detection bias.
+Downgraded for imprecision ‐ single trial and low sample and event rate.",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults undergoing bleaching,6.5% HP strips,16% CP gel in tray,Tooth whitening - 21 days,MD,-2.1,-1.16,-3.04,TRUE,55,1,Low,Downgraded for imprecision ‐ single trial and low sample and event rate.,FALSE,TRUE,FALSE,FALSE,FALSE
+Adults undergoing bleaching,HP strips,CP gel in tray,Adverse effects,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Adults undergoing bleaching,14% HP strips,9.5% HP gel in tray,Tooth whitening - 22 days,MD,1.4,-2.35,-0.45,TRUE,29,1,Very low,"Downgraded for risk of bias ‐ unclear risk of bias due to selection and detection bias.
+Downgraded for imprecision ‐ single trial and low sample and event rate.",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults undergoing bleaching,5.3% HP strips,5% HP gel in tray,Tooth whitening - 18 months,MD,0.06,-2.36,2.24,FALSE,28,1,Very low,"Downgraded for risk of bias ‐ unclear risk of bias due to selection and detection bias.
+Downgraded for imprecision ‐ single trial and low sample and event rate.",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults undergoing bleaching,5.3% HP strips,5% HP gel in tray,Patient comfort,MD,-1.27,0.13,2.41,FALSE,28,1,Very low,"Downgraded for risk of bias ‐ unclear risk of bias due to selection and detection bias.
+Downgraded for imprecision ‐ single trial and low sample and event rate.",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults undergoing bleaching,HP strips,HP gel in tray,Adverse effects,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Adults undergoing bleaching,6% HP strips,10% HP thin gel strips,Tooth whitening - 15 days,MD,-0.68,0.16,1.2,FALSE,35,1,Very low,"Downgraded for risk of bias ‐ unclear risk of bias due to selection and detection bias.
+Downgraded for imprecision ‐ single trial and low sample and event rate.",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults undergoing bleaching,9.5% adhesion HP strips,10% HP strips,Tooth whitening - 9 days,MD,1.5,-2.33,-0.67,TRUE,29,1,Very low,"Downgraded for risk of bias ‐ unclear risk of bias due to selection and detection bias.
+Downgraded for imprecision ‐ single trial and low sample and event rate.",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults undergoing bleaching,HP strips,HP strips,Adverse effects,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Adults undergoing bleaching,18% CP paint-on gel,6% HP strips,Tooth whitening,SMD,-1.5,-1.94,-1.06,TRUE,102,2,Very low,"Downgraded for risk of bias ‐ unclear risk of bias due to selection and detection bias.
+Downgraded for imprecision ‐ single trial and low sample and event rate.",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults undergoing bleaching,CP paint-on gel,HP strips,Adverse effects,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Adults undergoing bleaching,5.9% HP paint-on gel,5.9% HP strips,Tooth whitening,MD,-2.7,-3.32,-2.08,TRUE,40,1,Very low,"Downgraded for risk of bias ‐ unclear risk of bias due to selection and detection bias.
+Downgraded for imprecision ‐ single trial and low sample and event rate.",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults undergoing bleaching,5.9% HP paint-on gel,5.9% HP strips,Patient satisfaction,MD,-0.25,-1.88,1.38,FALSE,40,1,Very low,"Downgraded for risk of bias ‐ unclear risk of bias due to selection and detection bias.
+Downgraded for imprecision ‐ single trial and low sample and event rate.",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults undergoing bleaching,HP paint-on gel,HP strips,Adverse effects,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Adults undergoing bleaching,18% CP paint-on gel 4x 1 week,18% CP paint-on gel 2x 1 week,Tooth whitening - 1 week,MD,1.39,0.5,2.28,TRUE,69,1,Very low,"Downgraded for risk of bias ‐ unclear risk of bias due to selection and detection bias.
+Downgraded for imprecision ‐ single trial and low sample and event rate.",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults undergoing bleaching,16.40% CP paint-on gel,18% CP paint-on gel,Tooth whitening - 2 weeks,MD,-0.7,-2.21,0.81,FALSE,93,1,Very low,"Downgraded for risk of bias ‐ unclear risk of bias due to selection and detection bias.
+Downgraded for imprecision ‐ single trial and low sample and event rate.",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults undergoing bleaching,CP paint-on gel,CP paint-on gel,Adverse effects,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Adults undergoing bleaching,8.75% HP paint-on gel,25% CP paint-on gel,Tooth whitening,MD,-0.16,-1.39,1.07,FALSE,59,1,Very low,"Downgraded for risk of bias ‐ unclear risk of bias due to selection and detection bias.
+Downgraded for imprecision ‐ single trial and low sample and event rate.",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults undergoing bleaching,HP paint-on gel,CP paint-on gel,Adverse effects,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Adults undergoing bleaching,6% HP paint-on gel with KF,6% HP paint-on gel,Tooth whitening,MD,-0.1,-0.56,0.36,FALSE,67,1,Very low,"Downgraded for risk of bias ‐ unclear risk of bias due to selection and detection bias.
+Downgraded for imprecision ‐ single trial and low sample and event rate.",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults undergoing bleaching,HP paint-on gel,HP paint-on gel,Adverse effects,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Adults undergoing bleaching,19% SPC paint-on gel,18% CP paint-on gel,Tooth whitening - 14 days,MD,0.58,-0.95,-0.21,TRUE,38,1,Very low,"Downgraded for risk of bias ‐ unclear risk of bias due to selection and detection bias.
+Downgraded for imprecision ‐ single trial and low sample and event rate.",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults undergoing bleaching,SPC paint-on gel,CP paint-on gel,Adverse effects,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA

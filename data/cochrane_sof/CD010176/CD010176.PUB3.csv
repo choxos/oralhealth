@@ -1,0 +1,71 @@
+Population,Intervention,Comparison,Outcome,Measure,Effect,CI Lower,CI Upper,Significant,Number of participants,Number of studies,Certainty of the evidence (GRADE),Reasons for GRADE if not High,Risk of bias,Imprecision,Inconsistency,Indirectness,Publication bias
+Adults requiring replacement of missing teeth,Alveolar ridge preservation (ARP) techniques (bone grafting (xenografts)),Extraction,Changes in width of alveolar ridge (mm),MD,-1.18,-1.82,-0.54,TRUE,184,6,Very low,"Certainty of the evidence downgraded 1 level due to unclear risk of bias.
+Certainty of the evidence downgraded 2 levels due to inconsistency (substantial heterogeneity).",TRUE,FALSE,TRUE,FALSE,FALSE
+Adults requiring replacement of missing teeth,Alveolar ridge preservation (ARP) techniques (bone grafting (xenografts)),Extraction,Changes in height of alveolar ridge (mm),MD,-1.35,-2,-0.7,TRUE,184,6,Very low,"Certainty of the evidence downgraded 1 level due to unclear risk of bias.
+Certainty of the evidence downgraded 2 levels due to inconsistency (substantial heterogeneity).",TRUE,FALSE,TRUE,FALSE,FALSE
+Adults requiring replacement of missing teeth,Alveolar ridge preservation (ARP) techniques (bone grafting (xenografts)),Extraction,Complications,NA,NA,NA,NA,NA,54,2,Low,"Certainty of the evidence downgraded 1 level due to unclear risk of bias.
+Certainty of the evidence downgraded 1 level due to imprecision (small studies and/or wide confidence intervals).",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults requiring replacement of missing teeth,Alveolar ridge preservation (ARP) techniques (bone grafting (xenografts)),Extraction,Need for additional augmentation prior to implant placement,RR,0.68,0.29,1.62,FALSE,154,4,Very low,"Certainty of the evidence downgraded 1 level due to unclear risk of bias.
+Certainty of the evidence downgraded 1 level due to inconsistency (moderate heterogeneity).
+Certainty of the evidence downgraded 1 level due to imprecision (small studies and/or wide confidence intervals).",TRUE,TRUE,TRUE,FALSE,FALSE
+Adults requiring replacement of missing teeth,Alveolar ridge preservation (ARP) techniques (bone grafting (xenografts)),Extraction,Aesthetic outcomes of future prosthodontic rehabilitation,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Adults requiring replacement of missing teeth,Alveolar ridge preservation (ARP) techniques (bone grafting (xenografts)),Extraction,Implant failure rate,RR,1,0.07,14.9,FALSE,70,2,Very low,"Certainty of the evidence downgraded 2 levels due to high risk of bias.
+Certainty of the evidence downgraded 1 level due to imprecision (small studies and/or wide confidence intervals).",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults requiring replacement of missing teeth,Alveolar ridge preservation (ARP) techniques (bone grafting (alloplasts)),Extraction,Changes in width of alveolar ridge (mm),NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Adults requiring replacement of missing teeth,Alveolar ridge preservation (ARP) techniques (bone grafting (alloplasts)),Extraction,Changes in height of alveolar ridge (mm),MD,-3.73,-4.05,-3.41,TRUE,15,1,Very low,"Certainty of the evidence downgraded 1 level due to unclear risk of bias.
+Certainty of the evidence downgraded 2 levels due to imprecision (single study with limited number of participants).",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults requiring replacement of missing teeth,Alveolar ridge preservation (ARP) techniques (bone grafting (alloplasts)),Extraction,Complications,NA,NA,NA,NA,NA,15,1,Very low,"Certainty of the evidence downgraded 1 level due to unclear risk of bias.
+Certainty of the evidence downgraded 2 levels due to imprecision (single study with limited number of participants).",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults requiring replacement of missing teeth,Alveolar ridge preservation (ARP) techniques (bone grafting (alloplasts)),Extraction,Need for additional augmentation prior to implant placement,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Adults requiring replacement of missing teeth,Alveolar ridge preservation (ARP) techniques (bone grafting (alloplasts)),Extraction,Aesthetic outcomes of future prosthodontic rehabilitation,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Adults requiring replacement of missing teeth,Alveolar ridge preservation (ARP) techniques (bone grafting (alloplasts)),Extraction,Implant failure rate,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Adults requiring replacement of missing teeth,Allografts,Xenografts,Changes in width of alveolar ridge (mm),MD,-0.4,-1.13,0.34,FALSE,87,3,Very low,"Certainty of the evidence downgraded 1 level due to unclear risk of bias.
+Certainty of the evidence downgraded 2 levels due to inconsistency (substantial heterogeneity).",TRUE,FALSE,TRUE,FALSE,FALSE
+Adults requiring replacement of missing teeth,Allografts,Xenografts,Changes in height of alveolar ridge (mm),MD,-0.45,-1.48,0.58,FALSE,60,2,Very low,"Certainty of the evidence downgraded 1 level due to unclear risk of bias.
+Certainty of the evidence downgraded 1 level due to inconsistency (moderate heterogeneity).
+Certainty of the evidence downgraded 1 level due to imprecision (small studies and/or wide confidence intervals).",TRUE,TRUE,TRUE,FALSE,FALSE
+Adults requiring replacement of missing teeth,Allografts,Xenografts,Complications,NA,NA,NA,NA,NA,87,3,Low,"Certainty of the evidence downgraded 1 level due to unclear risk of bias.
+Certainty of the evidence downgraded 1 level due to imprecision (small studies and/or wide confidence intervals).",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults requiring replacement of missing teeth,Allografts,Xenografts,Need for additional augmentation prior to implant placement,RR,6.36,0.35,115.73,FALSE,40,1,Very low,"Certainty of the evidence downgraded 1 level due to unclear risk of bias.
+Certainty of the evidence downgraded 2 levels due to imprecision (single study with limited number of participants).",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults requiring replacement of missing teeth,Allografts,Xenografts,Aesthetic outcomes of future prosthodontic rehabilitation,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Adults requiring replacement of missing teeth,Allografts,Xenografts,Implant failure rate,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Adults requiring replacement of missing teeth,Alloplasts,Xenografts,Changes in width of alveolar ridge (mm),MD,-0.31,-0.66,0.04,FALSE,37,2,Very low,"Certainty of the evidence downgraded 1 level due to unclear risk of bias.
+Certainty of the evidence downgraded 2 levels due to inconsistency (substantial heterogeneity).",TRUE,FALSE,TRUE,FALSE,FALSE
+Adults requiring replacement of missing teeth,Alloplasts,Xenografts,Changes in height of alveolar ridge (mm),MD,-0.6,-1.27,0.07,FALSE,25,1,Very low,"Certainty of the evidence downgraded 1 level due to unclear risk of bias.
+Certainty of the evidence downgraded 2 levels due to imprecision (single study with limited number of participants).",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults requiring replacement of missing teeth,Alloplasts,Xenografts,Complications,NA,NA,NA,NA,NA,37,2,Low,"Certainty of the evidence downgraded 1 level due to unclear risk of bias.
+Certainty of the evidence downgraded 1 level due to imprecision (small studies and/or wide confidence intervals).",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults requiring replacement of missing teeth,Alloplasts,Xenografts,Need for additional augmentation prior to implant placement,RR,1.09,0.65,1.83,FALSE,37,2,Very low,"Certainty of the evidence downgraded 1 level due to unclear risk of bias.
+Certainty of the evidence downgraded 1 level due to inconsistency (moderate heterogeneity).
+Certainty of the evidence downgraded 1 level due to imprecision (small studies and/or wide confidence intervals).",TRUE,TRUE,TRUE,FALSE,FALSE
+Adults requiring replacement of missing teeth,Alloplasts,Xenografts,Aesthetic outcomes of future prosthodontic rehabilitation,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Adults requiring replacement of missing teeth,Alloplasts,Xenografts,Implant failure rate,NA,NA,NA,NA,NA,25,1,Very low,"Certainty of the evidence downgraded 1 level due to unclear risk of bias.
+Certainty of the evidence downgraded 2 levels due to imprecision (single study with limited number of participants).",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults requiring replacement of missing teeth,Alloplasts with membrane,Alloplasts without membrane,Changes in width of alveolar ridge (mm),MD,0.43,0.18,0.68,TRUE,20,1,Very low,"Certainty of the evidence downgraded 2 levels due to high risk of bias.
+Certainty of the evidence downgraded 2 levels due to imprecision (single study with limited number of participants).",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults requiring replacement of missing teeth,Alloplasts with membrane,Alloplasts without membrane,Changes in height of alveolar ridge (mm),MD,0.38,0.26,0.5,TRUE,20,1,Very low,"Certainty of the evidence downgraded 2 levels due to high risk of bias.
+Certainty of the evidence downgraded 2 levels due to imprecision (single study with limited number of participants).",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults requiring replacement of missing teeth,Alloplasts with membrane,Alloplasts without membrane,Complications,NA,NA,NA,NA,NA,20,1,Very low,"Certainty of the evidence downgraded 2 levels due to high risk of bias.
+Certainty of the evidence downgraded 2 levels due to imprecision (single study with limited number of participants).",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults requiring replacement of missing teeth,Alloplasts with membrane,Alloplasts without membrane,Need for additional augmentation prior to implant placement,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Adults requiring replacement of missing teeth,Alloplasts with membrane,Alloplasts without membrane,Aesthetic outcomes of future prosthodontic rehabilitation,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Adults requiring replacement of missing teeth,Alloplasts with membrane,Alloplasts without membrane,Implant failure rate,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Adults requiring replacement of missing teeth,Allografts with synthetic cell-binding peptide P-15,Allografts without synthetic cell-binding peptide P-15,Changes in width of alveolar ridge (mm),MD,-0.87,-1.61,-0.13,TRUE,18,1,Very low,"Certainty of the evidence downgraded 2 levels due to high risk of bias.
+Certainty of the evidence downgraded 2 levels due to imprecision (single study with limited number of participants).",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults requiring replacement of missing teeth,Allografts with synthetic cell-binding peptide P-15,Allografts without synthetic cell-binding peptide P-15,Changes in height of alveolar ridge (mm),MD,-0.3,-1.06,0.46,FALSE,18,1,Very low,"Certainty of the evidence downgraded 2 levels due to high risk of bias.
+Certainty of the evidence downgraded 2 levels due to imprecision (single study with limited number of participants).",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults requiring replacement of missing teeth,Allografts with synthetic cell-binding peptide P-15,Allografts without synthetic cell-binding peptide P-15,Complications,NA,NA,NA,NA,NA,18,1,Very low,"Certainty of the evidence downgraded 2 levels due to high risk of bias.
+Certainty of the evidence downgraded 2 levels due to imprecision (single study with limited number of participants).",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults requiring replacement of missing teeth,Allografts with synthetic cell-binding peptide P-15,Allografts without synthetic cell-binding peptide P-15,Need for additional augmentation prior to implant placement,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Adults requiring replacement of missing teeth,Allografts with synthetic cell-binding peptide P-15,Allografts without synthetic cell-binding peptide P-15,Aesthetic outcomes of future prosthodontic rehabilitation,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Adults requiring replacement of missing teeth,Allografts with synthetic cell-binding peptide P-15,Allografts without synthetic cell-binding peptide P-15,Implant failure rate,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Adults requiring replacement of missing teeth,Alloplasts single particle size,Alloplasts multiple particle size,Changes in width of alveolar ridge (mm),MD,0.1,-0.97,1.17,FALSE,30,1,Very low,"Certainty of the evidence downgraded 1 level due to unclear risk of bias.
+Certainty of the evidence downgraded 2 levels due to imprecision (single study with limited number of participants).",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults requiring replacement of missing teeth,Alloplasts single particle size,Alloplasts multiple particle size,Changes in height of alveolar ridge (mm),MD,0.1,-1.22,1.42,FALSE,30,1,Very low,"Certainty of the evidence downgraded 1 level due to unclear risk of bias.
+Certainty of the evidence downgraded 2 levels due to imprecision (single study with limited number of participants).",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults requiring replacement of missing teeth,Alloplasts single particle size,Alloplasts multiple particle size,Complications,NA,NA,NA,NA,NA,30,1,Very low,"Certainty of the evidence downgraded 1 level due to unclear risk of bias.
+Certainty of the evidence downgraded 2 levels due to imprecision (single study with limited number of participants).",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults requiring replacement of missing teeth,Alloplasts single particle size,Alloplasts multiple particle size,Need for additional augmentation prior to implant placement,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Adults requiring replacement of missing teeth,Alloplasts single particle size,Alloplasts multiple particle size,Aesthetic outcomes of future prosthodontic rehabilitation,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Adults requiring replacement of missing teeth,Alloplasts single particle size,Alloplasts multiple particle size,Implant failure rate,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA

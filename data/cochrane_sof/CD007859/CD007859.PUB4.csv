@@ -1,0 +1,21 @@
+Population,Intervention,Comparison,Outcome,Measure,Effect,CI Lower,CI Upper,Significant,Number of participants,Number of studies,Certainty of the evidence (GRADE),Reasons for GRADE if not High,Risk of bias,Imprecision,Inconsistency,Indirectness,Publication bias
+people receiving orthodontic treatment with fixed appliances,superelastic NiTi,multistrand stainless steel,Alignment rate between first molars,MD,7.5,-11.27,26.27,FALSE,48,1,Low,Very serious imprecision,FALSE,TRUE,FALSE,FALSE,FALSE
+people receiving orthodontic treatment with fixed appliances,superelastic NiTi,multistrand stainless steel,Time to alignment,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+people receiving orthodontic treatment with fixed appliances,superelastic NiTi,multistrand stainless steel,Pain day 1,MD,2.68,-1.38,6.75,FALSE,127,2,Moderate,Serious imprecision,FALSE,TRUE,FALSE,FALSE,FALSE
+people receiving orthodontic treatment with fixed appliances,superelastic NiTi,multistrand stainless steel,Root resorption,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+people receiving orthodontic treatment with fixed appliances,thermoelastic NiTi,multistrand stainless steel,Alignment rate between first molars,MD,-8.78,-27.79,10.23,FALSE,42,1,Low,Very serious imprecision,FALSE,TRUE,FALSE,FALSE,FALSE
+people receiving orthodontic treatment with fixed appliances,thermoelastic NiTi,multistrand stainless steel,Time to alignment,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+people receiving orthodontic treatment with fixed appliances,thermoelastic NiTi,multistrand stainless steel,Pain,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+people receiving orthodontic treatment with fixed appliances,thermoelastic NiTi,multistrand stainless steel,Root resorption,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+people receiving orthodontic treatment with fixed appliances,superelastic NiTi,conventional NiTi,Alignment rate between canines,MD,0.28,-0.33,0.89,FALSE,40,1,Very low,"Serious risk of bias, Very serious imprecision",TRUE,TRUE,FALSE,FALSE,FALSE
+people receiving orthodontic treatment with fixed appliances,superelastic NiTi,conventional NiTi,Time to alignment,MD,0.3,-1.14,1.74,FALSE,49,1,Low,Very serious imprecision,FALSE,TRUE,FALSE,FALSE,FALSE
+people receiving orthodontic treatment with fixed appliances,superelastic NiTi,conventional NiTi,Pain day 1,MD,-1.1,-15.1,12.9,FALSE,79,1,Very low,"Serious risk of bias, Very serious imprecision",TRUE,TRUE,FALSE,FALSE,FALSE
+people receiving orthodontic treatment with fixed appliances,superelastic NiTi,conventional NiTi,Root resorption,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+people receiving orthodontic treatment with fixed appliances,coaxial superelastic NiTi,single-strand superelastic NiTi,Alignment rate between canines,MD,5.07,4.16,5.99,TRUE,24,1,Moderate,Single study with small sample size,FALSE,TRUE,FALSE,FALSE,FALSE
+people receiving orthodontic treatment with fixed appliances,coaxial superelastic NiTi,single-strand superelastic NiTi,Time to alignment,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+people receiving orthodontic treatment with fixed appliances,coaxial superelastic NiTi,single-strand superelastic NiTi,Pain,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+people receiving orthodontic treatment with fixed appliances,coaxial superelastic NiTi,single-strand superelastic NiTi,Root resorption,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+people receiving orthodontic treatment with fixed appliances,thermoelastic NiTi,superelastic NiTi,Alignment rate between first molars,MD,-16.28,-36.61,4.05,FALSE,46,1,Low,Very serious imprecision,FALSE,TRUE,FALSE,FALSE,FALSE
+people receiving orthodontic treatment with fixed appliances,thermoelastic NiTi,superelastic NiTi,Time to alignment,MD,-0.5,-1.78,0.78,FALSE,50,1,Low,Very serious imprecision,FALSE,TRUE,FALSE,FALSE,FALSE
+people receiving orthodontic treatment with fixed appliances,thermoelastic NiTi,superelastic NiTi,Pain day 1,MD,-7,-26.56,12.56,FALSE,30,1,Low,Very serious imprecision,FALSE,TRUE,FALSE,FALSE,FALSE
+people receiving orthodontic treatment with fixed appliances,thermoelastic NiTi,superelastic NiTi,Root resorption,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA

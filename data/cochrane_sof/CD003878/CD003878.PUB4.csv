@@ -1,0 +1,4 @@
+Population,Intervention,Comparison,Outcome,Measure,Effect,CI Lower,CI Upper,Significant,Number of participants,Number of studies,Certainty of the evidence (GRADE),Reasons for GRADE if not High,Risk of bias,Imprecision,Inconsistency,Indirectness,Publication bias
+patients requiring dental implants,immediate loading,conventional loading,Prosthesis failure at 1 year,RR,2.41,0.76,7.63,FALSE,257,6,Very low,NA,TRUE,TRUE,TRUE,TRUE,TRUE
+patients requiring dental implants,early loading,conventional loading,Prosthesis failure at 1 year,RR,5,0.63,39.67,FALSE,48,1,Very low,NA,TRUE,TRUE,TRUE,TRUE,TRUE
+patients requiring dental implants,immediate loading,early loading,Prosthesis failure at 1 year,RR,0.68,0.25,1.86,FALSE,408,4,Low,NA,TRUE,TRUE,FALSE,FALSE,FALSE

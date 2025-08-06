@@ -1,0 +1,11 @@
+Population,Intervention,Comparison,Outcome,Measure,Effect,CI Lower,CI Upper,Significant,Number of participants,Number of studies,Certainty of the evidence (GRADE),Reasons for GRADE if not High,Risk of bias,Imprecision,Inconsistency,Indirectness,Publication bias
+patients with intrabony defects,Emdogain,Control flap surgery,Tooth loss,NA,NA,NA,NA,NA,371,9,NA,NA,NA,NA,NA,NA,NA
+patients with intrabony defects,Emdogain,Control flap surgery,PAL gain,MD,1.1,0.6,1.6,TRUE,371,9,Low,Not specified,TRUE,TRUE,FALSE,FALSE,FALSE
+patients with intrabony defects,Emdogain,Control flap surgery,Aesthetics,MD,1,-5.4,7.4,FALSE,166,1,Low,Not specified,TRUE,TRUE,FALSE,FALSE,FALSE
+patients with intrabony defects,Emdogain,Control flap surgery,PPD reduction,MD,0.7,0.5,1,TRUE,371,9,Low,Not specified,TRUE,TRUE,FALSE,FALSE,FALSE
+patients with intrabony defects,Emdogain,Control flap surgery,REC change,MD,0.02,-0.3,0.3,FALSE,302,6,Low,Not specified,TRUE,TRUE,FALSE,FALSE,FALSE
+patients with intrabony defects,Emdogain,GTR,Tooth loss,NA,NA,NA,NA,NA,237,5,NA,NA,NA,NA,NA,NA,NA
+patients with intrabony defects,Emdogain,GTR,PAL gain,MD,-0.2,-0.2,0.55,FALSE,304,6,Low,Not specified,TRUE,TRUE,FALSE,FALSE,FALSE
+patients with intrabony defects,Emdogain,GTR,PPD reduction,MD,-0.4,-0.2,1.1,FALSE,304,6,Low,Not specified,TRUE,TRUE,FALSE,FALSE,FALSE
+patients with intrabony defects,Emdogain,GTR,Aesthetics,NA,NA,NA,NA,NA,0,0,NA,NA,NA,NA,NA,NA,NA
+patients with intrabony defects,Emdogain,GTR,REC change,MD,0.4,0.2,0.7,TRUE,206,5,Low,Not specified,TRUE,TRUE,FALSE,FALSE,FALSE

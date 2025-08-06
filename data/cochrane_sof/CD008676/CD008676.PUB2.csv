@@ -1,0 +1,5 @@
+Population,Intervention,Comparison,Outcome,Measure,Effect,CI Lower,CI Upper,Significant,Number of participants,Number of studies,Certainty of the evidence (GRADE),Reasons for GRADE if not High,Risk of bias,Imprecision,Inconsistency,Indirectness,Publication bias
+adults and children with gingivitis,chlorhexidine mouthrinse,placebo/control mouthrinse or no mouthrinse,Gingival Index 4 to 6 weeks,MD,-0.21,-0.31,-0.11,TRUE,805,10,High,NA,FALSE,FALSE,FALSE,FALSE,FALSE
+adults and children with gingivitis,chlorhexidine mouthrinse,placebo/control mouthrinse or no mouthrinse,Plaque 4 to 6 weeks,SMD,-1.45,-1.9,-1,TRUE,950,12,High,NA,FALSE,FALSE,FALSE,FALSE,FALSE
+adults and children with gingivitis,chlorhexidine mouthrinse,placebo/control mouthrinse or no mouthrinse,Tooth staining 4 to 6 weeks,SMD,1.07,0.8,1.34,TRUE,415,8,Moderate,Downgraded as 8 trials at high risk of bias,TRUE,FALSE,FALSE,FALSE,FALSE
+adults and children with gingivitis,chlorhexidine mouthrinse,placebo/control mouthrinse or no mouthrinse,Other adverse effects,NA,NA,NA,NA,NA,NA,22,NA,NA,NA,NA,NA,NA,NA

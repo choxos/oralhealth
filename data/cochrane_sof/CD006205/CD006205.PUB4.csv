@@ -1,0 +1,32 @@
+Population,Intervention,Comparison,Outcome,Measure,Effect,CI Lower,CI Upper,Significant,Number of participants,Number of studies,Certainty of the evidence (GRADE),Reasons for GRADE if not High,Risk of bias,Imprecision,Inconsistency,Indirectness,Publication bias
+adults with oral or oropharyngeal cancer,elective neck dissection,therapeutic (delayed) neck dissection,Total mortality,HR,0.84,0.41,1.72,FALSE,571,2,Very low,"Downgraded for risk of bias, imprecision, and inconsistency",TRUE,TRUE,TRUE,FALSE,FALSE
+adults with oral or oropharyngeal cancer,elective neck dissection,therapeutic (delayed) neck dissection,"New disease, progression or mortality",HR,0.73,0.25,2.11,FALSE,571,2,Very low,"Downgraded for risk of bias, imprecision",TRUE,TRUE,FALSE,FALSE,FALSE
+adults with oral or oropharyngeal cancer,elective neck dissection,therapeutic (delayed) neck dissection,Locoregional recurrence,NA,NA,NA,NA,NA,278,4,Very low,"Downgraded for study design, imprecision",TRUE,TRUE,FALSE,FALSE,FALSE
+adults with oral or oropharyngeal cancer,elective neck dissection,therapeutic (delayed) neck dissection,Recurrence,NA,NA,NA,NA,NA,0,0,NA,NA,NA,NA,NA,NA,NA
+adults with oral or oropharyngeal cancer,elective neck dissection,therapeutic (delayed) neck dissection,Adverse events,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+adults with oral or oropharyngeal cancer,elective radical neck dissection,elective selective neck dissection,Total mortality,NA,NA,NA,NA,NA,252,2,Very low,"Downgraded for study design, imprecision",TRUE,TRUE,FALSE,FALSE,FALSE
+adults with oral or oropharyngeal cancer,elective radical neck dissection,elective selective neck dissection,"New disease, progression or mortality",HR,0.57,0.29,1.11,FALSE,104,1,Very low,"Downgraded for risk of bias, imprecision",TRUE,TRUE,FALSE,FALSE,FALSE
+adults with oral or oropharyngeal cancer,elective radical neck dissection,elective selective neck dissection,Locoregional recurrence,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+adults with oral or oropharyngeal cancer,elective radical neck dissection,elective selective neck dissection,Recurrence,RR,1.21,0.63,2.33,FALSE,143,1,Very low,"Downgraded for risk of bias, imprecision, study design",TRUE,TRUE,TRUE,FALSE,FALSE
+adults with oral or oropharyngeal cancer,elective radical neck dissection,elective selective neck dissection,Adverse events,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+adults with oral or oropharyngeal cancer,PET-CT following chemoradiotherapy,planned neck dissection either before or after chemoradiotherapy,Total mortality,HR,0.92,0.65,1.31,FALSE,564,1,Very low,"Downgraded three levels as high risk of bias, interim analysis of 35 participants after 23 months.",TRUE,TRUE,FALSE,FALSE,FALSE
+adults with oral or oropharyngeal cancer,PET-CT following chemoradiotherapy,planned neck dissection either before or after chemoradiotherapy,Disease free survival,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+adults with oral or oropharyngeal cancer,PET-CT following chemoradiotherapy,planned neck dissection either before or after chemoradiotherapy,Locoregional recurrence,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+adults with oral or oropharyngeal cancer,PET-CT following chemoradiotherapy,planned neck dissection either before or after chemoradiotherapy,Recurrence,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+adults with oral or oropharyngeal cancer,PET-CT following chemoradiotherapy,planned neck dissection either before or after chemoradiotherapy,Adverse events,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+adults with oral or oropharyngeal cancer,surgery + adjuvant radiotherapy,chemotherapy,Total mortality,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+adults with oral or oropharyngeal cancer,surgery + adjuvant radiotherapy,chemotherapy,Total mortality,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+adults with oral or oropharyngeal cancer,surgery + adjuvant radiotherapy,chemotherapy,Disease free survival,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+adults with oral or oropharyngeal cancer,surgery + adjuvant radiotherapy,chemotherapy,Locoregional recurrence,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+adults with oral or oropharyngeal cancer,surgery + adjuvant radiotherapy,chemotherapy,Recurrence,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+adults with oral or oropharyngeal cancer,surgery + adjuvant radiotherapy,chemotherapy,Adverse events,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+adults with oral or oropharyngeal cancer,supraomohyoid neck dissection,modified radical neck dissection,Total mortality,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+adults with oral or oropharyngeal cancer,supraomohyoid neck dissection,modified radical neck dissection,Disease free survival,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+adults with oral or oropharyngeal cancer,supraomohyoid neck dissection,modified radical neck dissection,Locoregional recurrence,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+adults with oral or oropharyngeal cancer,supraomohyoid neck dissection,modified radical neck dissection,Recurrence,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+adults with oral or oropharyngeal cancer,supraomohyoid neck dissection,modified radical neck dissection,Adverse events,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+adults with oral or oropharyngeal cancer,super-selective neck dissection,selective neck dissection,Total mortality,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+adults with oral or oropharyngeal cancer,super-selective neck dissection,selective neck dissection,Disease free survival,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+adults with oral or oropharyngeal cancer,super-selective neck dissection,selective neck dissection,Locoregional recurrence,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+adults with oral or oropharyngeal cancer,super-selective neck dissection,selective neck dissection,Recurrence,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+adults with oral or oropharyngeal cancer,super-selective neck dissection,selective neck dissection,Adverse events,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA

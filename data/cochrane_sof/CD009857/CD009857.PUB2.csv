@@ -1,0 +1,17 @@
+Population,Intervention,Comparison,Outcome,Measure,Effect,CI Lower,CI Upper,Significant,Number of participants,Number of studies,Certainty of the evidence (GRADE),Reasons for GRADE if not High,Risk of bias,Imprecision,Inconsistency,Indirectness,Publication bias
+Adults 16 years and older,Interdental brushing plus toothbrushing,Toothbrushing alone,Gingivitis,MD,-0.53,-0.83,-0.23,TRUE,62,1,Very low,Single study at high risk of bias,TRUE,FALSE,FALSE,FALSE,FALSE
+Adults 16 years and older,Interdental brushing plus toothbrushing,Toothbrushing alone,Periodontitis,NA,NA,NA,NA,NA,0,0,NA,NA,NA,NA,NA,NA,NA
+Adults 16 years and older,Interdental brushing plus toothbrushing,Toothbrushing alone,Plaque,MD,-0.95,-1.34,-0.56,TRUE,62,1,Very low,Single study at high risk of bias,TRUE,FALSE,FALSE,FALSE,FALSE
+Adults 16 years and older,Interdental brushing plus toothbrushing,Toothbrushing alone,Interproximal caries,NA,NA,NA,NA,NA,0,0,NA,NA,NA,NA,NA,NA,NA
+Adults 16 years and older,Interdental brushing plus toothbrushing,Toothbrushing alone,Harms and adverse outcomes,NA,NA,NA,NA,NA,0,0,NA,NA,NA,NA,NA,NA,NA
+Adults 16 years and older,Interdental brushing plus toothbrushing,Toothbrushing alone,Bad breath (halitosis),NA,NA,NA,NA,NA,0,0,NA,NA,NA,NA,NA,NA,NA
+Adults 16 years and older,Interdental brushing plus toothbrushing,Toothbrushing alone,Quality of life,NA,NA,NA,NA,NA,0,0,NA,NA,NA,NA,NA,NA,NA
+Adults 16 years and older,Interdental brushing plus toothbrushing,Flossing plus toothbrushing,Gingivitis,SMD,-0.53,-0.81,-0.24,TRUE,390,7,Low,"Three studies at high risk of bias, three unclear. Two studies were industry?sponsored, whilst in three studies the source of funding was not declared.
+Heterogeneity I2 = 85%, P value < 0.001.",TRUE,FALSE,TRUE,FALSE,FALSE
+Adults 16 years and older,Interdental brushing plus toothbrushing,Flossing plus toothbrushing,Periodontitis,NA,NA,NA,NA,NA,0,0,NA,NA,NA,NA,NA,NA,NA
+Adults 16 years and older,Interdental brushing plus toothbrushing,Flossing plus toothbrushing,Plaque,SMD,0.1,-0.13,0.33,FALSE,326,7,Low,"Three studies at high risk of bias, three unclear. Two studies were industry?sponsored, whilst in three studies the source of funding was not declared.
+Heterogeneity I2 = 85%, P value < 0.001.",TRUE,FALSE,TRUE,FALSE,FALSE
+Adults 16 years and older,Interdental brushing plus toothbrushing,Flossing plus toothbrushing,Interproximal caries,NA,NA,NA,NA,NA,0,0,NA,NA,NA,NA,NA,NA,NA
+Adults 16 years and older,Interdental brushing plus toothbrushing,Flossing plus toothbrushing,Harms and adverse outcomes,NA,NA,NA,NA,NA,0,0,NA,NA,NA,NA,NA,NA,NA
+Adults 16 years and older,Interdental brushing plus toothbrushing,Flossing plus toothbrushing,Bad breath (halitosis),NA,NA,NA,NA,NA,0,0,NA,NA,NA,NA,NA,NA,NA
+Adults 16 years and older,Interdental brushing plus toothbrushing,Flossing plus toothbrushing,Quality of life,NA,NA,NA,NA,NA,0,0,NA,NA,NA,NA,NA,NA,NA

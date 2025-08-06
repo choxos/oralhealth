@@ -1,0 +1,5 @@
+Population,Intervention,Comparison,Outcome,Measure,Effect,CI Lower,CI Upper,Significant,Number of participants,Number of studies,Certainty of the evidence (GRADE),Reasons for GRADE if not High,Risk of bias,Imprecision,Inconsistency,Indirectness,Publication bias
+Patients requiring Class I or Class II resin‐based composite restorations,Liner,No liner,Postoperative hypersensitivity (POH) (Patient‐reported Y/N) at 1 week,RR,0.56,0.26,1.17,FALSE,299,3,Low,Downgraded due to high risk of bias and imprecision,TRUE,TRUE,FALSE,FALSE,FALSE
+Patients requiring Class I or Class II resin‐based composite restorations,Liner,No liner,Postoperative cold response measurement (CRM) at 1 week,MD,6,1.36,10.64,TRUE,88,1,Low,Downgraded due to single study at high risk of bias,TRUE,FALSE,FALSE,FALSE,FALSE
+Patients requiring Class I or Class II resin‐based composite restorations,Liner,No liner,Restoration failure at 1 year,RR,1,0.07,15,FALSE,281,4,Low,Downgraded due to high risk of bias and imprecision,TRUE,TRUE,FALSE,FALSE,FALSE
+Patients requiring Class I or Class II resin‐based composite restorations,Liner,No liner,Adverse events,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA

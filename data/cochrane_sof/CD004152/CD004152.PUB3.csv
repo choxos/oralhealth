@@ -1,0 +1,2 @@
+Population,Intervention,Comparison,Outcome,Measure,Effect,CI Lower,CI Upper,Significant,Number of participants,Number of studies,Certainty of the evidence (GRADE),Reasons for GRADE if not High,Risk of bias,Imprecision,Inconsistency,Indirectness,Publication bias
+patients requiring dental implants,antibiotics,no antibiotics or placebo,Implant failure at 4 months,RR,0.4,0.19,0.84,TRUE,1007,4,Moderate,Not specified,NA,NA,NA,NA,NA

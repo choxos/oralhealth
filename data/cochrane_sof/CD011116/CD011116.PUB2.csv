@@ -1,0 +1,11 @@
+Population,Intervention,Comparison,Outcome,Measure,Effect,CI Lower,CI Upper,Significant,Number of participants,Number of studies,Certainty of the evidence (GRADE),Reasons for GRADE if not High,Risk of bias,Imprecision,Inconsistency,Indirectness,Publication bias
+people with gagging during dental treatment,acupuncture at P6 point,sham acupuncture,Primary outcome: completion of dental procedure,RR,1.65,0.59,4.57,FALSE,33,1,very low,"Risk of bias is unclear and unpublished data for primary outcome was used. Hence downgraded by two levels for primary outcome and one level for secondary outcome.
+Single study and done only in adults. Hence downgraded by one level for indirectness.
+Wide CI and small sample size. Hence downgraded by one level for imprecision.",TRUE,TRUE,FALSE,TRUE,FALSE
+people with gagging during dental treatment,acupuncture at P6 point,sham acupuncture,Secondary outcome: reduction in gagging: assessor-reported outcome - treatment effectiveness during stage 1,MD,0.4,-0.12,0.93,FALSE,33,1,very low,"Risk of bias is unclear and unpublished data for primary outcome was used. Hence downgraded by two levels for primary outcome and one level for secondary outcome.
+Single study and done only in adults. Hence downgraded by one level for indirectness.
+Wide CI and small sample size. Hence downgraded by one level for imprecision.",TRUE,TRUE,FALSE,TRUE,FALSE
+people with gagging during dental treatment,acupuncture at P6 point,sham acupuncture,Secondary outcome: reduction in gagging: patient-reported outcome,MD,0.86,-1.13,2.85,FALSE,33,1,very low,"Risk of bias is unclear and unpublished data for primary outcome was used. Hence downgraded by two levels for primary outcome and one level for secondary outcome.
+Single study and done only in adults. Hence downgraded by one level for indirectness.
+Wide CI and small sample size. Hence downgraded by one level for imprecision.",TRUE,TRUE,FALSE,TRUE,FALSE
+people with gagging during dental treatment,acupuncture at P6 point,sham acupuncture,Secondary outcome: adverse events,NA,NA,NA,NA,NA,0,1,NA,NA,NA,NA,NA,NA,NA

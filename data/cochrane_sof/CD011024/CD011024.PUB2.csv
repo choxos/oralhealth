@@ -1,0 +1,26 @@
+Population,Intervention,Comparison,Outcome,Measure,Effect,CI Lower,CI Upper,Significant,Number of participants,Number of studies,Certainty of the evidence (GRADE),Reasons for GRADE if not High,Risk of bias,Imprecision,Inconsistency,Indirectness,Publication bias
+children and adolescents having dental treatment,audiovisual distraction,conventional treatment,Acceptance of LA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+children and adolescents having dental treatment,audiovisual distraction,conventional treatment,Completion of dental treatment,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+children and adolescents having dental treatment,audiovisual distraction,conventional treatment,Successful LA/painless treatment,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+children and adolescents having dental treatment,audiovisual distraction,conventional treatment,pain‐related behaviour during LA (children who exhibited a negative versus positive behaviour; Frankl Behaviour Rating Scale (FBRS)),RR,0.13,0.03,0.5,TRUE,60,1,Very low,"Certainty of the evidence downgraded by 1 level for high risk of bias, and 2 levels for very serious imprecision (single study with a small sample size).",TRUE,TRUE,FALSE,FALSE,FALSE
+children and adolescents having dental treatment,audiovisual distraction,conventional treatment,Patient satisfaction: measured by questionnaires,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+children and adolescents having dental treatment,audiovisual distraction,conventional treatment,Adverse effects,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+children and adolescents having dental treatment,the wand,traditional LA,Acceptance of LA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+children and adolescents having dental treatment,the wand,traditional LA,Completion of dental treatment,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+children and adolescents having dental treatment,the wand,traditional LA,Successful LA/painless treatment,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+children and adolescents having dental treatment,the wand,traditional LA,pain‐related behaviour (any disruptive behaviour/sudden reaction/movement),NA,NA,NA,NA,NA,704,6,Very low,"Certainty of the evidence downgraded by 1 level for high risk of bias, and 2 levels for very serious imprecision.",TRUE,TRUE,FALSE,FALSE,FALSE
+children and adolescents having dental treatment,the wand,traditional LA,Patient satisfaction: measured by questionnaires,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+children and adolescents having dental treatment,the wand,traditional LA,Adverse effects,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+children and adolescents having dental treatment,counter‐stimulation or distraction,conventional treatment,Acceptance of LA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+children and adolescents having dental treatment,counter‐stimulation or distraction,conventional treatment,Completion of dental treatment,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+children and adolescents having dental treatment,counter‐stimulation or distraction,conventional treatment,Successful LA/painless treatment,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+children and adolescents having dental treatment,counter‐stimulation or distraction,conventional treatment,"pain (Sound, Eyes, and Motor (SEM) scale; dichotomous ‐ any pain versus no pain, higher score indicates high pain experience)",RR,0.12,0.04,0.34,TRUE,134,1,Very low,"Certainty of the evidence downgraded by 1 level for high risk of bias, and 2 levels for very serious imprecision (single study with a small sample size).",TRUE,TRUE,FALSE,FALSE,FALSE
+children and adolescents having dental treatment,counter‐stimulation or distraction,conventional treatment,Patient satisfaction: measured by questionnaires,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+children and adolescents having dental treatment,counter‐stimulation or distraction,conventional treatment,Adverse effects,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+children and adolescents having dental treatment,hypnosis,conventional treatment,Acceptance of LA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+children and adolescents having dental treatment,hypnosis,conventional treatment,"Completion of dental treatment
+",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+children and adolescents having dental treatment,hypnosis,conventional treatment,Successful LA/painless treatment,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+children and adolescents having dental treatment,hypnosis,conventional treatment,"pain (Modified Objective Pain Score (mOPS); VAS: 0 to 10, higher score indicates worse pain experience)",MD,-1.79,-3.01,-0.57,TRUE,29,1,Very low,"Certainty of the evidence downgraded by 1 level for high risk of bias, and 2 levels for very serious imprecision (single study with a small sample size).",TRUE,TRUE,FALSE,FALSE,FALSE
+children and adolescents having dental treatment,hypnosis,conventional treatment,Patient satisfaction: measured by questionnaires,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+children and adolescents having dental treatment,hypnosis,conventional treatment,Adverse effects,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA

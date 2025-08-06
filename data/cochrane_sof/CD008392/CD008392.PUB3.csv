@@ -1,0 +1,5 @@
+Population,Intervention,Comparison,Outcome,Measure,Effect,CI Lower,CI Upper,Significant,Number of participants,Number of studies,Certainty of the evidence (GRADE),Reasons for GRADE if not High,Risk of bias,Imprecision,Inconsistency,Indirectness,Publication bias
+children and adolescents having dental treatment,paracetamol,placebo,Postoperative pain (dichotomous measure: parent report of presence of pain‐related behaviours),RR,0.81,0.53,1.22,FALSE,100,2,Low,"Two studies: one at high risk of bias and one at unclear risk of bias. We downgraded by one level for risk of bias.
+We downgraded by one level for imprecision.",TRUE,TRUE,FALSE,FALSE,FALSE
+children and adolescents having dental treatment,ibuprofen,placebo,Postoperative pain (continuous measure: self report using visual analogue scale),MD,-13.44,-23.01,-3.88,TRUE,85,2,Low,"Two small studies were at high risk of bias. We downgraded by one level for risk of bias.
+We downgraded by one level for imprecision.",TRUE,TRUE,FALSE,FALSE,FALSE

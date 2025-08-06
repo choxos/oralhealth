@@ -1,0 +1,16 @@
+Population,Intervention,Comparison,Outcome,Measure,Effect,CI Lower,CI Upper,Significant,Number of participants,Number of studies,Certainty of the evidence (GRADE),Reasons for GRADE if not High,Risk of bias,Imprecision,Inconsistency,Indirectness,Publication bias
+Adults undergoing orthognathic surgery,Resorbable plates,Titanium plates,Need for retreatment or replacement of fixation due to failure of the fixation,NA,NA,NA,NA,NA,361,1,Very Low,"Downgraded 1 level for indirectness (single study).
+Downgraded 1 level for imprecision.
+Downgraded 1 level for high risk of performance and detection bias.",TRUE,TRUE,FALSE,TRUE,FALSE
+Adults undergoing orthognathic surgery,Resorbable plates,Titanium plates,Postoperative pain during the immediate recovery period,MD,-0.77,-1.92,0.38,FALSE,60,1,Very Low,"Downgraded 1 level for indirectness (single study).
+Downgraded 1 level for imprecision.
+Downgraded 1 level for high risk of performance and detection bias.",TRUE,TRUE,FALSE,TRUE,FALSE
+Adults undergoing orthognathic surgery,Resorbable plates,Titanium plates,Postoperative chronic or lasting pain,MD,-0.77,-1.58,0.04,FALSE,60,1,Very Low,"Downgraded 1 level for indirectness (single study).
+Downgraded 1 level for imprecision.
+Downgraded 1 level for high risk of performance and detection bias.",TRUE,TRUE,FALSE,TRUE,FALSE
+Adults undergoing orthognathic surgery,Resorbable plates,Titanium plates,Patient satisfaction,MD,0.17,-0.67,1.01,FALSE,60,1,Very Low,"Downgraded 1 level for indirectness (single study).
+Downgraded 1 level for imprecision.
+Downgraded 1 level for high risk of performance and detection bias.",TRUE,TRUE,FALSE,TRUE,FALSE
+Adults undergoing orthognathic surgery,Resorbable plates,Titanium plates,Adverse effects,NA,NA,NA,NA,NA,60,1,Very Low,"Downgraded 1 level for indirectness (single study).
+Downgraded 1 level for high risk of performance and detection bias.
+Downgraded 1 level for inconsistency as subgroup populations of different osteotomies are included. Le?Fort I osteotomy and mandibular osteotomies were all grouped and compared as 1. Different subgroups should have been compared separately for consistency.",TRUE,FALSE,TRUE,TRUE,FALSE

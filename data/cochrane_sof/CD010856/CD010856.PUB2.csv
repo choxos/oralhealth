@@ -1,0 +1,36 @@
+Population,Intervention,Comparison,Outcome,Measure,Effect,CI Lower,CI Upper,Significant,Number of participants,Number of studies,Certainty of the evidence (GRADE),Reasons for GRADE if not High,Risk of bias,Imprecision,Inconsistency,Indirectness,Publication bias
+People of all ages,Initiation of water fluoridation,Low/non-fluoridated water,Caries in deciduous teeth (dmft),MD,-1.81,-2.31,-1.31,TRUE,44268,9,Very Low,"Studies at high risk of bias; quality of the evidence downgraded
+
+Substantial heterogeneity present, however, given that the direction of effect was the same in all but on of the studies/outcomes we did not downgrade due to heterogeneity
+
+Indirectness of evidence due to lack of contemporary evidence; quality of the evidence downgraded. 71% of the studies conducted prior 1975; the use of fluoridated toothpaste, the availability of other caries prevention strategies, diet and tap water consumption are all likely to have changed in the populations in which the studies were conducted. No studies on the effect of water fluoridation in adults met the inclusion criteria
+
+Very large effect size; quality of the evidence upgraded twice",TRUE,FALSE,FALSE,TRUE,FALSE
+People of all ages,Initiation of water fluoridation,Low/non-fluoridated water,Caries score in permanent teeth (DMFT),MD,-1.16,-1.61,-0.72,TRUE,78764,10,Very Low,"Studies at high risk of bias; quality of the evidence downgraded
+
+Substantial heterogeneity present, however, given that the direction of effect was the same in all but on of the studies/outcomes we did not downgrade due to heterogeneity
+
+Indirectness of evidence due to lack of contemporary evidence; quality of the evidence downgraded. 71% of the studies conducted prior 1975; the use of fluoridated toothpaste, the availability of other caries prevention strategies, diet and tap water consumption are all likely to have changed in the populations in which the studies were conducted. No studies on the effect of water fluoridation in adults met the inclusion criteria
+
+Very large effect size; quality of the evidence upgraded twice",TRUE,FALSE,FALSE,TRUE,FALSE
+People of all ages,Initiation of water fluoridation,Low/non-fluoridated water,Change in proportion of caries-free children (deciduous teeth),MD,0.15,0.11,0.19,TRUE,39966,10,Very Low,"Studies at high risk of bias; quality of the evidence downgraded
+
+Substantial heterogeneity present, however, given that the direction of effect was the same in all but on of the studies/outcomes we did not downgrade due to heterogeneity
+
+Indirectness of evidence due to lack of contemporary evidence; quality of the evidence downgraded. 71% of the studies conducted prior 1975; the use of fluoridated toothpaste, the availability of other caries prevention strategies, diet and tap water consumption are all likely to have changed in the populations in which the studies were conducted. No studies on the effect of water fluoridation in adults met the inclusion criteria
+
+Very large effect size; quality of the evidence upgraded twice",TRUE,FALSE,FALSE,TRUE,FALSE
+People of all ages,Initiation of water fluoridation,Low/non-fluoridated water,Change in proportion of caries-free children (permanent teeth),MD,0.14,0.05,0.23,TRUE,53538,8,Very Low,"Studies at high risk of bias; quality of the evidence downgraded
+
+Substantial heterogeneity present, however, given that the direction of effect was the same in all but on of the studies/outcomes we did not downgrade due to heterogeneity
+
+Indirectness of evidence due to lack of contemporary evidence; quality of the evidence downgraded. 71% of the studies conducted prior 1975; the use of fluoridated toothpaste, the availability of other caries prevention strategies, diet and tap water consumption are all likely to have changed in the populations in which the studies were conducted. No studies on the effect of water fluoridation in adults met the inclusion criteria
+
+Very large effect size; quality of the evidence upgraded twice",TRUE,FALSE,FALSE,TRUE,FALSE
+People of all ages,Initiation of water fluoridation,Low/non-fluoridated water,Disparities in caries by socioeconomic status (SES),NA,NA,NA,NA,NA,35399,3,Very Low,Studies at high risk of bias; quality of the evidence downgraded,TRUE,FALSE,FALSE,FALSE,FALSE
+People of all ages,Initiation of water fluoridation,Low/non-fluoridated water,Dental fluorosis of aesthetic concern,OR,2.9,2.05,4.1,TRUE,59630,40,Low,Studies at high risk of bias; quality of the evidence downgraded. Substantial heterogeneity; quality of the evidence downgraded,TRUE,FALSE,TRUE,FALSE,FALSE
+People of all ages,Cessation of water fluoridation,Fluoridated water,Caries in permanent teeth (DMFS),NA,NA,NA,NA,NA,9249,1,Very Low,Study at high risk of bias; quality of evidence downgraded,TRUE,FALSE,FALSE,FALSE,FALSE
+People of all ages,Cessation of water fluoridation,Fluoridated water,Caries in deciduous teeth (dmft/dmfs),NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People of all ages,Cessation of water fluoridation,Fluoridated water,Change in proportion of caries-free children (deciduous or permanent teeth),NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People of all ages,Cessation of water fluoridation,Fluoridated water,Disparities in caries by socioeconomic status (SES),NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People of all ages,Cessation of water fluoridation,Fluoridated water,Adverse effects,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA

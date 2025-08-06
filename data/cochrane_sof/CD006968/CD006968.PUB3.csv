@@ -1,0 +1,15 @@
+Population,Intervention,Comparison,Outcome,Measure,Effect,CI Lower,CI Upper,Significant,Number of participants,Number of studies,Certainty of the evidence (GRADE),Reasons for GRADE if not High,Risk of bias,Imprecision,Inconsistency,Indirectness,Publication bias
+Patients having a tooth extraction,Chlorhexidine rinse,Placebo/no treatment,Presence of dry socket,OR,0.38,0.25,0.58,TRUE,1547,6,Moderate,3 trials were assessed as being at high risk of bias and 1 at unclear risk of bias,TRUE,FALSE,FALSE,FALSE,FALSE
+Patients having a tooth extraction,Chlorhexidine rinse,Placebo/no treatment,Adverse events,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Patients having a tooth extraction,Chlorhexidine gel,Placebo/no treatment,Presence of dry socket,OR,0.44,0.27,0.71,TRUE,753,7,Moderate,2 trials were assessed as being at low risk of bias 2 at unclear risk and the other 3 at high risk of bias,TRUE,FALSE,FALSE,FALSE,FALSE
+Patients having a tooth extraction,Chlorhexidine gel,Placebo/no treatment,Adverse events,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Patients having a tooth extraction,Chlorhexidine gel,Chlorhexidine rinse,Presence of dry socket,RR,0.74,0.46,1.2,FALSE,383,2,Low,2 studies at high risk of bias and imprecision of estimate due to the CI including the possibility of a benefit for both treatment groups,TRUE,TRUE,FALSE,FALSE,FALSE
+Patients having a tooth extraction,Chlorhexidine gel,Chlorhexidine rinse,Adverse events,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Patients having a tooth extraction,Platelet rich plasma,Placebo/no treatment,Presence of dry socket,RR,0.51,0.19,1.33,FALSE,127,2,Very low,2 studies at high risk of bias low event rate and the CI including the possibility of benefit for both treatment groups,TRUE,TRUE,FALSE,FALSE,FALSE
+Patients having a tooth extraction,Platelet rich plasma,Placebo/no treatment,Adverse events,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Adults with dry socket,Zinc oxide eugenol,Alvogyl,Healing,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Adults with dry socket,Zinc oxide eugenol,Alvogyl,Pain,NA,NA,1.04,1.75,NA,80,2,Very low,2 studies at unclear risk of bias heterogeneity and differences in the results for day 5 versus day 7,TRUE,FALSE,TRUE,FALSE,FALSE
+Adults with dry socket,Zinc oxide eugenol,Alvogyl,Swelling,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Adults with dry socket,Zinc oxide eugenol,Alvogyl,Limitation of chewing or swallowing,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Adults with dry socket,Zinc oxide eugenol,Alvogyl,Fever,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Adults with dry socket,Zinc oxide eugenol,Alvogyl,Adverse effects,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA

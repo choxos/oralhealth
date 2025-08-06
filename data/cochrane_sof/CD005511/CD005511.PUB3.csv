@@ -1,0 +1,95 @@
+Population,Intervention,Comparison,Outcome,Measure,Effect,CI Lower,CI Upper,Significant,Number of participants,Number of studies,Certainty of the evidence (GRADE),Reasons for GRADE if not High,Risk of bias,Imprecision,Inconsistency,Indirectness,Publication bias
+People requiring retreatment of periapical lesions,Root-end resection (with root-end filling),Root canal retreatment,Healing - 1 year,RR,1.15,0.97,1.35,FALSE,126,2,Very low,"Quality of evidence was downgraded owing to heterogeneity (inconsistency).
+Quality of evidence was downgraded owing to imprecision (CI includes RR of 1.0).
+Quality of evidence was downgraded because both studies had high risk of bias.",TRUE,TRUE,TRUE,FALSE,FALSE
+People requiring retreatment of periapical lesions,Root-end resection (with root-end filling),Root canal retreatment,Pain assessed with visual analogue scale (VAS) from 0 to 100 - 1 day,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People requiring retreatment of periapical lesions,Root-end resection (with root-end filling),Root canal retreatment,Prevalence of pain - 1 day,RR,3.34,2.05,5.43,TRUE,87,1,Low,Quality of evidence was downgraded because it was based on a single small study at high risk of bias.,TRUE,FALSE,FALSE,FALSE,FALSE
+People requiring retreatment of periapical lesions,Root-end resection (with root-end filling),Root canal retreatment,Occurrence of postoperative infection - 4 weeks,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People requiring retreatment of periapical lesions,Root-end resection (with root-end filling),Root canal retreatment,Height loss of interdental papilla,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People requiring retreatment of periapical lesions,Root-end resection (with root-end filling),Root canal retreatment,Maximum pain assessed with verbal rating scale (VRS),NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People requiring retreatment of periapical lesions,CBCT,Periapical radiography,Healing - 1 year,RR,1.02,0.7,1.47,FALSE,39,1,Very low,Quality of evidence was downgraded because it was derived from a single study at high risk of bias with imprecise results.,TRUE,TRUE,FALSE,FALSE,FALSE
+People requiring retreatment of periapical lesions,CBCT,Periapical radiography,Pain assessed with visual analogue scale (VAS) from 0 to 100 - 1 day,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People requiring retreatment of periapical lesions,CBCT,Periapical radiography,Prevalence of pain - 1 day,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People requiring retreatment of periapical lesions,CBCT,Periapical radiography,Occurrence of postoperative infection - 4 weeks,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People requiring retreatment of periapical lesions,CBCT,Periapical radiography,Height loss of interdental papilla,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People requiring retreatment of periapical lesions,CBCT,Periapical radiography,Maximum pain assessed with verbal rating scale (VRS),NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People requiring retreatment of periapical lesions,Preoperative antibiotic prophylaxis,Placebo,Healing - 1 year,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People requiring retreatment of periapical lesions,Preoperative antibiotic prophylaxis,Placebo,Pain assessed with visual analogue scale (VAS) from 0 to 100 - 1 day,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People requiring retreatment of periapical lesions,Preoperative antibiotic prophylaxis,Placebo,Prevalence of pain - 1 day,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People requiring retreatment of periapical lesions,Preoperative antibiotic prophylaxis,Placebo,Occurrence of postoperative infection - 4 weeks,RR,0.49,0.09,2.64,FALSE,250,1,Very low,Single study at unclear risk of bias with very imprecise results,TRUE,TRUE,FALSE,FALSE,FALSE
+People requiring retreatment of periapical lesions,Preoperative antibiotic prophylaxis,Placebo,Height loss of interdental papilla,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People requiring retreatment of periapical lesions,Preoperative antibiotic prophylaxis,Placebo,Maximum pain assessed with verbal rating scale (VRS),NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People requiring retreatment of periapical lesions,Endoscope,Loupes,Healing at 1 year,RR,1.05,0.92,1.2,FALSE,62,1,Low,Quality of evidence was downgraded because it was derived from a single study at high risk of bias.,TRUE,TRUE,FALSE,FALSE,FALSE
+People requiring retreatment of periapical lesions,Endoscope,Microscope,Healing at 2 years,RR,1.01,0.89,1.15,FALSE,70,1,Low,Quality of evidence was downgraded because it was derived from a single study at high risk of bias.,TRUE,TRUE,FALSE,FALSE,FALSE
+People requiring retreatment of periapical lesions,Endoscope,loupes or microscope,Pain assessed with visual analogue scale (VAS) from 0 to 100 at 1 day,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People requiring retreatment of periapical lesions,Endoscope,loupes or microscope,Prevalence of pain at 1 day,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People requiring retreatment of periapical lesions,Endoscope,loupes or microscope,Occurrence of postoperative infection  at 4 weeks,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People requiring retreatment of periapical lesions,Endoscope,loupes or microscope,Height loss of interdental papilla,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People requiring retreatment of periapical lesions,Endoscope,loupes or microscope,Maximum pain assessed with verbal rating scale (VRS),NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People requiring retreatment of periapical lesions,PBI,Complete mobilisation,Healing at 1 year,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People requiring retreatment of periapical lesions,PBI,Complete mobilisation,Pain assessed with visual analogue scale (VAS) from 0 to 100 - 1 day,MD,-2.25,-7.17,2.67,FALSE,38,1,Very low,Single small study at unclear risk of bias with very imprecise results,TRUE,TRUE,FALSE,FALSE,FALSE
+People requiring retreatment of periapical lesions,PBI,Complete mobilisation,Prevalence of pain at 1 day,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People requiring retreatment of periapical lesions,PBI,Complete mobilisation,Occurrence of postoperative infection  at 4 weeks,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People requiring retreatment of periapical lesions,PBI,Complete mobilisation,Height loss of interdental papilla - 1 year,MD,-1.04,-1.48,-0.6,TRUE,12,1,Very low,Single small split-mouth study at high risk of bias,TRUE,TRUE,FALSE,FALSE,FALSE
+People requiring retreatment of periapical lesions,PBI,Complete mobilisation,Maximum pain assessed with verbal rating scale (VRS),NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People requiring retreatment of periapical lesions,Ultrasonic instruments,Bur,Healing at 1 year,RR,1.14,1,1.3,TRUE,290,1,Low,Quality of evidence downgraded because it was derived from one study at high risk of bias (attrition bias).,TRUE,FALSE,FALSE,FALSE,FALSE
+People requiring retreatment of periapical lesions,Ultrasonic instruments,Bur,Pain assessed with visual analogue scale (VAS) from 0 to 100 - 1 day,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People requiring retreatment of periapical lesions,Ultrasonic instruments,Bur,Prevalence of pain at 1 day,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People requiring retreatment of periapical lesions,Ultrasonic instruments,Bur,Occurrence of postoperative infection  at 4 weeks,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People requiring retreatment of periapical lesions,Ultrasonic instruments,Bur,Height loss of interdental papilla - 1 year,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People requiring retreatment of periapical lesions,Ultrasonic instruments,Bur,Maximum pain assessed with verbal rating scale (VRS),NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People requiring retreatment of periapical lesions,MTA,IRM,Healing at 1 year,RR,1.09,0.97,1.21,FALSE,222,2,Low,"Quality of evidence was downgraded owing to imprecision (CI includes RR of 1.0).
+Quality of evidence was downgraded because one study had high risk of bias (attrition bias).",TRUE,TRUE,FALSE,FALSE,FALSE
+People requiring retreatment of periapical lesions,MTA,IRM,Pain assessed with visual analogue scale (VAS) from 0 to 100 - 1 day,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People requiring retreatment of periapical lesions,MTA,IRM,Prevalence of pain at 1 day,RR,1.01,0.84,1.22,FALSE,100,1,Low,"Quality of evidence was downgraded owing to imprecision (CI includes RR of 1.0).
+Quality of evidence was downgraded because one study had high risk of bias (attrition bias).",TRUE,TRUE,FALSE,FALSE,FALSE
+People requiring retreatment of periapical lesions,MTA,IRM,Occurrence of postoperative infection  at 4 weeks,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People requiring retreatment of periapical lesions,MTA,IRM,Height loss of interdental papilla - 1 year,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People requiring retreatment of periapical lesions,MTA,IRM,Maximum pain assessed with verbal rating scale (VRS),NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People requiring retreatment of periapical lesions,MTA,SuperEBA,Healing at 1 year,RR,0.97,0.91,1.04,FALSE,192,1,Low,Quality of evidence was downgraded because it was based on a single study and because of imprecision.,TRUE,TRUE,FALSE,FALSE,FALSE
+People requiring retreatment of periapical lesions,MTA,SuperEBA,Pain assessed with visual analogue scale (VAS) from 0 to 100 - 1 day,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People requiring retreatment of periapical lesions,MTA,SuperEBA,Prevalence of pain at 1 day,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People requiring retreatment of periapical lesions,MTA,SuperEBA,Occurrence of postoperative infection  at 4 weeks,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People requiring retreatment of periapical lesions,MTA,SuperEBA,Height loss of interdental papilla - 1 year,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People requiring retreatment of periapical lesions,MTA,SuperEBA,Maximum pain assessed with verbal rating scale (VRS),NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People requiring retreatment of periapical lesions,MTA,Gutta-percha,Healing - 1 year,RR,1.6,1.14,2.24,TRUE,46,1,Low,Quality of evidence was downgraded because it was based on a single study and because of imprecision.,TRUE,TRUE,FALSE,FALSE,FALSE
+People requiring retreatment of periapical lesions,MTA,Gutta-percha,Pain assessed with visual analogue scale (VAS) from 0 to 100 - 1 day,MD,-4,-16.69,8.69,FALSE,42,1,Low,Quality of evidence was downgraded because it was based on a single study and because of imprecision.,TRUE,TRUE,FALSE,FALSE,FALSE
+People requiring retreatment of periapical lesions,MTA,Gutta-percha,Prevalence of pain at 1 day,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People requiring retreatment of periapical lesions,MTA,Gutta-percha,Occurrence of postoperative infection  at 4 weeks,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People requiring retreatment of periapical lesions,MTA,Gutta-percha,Height loss of interdental papilla - 1 year,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People requiring retreatment of periapical lesions,MTA,Gutta-percha,Maximum pain assessed with verbal rating scale (VRS),NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People requiring retreatment of periapical lesions,Glass ionomer cement,Amalgam,Healing - 1 year,RR,0.98,0.86,1.12,FALSE,105,1,Very low,"Quality of evidence was downgraded owing to imprecision (CI includes RR of 1.0).
+Quality of evidence was downgraded because it was based on a single study that had high risk of bias.",TRUE,TRUE,FALSE,FALSE,FALSE
+People requiring retreatment of periapical lesions,Glass ionomer cement,Amalgam,Pain assessed with visual analogue scale (VAS) from 0 to 100 - 1 day,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People requiring retreatment of periapical lesions,Glass ionomer cement,Amalgam,Prevalence of pain at 1 day,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People requiring retreatment of periapical lesions,Glass ionomer cement,Amalgam,Occurrence of postoperative infection  at 4 weeks,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People requiring retreatment of periapical lesions,Glass ionomer cement,Amalgam,Height loss of interdental papilla - 1 year,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People requiring retreatment of periapical lesions,Glass ionomer cement,Amalgam,Maximum pain assessed with verbal rating scale (VRS),NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People requiring retreatment of periapical lesions,IRM,Gutta-percha,Healing - 1 year,RR,0.92,0.8,1.05,FALSE,147,1,Very low,"Quality of evidence was downgraded owing to imprecision (CI includes RR of 1.0).
+Quality of evidence was downgraded because it was based on a single study that had high risk of bias.",TRUE,TRUE,FALSE,FALSE,FALSE
+People requiring retreatment of periapical lesions,IRM,Gutta-percha,Pain assessed with visual analogue scale (VAS) from 0 to 100 - 1 day,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People requiring retreatment of periapical lesions,IRM,Gutta-percha,Prevalence of pain at 1 day,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People requiring retreatment of periapical lesions,IRM,Gutta-percha,Occurrence of postoperative infection  at 4 weeks,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People requiring retreatment of periapical lesions,IRM,Gutta-percha,Height loss of interdental papilla - 1 year,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People requiring retreatment of periapical lesions,IRM,Gutta-percha,Maximum pain assessed with verbal rating scale (VRS),NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People requiring retreatment of periapical lesions,SuperEBA,IRM,Healing - 1 year,RR,1.11,0.99,1.24,FALSE,194,1,Very low,"Quality of evidence was downgraded owing to imprecision (CI includes RR of 1.0).
+Quality of evidence was downgraded because it was based on a single study that had high risk of bias.",TRUE,TRUE,FALSE,FALSE,FALSE
+People requiring retreatment of periapical lesions,SuperEBA,IRM,Pain assessed with visual analogue scale (VAS) from 0 to 100 - 1 day,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People requiring retreatment of periapical lesions,SuperEBA,IRM,Prevalence of pain at 1 day,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People requiring retreatment of periapical lesions,SuperEBA,IRM,Occurrence of postoperative infection  at 4 weeks,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People requiring retreatment of periapical lesions,SuperEBA,IRM,Height loss of interdental papilla - 1 year,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People requiring retreatment of periapical lesions,SuperEBA,IRM,Maximum pain assessed with verbal rating scale (VRS),NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People requiring retreatment of periapical lesions,Calcium sulphate,No grafting,Healing - 1 year,RR,1.12,0.83,1.5,FALSE,18,1,Low,Quality of evidence was downgraded two levels because it was based on a single study and because of imprecision.,FALSE,TRUE,FALSE,FALSE,FALSE
+People requiring retreatment of periapical lesions,GTR + Bovine bone,No grafting,Healing - 1 year,RR,1.12,0.86,1.46,FALSE,59,1,Low,Quality of evidence was downgraded two levels because it was based on a single study and because of imprecision.,FALSE,TRUE,FALSE,FALSE,FALSE
+People requiring retreatment of periapical lesions,PRGF gel,No grafting,Pain assessed with visual analogue scale (VAS) from 0 to 100 - 1 day,MD,-51.6,-63.43,-39.77,TRUE,36,1,Low,Quality of evidence was downgraded two levels because it was based on a single study and because of imprecision.,FALSE,TRUE,FALSE,FALSE,FALSE
+People requiring retreatment of periapical lesions,grafting,No grafting,Prevalence of pain at 1 day,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People requiring retreatment of periapical lesions,grafting,No grafting,Occurrence of postoperative infection  at 4 weeks,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People requiring retreatment of periapical lesions,grafting,No grafting,Height loss of interdental papilla - 1 year,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People requiring retreatment of periapical lesions,grafting,No grafting,Maximum pain assessed with verbal rating scale (VRS),NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People requiring retreatment of periapical lesions,LLLT,Placebo,Healing - 1 year,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People requiring retreatment of periapical lesions,LLLT,Placebo,Pain assessed with visual analogue scale (VAS) from 0 to 100 - 1 day,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People requiring retreatment of periapical lesions,LLLT,Placebo,Prevalence of pain at 1 day,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People requiring retreatment of periapical lesions,LLLT,Placebo,Occurrence of postoperative infection  at 4 weeks,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People requiring retreatment of periapical lesions,LLLT,Placebo,Height loss of interdental papilla - 1 year,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People requiring retreatment of periapical lesions,LLLT,Placebo,Maximum pain assessed with verbal rating scale (VRS),NA,NA,NA,NA,NA,52,1,Very low,Quality of evidence was downgraded three levels because it is based on a single study at high risk of bias.,TRUE,FALSE,FALSE,FALSE,FALSE
+People requiring retreatment of periapical lesions,LLLT,Control,Maximum pain assessed with verbal rating scale (VRS),NA,NA,NA,NA,NA,44,1,Very low,Quality of evidence was downgraded three levels because it is based on a single study at high risk of bias.,TRUE,FALSE,FALSE,FALSE,FALSE

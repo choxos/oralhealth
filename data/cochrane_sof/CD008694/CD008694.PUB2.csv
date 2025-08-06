@@ -1,0 +1,11 @@
+Population,Intervention,Comparison,Outcome,Measure,Effect,CI Lower,CI Upper,Significant,Number of participants,Number of studies,Certainty of the evidence (GRADE),Reasons for GRADE if not High,Risk of bias,Imprecision,Inconsistency,Indirectness,Publication bias
+children with pacifier or digit sucking habits,orthodontic appliances (palatal arch/palatal crib),no treatment,Sucking cessation (short term),RR,6.53,1.67,25.53,TRUE,70,2,Low,"Downgraded due to risk of bias.
+Downgraded due to applicability (only 2 types of orthodontic appliance evaluated: palatal arch and palatal crib).",TRUE,FALSE,FALSE,TRUE,FALSE
+children with pacifier or digit sucking habits,orthodontic appliances (palatal arch/palatal crib),no treatment,Occlusion (changes in overbite),MD,4.1,2.93,5.27,TRUE,24,1,Very low,"Downgraded due to risk of bias.
+Downgraded due to applicability (only 2 types of orthodontic appliance evaluated: palatal arch and palatal crib).
+Downgraded for imprecision due to small number of participants.",TRUE,TRUE,FALSE,TRUE,FALSE
+children with pacifier or digit sucking habits,orthodontic appliances (palatal arch/palatal crib),no treatment,Adverse events,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+children with pacifier or digit sucking habits,psychological interventions,no treatment,Sucking cessation (short term),RR,6.16,1.18,32.1,TRUE,87,2,Low,"Downgraded due to risk of bias.
+Downgraded due to applicability.",TRUE,FALSE,FALSE,TRUE,FALSE
+children with pacifier or digit sucking habits,psychological interventions,no treatment,Occlusion,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+children with pacifier or digit sucking habits,psychological interventions,no treatment,Adverse events,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA

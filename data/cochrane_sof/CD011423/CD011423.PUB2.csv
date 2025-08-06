@@ -1,0 +1,25 @@
+Population,Intervention,Comparison,Outcome,Measure,Effect,CI Lower,CI Upper,Significant,Number of participants,Number of studies,Certainty of the evidence (GRADE),Reasons for GRADE if not High,Risk of bias,Imprecision,Inconsistency,Indirectness,Publication bias
+patients affected by infrabony defects requiring surgical treatment,APC + OFD,OFD,Change in probing depth (PD) (mm) (9‐12 months follow‐up),MD,1.29,1,1.58,TRUE,510,12,Very low,"Downgraded by 2 levels for high risk of performance bias.
+Downgraded by 2 levels for high heterogeneity.",TRUE,FALSE,TRUE,FALSE,FALSE
+patients affected by infrabony defects requiring surgical treatment,APC + OFD,OFD,Change in clinical attachment level (CAL) (mm) (9‐12 months follow‐up),MD,1.47,1.11,1.82,TRUE,510,12,Very low,"Downgraded by 2 levels for high risk of performance bias.
+Downgraded by 2 levels for high heterogeneity.",TRUE,FALSE,TRUE,FALSE,FALSE
+patients affected by infrabony defects requiring surgical treatment,APC + OFD,OFD,Change in radiographic bone defect filling (RBF) (%) (9‐12 months follow‐up),MD,34.26,30.07,38.46,TRUE,401,9,Very low,"Downgraded by 2 levels for high risk of performance bias.
+Downgraded by 2 levels for high heterogeneity.",TRUE,FALSE,TRUE,FALSE,FALSE
+patients affected by infrabony defects requiring surgical treatment,APC + OFD + BG,OFD + BG,Change in probing depth (PD) (mm) (All follow‐ups),MD,0.54,0.33,0.75,TRUE,569,17,Very low,"Downgraded by 2 levels for high risk of performance bias.
+Downgraded by 2 levels for high heterogeneity.",TRUE,FALSE,TRUE,FALSE,FALSE
+patients affected by infrabony defects requiring surgical treatment,APC + OFD + BG,OFD + BG,Change in clinical attachment level (CAL) (mm) (All follow‐ups),MD,0.72,0.43,1,TRUE,569,17,Very low,"Downgraded by 2 levels for high risk of performance bias.
+Downgraded by 2 levels for high heterogeneity.",TRUE,FALSE,TRUE,FALSE,FALSE
+patients affected by infrabony defects requiring surgical treatment,APC + OFD + BG,OFD + BG,Change in radiographic bone defect filling (RBF) (%) (All follow‐ups),MD,8.1,5.26,10.94,TRUE,420,11,Very low,"Downgraded by 2 levels for high risk of performance bias.
+Downgraded by 2 levels for high heterogeneity.",TRUE,FALSE,TRUE,FALSE,FALSE
+patients affected by infrabony defects requiring surgical treatment,APC + GTR,GTR,Change in probing depth (PD) (mm) (All follow‐ups),MD,0.92,-0.02,1.86,FALSE,248,7,Very low,"Downgraded by 2 levels for high risk of performance bias.
+Downgraded by 2 levels for high heterogeneity.
+Downgraded by 2 levels for imprecision (wide confidence interval and small sample size).",TRUE,TRUE,TRUE,FALSE,FALSE
+patients affected by infrabony defects requiring surgical treatment,APC + GTR,GTR,Change in clinical attachment level (CAL) (mm) (All follow‐ups),MD,0.42,-0.02,0.86,FALSE,248,7,Very low,"Downgraded by 2 levels for high risk of performance bias.
+Downgraded by 2 levels for high heterogeneity.
+Downgraded by 2 levels for imprecision (wide confidence interval and small sample size).",TRUE,TRUE,TRUE,FALSE,FALSE
+patients affected by infrabony defects requiring surgical treatment,APC + EMD,EMD,Change in probing depth (PD) (mm) (All follow‐ups),MD,0.13,-0.05,0.3,FALSE,75,2,Very low,"Downgraded by 2 levels for high risk of performance bias.
+Downgraded by 2 levels for imprecision (wide confidence interval and small sample size).",TRUE,TRUE,FALSE,FALSE,FALSE
+patients affected by infrabony defects requiring surgical treatment,APC + EMD,EMD,Change in clinical attachment level (CAL) (mm) (All follow‐ups),MD,0.1,-0.13,0.32,FALSE,75,2,Very low,"Downgraded by 2 levels for high risk of performance bias.
+Downgraded by 2 levels for imprecision (wide confidence interval and small sample size).",TRUE,TRUE,FALSE,FALSE,FALSE
+patients affected by infrabony defects requiring surgical treatment,APC + EMD,EMD,Change in radiographic bone defect filling (RBF) (%) (All follow‐ups),MD,-0.6,-6.21,5.01,FALSE,49,1,Very low,"Downgraded by 2 levels for high risk of performance bias.
+Downgraded by 2 levels for imprecision (wide confidence interval and small sample size).",TRUE,TRUE,FALSE,FALSE,FALSE

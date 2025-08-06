@@ -1,0 +1,13 @@
+Population,Intervention,Comparison,Outcome,Measure,Effect,CI Lower,CI Upper,Significant,Number of participants,Number of studies,Certainty of the evidence (GRADE),Reasons for GRADE if not High,Risk of bias,Imprecision,Inconsistency,Indirectness,Publication bias
+patients with taste disturbances,zinc,placebo,Taste acuity improvement - Patient reported outcome,RR,1.45,1,2.1,FALSE,119,2,very low,"Risk of bias: unclear randomisation and blinding and high risk of bias due to attrition in Sakai 2002. Downgraded by 1 level.
+Serious Imprecision: The CI of the effect estimate indicates no difference as well as appreciable benefit with zinc. Downgraded by 1 level.
+Publication bias: Data from Jprn‐C 2013 (awaiting classification) with 150 participants, is unavailable as the authors refused to share data prior to publication.",TRUE,TRUE,FALSE,FALSE,TRUE
+patients with taste disturbances,zinc,placebo,Taste acuity improvement - Objective outcome - Continuous - Overall taste improvement,SMD,0.44,0.23,0.65,TRUE,366,3,moderate,"Publication bias: Data from Jprn‐C 2013 (awaiting classification) with 150 participants, is unavailable as the authors refused to share data prior to publication.",FALSE,FALSE,FALSE,FALSE,TRUE
+patients with taste disturbances,zinc,placebo,Taste acuity improvement - Objective outcome - Continuous - Taste recognition,SMD,1.26,0.07,2.44,TRUE,14,1,very low,"Serious Imprecision: The CI of the effect estimate indicates no difference as well as appreciable benefit with zinc. Downgraded by 1 level.
+Incomplete data due to attrition bias and other bias, such as inclusion of one 3‐year old child, possibility of carry‐over effect.
+Inconsistency in outcome assessment: smile or grimace were considered as outcome for 6 month‐old, 3‐ and 5‐year old children.",TRUE,TRUE,TRUE,FALSE,FALSE
+patients with taste disturbances,zinc,placebo,Taste acuity improvement - Objective outcome - Dichotomous - Idiopathic and zinc deficient taste disorders,RR,1.7,1.2,2.01,TRUE,73,1,low,"Risk of bias: unclear randomisation and blinding and high risk of bias due to attrition in Sakai 2002. Downgraded by 1 level.
+Publication bias: Data from Jprn‐C 2013 (awaiting classification) with 150 participants, is unavailable as the authors refused to share data prior to publication.",TRUE,FALSE,FALSE,FALSE,TRUE
+patients with taste disturbances,zinc,placebo,Adverse events,RR,6.21,1.12,34.37,TRUE,335,3,NA,NA,NA,NA,NA,NA,NA
+patients with taste disturbances,acupuncture,sham control,Taste discrimination,MD,2.8,-1.18,6.78,FALSE,37,1,low,"Single‐blinded study.
+The CI of the effect estimate indicates no difference as well as appreciable benefit with acupuncture. Downgraded by 1 level.",TRUE,TRUE,FALSE,FALSE,FALSE

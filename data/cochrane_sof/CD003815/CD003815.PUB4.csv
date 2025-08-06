@@ -1,0 +1,7 @@
+Population,Intervention,Comparison,Outcome,Measure,Effect,CI Lower,CI Upper,Significant,Number of participants,Number of studies,Certainty of the evidence (GRADE),Reasons for GRADE if not High,Risk of bias,Imprecision,Inconsistency,Indirectness,Publication bias
+adults with missing teeth,implant A,implant B,Implant failure,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+adults with missing teeth,implant A,implant B,Bone level change,MD,0.59,0.44,0.74,TRUE,NA,1,NA,NA,NA,NA,NA,NA,NA
+adults with missing teeth,turned implants,roughened implants,Early implant failure,RR,2.79,0.87,8.9,FALSE,285,6,low,"Downgraded as 4 studies at high risk of bias and 2 unclear.
+Downgraded for imprecision (low sample size/event rates).",TRUE,TRUE,FALSE,FALSE,FALSE
+adults with missing teeth,turned implants,roughened implants,Peri-implantitis,RR,0.8,0.67,0.96,TRUE,144,4,low,"Downgraded for imprecision (low sample size/event rates).
+Downgraded as 3 studies at high risk of bias and 1 unclear.",TRUE,TRUE,FALSE,FALSE,FALSE

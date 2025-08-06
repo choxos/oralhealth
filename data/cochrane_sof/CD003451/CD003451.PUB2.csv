@@ -1,0 +1,9 @@
+Population,Intervention,Comparison,Outcome,Measure,Effect,CI Lower,CI Upper,Significant,Number of participants,Number of studies,Certainty of the evidence (GRADE),Reasons for GRADE if not High,Risk of bias,Imprecision,Inconsistency,Indirectness,Publication bias
+children with prominent lower front teeth,facemask,no treatment,Overjet - 1 year treatment (at end of treatment),MD,4.1,3.04,5.16,TRUE,69,1,Moderate,Only one study reported overjet,FALSE,TRUE,FALSE,FALSE,FALSE
+children with prominent lower front teeth,facemask,no treatment,Overjet - 1 year treatment (mean 2 years post-treatment),MD,2.5,1.21,3.79,TRUE,63,1,Moderate,Only one study reported overjet,FALSE,TRUE,FALSE,FALSE,FALSE
+children with prominent lower front teeth,facemask,no treatment,ANB - 1 year follow-up,MD,3.93,3.46,4.39,TRUE,155,3,Low,"Downgraded because one study at low risk of bias, and two at unclear risk of bias.
+Downgraded due to heterogeneity: Chi2 = 11.29, degrees of freedom (df) = 2 (P value = 0.004); I2 = 82%",TRUE,FALSE,TRUE,FALSE,FALSE
+children with prominent lower front teeth,facemask,no treatment,ANB - 3-year follow-up,MD,1.4,0.43,2.37,TRUE,63,1,Moderate,Only one study reported this outcome,FALSE,TRUE,FALSE,FALSE,FALSE
+children with prominent lower front teeth,"chin cup (300 g, 600 g or 480 to 500 g)",no treatment,ANB - 1 year follow-up,NA,NA,NA,NA,NA,90,2,Very low,Both studies at high risk of bias with only one study providing outcome data,TRUE,TRUE,FALSE,FALSE,FALSE
+children with prominent lower front teeth,Tandem traction bow appliance,no treatment,Overjet at end of 1 year of treatment,MD,3.3,2.46,4.14,TRUE,30,1,Very low,Only one small study at high risk of bias reported this outcome,TRUE,TRUE,FALSE,FALSE,FALSE
+children with prominent lower front teeth,Tandem traction bow appliance,no treatment,ANB at end of 1 year of treatment,MD,1.7,1.09,2.31,TRUE,30,1,Very low,Only one small study at high risk of bias reported this outcome,TRUE,TRUE,FALSE,FALSE,FALSE

@@ -1,0 +1,3 @@
+Population,Intervention,Comparison,Outcome,Measure,Effect,CI Lower,CI Upper,Significant,Number of participants,Number of studies,Certainty of the evidence (GRADE),Reasons for GRADE if not High,Risk of bias,Imprecision,Inconsistency,Indirectness,Publication bias
+patients with cardiovascular disease and chronic periodontitis,periodontal treatment,community care,All-cause and CVD-related death,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+patients with cardiovascular disease and chronic periodontitis,periodontal treatment,community care,All cardiovascular events,RR,0.72,0.23,2.22,FALSE,303,1,very low,"Lack of blinding. Poor compliance with study protocol, Wide confidence interval",TRUE,TRUE,FALSE,FALSE,FALSE

@@ -1,0 +1,2 @@
+Population,Intervention,Comparison,Outcome,Measure,Effect,CI Lower,CI Upper,Significant,Number of participants,Number of studies,Certainty of the evidence (GRADE),Reasons for GRADE if not High,Risk of bias,Imprecision,Inconsistency,Indirectness,Publication bias
+patients with insufficient bone below maxillary sinus,PRP,no PRP,Implant failure (at 0 to 2 years),OR,0.61,0.09,4.27,FALSE,91,2,Low,Poor study design for both (split‐mouth and parallel group),TRUE,FALSE,FALSE,FALSE,FALSE

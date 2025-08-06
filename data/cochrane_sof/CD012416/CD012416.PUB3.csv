@@ -1,0 +1,5 @@
+Population,Intervention,Comparison,Outcome,Measure,Effect,CI Lower,CI Upper,Significant,Number of participants,Number of studies,Certainty of the evidence (GRADE),Reasons for GRADE if not High,Risk of bias,Imprecision,Inconsistency,Indirectness,Publication bias
+older adults,professional oral care,usual oral care,Incidence of NHAP,NA,NA,NA,NA,NA,5018,5,Low,Downgraded two levels due to risk of bias (performance bias and attrition bias) and imprecision.,TRUE,TRUE,FALSE,FALSE,FALSE
+older adults,professional oral care,usual oral care,Mortality (pneumonia-associated),RR,0.43,0.25,0.76,TRUE,454,2,Low,Downgraded two levels due to risk of bias (performance bias and attrition bias) and inconsistency.,TRUE,FALSE,TRUE,FALSE,FALSE
+older adults,professional oral care,usual oral care,Mortality (all-cause),NA,NA,NA,NA,NA,3764,3,Very low,Downgraded three levels due to risk of bias (performance bias and attrition bias) and severe imprecision.,TRUE,TRUE,FALSE,FALSE,FALSE
+older adults,professional oral care,usual oral care,Adverse effects of interventions,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA

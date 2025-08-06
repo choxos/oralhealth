@@ -1,0 +1,58 @@
+Population,Intervention,Comparison,Outcome,Measure,Effect,CI Lower,CI Upper,Significant,Number of participants,Number of studies,Certainty of the evidence (GRADE),Reasons for GRADE if not High,Risk of bias,Imprecision,Inconsistency,Indirectness,Publication bias
+People with oral submucous fibrosis,Antioxidant,Placebo,"Participant?reported resumption of normal eating, chewing and speech",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People with oral submucous fibrosis,Antioxidant,Placebo,Interincisal distance (< 3 months),MD,3.11,0.46,5.77,TRUE,520,2,Low,"Downgraded one level due to inconsistency (substantial heterogeneity).
+Downgraded one level due to serious concerns regarding risk of bias.",TRUE,FALSE,TRUE,FALSE,FALSE
+People with oral submucous fibrosis,Antioxidant,Placebo,Interincisal distance (3-6 months),MD,8.83,8.22,9.45,TRUE,620,3,Moderate,Downgraded one level due to serious concerns regarding risk of bias.,TRUE,FALSE,FALSE,FALSE,FALSE
+People with oral submucous fibrosis,Antioxidant,Placebo,Interincisal distance (> 6 months),MD,-1.41,-5.74,2.92,FALSE,90,1,Low,Downgraded two levels due to very serious concerns regarding imprecision of effect estimate.,FALSE,TRUE,FALSE,FALSE,FALSE
+People with oral submucous fibrosis,Antioxidant,Placebo,Burning sensation (< 3 months),MD,-30.92,-31.57,-30.27,TRUE,400,1,Moderate,Downgraded one level due to serious concerns regarding risk of bias.,TRUE,FALSE,FALSE,FALSE,FALSE
+People with oral submucous fibrosis,Antioxidant,Placebo,Burning sensation (3-6 months),MD,-70.82,-94.39,-47.25,TRUE,500,2,Moderate,"Downgraded one level due to serious concerns regarding risk of bias.
+As the heterogeneity between studies seemed to relate to magnitude rather than direction of effect, we did not downgrade for inconsistency.",TRUE,FALSE,TRUE,FALSE,FALSE
+People with oral submucous fibrosis,Antioxidant,Placebo,Burning sensation (> 6 months),MD,-27.6,-36.21,-18.99,TRUE,90,1,Moderate,Downgraded one level due to serious concerns regarding imprecision of effect estimate.,FALSE,TRUE,FALSE,FALSE,FALSE
+People with oral submucous fibrosis,Antioxidant,Placebo,Adverse effects,NA,NA,NA,NA,NA,90,1,NA,NA,NA,NA,NA,NA,NA
+People with oral submucous fibrosis,Pentoxifylline,Placebo,Interincisal distance (< 3 months),MD,1.8,1.02,2.58,TRUE,106,1,Low,"Downgraded one level due to serious concerns regarding risk of bias.
+Downgraded one level due to serious concerns regarding imprecision of effect estimate.",TRUE,TRUE,FALSE,FALSE,FALSE
+People with oral submucous fibrosis,Pentoxifylline,Placebo,Interincisal distance (3-6 months),MD,-0.15,-5.04,4.74,FALSE,136,2,Very low,"Downgraded one level due to inconsistency (substantial heterogeneity).
+Downgraded one level due to serious concerns regarding risk of bias.
+Downgraded one level due to serious concerns regarding imprecision of effect estimate.",TRUE,TRUE,TRUE,FALSE,FALSE
+People with oral submucous fibrosis,Pentoxifylline,Placebo,Interincisal distance (> 6 months),NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People with oral submucous fibrosis,Pentoxifylline,Placebo,Burning sensation (< 3 months),NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People with oral submucous fibrosis,Pentoxifylline,Placebo,Burning sensation (3-6 months),MD,-7,-28.8,42.8,FALSE,30,1,Very low,"Downgraded one level due to serious concerns regarding risk of bias.
+Downgraded two levels due to very serious concerns regarding imprecision of effect estimate.",TRUE,TRUE,FALSE,FALSE,FALSE
+People with oral submucous fibrosis,Pentoxifylline,Placebo,Burning sensation (> 6 months),NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People with oral submucous fibrosis,Pentoxifylline,Placebo,Adverse effects,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People with oral submucous fibrosis,Dexamethasone,Placebo,Interincisal distance (< 3 months),MD,-1.8,-6.3,2.7,FALSE,25,1,Very low,"Downgraded one level due to serious concerns regarding risk of bias.
+Downgraded two levels due to very serious concerns regarding imprecision of effect estimate.",TRUE,TRUE,FALSE,FALSE,FALSE
+People with oral submucous fibrosis,Dexamethasone,Placebo,Interincisal distance (3-6 months),MD,-2.1,-6.77,2.57,FALSE,25,1,Very low,"Downgraded one level due to serious concerns regarding risk of bias.
+Downgraded two levels due to very serious concerns regarding imprecision of effect estimate.",TRUE,TRUE,FALSE,FALSE,FALSE
+People with oral submucous fibrosis,Dexamethasone,Placebo,Interincisal distance (> 6 months),NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People with oral submucous fibrosis,Dexamethasone,Placebo,Burning sensation (< 3 months),MD,-52,-62.04,-41.96,TRUE,25,1,Very low,"Downgraded one level due to serious concerns regarding risk of bias.
+Downgraded two levels due to very serious concerns regarding imprecision of effect estimate.",TRUE,TRUE,FALSE,FALSE,FALSE
+People with oral submucous fibrosis,Dexamethasone,Placebo,Burning sensation (3-6 months),MD,-46,-53.44,-38.56,TRUE,25,1,Very low,"Downgraded one level due to serious concerns regarding risk of bias.
+Downgraded two levels due to very serious concerns regarding imprecision of effect estimate.",TRUE,TRUE,FALSE,FALSE,FALSE
+People with oral submucous fibrosis,Dexamethasone,Placebo,Burning sensation (> 6 months),NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People with oral submucous fibrosis,Dexamethasone,Placebo,Adverse effects,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People with oral submucous fibrosis,Vasodilator,Placebo,Interincisal distance (< 3 months),MD,2.51,-0.99,6.01,FALSE,85,2,Very low,"Downgraded one level due to serious concerns regarding risk of bias.
+Downgraded two levels due to very serious concerns regarding imprecision of effect estimate.",TRUE,TRUE,FALSE,FALSE,FALSE
+People with oral submucous fibrosis,Vasodilator,Placebo,Interincisal distance (3-6 months),MD,4.04,-1.93,10.02,FALSE,85,2,Very low,"Downgraded one level due to serious concerns regarding risk of bias.
+Downgraded two levels due to very serious concerns regarding imprecision of effect estimate.",TRUE,TRUE,FALSE,FALSE,FALSE
+People with oral submucous fibrosis,Vasodilator,Placebo,Interincisal distance (> 6 months),NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People with oral submucous fibrosis,Vasodilator,Placebo,Burning sensation (< 3 months),MD,-38.79,-52.06,-25.53,TRUE,85,2,Very low,"Downgraded one level due to inconsistency (substantial heterogeneity).
+Downgraded one level due to serious concerns regarding risk of bias.
+Downgraded one level due to serious concerns regarding imprecision of effect estimate.",TRUE,TRUE,TRUE,FALSE,FALSE
+People with oral submucous fibrosis,Vasodilator,Placebo,Burning sensation (3-6 months),MD,-51.02,-72.85,-29.2,TRUE,85,2,Very low,"Downgraded one level due to inconsistency (substantial heterogeneity).
+Downgraded one level due to serious concerns regarding risk of bias.
+Downgraded one level due to serious concerns regarding imprecision of effect estimate.",TRUE,TRUE,TRUE,FALSE,FALSE
+People with oral submucous fibrosis,Vasodilator,Placebo,Burning sensation (> 6 months),NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People with oral submucous fibrosis,Vasodilator,Placebo,Adverse effects,NA,NA,NA,NA,NA,85,2,NA,NA,NA,NA,NA,NA,NA
+People with oral submucous fibrosis,Hydrocortisone + hyaluronidase,Placebo,Interincisal distance (< 3 months),NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People with oral submucous fibrosis,Hydrocortisone + hyaluronidase,Placebo,Interincisal distance (3-6 months),MD,-4.88,-12.87,3.11,FALSE,12,1,Very low,"Downgraded one level due to serious concerns regarding risk of bias.
+Downgraded two levels due to very serious concerns regarding imprecision of effect estimate.",TRUE,TRUE,FALSE,FALSE,FALSE
+People with oral submucous fibrosis,Hydrocortisone + hyaluronidase,Placebo,Interincisal distance (> 6 months),NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People with oral submucous fibrosis,Hydrocortisone + hyaluronidase,Placebo,Burning sensation,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People with oral submucous fibrosis,Hydrocortisone + hyaluronidase,Placebo,Adverse effects,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People with oral submucous fibrosis,Physiotherapy,No active treatment,Interincisal distance (< 3 months),NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People with oral submucous fibrosis,Physiotherapy,No active treatment,Interincisal distance (3-6 months),MD,0.5,-7.72,8.72,FALSE,24,1,Very low,"Downgraded one level due to serious concerns regarding risk of bias.
+Downgraded two levels due to very serious concerns regarding imprecision of effect estimate.",TRUE,TRUE,FALSE,FALSE,FALSE
+People with oral submucous fibrosis,Physiotherapy,No active treatment,Interincisal distance (> 6 months),NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People with oral submucous fibrosis,Physiotherapy,No active treatment,Burning sensation,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People with oral submucous fibrosis,Physiotherapy,No active treatment,Adverse effects,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA

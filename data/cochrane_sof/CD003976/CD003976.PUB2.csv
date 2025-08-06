@@ -1,0 +1,14 @@
+Population,Intervention,Comparison,Outcome,Measure,Effect,CI Lower,CI Upper,Significant,Number of participants,Number of studies,Certainty of the evidence (GRADE),Reasons for GRADE if not High,Risk of bias,Imprecision,Inconsistency,Indirectness,Publication bias
+People undergoing orthodontic treatment,Analgesic,Control (placebo or no treatment),Pain assessed with VAS (0 to 100 mm where 0 = no pain) Follow-up: mean 2 hours,MD,-11.66,-16.15,-7.17,TRUE,685,10,Moderate,Downgraded one level for risk of bias as four of the studies were at high risk of bias and the remaining six were at unclear risk of bias. Not downgraded for heterogeneity as effects were all in same direction.,TRUE,FALSE,FALSE,FALSE,FALSE
+People undergoing orthodontic treatment,Analgesic,Control (placebo or no treatment),Rescue analgesia,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People undergoing orthodontic treatment,Analgesic,Control (placebo or no treatment),Adverse events,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People undergoing orthodontic treatment,NSAID,Paracetamol,Pain assessed with VAS (0 to 100 mm where 0 = no pain) Follow-up: mean 2 hours,MD,-2.92,-8.48,2.65,FALSE,664,7,Low,"Downgraded one level for risk of bias: three studies at high risk of bias and two at unknown risk of bias; only one study of low risk of bias.
+Downgraded one level for imprecision of estimate.",TRUE,TRUE,FALSE,FALSE,FALSE
+People undergoing orthodontic treatment,NSAID,Paracetamol,Rescue analgesia,RR,1.5,0.6,3.6,FALSE,159,1,Very low,Downgraded as only one trial reported on this,TRUE,TRUE,FALSE,FALSE,FALSE
+People undergoing orthodontic treatment,NSAID,Paracetamol,Adverse events,NA,NA,NA,NA,NA,NA,1,Very low,Downgraded as only one trial reported on this,TRUE,TRUE,FALSE,FALSE,FALSE
+Pain relief during orthodontic treatment,Ibuprofen pre-emptively,Ibuprofen post-treatment,Pain assessed with VAS (0 to 100 mm where 0 = no pain) Follow-up: mean 2 hours,MD,-11.3,-16.27,-6.33,TRUE,41,1,Very low,"Downgraded one level for risk of bias, one level as single small study, one level for imprecision",TRUE,TRUE,FALSE,FALSE,FALSE
+Pain relief during orthodontic treatment,Ibuprofen pre-emptively,Ibuprofen post-treatment,Rescue analgesia,RR,0.8,0.3,1.9,FALSE,41,1,NA,NA,NA,NA,NA,NA,NA
+Pain relief during orthodontic treatment,Ibuprofen pre-emptively,Ibuprofen post-treatment,Adverse events,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Pain relief during orthodontic treatment,NSAID,Local anaesthetic,Pain assessed with VAS (0 to 100 mm where 0 = no pain) Follow-up: mean 2 hours,MD,13,-3.45,29.45,FALSE,48,1,Very low,"Downgraded two levels as single, small study at unclear risk of bias, one level for imprecision",TRUE,TRUE,FALSE,FALSE,FALSE
+Pain relief during orthodontic treatment,NSAID,Local anaesthetic,Rescue analgesia,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Pain relief during orthodontic treatment,NSAID,Local anaesthetic,Adverse events,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA

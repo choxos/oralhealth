@@ -1,0 +1,2 @@
+Population,Intervention,Comparison,Outcome,Measure,Effect,CI Lower,CI Upper,Significant,Number of participants,Number of studies,Certainty of the evidence (GRADE),Reasons for GRADE if not High,Risk of bias,Imprecision,Inconsistency,Indirectness,Publication bias
+people requiring dental implants,prophylactic antibiotics,no antibiotics or placebo,Implant failure at 4 months,RR,0.33,0.16,0.67,TRUE,1162,6,Moderate,Downgraded due to three of the six studies being at high risk of bias,NA,NA,NA,NA,NA

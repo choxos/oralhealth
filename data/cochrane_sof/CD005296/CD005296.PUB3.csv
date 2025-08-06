@@ -1,0 +1,14 @@
+Population,Intervention,Comparison,Outcome,Measure,Effect,CI Lower,CI Upper,Significant,Number of participants,Number of studies,Certainty of the evidence (GRADE),Reasons for GRADE if not High,Risk of bias,Imprecision,Inconsistency,Indirectness,Publication bias
+people receiving endodontic treatment of permanent teeth,single-visit treatment,multiple-visit treatment,Tooth extraction due to endodontic problems,RR,0.44,0.04,4.78,FALSE,220,1,Very Low,"The study was judged at high risk of bias.
+The results are based on a single study performed in a university centre.
+The results are based on an single study, with relatively few participants and events.",TRUE,TRUE,FALSE,TRUE,FALSE
+people receiving endodontic treatment of permanent teeth,single-visit treatment,multiple-visit treatment,Radiological failure,RR,0.91,0.68,1.21,FALSE,1493,11,Low,The results are based on a number of studies judged at high risk of bias. The results showed significant imprecision.,TRUE,TRUE,FALSE,FALSE,FALSE
+people receiving endodontic treatment of permanent teeth,single-visit treatment,multiple-visit treatment,Pain (dichotomous) - pain in the immediate postoperative period (until 72 hours postobturation),RR,0.99,0.84,1.17,FALSE,1560,9,Moderate,The results are based on a number of studies judged at high risk of bias.,TRUE,FALSE,FALSE,FALSE,FALSE
+people receiving endodontic treatment of permanent teeth,single-visit treatment,multiple-visit treatment,Pain (dichotomous) - pain at 1 week,RR,1.5,0.99,2.28,FALSE,1383,8,Low,"The results are based on a number of studies judged at high risk of bias.
+The studies showed significant heterogeneity.",TRUE,FALSE,TRUE,FALSE,FALSE
+people receiving endodontic treatment of permanent teeth,single-visit treatment,multiple-visit treatment,Swelling or flare-up,RR,1.36,0.66,2.81,FALSE,281,4,Low,"The results are based on a number of studies judged at high risk of bias.
+The results showed significant imprecision.",TRUE,TRUE,FALSE,FALSE,FALSE
+people receiving endodontic treatment of permanent teeth,single-visit treatment,multiple-visit treatment,Painkiller use,RR,2.35,1.6,3.45,TRUE,648,4,Moderate,The results are based on a number of studies judged at high risk of bias.,TRUE,FALSE,FALSE,FALSE,FALSE
+people receiving endodontic treatment of permanent teeth,single-visit treatment,multiple-visit treatment,Sinus track or fistula formation,RR,0.98,0.15,6.48,FALSE,345,2,Low,"The results are based on a number of studies judged at high risk of bias.
+The results are based on two studies only, with relatively few participants and events.",TRUE,TRUE,FALSE,FALSE,FALSE
+people receiving endodontic treatment of permanent teeth,single-visit treatment,multiple-visit treatment,Any complication,RR,0.92,0.77,1.11,FALSE,1686,10,Moderate,The results are based on a number of studies judged at high risk of bias.,TRUE,FALSE,FALSE,FALSE,FALSE

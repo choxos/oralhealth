@@ -1,0 +1,80 @@
+Population,Intervention,Comparison,Outcome,Measure,Effect,CI Lower,CI Upper,Significant,Number of participants,Number of studies,Certainty of the evidence (GRADE),Reasons for GRADE if not High,Risk of bias,Imprecision,Inconsistency,Indirectness,Publication bias
+dental patients undergoing aerosol‐generating procedures and dental healthcare professionals treating them,CHX,no rinsing,Incidence of infection of dental healthcare providers,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+dental patients undergoing aerosol‐generating procedures and dental healthcare professionals treating them,CHX,no rinsing,Reduction in level of contamination by particles > 5 �m (droplets) at distances of < 2 m from patient's oral cavity in the operative environment �operator level,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+dental patients undergoing aerosol‐generating procedures and dental healthcare professionals treating them,CHX,no rinsing,"Reduction in level of contamination by particles ?5 �m (droplet nuclei) at distances of ? 2 m from patient's oral cavity in the operative environment
+",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+dental patients undergoing aerosol‐generating procedures and dental healthcare professionals treating them,CHX,no rinsing,"Adverse events such as transient discolouration, altered taste, allergic reaction, hypersensitivity",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+dental patients undergoing aerosol‐generating procedures and dental healthcare professionals treating them,CHX,water,Incidence of infection of dental healthcare providers,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+dental patients undergoing aerosol‐generating procedures and dental healthcare professionals treating them,CHX,water,Reduction in level of contamination by particles > 5 µm (droplets) at distances of < 2 m from patient's oral cavity in the operative environment – combined patient and operator level,MD,632.94,1267.33,-1.45,FALSE,80,3,Very low,"Downgraded two levels due to inconsistency.
+Downgraded one level due to imprecision.
+Downgraded one level due to risk of bias.",TRUE,TRUE,TRUE,FALSE,FALSE
+dental patients undergoing aerosol‐generating procedures and dental healthcare professionals treating them,CHX,water,"Reduction in the level of contamination by particles > 5 µm (droplets) at distances of < 2 m from patient's oral cavity in the operative environment – combined operator, assistant and patient level",MD,101.1,107.01,95.19,TRUE,20,1,Low,"Downgraded one level due to imprecision.
+Downgraded one level due to risk of bias.",TRUE,TRUE,FALSE,FALSE,FALSE
+dental patients undergoing aerosol‐generating procedures and dental healthcare professionals treating them,CHX,water,Reduction in level of contamination by particles ?5 �m (droplet nuclei) at distances of ? 2 m from patient's oral cavity in the operative environment,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+dental patients undergoing aerosol‐generating procedures and dental healthcare professionals treating them,CHX,water,"Adverse events such as transient discolouration, altered taste, allergic reaction, hypersensitivity",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+dental patients undergoing aerosol‐generating procedures and dental care professionals treating them,CHX,saline,Incidence of infection of dental healthcare providers,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+dental patients undergoing aerosol‐generating procedures and dental care professionals treating them,CHX,saline,Reduction in level of contamination by particles > 5 µm (droplets) at distances of < 2 m from patient's oral cavity in the operative environment – operator level,MD,21.33,36.8,5.86,TRUE,12,1,Very low,"Downgraded two levels due to serious risk of bias.
+Downgraded two levels due to serious imprecision.",TRUE,TRUE,FALSE,FALSE,FALSE
+dental patients undergoing aerosol‐generating procedures and dental care professionals treating them,CHX,saline,Reduction in the level of contamination by particles ?5 �m (droplet nuclei) at distances of ? 2 m from patient's oral cavity in the operative environment,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+dental patients undergoing aerosol‐generating procedures and dental care professionals treating them,CHX,saline,"Adverse events such as transient discolouration, altered taste, allergic reaction, hypersensitivity",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+dental patients undergoing aerosol‐generating procedures and dental care professionals treating them,CHX,essential oils/herbal mouthwash,Incidence of infection of dental healthcare providers,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+dental patients undergoing aerosol‐generating procedures and dental care professionals treating them,CHX,essential oils/herbal mouthwash,Reduction in level of contamination by particles > 5 µm (droplets) at distances of < 2 m from patient's oral cavity in the operative environment – operator level,MD,23.09,34.4,11.78,TRUE,76,3,Low,"Downgraded one level due to risk of bias.
+Downgraded one level due to imprecision.",TRUE,TRUE,FALSE,FALSE,FALSE
+dental patients undergoing aerosol‐generating procedures and dental care professionals treating them,CHX,essential oils/herbal mouthwash,Reduction in level of contamination by particles > 5 µm (droplets) at distances of < 2 m from patient's oral cavity in the operative environment – assistant level,MD,12.21,15.58,8.83,TRUE,76,3,Low,"Downgraded one level due to risk of bias.
+Downgraded one level due to imprecision.",TRUE,TRUE,FALSE,FALSE,FALSE
+dental patients undergoing aerosol‐generating procedures and dental care professionals treating them,CHX,essential oils/herbal mouthwash,Reduction in level of contamination by particles ? 5 �m (droplet nuclei) at distances of ? 2 m from patient's oral cavity in the operative environment,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+dental patients undergoing aerosol‐generating procedures and dental care professionals treating them,CHX,essential oils/herbal mouthwash,"Adverse events such as transient discolouration, altered taste, allergic reaction, hypersensitivity",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+dental patients undergoing aerosol‐generating procedures and dental care professionals treating them,CHX,povidone iodine,Incidence of infection of dental healthcare providers,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+dental patients undergoing aerosol‐generating procedures and dental care professionals treating them,CHX,povidone iodine,Reduction in level of contamination by particles > 5 µm (droplets) at distances of < 2 m from patient's oral cavity in the operative environment – operator level (aerobic cultures),MD,10.75,26.24,-4.74,FALSE,52,2,Very low,"Downgraded two levels due to risk of bias.
+Downgraded two levels due to imprecision.",TRUE,TRUE,FALSE,FALSE,FALSE
+dental patients undergoing aerosol‐generating procedures and dental care professionals treating them,CHX,povidone iodine,Reduction in level of contamination by particles > 5 µm (droplets) at distances of < 2 m from patient's oral cavity in the operative environment – operator level (aerobic and anaerobic cultures combined),MD,4.7,7.01,2.39,TRUE,30,1,Very low,"Downgraded two levels due to imprecision.
+Downgraded one level due to risk of bias.",TRUE,TRUE,FALSE,FALSE,FALSE
+dental patients undergoing aerosol‐generating procedures and dental care professionals treating them,CHX,povidone iodine,Reduction in level of contamination by particles ≤ 5 µm (droplet nuclei) at distances of ≥ 2 m from patient's oral cavity in the operative environment – aerobic cultures,MD,-0.2,7.28,-7.68,FALSE,40,1,Very low,"Downgraded two levels due to risk of bias.
+Downgraded two levels due to imprecision.",TRUE,TRUE,FALSE,FALSE,FALSE
+dental patients undergoing aerosol‐generating procedures and dental care professionals treating them,CHX,povidone iodine,Reduction in level of contamination by particles ≤ 5 µm (droplet nuclei) at distances of ≥ 2 m from patient's oral cavity in the operative environment – anaerobic cultures,MD,0.8,11.65,-10.05,FALSE,40,1,Very low,"Downgraded two levels due to risk of bias.
+Downgraded two levels due to imprecision.",TRUE,TRUE,FALSE,FALSE,FALSE
+dental patients undergoing aerosol‐generating procedures and dental care professionals treating them,CHX,povidone iodine,"Adverse events such as transient discolouration, altered taste, allergic reaction, hypersensitivity",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+dental patients undergoing aerosol‐generating procedures and dental care professionals treating them,CHX,CPC,Incidence of infection of dental healthcare providers,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+dental patients undergoing aerosol‐generating procedures and dental care professionals treating them,CHX,CPC,Reduction in level of contamination by particles > 5 µm (droplets) at distances of < 2 m from patient's oral cavity in the operative environment – operator,MD,2.2,9.07,-4.67,FALSE,20,1,Very low,"Downgraded one level due to risk of bias.
+Downgraded two levels due to imprecision.",TRUE,TRUE,FALSE,FALSE,FALSE
+dental patients undergoing aerosol‐generating procedures and dental care professionals treating them,CHX,CPC,Reduction in level of contamination by particles > 5 µm (droplets) at distances of < 2 m from patient's oral cavity in the operative environment – assistant,MD,0.2,6.3,-5.9,FALSE,20,1,Very low,"Downgraded one level due to risk of bias.
+Downgraded two levels due to imprecision.",TRUE,TRUE,FALSE,FALSE,FALSE
+dental patients undergoing aerosol‐generating procedures and dental care professionals treating them,CHX,CPC,Reduction in level of contamination by particles > 5 µm (droplets) at distances of < 2 m from patient's oral cavity in the operative environment – operator,MD,-4.43,2.27,-11.13,FALSE,50,2,Very low,"Downgraded one level due to risk of bias.
+Downgraded two levels due to imprecision.",TRUE,TRUE,FALSE,FALSE,FALSE
+dental patients undergoing aerosol‐generating procedures and dental care professionals treating them,CHX,CPC,Reduction in level of contamination by particles > 5 µm (droplets) at distances of < 2 m from patient's oral cavity in the operative environment – assistant,MD,-8.8,-2.7,-14.9,TRUE,20,1,Very low,"Downgraded one level due to risk of bias.
+Downgraded two levels due to imprecision.",TRUE,TRUE,FALSE,FALSE,FALSE
+dental patients undergoing aerosol‐generating procedures and dental care professionals treating them,CHX,CPC,Reduction in level of contamination by particles > 5 µm (droplets) at distances of < 2 m from patient's oral cavity in the operative environment – operator,MD,11.5,18.37,4.63,TRUE,20,1,Very low,"Downgraded one level due to risk of bias.
+Downgraded two levels due to imprecision.",TRUE,TRUE,FALSE,FALSE,FALSE
+dental patients undergoing aerosol‐generating procedures and dental care professionals treating them,CHX,CPC,Reduction in level of contamination by particles > 5 µm (droplets) at distances of < 2 m from patient's oral cavity in the operative environment – assistant,MD,8.8,14.9,2.7,TRUE,20,1,Very low,"Downgraded one level due to risk of bias.
+Downgraded two levels due to imprecision.",TRUE,TRUE,FALSE,FALSE,FALSE
+dental patients undergoing aerosol‐generating procedures and dental care professionals treating them,CHX,CPC,Reduction in level of contamination by particles > 5 µm (droplets) at distances of < 2 m from patient's oral cavity in the operative environment – operator,MD,-13.6,-6.73,-20.47,TRUE,20,1,Very low,"Downgraded one level due to risk of bias.
+Downgraded two levels due to imprecision.",TRUE,TRUE,FALSE,FALSE,FALSE
+dental patients undergoing aerosol‐generating procedures and dental care professionals treating them,CHX,CPC,Reduction in level of contamination by particles > 5 µm (droplets) at distances of < 2 m from patient's oral cavity in the operative environment – assistant,MD,-17.4,-11.3,-23.5,TRUE,20,1,Very low,"Downgraded one level due to risk of bias.
+Downgraded two levels due to imprecision.",TRUE,TRUE,FALSE,FALSE,FALSE
+dental patients undergoing aerosol‐generating procedures and dental care professionals treating them,CHX,CPC,Reduction in level of contamination by particles > 5 µm (droplets) at distances of < 2 m from patient's oral cavity in the operative environment – operator level,MD,30,85.86,-25.86,FALSE,30,1,Very low,"Downgraded two levels due to imprecision.Downgraded one level due to inconsistency,",FALSE,TRUE,TRUE,FALSE,FALSE
+dental patients undergoing aerosol‐generating procedures and dental care professionals treating them,CHX,CPC,Reduction in level of contamination by particles ? 5 �m (droplet nuclei) at distances of ? 2 m from patient's oral cavity in the operative environment,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+dental patients undergoing aerosol‐generating procedures and dental care professionals treating them,CHX,CPC,"Adverse events such as transient discolouration, altered taste, allergic reaction, hypersensitivity",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+,,,,,,,,,,,,,,,,,
+dental patients undergoing aerosol‐generating procedures and dental care professionals treating them,tempered CHX,non‐tempered CHX,Incidence of infection of dental healthcare providers,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+dental patients undergoing aerosol‐generating procedures and dental care professionals treating them,tempered CHX,non‐tempered CHX,Reduction in level of contamination by particles > 5 µm (droplets) at distances of < 2 m from patient's oral cavity in the operative environment – operator level,MD,15.8,22.67,8.93,TRUE,20,1,Very low,"Downgraded one level due to risk of bias.
+Downgraded two levels due to imprecision.",TRUE,TRUE,FALSE,FALSE,FALSE
+dental patients undergoing aerosol‐generating procedures and dental care professionals treating them,tempered CHX,non‐tempered CHX,Reduction in level of contamination by particles > 5 µm (droplets) at distances of < 2 m from patient's oral cavity in the operative environment – assistant level,MD,17.6,23.7,11.5,TRUE,20,1,Very low,"Downgraded one level due to risk of bias.
+Downgraded two levels due to imprecision.",TRUE,TRUE,FALSE,FALSE,FALSE
+dental patients undergoing aerosol‐generating procedures and dental care professionals treating them,tempered CHX,non‐tempered CHX,Reduction in level of contamination by particles > 5 µm (droplets) at distances of < 2 m from patient's oral cavity in the operative environment – combined,MD,10.8,15.15,6.45,TRUE,20,1,Very low,"Downgraded one level due to risk of bias.
+Downgraded two levels due to imprecision.",TRUE,TRUE,FALSE,FALSE,FALSE
+dental patients undergoing aerosol‐generating procedures and dental care professionals treating them,tempered CHX,non‐tempered CHX,Reduction in the level of contamination by particles ?5 �m (droplet nuclei) at distances of ? 2 m from patient's oral cavity in the operative environment,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+dental patients undergoing aerosol‐generating procedures and dental care professionals treating them,tempered CHX,non‐tempered CHX,"Adverse events such as transient discolouration, altered taste, allergic reaction, hypersensitivity",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA

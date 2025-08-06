@@ -1,0 +1,30 @@
+Population,Intervention,Comparison,Outcome,Measure,Effect,CI Lower,CI Upper,Significant,Number of participants,Number of studies,Certainty of the evidence (GRADE),Reasons for GRADE if not High,Risk of bias,Imprecision,Inconsistency,Indirectness,Publication bias
+patients reporting halitosis,mechanical tongue cleaning,no tongue cleaning,Dentist-reported OLT score,MD,0.2,0.34,0.07,TRUE,46,2,VERY LOW,"Acar 2019; Wang 2017.
+Downgraded for imprecision ‐ low sample size and event rate.
+Downgraded for risk of bias ‐ unclear risk of bias due to lack of allocation concealment, selection bias, detection bias, and reporting bias. High risk of performance bias.",TRUE,TRUE,FALSE,FALSE,FALSE
+patients reporting halitosis,mechanical tongue cleaning,no tongue cleaning,Patient-reported OLT score,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+patients reporting halitosis,mechanical tongue cleaning,no tongue cleaning,Adverse events,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+patients reporting halitosis,0.6% eucalyptus chewing gum,placebo chewing gum,Dentist-reported OLT score,MD,0.1,0.31,0.11,FALSE,65,1,VERY LOW,"Tanaka 2010.
+Downgraded for risk of bias ‐ unclear risk of bias due to lack of allocation concealment.
+Downgraded for imprecision ‐ wide confidence intervals, low sample size and event rate.",TRUE,TRUE,FALSE,FALSE,FALSE
+patients reporting halitosis,0.6% eucalyptus chewing gum,placebo chewing gum,Patient-reported OLT score,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+patients reporting halitosis,0.6% eucalyptus chewing gum,placebo chewing gum,Adverse events,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+patients reporting halitosis,1000 mg champignon,placebo,Patient-reported VAS,MD,1.07,14.51,12.37,FALSE,40,1,VERY LOW,"Downgraded for risk of bias ‐ unclear risk of performance and detection bias and high risk of bias in reporting bias.
+Downgraded for imprecision ‐ wide confidence interval crossing the line of no effect, low sample size and event rate.",TRUE,TRUE,FALSE,FALSE,FALSE
+patients reporting halitosis,1000 mg champignon,placebo,Dentist-reported OLT score,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+patients reporting halitosis,1000 mg champignon,placebo,Adverse events,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+patients reporting halitosis,hinokitiol gel,placebo gel,Dentist-reported OLT score,MD,0.27,1.26,0.72,FALSE,18,1,VERY LOW,"Downgraded for risk of bias ‐ high risk of performance and detection bias.
+Downgraded for imprecision ‐ wide confidence interval, low sample size and event rate.",TRUE,TRUE,FALSE,FALSE,FALSE
+patients reporting halitosis,hinokitiol gel,placebo gel,Patient-reported OLT score,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+patients reporting halitosis,hinokitiol gel,placebo gel,Adverse events,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+patients reporting halitosis,0.3% triclosan toothpaste,control toothpaste,Dentist-reported breath odour score,MD,3.48,3.77,3.19,TRUE,81,1,VERY LOW,"Downgraded for risk of bias ‐ unclear risk of bias due to improper selection, lack of allocation concealment, performance, detection and reporting.
+Downgraded for imprecision ‐ low sample size and event rate.",TRUE,TRUE,FALSE,FALSE,FALSE
+patients reporting halitosis,0.3% triclosan toothpaste,control toothpaste,Patient-reported OLT score,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+patients reporting halitosis,0.3% triclosan toothpaste,control toothpaste,Adverse events,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+patients reporting halitosis,mouthwash containing chlorhexidine and zinc acetate,placebo mouthwash,Dentist-reported OLT score,MD,0.2,0.58,0.18,FALSE,44,1,VERY LOW,"Downgraded for risk of bias ‐ unclear risk of selection bias, detection bias and other bias.
+Downgraded for imprecision ‐ wide confidence intervals, low sample size and event rate.",TRUE,TRUE,FALSE,FALSE,FALSE
+patients reporting halitosis,mouthwash containing chlorhexidine and zinc acetate,placebo mouthwash,Patient-reported OLT score,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+patients reporting halitosis,mouthwash containing chlorhexidine and zinc acetate,placebo mouthwash,Adverse events,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+patients reporting halitosis,brushing + cetylpyridium mouthwash,brushing,Dentist-reported OLT score,MD,0.48,0.72,0.24,TRUE,70,1,LOW,Downgraded for imprecision ‐ low sample size and event rate.,FALSE,TRUE,FALSE,FALSE,FALSE
+patients reporting halitosis,brushing + cetylpyridium mouthwash,brushing,Patient-reported OLT score,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+patients reporting halitosis,brushing + cetylpyridium mouthwash,brushing,Adverse events,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA

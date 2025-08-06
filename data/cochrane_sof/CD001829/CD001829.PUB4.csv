@@ -1,0 +1,25 @@
+Population,Intervention,Comparison,Outcome,Measure,Effect,CI Lower,CI Upper,Significant,Number of participants,Number of studies,Certainty of the evidence (GRADE),Reasons for GRADE if not High,Risk of bias,Imprecision,Inconsistency,Indirectness,Publication bias
+People with oral leukoplakia,Vitamin A or retinoids,Placebo,Cancer development at 24 months from start of treatment (treatment lasted 12 months),RR,0.11,0.01,2.05,FALSE,85,1,Very low,Single small study at unclear risk of bias with very imprecise result,TRUE,TRUE,FALSE,FALSE,FALSE
+People with oral leukoplakia,Vitamin A or retinoids,Placebo,Clinical resolution (not completely resolved) at 4 to 12 months,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People with oral leukoplakia,Vitamin A or retinoids,Placebo,Histological changes (not improved) at 3 months,RR,0.43,0.24,0.76,TRUE,41,1,Moderate,Single small study,FALSE,TRUE,FALSE,FALSE,FALSE
+People with oral leukoplakia,Vitamin A or retinoids,Placebo,Safety of the intervention at 4 to 12 months,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People with oral leukoplakia,Systemic beta carotene,Placebo,Cancer development at 24 months from start of treatment (treatment lasted 12 months),RR,0.73,0.24,2.2,FALSE,132,2,Very low,Unclear or high risk of bias and serious imprecision,TRUE,TRUE,FALSE,FALSE,FALSE
+People with oral leukoplakia,Systemic beta carotene,Placebo,Clinical resolution (not completely resolved) at 5 to 12 months,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People with oral leukoplakia,Systemic beta carotene,Placebo,Histological changes (not improved) at 5 months (treatment lasted 3 months),RR,0.24,0.12,0.46,TRUE,58,1,Low,Single small study at unclear risk of bias,TRUE,TRUE,FALSE,FALSE,FALSE
+People with oral leukoplakia,Systemic beta carotene,Placebo,Safety of the intervention at 5 to 12 months,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People with oral leukoplakia,NSAIDs,Placebo,Cancer development,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People with oral leukoplakia,NSAIDs,Placebo,Clinical resolution (not completely resolved) at 3 months,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People with oral leukoplakia,NSAIDs,Placebo,Histological changes (not improved),NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People with oral leukoplakia,NSAIDs,Placebo,Safety of the intervention over 3 months,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People with oral leukoplakia,herbal extracts a tea components; a Chinese herbal mixture; curcumin chewing gum; freeze dried black raspberry gel,Placebo,Cancer development,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People with oral leukoplakia,herbal extracts a tea components; a Chinese herbal mixture; curcumin chewing gum; freeze dried black raspberry gel,Placebo,Clinical resolution (not completely resolved) at 3 to 6 months,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People with oral leukoplakia,herbal extracts a tea components; a Chinese herbal mixture; curcumin chewing gum; freeze dried black raspberry gel,Placebo,Histological changes (not improved) at 3 months,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People with oral leukoplakia,herbal extracts a tea components; a Chinese herbal mixture; curcumin chewing gum; freeze dried black raspberry gel,Placebo,Safety of the intervention over 3 months,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People with oral leukoplakia,Topical bleomycin,Placebo,Cancer development up to 7 years,RR,3,0.32,27.83,FALSE,20,1,Very low,Single small study at unclear risk of bias with imprecise result,TRUE,TRUE,FALSE,FALSE,FALSE
+People with oral leukoplakia,Topical bleomycin,Placebo,Clinical resolution (not completely resolved) at 3 months,RR,0.55,0.29,1.04,FALSE,22,1,Very low,Single small study at unclear risk of bias with imprecise result,TRUE,TRUE,FALSE,FALSE,FALSE
+People with oral leukoplakia,Topical bleomycin,Placebo,Histological changes (not improved) at 3 months,RR,0.49,0.22,1.1,FALSE,21,1,Very low,Single small study at unclear risk of bias with imprecise result,TRUE,TRUE,FALSE,FALSE,FALSE
+People with oral leukoplakia,Topical bleomycin,Placebo,Safety of the intervention over 3 months,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People with oral leukoplakia,Bowman-Birk inhibitor,Placebo,Cancer development,Not measured,Not measured,Not measured,Not measured,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People with oral leukoplakia,Bowman-Birk inhibitor,Placebo,Clinical resolution (not completely resolved) at 6 months,RR,1,0.91,1.09,FALSE,21,1,Low,Single small study at high risk of bias,TRUE,TRUE,FALSE,FALSE,FALSE
+People with oral leukoplakia,Bowman-Birk inhibitor,Placebo,Histological changes (not improved) at 6 months,Not measured,Not measured,Not measured,Not measured,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People with oral leukoplakia,Bowman-Birk inhibitor,Placebo,Safety of the intervention up to 6 months,Not measured,Not measured,Not measured,Not measured,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA

@@ -1,0 +1,30 @@
+Population,Intervention,Comparison,Outcome,Measure,Effect,CI Lower,CI Upper,Significant,Number of participants,Number of studies,Certainty of the evidence (GRADE),Reasons for GRADE if not High,Risk of bias,Imprecision,Inconsistency,Indirectness,Publication bias
+Adult patients with single recession-type defects,ADMG + CAF,SCTG + CAF,Aesthetic condition change related to patient's opinion,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Adult patients with single recession-type defects,ADMG + CAF,SCTG + CAF,Sites with complete root coverage,OR,0.43,0.13,1.37,FALSE,50,2,LOW,Imprecision,FALSE,TRUE,FALSE,FALSE,FALSE
+Adult patients with single recession-type defects,ADMG + CAF,SCTG + CAF,Gingival recession change,MD,-0.36,-1.03,0.3,FALSE,100,4,LOW,"Inconsistency, Imprecision",FALSE,TRUE,TRUE,FALSE,FALSE
+Adult patients with single recession-type defects,ADMG + CAF,SCTG + CAF,Clinical attachment level change,MD,-0.53,-1.14,0.08,FALSE,100,4,LOW,"Inconsistency, Imprecision",FALSE,TRUE,TRUE,FALSE,FALSE
+Adult patients with single recession-type defects,ADMG + CAF,SCTG + CAF,Keratinized tissue change,MD,-0.59,-1.27,0.1,FALSE,100,4,VERY LOW,"Inconsistency, Imprecision",FALSE,TRUE,TRUE,FALSE,FALSE
+Adult patients with single recession-type defects,ADMG + CAF,CAF,Aesthetic condition change related to patient's opinion,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Adult patients with single recession-type defects,ADMG + CAF,CAF,Sites with complete root coverage,OR,3.97,0.2,80.5,FALSE,50,2,VERY LOW,"Inconsistency, Imprecision",FALSE,TRUE,TRUE,FALSE,FALSE
+Adult patients with single recession-type defects,ADMG + CAF,CAF,Gingival recession depth change,MD,0.61,-0.52,1.73,FALSE,50,2,LOW,"Inconsistency, Imprecision",FALSE,TRUE,TRUE,FALSE,FALSE
+Adult patients with single recession-type defects,ADMG + CAF,CAF,Clinical attachment level change,MD,0.51,-0.25,1.27,FALSE,50,2,LOW,"Inconsistency, Imprecision",FALSE,TRUE,TRUE,FALSE,FALSE
+Adult patients with single recession-type defects,ADMG + CAF,CAF,Keratinized tissue width change,MD,0.28,-0.08,0.64,FALSE,50,2,LOW,"Inconsistency, Imprecision",FALSE,TRUE,TRUE,FALSE,FALSE
+Adult patients with single recession-type defects,EMP + CAF,CAF,Aesthetic condition change related to patient's opinion,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Adult patients with single recession-type defects,EMP + CAF,CAF,Gingival recession depth change,MD,0.07,-0.25,0.4,FALSE,136,3,LOW,"Inconsistency, Imprecision",FALSE,TRUE,TRUE,FALSE,FALSE
+Adult patients with single recession-type defects,EMP + CAF,CAF,Clinical attachment level change,MD,0.22,-0.02,0.45,FALSE,136,3,LOW,"Inconsistency, Imprecision",FALSE,TRUE,TRUE,FALSE,FALSE
+Adult patients with single recession-type defects,EMP + CAF,CAF,Keratinized tissue width change,MD,0.35,0.13,0.56,TRUE,136,3,LOW,"Inconsistency, Imprecision",FALSE,TRUE,TRUE,FALSE,FALSE
+Adult patients with single recession-type defects,EMP + CAF,SCTG + CAF,Aesthetic condition change related to patient's opinion,NA,NA,NA,NA,NA,NA,1,VERY LOW,"Risk of bias, Inconsistency, Imprecision",TRUE,TRUE,TRUE,FALSE,FALSE
+Adult patients with single recession-type defects,EMP + CAF,SCTG + CAF,Sites with complete root coverage,OR,0.61,0.05,7.86,FALSE,62,2,VERY LOW,"Inconsistency, Imprecision",FALSE,TRUE,TRUE,FALSE,FALSE
+Adult patients with single recession-type defects,EMP + CAF,SCTG + CAF,Gingival recession change,MD,-0.39,-1.27,0.48,FALSE,62,2,VERY LOW,"Inconsistency, Imprecision",FALSE,TRUE,TRUE,FALSE,FALSE
+Adult patients with single recession-type defects,EMP + CAF,SCTG + CAF,Clinical attachment change,MD,-0.25,-0.69,0.2,FALSE,62,2,LOW,Imprecision,FALSE,TRUE,FALSE,FALSE,FALSE
+Adult patients with single recession-type defects,EMP + CAF,SCTG + CAF,Keratinized tissue change,MD,-1.06,-1.36,-0.76,TRUE,62,2,VERY LOW,"Inconsistency, Imprecision",FALSE,TRUE,TRUE,FALSE,FALSE
+Adult patients with single recession-type defects,GTR rm + CAF,SCTG + CAF,Aesthetic condition change related to patient's opinion,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Adult patients with single recession-type defects,GTR rm + CAF,SCTG + CAF,Sites with complete root coverage,OR,0.61,0.3,1.24,FALSE,98,3,LOW,Imprecision,FALSE,TRUE,FALSE,FALSE,FALSE
+Adult patients with single recession-type defects,GTR rm + CAF,SCTG + CAF,Gingival recession change,MD,-0.37,-0.6,-0.13,TRUE,98,3,LOW,Imprecision,FALSE,TRUE,FALSE,FALSE,FALSE
+Adult patients with single recession-type defects,GTR rm + CAF,SCTG + CAF,Clinical attachment level change,MD,0.35,0.06,0.63,TRUE,98,3,LOW,Imprecision,FALSE,TRUE,FALSE,FALSE,FALSE
+Adult patients with single recession-type defects,GTR rm + CAF,SCTG + CAF,Keratinized tissue change,MD,-1.77,-2.66,-0.89,TRUE,98,3,VERY LOW,"Inconsistency, Imprecision",FALSE,TRUE,TRUE,FALSE,FALSE
+Adult patients with single recession-type defects,XCM + CAF,CAF,Aesthetic condition change related to patient's opinion,NA,NA,NA,NA,NA,NA,1,LOW,"Inconsistency, Imprecision",FALSE,TRUE,TRUE,FALSE,FALSE
+Adult patients with single recession-type defects,XCM + CAF,CAF,Sites with complete root coverage,OR,4.73,2.35,9.5,TRUE,104,2,LOW,"Inconsistency, Imprecision",FALSE,TRUE,TRUE,FALSE,FALSE
+Adult patients with single recession-type defects,XCM + CAF,CAF,Gingival recession depth change,MD,0.4,0.11,0.68,TRUE,104,2,LOW,"Inconsistency, Imprecision",FALSE,TRUE,TRUE,FALSE,FALSE
+Adult patients with single recession-type defects,XCM + CAF,CAF,Clinical attachment level change,MD,0.37,-0.09,0.83,FALSE,104,2,LOW,"Inconsistency, Imprecision",FALSE,TRUE,TRUE,FALSE,FALSE
+Adult patients with single recession-type defects,XCM + CAF,CAF,Keratinized tissue width change,MD,0.44,0.04,0.85,TRUE,104,2,LOW,"Inconsistency, Imprecision",FALSE,TRUE,TRUE,FALSE,FALSE

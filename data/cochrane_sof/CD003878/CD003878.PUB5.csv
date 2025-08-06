@@ -1,0 +1,7 @@
+Population,Intervention,Comparison,Outcome,Measure,Effect,CI Lower,CI Upper,Significant,Number of participants,Number of studies,Certainty of the evidence (GRADE),Reasons for GRADE if not High,Risk of bias,Imprecision,Inconsistency,Indirectness,Publication bias
+patients requiring dental implants,immediate loading,conventional loading,Prosthesis failure at 1 year,RR,1.9,0.67,5.34,FALSE,381,8,very low,"Eight studies: five at high and three at unclear risk of bias
+There is some evidence of publication bias",TRUE,FALSE,FALSE,FALSE,TRUE
+patients requiring dental implants,early loading,conventional loading,Prosthesis failure at 1 year,RR,5,0.63,39.67,FALSE,48,1,very low,"Only one small study at high risk of bias
+There is some evidence of publication bias",TRUE,FALSE,FALSE,FALSE,TRUE
+patients requiring dental implants,immediate loading,early loading,Prosthesis failure at 1 year,RR,0.69,0.25,1.87,FALSE,408,4,very low,"Four trials: one trial high, one unclear and two at low risk of bias
+There is some evidence of publication bias",TRUE,FALSE,FALSE,FALSE,TRUE

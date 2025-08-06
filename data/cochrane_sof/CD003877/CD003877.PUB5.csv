@@ -1,0 +1,22 @@
+Population,Intervention,Comparison,Outcome,Measure,Effect,CI Lower,CI Upper,Significant,Number of participants,Number of studies,Certainty of the evidence (GRADE),Reasons for GRADE if not High,Risk of bias,Imprecision,Inconsistency,Indirectness,Publication bias
+Children needing dental care,Midazolam (oral),Placebo,Houpt/other behavioural score,SD,1.96,1.59,2.33,TRUE,202,6,Moderate,Downgraded for risk of bias (lack of blinding and randomisation processes unclear).,TRUE,FALSE,FALSE,FALSE,FALSE
+Children needing dental care,Midazolam (intravenous),Placebo,Houpt/other behavioural score,SD,1.21,0.24,2.18,TRUE,20,1,Very Low,"Downgraded for risk of bias (lack of blinding and randomisation processes unclear).
+Downgraded for imprecision (large confidence interval and small numbers).",TRUE,TRUE,FALSE,FALSE,FALSE
+Children needing dental care,Nitrous oxide,Placebo,Houpt/other behavioural score,SD,0.69,0.13,1.26,TRUE,52,1,Very Low,"Downgraded for risk of bias (lack of blinding and randomisation processes unclear).
+Downgraded for imprecision (large confidence interval).",TRUE,TRUE,FALSE,FALSE,FALSE
+Children needing dental care,Diazepam (oral),Placebo,Houpt/other behavioural score,SD,0.62,-0.28,1.53,FALSE,20,1,Very Low,"Downgraded for risk of bias (lack of blinding and randomisation processes unclear).
+Downgraded for imprecision (large confidence interval and small numbers).",TRUE,TRUE,FALSE,FALSE,FALSE
+Children needing dental care,Chloral hydrate,Placebo,Good or better behaviour,RR,1.33,0.8,2.22,FALSE,60,1,Very Low,"Downgraded for imprecision (large confidence interval).
+Downgraded for risk of bias (randomisation unclear and incomplete outcome assessment).",TRUE,TRUE,FALSE,FALSE,FALSE
+Children needing dental care,Meperidine,Placebo,Good or better behaviour,RR,5.33,1.45,19.64,TRUE,60,1,Low,Downgraded for risk of bias (randomisation unclear) and imprecision.,TRUE,TRUE,FALSE,FALSE,FALSE
+Children needing dental care,Midazolam (any mode of delivery),Different dosage of the same sedative,Any behavioural score,NA,NA,NA,NA,NA,394,10,Very Low,"Downgraded for risk of bias, inconsistency and/or imprecision.",TRUE,TRUE,TRUE,FALSE,FALSE
+Children needing dental care,Hydroxyzine,Different dosage of the same sedative,Any behavioural score,NA,NA,NA,NA,NA,30,1,Very Low,"Downgraded for risk of bias, inconsistency and/or imprecision.",TRUE,TRUE,TRUE,FALSE,FALSE
+Children needing dental care,Chloral hydrate/hydroxyzine,Different sedative,Any behavioural score,NA,NA,NA,NA,NA,235,6,Very Low,"Downgraded for risk of bias, inconsistency and/or imprecision.",TRUE,TRUE,TRUE,FALSE,FALSE
+Children needing dental care,Chloral hydrate/promethazine,Different sedative,Any behavioural score,NA,NA,NA,NA,NA,24,1,Very Low,"Downgraded for risk of bias, inconsistency and/or imprecision.",TRUE,TRUE,TRUE,FALSE,FALSE
+Children needing dental care,Dexmedetomidine,Different sedative,Any behavioural score,NA,NA,NA,NA,NA,120,2,Very Low,"Downgraded for risk of bias, inconsistency and/or imprecision.",TRUE,TRUE,TRUE,FALSE,FALSE
+Children needing dental care,Ketamine,Different sedative,Any behavioural score,NA,NA,NA,NA,NA,494,8,Very Low,"Downgraded for risk of bias, inconsistency and/or imprecision.",TRUE,TRUE,TRUE,FALSE,FALSE
+Children needing dental care,Ketamine/midazolam,Different sedative,Any behavioural score,NA,NA,NA,NA,NA,27,1,Very Low,"Downgraded for risk of bias, inconsistency and/or imprecision.",TRUE,TRUE,TRUE,FALSE,FALSE
+Children needing dental care,Midazolam (oral),Different sedative,Any behavioural score,NA,NA,NA,NA,NA,654,7,Very Low,"Downgraded for risk of bias, inconsistency and/or imprecision.",TRUE,TRUE,TRUE,FALSE,FALSE
+Children needing dental care,Midazolam (intravenous),Different sedative,Any behavioural score,NA,NA,NA,NA,NA,70,2,Very Low,"Downgraded for risk of bias, inconsistency and/or imprecision.",TRUE,TRUE,TRUE,FALSE,FALSE
+Children needing dental care,Midazolam (rectal),Different sedative,Any behavioural score,NA,NA,NA,NA,NA,90,1,Very Low,"Downgraded for risk of bias, inconsistency and/or imprecision.",TRUE,TRUE,TRUE,FALSE,FALSE
+Children needing dental care,Sevoflurane,Different sedative,Any behavioural score,NA,NA,NA,NA,NA,1140,3,Very Low,"Downgraded for risk of bias, inconsistency and/or imprecision.",TRUE,TRUE,TRUE,FALSE,FALSE

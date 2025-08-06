@@ -1,0 +1,4 @@
+Population,Intervention,Comparison,Outcome,Measure,Effect,CI Lower,CI Upper,Significant,Number of participants,Number of studies,Certainty of the evidence (GRADE),Reasons for GRADE if not High,Risk of bias,Imprecision,Inconsistency,Indirectness,Publication bias
+Adults or children at risk of endocarditis,Antibiotic prophylaxis,No antibiotic prophylaxis,Mortality,NA,NA,NA,NA,NA,248,1,NA,NA,NA,NA,NA,NA,NA
+Adults or children at risk of endocarditis,Antibiotic prophylaxis,No antibiotic prophylaxis,Development of endocarditis (in those with definite indication for prophylaxis),OR,1.62,0.57,4.57,FALSE,248,1,Very low,Not specified,NA,NA,NA,NA,NA
+Adults or children at risk of endocarditis,Antibiotic prophylaxis,No antibiotic prophylaxis,Adverse events,NA,NA,NA,NA,NA,248,1,NA,NA,NA,NA,NA,NA,NA

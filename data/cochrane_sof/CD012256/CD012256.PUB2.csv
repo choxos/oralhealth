@@ -1,0 +1,33 @@
+Population,Intervention,Comparison,Outcome,Measure,Effect,CI Lower,CI Upper,Significant,Number of participants,Number of studies,Certainty of the evidence (GRADE),Reasons for GRADE if not High,Risk of bias,Imprecision,Inconsistency,Indirectness,Publication bias
+Completely edentulous people,Biofunctional prosthetic system (Accu-dent System),Traditional technique,Participant-reported oral health-related quality of life (OHIP-EDENT),NA,NA,NA,NA,NA,10,1,Very low, We downgraded the quality of the evidence by one level for high risk of bias and two levels for sparse data,TRUE,TRUE,FALSE,FALSE,FALSE
+Completely edentulous people,Biofunctional prosthetic system (Accu-dent System),Traditional technique,Participant-reported quality of the denture - denture satisfaction,NA,NA,NA,NA,NA,10,1,Very low, We downgraded the quality of the evidence by one level for high risk of bias and two levels for sparse data,TRUE,TRUE,FALSE,FALSE,FALSE
+Completely edentulous people,Biofunctional prosthetic system (Accu-dent System),Traditional technique,Number of border adjustments and sore spots after insertion of denture,NA,NA,NA,NA,NA,10,1,Very low, We downgraded the quality of the evidence by one level for high risk of bias and two levels for sparse data,TRUE,TRUE,FALSE,FALSE,FALSE
+Completely edentulous people,Wax,Polysulfide rubber,Participant‐reported oral health‐related quality of life (OHIP‐EDENT),NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Completely edentulous people,Wax,Polysulfide rubber,Participant‐reported quality of the denture,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Completely edentulous people,Wax,Polysulfide rubber,Number of border adjustments and sore spots after insertion of denture,RR,0.81,0.38,1.7,FALSE,27,1,Very low,"Downgraded for risk of bias due to the single study contributing data for this outcome being at unclear risk of bias in many domains
+Downgraded for imprecision due to the wide 95% CI starting from 0.38 highly beneficial to 1.70 no benefit.
+ Downgraded for indirectness due to the single study with only 27 participants. Hence generalisation becomes difficult.",TRUE,TRUE,FALSE,TRUE,FALSE
+Completely edentulous people,Alginate,Silicone,Participant-reported oral health-related quality of life (OHIP-EDENT),MD,7.2,2.71,11.69,TRUE,144,1,Low,"Downgraded for indirectness as it is the only study that has used alginate as final (wash) impression hence it cannot be generalised.
+Downgraded for imprecision as the 95% CI is wide and includes the possibility of the mean difference being clinically unimportant.",FALSE,TRUE,FALSE,TRUE,FALSE
+Completely edentulous people,Alginate,Silicone,"Participant‐reported quality of the denture
+Follow‐up: two weeks",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Completely edentulous people,Alginate,Silicone,"Number of border adjustments and sore spots after insertion of denture
+Follow‐up: two weeks",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Completely edentulous people,Single stage with alginate,Two stage-two step elastomer,Participant-reported oral health-related quality of life (OHIP-EDENT),MD,0.05,-2.37,2.47,FALSE,98,2,Very low,"Downgraded for imprecision due to the wide 95% CI
+Downgraded for indirectness due to study participants with long period of edentulousness (mean range 24 to 38 years) and poor prognostic factors for success of denture in both groups (ACP classification was at least 69% to 73% in ACP III and ACP IV)
+Downgraded for risk of bias as allocation concealment was at unclear risk of bias and clinicians were not blinded.",TRUE,TRUE,FALSE,TRUE,FALSE
+Completely edentulous people,Single stage with alginate,Two stage-two step elastomer,Participant-reported quality of the denture - general satisfaction,MD,0,-8.23,8.23,FALSE,105,1,Very low,"Downgraded for indirectness due to study participants with long period of edentulousness (mean range 24 to 38 years) and poor prognostic factors for success of denture in both groups (ACP classification was at least 69% to 73% in ACP III and ACP IV)
+Downgraded for risk of bias as allocation concealment was at unclear risk of bias and clinicians were not blinded.
+Downgraded for imprecision due to the wide 95% CI. Single study with 105 participants",TRUE,TRUE,FALSE,TRUE,FALSE
+Completely edentulous people,Single stage with alginate,Two stage-two step elastomer,Number of border adjustments and sore spots after insertion of denture,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Completely edentulous people,Single-stage with alginate,Two step-two stage with ZoE,Participant-reported oral health-related quality of life (OHIP-EDENT),MD,0.5,-2.67,3.67,FALSE,39,1,Very low,"Downgraded for indirectness due to the single study with only 39 participants included in this trial. Therefore, it is difficult to generalise.
+Downgraded twice for serious imprecision, small sample size and wide 95% CI.",FALSE,TRUE,FALSE,TRUE,FALSE
+Completely edentulous people,Single-stage with alginate,Two step-two stage with ZoE,Participant-reported quality of the denture: general satisfaction,RR,3.15,0.14,72.88,FALSE,39,1,Very low,"Downgraded for indirectness due to the single study with only 39 participants included in this trial. Therefore, it is difficult to generalise.
+Downgraded twice for serious imprecision, small sample size and wide 95% CI.",FALSE,TRUE,FALSE,TRUE,FALSE
+Completely edentulous people,Single-stage with alginate,Two step-two stage with ZoE,Number of border adjustments and sore spots after insertion of denture,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People requiring removable partial dentures,Altered cast,One-piece cast,Participant‐reported oral health‐related quality of life,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+People requiring removable partial dentures,Altered cast,One-piece cast,Participant-reported quality of the denture: general satisfaction,NA,NA,NA,NA,NA,57,1,Low,"Downgraded one level as allocation concealment was unclear and there was a high risk of bias for incomplete outcome data and blinding of personnel
+Downgraded one level as a single study contributed data for this outcome",TRUE,FALSE,FALSE,TRUE,FALSE
+People requiring removable partial dentures,Altered cast,One-piece cast,Number of intaglio adjustments,RR,1.43,0.61,3.34,FALSE,72,1,Very low,"Downgraded one level as allocation concealment was unclear and there was a high risk of bias for incomplete outcome data and blinding of personnel
+Downgraded one level as a single study contributed data for this outcome
+Downgraded one level because 95% CI is wide",TRUE,TRUE,FALSE,TRUE,FALSE

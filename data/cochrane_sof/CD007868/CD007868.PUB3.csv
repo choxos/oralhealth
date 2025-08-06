@@ -1,0 +1,140 @@
+Population,Intervention,Comparison,Outcome,Measure,Effect,CI Lower,CI Upper,Significant,Number of participants,Number of studies,Certainty of the evidence (GRADE),Reasons for GRADE if not High,Risk of bias,Imprecision,Inconsistency,Indirectness,Publication bias,incoherence
+Young children between 1 and 6 years of age at the start of the study,1500 ppm F toothpaste,0 ppm F toothpaste,Caries increment (surface index d3fs),MD,-1.86,-2.51,-1.21,TRUE,998,1,Moderate,Downgraded for study limitations (unclear overall risk of bias),TRUE,FALSE,FALSE,FALSE,FALSE,NA
+Young children between 1 and 6 years of age at the start of the study,1450 ppm F toothpaste,250 ppm F toothpaste,Caries increment (surface index d3mfs),MD,-1.2,-2.92,0.52,FALSE,172,1,Low,Downgraded for study limitations (high risk of attrition bias) and imprecision,TRUE,TRUE,FALSE,FALSE,FALSE,NA
+Young children between 1 and 6 years of age at the start of the study,1055 to 1100 ppm F toothpaste,500 to 550 ppm F toothpaste,Caries increment (surface index d3mfs),MD,-0.05,-0.38,0.28,FALSE,1958,2,Moderate,"Downgraded for imprecision. There were some study limitations in 1 study but we did not deem these to be sufficient for an additional downgrading of the certainty, as this study contributed only 27% to the overall estimate.",FALSE,TRUE,FALSE,FALSE,FALSE,NA
+Young children between 1 and 6 years of age at the start of the study,1450 ppm F toothpaste,250 ppm F toothpaste,Caries increment (tooth index d3mft),MD,-0.4,-1.14,0.34,FALSE,172,1,Low,Downgraded for study limitations (high risk of attrition bias) and imprecision,TRUE,TRUE,FALSE,FALSE,FALSE,NA
+Young children between 1 and 6 years of age at the start of the study,1055 to 1100 ppm F toothpaste,500 to 550 ppm F toothpaste,Caries increment (tooth index d3mft),MD,-0.27,-0.6,0.06,FALSE,905,1,Low,Downgraded for study limitations (unclear overall risk of bias) and imprecision,TRUE,TRUE,FALSE,FALSE,FALSE,NA
+Young children between 1 and 6 years of age at the start of the study,1450 F toothpaste,440 ppm F toothpaste,Caries increment (tooth index d3mft),MD,-0.34,-0.59,-0.09,TRUE,2362,1,Moderate,Downgraded for imprecision. Some concerns regarding study limitations (unclear risk of bias for performance bias and contamination) but not considered sufficient to merit additional downgrading.,FALSE,TRUE,FALSE,FALSE,FALSE,NA
+Young children between 1 and 6 years of age at the start of the study,1450 ppm F toothpaste,250 ppm F toothpaste,Proportion of children developing new caries,RR,0.92,0.54,1.57,FALSE,172,1,Low,Downgraded for study limitations (high risk of attrition bias) and imprecision,TRUE,TRUE,FALSE,FALSE,FALSE,NA
+Young children between 1 and 6 years of age at the start of the study,1055 to 1100 ppm F toothpaste,500 to 550 ppm F toothpaste,Proportion of children developing new caries,RR,0.86,0.74,0.99,TRUE,905,1,Low,Downgraded for study limitations (unclear overall risk of bias) and imprecision,TRUE,TRUE,FALSE,FALSE,FALSE,NA
+Young children between 1 and 6 years of age at the start of the study,1450 F toothpaste,440 ppm F toothpaste,Proportion developing new caries,RR,0.87,0.81,0.94,TRUE,2362,1,Moderate,Downgraded for imprecision. Some concerns regarding study limitations (unclear risk of bias for performance bias and contamination) but not considered sufficient to merit additional downgrading.,FALSE,TRUE,FALSE,FALSE,FALSE,NA
+Young children between 1 and 6 years of age at the start of the study,1500 ppm F toothpaste,0 ppm F toothpaste,Adverse effects of toothpaste,NA,NA,NA,NA,NA,998,1,Low,Downgraded for imprecision (no events reported) and study limitations (unclear overall risk of bias),TRUE,TRUE,FALSE,FALSE,FALSE,NA
+Young children between 1 and 6 years of age at the start of the study,1450 ppm F toothpaste,250 ppm F toothpaste,Adverse effects of toothpaste,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Young children between 1 and 6 years of age at the start of the study,1055 to 1100 ppm F toothpaste,500 to 550 ppm F toothpaste,Adverse effects of toothpaste,NA,NA,NA,NA,NA,195,1,Low,Downgraded for imprecision,FALSE,TRUE,FALSE,FALSE,FALSE,NA
+Young children between 1 and 6 years of age at the start of the study,1450 F toothpaste,440 ppm F toothpaste,Adverse effects of toothpaste,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Children and adolescents between 5 and 15 years of age at the start of the study,250 ppm F toothpaste,0 ppm F toothpaste,Caries increment (surface index D3(M)FS),NA,NA,NA,NA,NA,NA,3,Low,"Downgraded (some concerns) for within‐study bias.
+Downgraded (some concerns) for heterogeneity: prediction interval extends into clinically important or unimportant effects.
+Downgraded (some concerns) for : lack of agreement of the direct and indirect estimates relative to the clinically important value (0.30 SMD).",TRUE,FALSE,TRUE,FALSE,FALSE,TRUE
+Children and adolescents between 5 and 15 years of age at the start of the study,440 to 550 ppm F toothpaste,0 ppm F toothpaste,Caries increment (surface index D3(M)FS),NA,NA,NA,NA,NA,NA,2,Low,"Downgraded (some concerns) for within‐study bias.
+Downgraded (some concerns) for incoherence: lack of agreement of the direct and indirect estimates relative to the clinically important value (0.30 SMD).
+Downgraded (some concerns) for imprecision: 95% CI extends into clinically important effects (0.30 SMD).",TRUE,FALSE,TRUE,FALSE,FALSE,TRUE
+Children and adolescents between 5 and 15 years of age at the start of the study,1000 to 1250 ppm F toothpaste,0 ppm F toothpaste,Caries increment (surface index D3(M)FS),NA,NA,NA,NA,NA,NA,55,high,"Downgraded (some concerns) for within‐study bias.
+Downgraded (some concerns) for imprecision: 95% CI extends into clinically important effects (0.30 SMD).",TRUE,TRUE,FALSE,FALSE,FALSE,FALSE
+Children and adolescents between 5 and 15 years of age at the start of the study,1450 to 1500 ppm F toothpaste,0 ppm F toothpaste,Caries increment (surface index D3(M)FS),NA,NA,NA,NA,NA,NA,4,Moderate,"Downgraded (some concerns) for within‐study bias.
+Downgraded (some concerns) for imprecision: 95% CI extends into clinically important effects (0.30 SMD).",TRUE,TRUE,FALSE,FALSE,FALSE,FALSE
+Children and adolescents between 5 and 15 years of age at the start of the study,1700 to 2200 ppm F toothpaste,0 ppm F toothpaste,Caries increment (surface index D3(M)FS),NA,NA,NA,NA,NA,NA,NA,Low,"Downgraded (some concerns) for within‐study bias.
+Downgraded (some concerns) for imprecision: 95% CI extends into clinically important effects (0.30 SMD).",TRUE,TRUE,FALSE,FALSE,FALSE,FALSE
+Children and adolescents between 5 and 15 years of age at the start of the study,2400 to 2800 ppm F toothpaste,0 ppm F toothpaste,Caries increment (surface index D3(M)FS),NA,NA,NA,NA,NA,NA,3,Low,"Downgraded (some concerns) for within‐study bias.
+Downgraded (some concerns) for heterogeneity: prediction interval extends into clinically important or unimportant effects.
+Downgraded (some concerns) for incoherence: lack of agreement of the direct and indirect estimates relative to the clinically important value (0.30 SMD).",TRUE,FALSE,TRUE,FALSE,FALSE,TRUE
+Children and adolescents between 5 and 15 years of age at the start of the study,440 to 550 ppm F toothpaste,250 ppm F toothpaste,Caries increment (surface index D3(M)FS),NA,NA,NA,NA,NA,NA,1,Low,"Downgraded (some concerns) for within‐study bias.
+Downgraded (some concerns) for heterogeneity: prediction interval extends into clinically important or unimportant effects.
+Downgraded (some concerns) for incoherence: lack of agreement of the direct and indirect estimates relative to the clinically important value (0.30 SMD).",TRUE,FALSE,TRUE,FALSE,FALSE,TRUE
+Children and adolescents between 5 and 15 years of age at the start of the study,1000 to 1250 ppm F toothpaste,250 ppm F toothpaste,Caries increment (surface index D3(M)FS),NA,NA,NA,NA,NA,NA,7,Low,"Downgraded (some concerns) for within‐study bias.
+Downgraded (some concerns) for heterogeneity: prediction interval extends into clinically important or unimportant effects.
+Downgraded (some concerns) for incoherence: lack of agreement of the direct and indirect estimates relative to the clinically important value (0.30 SMD).",TRUE,FALSE,TRUE,FALSE,FALSE,TRUE
+Children and adolescents between 5 and 15 years of age at the start of the study,1450 to 1500 ppm F toothpaste,250 ppm F toothpaste,Caries increment (surface index D3(M)FS),NA,NA,NA,NA,NA,NA,NA,Low,"Downgraded (some concerns) for within‐study bias.
+Downgraded (some concerns) for imprecision: 95% CI extends into clinically important effects (0.30 SMD).",TRUE,TRUE,FALSE,FALSE,FALSE,FALSE
+Children and adolescents between 5 and 15 years of age at the start of the study,1700 to 2200 ppm F toothpaste,250 ppm F toothpaste,Caries increment (surface index D3(M)FS),NA,NA,NA,NA,NA,NA,NA,Low,"Downgraded (some concerns) for within‐study bias.
+Downgraded (some concerns) for imprecision: 95% CI extends into clinically important effects (0.30 SMD).",TRUE,TRUE,FALSE,FALSE,FALSE,FALSE
+Children and adolescents between 5 and 15 years of age at the start of the study,2400 to 2800 ppm F toothpaste,250 ppm F toothpaste,Caries increment (surface index D3(M)FS),NA,NA,NA,NA,NA,NA,NA,Low,"Downgraded (some concerns) for within‐study bias.
+Downgraded (some concerns) for imprecision: 95% CI extends into clinically important effects (0.30 SMD).",TRUE,TRUE,FALSE,FALSE,FALSE,FALSE
+Children and adolescents between 5 and 15 years of age at the start of the study,1000 to 1250 ppm F toothpaste,440 to 550 ppm F toothpaste,Caries increment (surface index D3(M)FS),NA,NA,NA,NA,NA,NA,1,Low,"Downgraded (some concerns) for within‐study bias.
+Downgraded (some concerns) for imprecision: 95% CI extends into clinically important effects (0.30 SMD).",TRUE,TRUE,FALSE,FALSE,FALSE,FALSE
+Children and adolescents between 5 and 15 years of age at the start of the study,1450 to 1500 ppm F toothpaste,440 to 550 ppm F toothpaste,Caries increment (surface index D3(M)FS),NA,NA,NA,NA,NA,NA,NA,Low,"Downgraded (some concerns) for within‐study bias.
+Downgraded (some concerns) for imprecision: 95% CI extends into clinically important effects (0.30 SMD).",TRUE,TRUE,FALSE,FALSE,FALSE,FALSE
+Children and adolescents between 5 and 15 years of age at the start of the study,1700 to 2200 ppm F toothpaste,440 to 550 ppm F toothpaste,Caries increment (surface index D3(M)FS),NA,NA,NA,NA,NA,NA,NA,Low,"Downgraded (some concerns) for within‐study bias.
+Downgraded (some concerns) for imprecision: 95% CI extends into clinically important effects (0.30 SMD).",TRUE,TRUE,FALSE,FALSE,FALSE,FALSE
+Children and adolescents between 5 and 15 years of age at the start of the study,2400 to 2800 ppm F toothpaste,440 to 550 ppm F toothpaste,Caries increment (surface index D3(M)FS),NA,NA,NA,NA,NA,NA,NA,Low,"Downgraded (some concerns) for within‐study bias.
+Downgraded (some concerns) for imprecision: 95% CI extends into clinically important effects (0.30 SMD).",TRUE,TRUE,FALSE,FALSE,FALSE,FALSE
+Children and adolescents between 5 and 15 years of age at the start of the study,1450 to 1500 ppm F toothpaste,1000 to 1250 ppm F toothpaste,Caries increment (surface index D3(M)FS),NA,NA,NA,NA,NA,NA,10,Moderate,Downgraded (some concerns) for within‐study bias.,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE
+Children and adolescents between 5 and 15 years of age at the start of the study,1700 to 2200 ppm F toothpaste,1000 to 1250 ppm F toothpaste,Caries increment (surface index D3(M)FS),NA,NA,NA,NA,NA,NA,5,Low,"Downgraded (some concerns) for incoherence: lack of agreement of the direct and indirect estimates relative to the clinically important value (0.30 SMD).
+
+Downgraded (major concerns) for within‐study bias.",TRUE,FALSE,FALSE,FALSE,FALSE,TRUE
+Children and adolescents between 5 and 15 years of age at the start of the study,2400 to 2800 ppm F toothpaste,1000 to 1250 ppm F toothpaste,Caries increment (surface index D3(M)FS),NA,NA,NA,NA,NA,NA,6,Low,"Downgraded (some concerns) for within‐study bias.
+Downgraded (some concerns) for heterogeneity: prediction interval extends into clinically important or unimportant effects.
+Downgraded (some concerns) for incoherence: lack of agreement of the direct and indirect estimates relative to the clinically important value (0.30 SMD).",TRUE,FALSE,TRUE,FALSE,FALSE,TRUE
+Children and adolescents between 5 and 15 years of age at the start of the study,1700 to 2200 ppm F toothpaste,1450 to 1500 ppm F toothpaste,Caries increment (surface index D3(M)FS),NA,NA,NA,NA,NA,NA,NA,Moderate,Downgraded (some concerns) for within‐study bias.,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE
+Children and adolescents between 5 and 15 years of age at the start of the study,2400 to 2800 ppm F toothpaste,1450 to 1500 ppm F toothpaste,Caries increment (surface index D3(M)FS),NA,NA,NA,NA,NA,NA,2,Moderate,Downgraded (some concerns) for within‐study bias.,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE
+Children and adolescents between 5 and 15 years of age at the start of the study,2400 to 2800 ppm F toothpaste,1700 to 2200 ppm F toothpaste,Caries increment (surface index D3(M)FS),NA,NA,NA,NA,NA,NA,1,Low,"Downgraded (some concerns) for within‐study bias.
+Downgraded (major concerns) for within‐study bias.",TRUE,FALSE,FALSE,FALSE,FALSE,FALSE
+Children and adolescents between 5 and 15 years of age at the start of the study,250 ppm F toothpaste,0 ppm F toothpaste,Caries increment (tooth index D3(M)FT),NA,NA,NA,NA,NA,NA,1,Low,"Downgraded (some concerns) for within‐study bias.
+Downgraded (some concerns) for heterogeneity: prediction interval extends into clinically important or unimportant effects.
+Downgraded (some concerns) for incoherence: lack of agreement of the direct and indirect estimates relative to the clinically important value (0.30 SMD).",TRUE,FALSE,TRUE,FALSE,FALSE,TRUE
+Children and adolescents between 5 and 15 years of age at the start of the study,440 to 550 ppm F toothpaste,0 ppm F toothpaste,Caries increment (tooth index D3(M)FT),NA,NA,NA,NA,NA,NA,2,Low,"Downgraded (some concerns) for within‐study bias.
+Downgraded (some concerns) for incoherence: lack of agreement of the direct and indirect estimates relative to the clinically important value (0.30 SMD).",TRUE,FALSE,FALSE,FALSE,FALSE,TRUE
+Children and adolescents between 5 and 15 years of age at the start of the study,1000 to 1250 ppm F toothpaste,0 ppm F toothpaste,Caries increment (tooth index D3(M)FT),NA,NA,NA,NA,NA,NA,41,high,Downgraded (some concerns) for within‐study bias.,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE
+Children and adolescents between 5 and 15 years of age at the start of the study,1450 to 1500 ppm F toothpaste,0 ppm F toothpaste,Caries increment (tooth index D3(M)FT),NA,NA,NA,NA,NA,NA,4,Moderate,Downgraded (some concerns) for within‐study bias.,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE
+Children and adolescents between 5 and 15 years of age at the start of the study,1700 to 2200 ppm F toothpaste,0 ppm F toothpaste,Caries increment (tooth index D3(M)FT),NA,NA,NA,NA,NA,NA,NA,Low,"Downgraded (some concerns) for imprecision: 95% CI extends into clinically important effects (0.30 SMD).
+Downgraded (major concerns) for within‐study bias.",TRUE,TRUE,FALSE,FALSE,FALSE,FALSE
+Children and adolescents between 5 and 15 years of age at the start of the study,2400 to 2800 ppm F toothpaste,0 ppm F toothpaste,Caries increment (tooth index D3(M)FT),NA,NA,NA,NA,NA,NA,2,Low,"Downgraded (some concerns) for within‐study bias.
+Downgraded (some concerns) for incoherence: lack of agreement of the direct and indirect estimates relative to the clinically important value (0.30 SMD).
+Downgraded (some concerns) for imprecision: 95% CI extends into clinically important effects (0.30 SMD).",TRUE,TRUE,FALSE,FALSE,FALSE,TRUE
+Children and adolescents between 5 and 15 years of age at the start of the study,440 to 550 ppm F toothpaste,250 ppm F toothpaste,Caries increment (tooth index D3(M)FT),NA,NA,NA,NA,NA,NA,1,Low,"Downgraded (some concerns) for within‐study bias.
+Downgraded (some concerns) for incoherence: lack of agreement of the direct and indirect estimates relative to the clinically important value (0.30 SMD).
+Downgraded (some concerns) for imprecision: 95% CI extends into clinically important effects (0.30 SMD).",TRUE,TRUE,FALSE,FALSE,FALSE,TRUE
+Children and adolescents between 5 and 15 years of age at the start of the study,1000 to 1250 ppm F toothpaste,250 ppm F toothpaste,Caries increment (tooth index D3(M)FT),NA,NA,NA,NA,NA,NA,3,Low,"Downgraded (some concerns) for within‐study bias.
+Downgraded (some concerns) for incoherence: lack of agreement of the direct and indirect estimates relative to the clinically important value (0.30 SMD).
+Downgraded (some concerns) for imprecision: 95% CI extends into clinically important effects (0.30 SMD).",TRUE,TRUE,FALSE,FALSE,FALSE,TRUE
+Children and adolescents between 5 and 15 years of age at the start of the study,1450 to 1500 ppm F toothpaste,250 ppm F toothpaste,Caries increment (tooth index D3(M)FT),NA,NA,NA,NA,NA,NA,NA,Low,"Downgraded (some concerns) for within‐study bias.
+Downgraded (some concerns) for imprecision: 95% CI extends into clinically important effects (0.30 SMD).",TRUE,TRUE,FALSE,FALSE,FALSE,FALSE
+Children and adolescents between 5 and 15 years of age at the start of the study,1700 to 2200 ppm F toothpaste,250 ppm F toothpaste,Caries increment (tooth index D3(M)FT),NA,NA,NA,NA,NA,NA,NA,Low,"Downgraded (some concerns) for imprecision: 95% CI extends into clinically important effects (0.30 SMD).
+Downgraded (major concerns) for within‐study bias.",TRUE,TRUE,FALSE,FALSE,FALSE,FALSE
+Children and adolescents between 5 and 15 years of age at the start of the study,2400 to 2800 ppm F toothpaste,250 ppm F toothpaste,Caries increment (tooth index D3(M)FT),NA,NA,NA,NA,NA,NA,NA,Low,"Downgraded (some concerns) for within‐study bias.
+Downgraded (some concerns) for imprecision: 95% CI extends into clinically important effects (0.30 SMD).",TRUE,TRUE,FALSE,FALSE,FALSE,FALSE
+Children and adolescents between 5 and 15 years of age at the start of the study,1000 to 1250 ppm F toothpaste,440 to 550 ppm F toothpaste,Caries increment (tooth index D3(M)FT),NA,NA,NA,NA,NA,NA,1,Low,"Downgraded (some concerns) for within‐study bias.
+
+Downgraded (some concerns) for incoherence: lack of agreement of the direct and indirect estimates relative to the clinically important value (0.30 SMD).
+Downgraded (some concerns) for imprecision: 95% CI extends into clinically important effects (0.30 SMD).",TRUE,TRUE,FALSE,FALSE,FALSE,TRUE
+Children and adolescents between 5 and 15 years of age at the start of the study,1450 to 1500 ppm F toothpaste,440 to 550 ppm F toothpaste,Caries increment (tooth index D3(M)FT),NA,NA,NA,NA,NA,NA,NA,Low,"Downgraded (some concerns) for within‐study bias.
+Downgraded (some concerns) for imprecision: 95% CI extends into clinically important effects (0.30 SMD).",TRUE,TRUE,FALSE,FALSE,FALSE,FALSE
+Children and adolescents between 5 and 15 years of age at the start of the study,1700 to 2200 ppm F toothpaste,440 to 550 ppm F toothpaste,Caries increment (tooth index D3(M)FT),NA,NA,NA,NA,NA,NA,NA,Low,"Downgraded (some concerns) for within‐study bias.
+Downgraded (some concerns) for imprecision: 95% CI extends into clinically important effects (0.30 SMD).",TRUE,TRUE,FALSE,FALSE,FALSE,FALSE
+Children and adolescents between 5 and 15 years of age at the start of the study,2400 to 2800 ppm F toothpaste,440 to 550 ppm F toothpaste,Caries increment (tooth index D3(M)FT),NA,NA,NA,NA,NA,NA,NA,Low,"Downgraded (some concerns) for within‐study bias.
+Downgraded (some concerns) for imprecision: 95% CI extends into clinically important effects (0.30 SMD).",TRUE,TRUE,FALSE,FALSE,FALSE,FALSE
+Children and adolescents between 5 and 15 years of age at the start of the study,1450 to 1500 ppm F toothpaste,1000 to 1250 ppm F toothpaste,Caries increment (tooth index D3(M)FT),NA,NA,NA,NA,NA,NA,4,Low,"Downgraded (some concerns) for within‐study bias.
+Downgraded (some concerns) for heterogeneity: prediction interval extends into clinically important or unimportant effects.",TRUE,FALSE,TRUE,FALSE,FALSE,FALSE
+Children and adolescents between 5 and 15 years of age at the start of the study,1700 to 2200 ppm F toothpaste,1000 to 1250 ppm F toothpaste,Caries increment (tooth index D3(M)FT),NA,NA,NA,NA,NA,NA,1,very low,"Downgraded (some concerns) for heterogeneity: prediction interval extends into clinically important or unimportant effects.
+Downgraded (some concerns) for incoherence: lack of agreement of the direct and indirect estimates relative to the clinically important value (0.30 SMD).
+Downgraded (major concerns) for within‐study bias.",TRUE,FALSE,TRUE,FALSE,FALSE,TRUE
+Children and adolescents between 5 and 15 years of age at the start of the study,2400 to 2800 ppm F toothpaste,1000 to 1250 ppm F toothpaste,Caries increment (tooth index D3(M)FT),NA,NA,NA,NA,NA,NA,3,very low,"Downgraded (some concerns) for heterogeneity: prediction interval extends into clinically important or unimportant effects.
+Downgraded (some concerns) for incoherence: lack of agreement of the direct and indirect estimates relative to the clinically important value (0.30 SMD).
+Downgraded (major concerns) for within‐study bias.",TRUE,FALSE,TRUE,FALSE,FALSE,TRUE
+Children and adolescents between 5 and 15 years of age at the start of the study,1700 to 2200 ppm F toothpaste,1450 to 1500 ppm F toothpaste,Caries increment (tooth index D3(M)FT),NA,NA,NA,NA,NA,NA,NA,Low,"Downgraded (some concerns) for within‐study bias.
+Downgraded (some concerns) for heterogeneity: prediction interval extends into clinically important or unimportant effects.
+Downgraded (some concerns) for imprecision: 95% CI extends into clinically important effects (0.30 SMD).",TRUE,TRUE,TRUE,FALSE,FALSE,FALSE
+Children and adolescents between 5 and 15 years of age at the start of the study,2400 to 2800 ppm F toothpaste,1450 to 1500 ppm F toothpaste,Caries increment (tooth index D3(M)FT),NA,NA,NA,NA,NA,NA,NA,Low,"Downgraded (some concerns) for within‐study bias.
+Downgraded (major concerns) for heterogeneity: prediction interval extends into clinically important or unimportant effects.",TRUE,FALSE,TRUE,FALSE,FALSE,FALSE
+Children and adolescents between 5 and 15 years of age at the start of the study,2400 to 2800 ppm F toothpaste,1700 to 2200 ppm F toothpaste,Caries increment (tooth index D3(M)FT),NA,NA,NA,NA,NA,NA,NA,very low,"bDowngraded (some concerns) for heterogeneity: prediction interval extends into clinically important or unimportant effects.
+cDowngraded (some concerns) for incoherence: lack of agreement of the direct and indirect estimates relative to the clinically important value (0.30 SMD).
+Downgraded (some concerns) for imprecision: 95% CI extends into clinically important effects (0.30 SMD).
+Downgraded (major concerns) for within‐study bias.
+Downgrade (major concerns) for incoherence: lack of agreement of the direct and indirect estimates relative to the clinically important value (0.30 SMD).",TRUE,TRUE,TRUE,FALSE,FALSE,FALSE
+Children and adolescents between 5 and 15 years of age at the start of the study,250 ppm F toothpaste,0 ppm F toothpaste,Proportion of children developing new caries,RR,1.07,0.91,1.27,FALSE,684,2,Low,Downgraded for imprecision and study limitations (unclear risk of selection and attrition bias),TRUE,TRUE,FALSE,FALSE,FALSE,
+Children and adolescents between 5 and 15 years of age at the start of the study,1000 to 1250 ppm F toothpaste,0 ppm F toothpaste,Proportion of children developing new caries,RR,0.9,0.77,1.06,FALSE,1898,7,Low,"Downgraded for imprecision, study limitations (6 studies at unclear risk of selection or attrition bias or both, 1 study at high risk of performance and detection bias), and inconsistency (I2 = 80%)",TRUE,TRUE,TRUE,FALSE,FALSE,
+Children and adolescents between 5 and 15 years of age at the start of the study,1500 ppm F toothpaste,0 ppm F toothpaste,Proportion of children developing new caries,RR,0.95,0.91,0.98,TRUE,945,1,Low,Downgraded for imprecision and study limitations (unclear risk of selection and attrition bias),TRUE,TRUE,FALSE,FALSE,FALSE,
+Children and adolescents between 5 and 15 years of age at the start of the study,1450 to 1500 ppm F toothpaste,1000 to 1250 ppm F toothpaste,Proportion of children developing new caries,RR,1.02,0.93,1.11,FALSE,4328,2,Low,"Downgraded for imprecision, study limitations (unclear risk of selection and attrition bias and contamination/co-intervention), and inconsistency (I2 = 82%)",TRUE,TRUE,TRUE,FALSE,FALSE,
+Children and adolescents between 5 and 15 years of age at the start of the study,toothbrushing with higher fluoride concentration toothpaste,toothbrushing with lower fluoride concentration toothpaste,Adverse effects of toothpaste,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,
+Adults aged between 18 and 93 years of age at the start of the study,1000 or 1100 ppm F toothpaste,0 ppm F toothpaste,Caries increment (surface index D3MFS),MD,-0.53,-1.02,-0.04,TRUE,2162,3,Moderate,Downgraded for study limitations (high overall risk of bias due to high levels of attrition in 1 study),TRUE,FALSE,FALSE,FALSE,FALSE,
+Adults aged between 18 and 93 years of age at the start of the study,1000 or 1100 ppm F toothpaste,0 ppm F toothpaste,Caries increment (tooth index D3MFT),MD,-0.46,-0.93,0.01,FALSE,247,1,Low,Downgraded for study limitations (high overall risk of bias due to high levels of attrition) and imprecision,TRUE,TRUE,FALSE,FALSE,FALSE,
+Adults aged between 18 and 93 years of age at the start of the study,1000 or 1100 ppm F toothpaste,0 ppm F toothpaste,Proportion of adults developing new caries,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,
+Adults aged between 18 and 93 years of age at the start of the study,1000 or 1100 ppm F toothpaste,0 ppm F toothpaste,Adverse effects of toothpaste,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,

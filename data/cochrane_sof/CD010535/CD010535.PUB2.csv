@@ -1,0 +1,13 @@
+Population,Intervention,Comparison,Outcome,Measure,Effect,CI Lower,CI Upper,Significant,Number of participants,Number of studies,Certainty of the evidence (GRADE),Reasons for GRADE if not High,Risk of bias,Imprecision,Inconsistency,Indirectness,Publication bias
+nursing home residents,oral health education (with information and practical components),usual care,Oral health-related quality of life,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+nursing home residents,oral health education (with information and practical components),usual care,Oral health,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+nursing home residents,oral health education (with information and practical components),usual care,Dental plaque,MD,-0.04,-0.26,0.17,FALSE,437,6,Low,"Downgraded one level due to serious risk of bias.
+Downgraded one level due to inconsistency (heterogeneity): I2= 66% and 92%.",TRUE,FALSE,TRUE,FALSE,FALSE
+nursing home residents,oral health education (with information and practical components),usual care,Denture plaque,SMD,-0.6,-1.25,0.05,FALSE,816,5,Low,"Downgraded one level due to serious risk of bias.
+Downgraded one level due to inconsistency (heterogeneity): I2= 66% and 92%.",TRUE,FALSE,TRUE,FALSE,FALSE
+nursing home residents,oral health education (with information and practical components),usual care,Gingivitis,NA,NA,NA,NA,NA,245,3,Low,"Downgraded one level due to serious risk of bias.
+Downgraded one level due to inconsistency (clinical heterogeneity).",TRUE,FALSE,TRUE,FALSE,FALSE
+nursing home residents,oral health education (with information and practical components),usual care,Denture-induced stomatitis,NA,NA,NA,NA,NA,417,2,Low,"Downgraded one level due to serious risk of bias.
+Downgraded one level due to inconsistency (clinical heterogeneity).",TRUE,FALSE,TRUE,FALSE,FALSE
+nursing home residents,oral health education (with information and practical components),usual care,Caries/root caries,NA,NA,NA,NA,NA,178,2,Low,"Downgraded one level due to serious risk of bias.
+Downgraded one level due to inconsistency (clinical heterogeneity).",TRUE,FALSE,TRUE,FALSE,FALSE

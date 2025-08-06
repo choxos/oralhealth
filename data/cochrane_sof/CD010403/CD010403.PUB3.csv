@@ -1,0 +1,18 @@
+Population,Intervention,Comparison,Outcome,Measure,Effect,CI Lower,CI Upper,Significant,Number of participants,Number of studies,Certainty of the evidence (GRADE),Reasons for GRADE if not High,Risk of bias,Imprecision,Inconsistency,Indirectness,Publication bias
+Cleft patients,Maxillary distraction osteogenesis,Orthognathic surgery,Maxillary advancement,MD,4.4,0.24,8.56,TRUE,39,1,Very low,"Downgraded two levels for limitation in design and implementation due to selection, performance, detection, attrition and reporting bias
+Downgraded one level for indirectness of evidence: very narrow range of participants with specific ethnic and disease characteristics
+Downgraded one level for imprecision: wide confidence Interval and no power calculation reported for this outcome",TRUE,TRUE,FALSE,TRUE,FALSE
+Cleft patients,Maxillary distraction osteogenesis,Orthognathic surgery,Long-term skeletal relapse,MD,4.8,0.41,9.19,TRUE,16,1,Very low,"Downgraded two levels for limitation in design and implementation due to selection, performance, detection, attrition and reporting bias
+Downgraded one level for indirectness of evidence: very narrow range of participants with specific ethnic and disease characteristics",TRUE,FALSE,FALSE,TRUE,FALSE
+Cleft patients,Maxillary distraction osteogenesis,Orthognathic surgery,Speech (deterioration),RR,0.11,0.01,1.85,FALSE,22,1,Very low,"Downgraded one level for indirectness of evidence: very narrow range of participants with specific ethnic and disease characteristics
+Downgraded one level for imprecision: wide confidence Interval and no power calculation reported for this outcome
+Downgraded two levels for limitation in design and implementation due to selection, performance, attrition and reporting bias",TRUE,TRUE,FALSE,TRUE,FALSE
+Cleft patients,Maxillary distraction osteogenesis,Orthognathic surgery,Velopharyngeal function,RR,1.28,0.65,2.52,FALSE,21,1,Very low,"Downgraded one level for indirectness of evidence: very narrow range of participants with specific ethnic and disease characteristics
+Downgraded one level for imprecision: wide confidence Interval and no power calculation reported for this outcome
+Downgraded two levels for limitation in design and implementation due to selection, performance, attrition and reporting bias",TRUE,TRUE,FALSE,TRUE,FALSE
+Cleft patients,Maxillary distraction osteogenesis,Orthognathic surgery,Psychological status,MD,2.95,0.14,5.76,TRUE,30,1,Very low,"Downgraded two levels for limitation in design and implementation due to selection, performance, detection, attrition and reporting bias
+Downgraded one level for indirectness of evidence: very narrow range of participants with specific ethnic and disease characteristics
+Downgraded one level for imprecision: wide confidence Interval and no power calculation reported for this outcome",TRUE,TRUE,FALSE,TRUE,FALSE
+Cleft patients,Maxillary distraction osteogenesis,Orthognathic surgery,Clinical morbidities,NA,NA,NA,NA,NA,29,1,Very low,"Downgraded two levels for limitation in design and implementation due to selection, performance, detection, attrition and reporting bias
+Downgraded one level for indirectness of evidence: very narrow range of participants with specific ethnic and disease characteristics
+Downgraded one level for imprecision: wide confidence Interval and no power calculation reported for this outcome",TRUE,TRUE,FALSE,TRUE,FALSE

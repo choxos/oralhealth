@@ -1,0 +1,108 @@
+Population,Intervention,Comparison,Outcome,Measure,Effect,CI Lower,CI Upper,Significant,Number of participants,Number of studies,Certainty of the evidence (GRADE),Reasons for GRADE if not High,Risk of bias,Imprecision,Inconsistency,Indirectness,Publication bias
+Adults with periodontitis (chronic/aggressive),Amoxicillin + metronidazole + SRP,SRP,Percentage of closed pockets,MD,16.2,25.87,6.53,TRUE,44,1,Very Low,"Downgraded by 1 level due to unclear risk of bias.
+Downgraded by 2 levels due to imprecision.",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults with periodontitis (chronic/aggressive),Amoxicillin + metronidazole + SRP,SRP,CAL,MD,0.47,0.9,0.05,TRUE,389,2,Very Low,"Downgraded by 2 levels due to imprecision.
+Downgraded by 2 levels due to risk of bias as studies showed unclear or high risk of bias.",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults with periodontitis (chronic/aggressive),Amoxicillin + metronidazole + SRP,SRP,Probing pocket depth,MD,0.3,0.42,0.18,TRUE,389,2,Very Low,"Downgraded by 2 levels due to imprecision.
+Downgraded by 2 levels due to risk of bias as studies showed unclear or high risk of bias.",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults with periodontitis (chronic/aggressive),Amoxicillin + metronidazole + SRP,SRP,Percentage of BOP,MD,8.06,14.26,1.85,TRUE,389,2,Very Low,"Downgraded by 2 levels due to imprecision.
+Downgraded by 2 levels due to risk of bias as studies showed unclear or high risk of bias.",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults with periodontitis (chronic/aggressive),Amoxicillin + metronidazole + SRP,SRP,Antimicrobial resistance,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Adults with periodontitis (chronic/aggressive),Amoxicillin + metronidazole + SRP,SRP,Adverse events,NA,NA,NA,NA,NA,389,2,Very Low,"Downgraded by 2 levels due to imprecision.
+Downgraded by 2 levels due to risk of bias as studies showed unclear or high risk of bias.",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults with periodontitis (chronic/aggressive),Amoxicillin + metronidazole + SRP,SRP,Patient-reported quality of life changes,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Adults with periodontitis (chronic/aggressive),Metronidazole + SRP,SRP,Percentage of closed pockets,MD,12.2,29.23,4.83,FALSE,22,1,Very Low,"Downgraded by 1 level due to unclear risk of bias.
+Downgraded by 2 levels due to imprecision.",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults with periodontitis (chronic/aggressive),Metronidazole + SRP,SRP,CAL,MD,1.12,2.24,0,TRUE,71,3,Very Low,"Downgraded by 2 levels due to imprecision.
+Downgraded by 2 levels due to risk of bias as studies showed unclear or high risk of bias.
+Downgraded by 1 level for inconsistency.",TRUE,TRUE,TRUE,FALSE,FALSE
+Adults with periodontitis (chronic/aggressive),Metronidazole + SRP,SRP,Probing pocket depth,MD,1.11,2.84,0.61,FALSE,47,2,Very Low,"Downgraded by 1 level due to unclear risk of bias.
+Downgraded by 2 levels due to imprecision.
+Downgraded by 1 level for inconsistency.",TRUE,TRUE,TRUE,FALSE,FALSE
+Adults with periodontitis (chronic/aggressive),Metronidazole + SRP,SRP,Percentage of BOP,MD,6.9,22.1,8.3,FALSE,22,1,Very Low,"Downgraded by 1 level due to unclear risk of bias.
+Downgraded by 2 levels due to imprecision.
+Downgraded by 1 level for inconsistency.",TRUE,TRUE,TRUE,FALSE,FALSE
+Adults with periodontitis (chronic/aggressive),Metronidazole + SRP,SRP,Antimicrobial resistance,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Adults with periodontitis (chronic/aggressive),Metronidazole + SRP,SRP,Adverse events,NA,NA,NA,NA,NA,71,3,Very Low,"Downgraded by 2 levels due to imprecision.
+Downgraded by 2 levels due to risk of bias as studies showed unclear or high risk of bias.",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults with periodontitis (chronic/aggressive),Metronidazole + SRP,SRP,Patient-reported quality of life changes,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Adults with periodontitis (chronic/aggressive),Azithromycin + SRP,SRP,Percentage of closed pockets,MD,2.5,10.19,15.19,FALSE,40,1,Very Low,"Downgraded by 1 level due to unclear risk of bias.
+Downgraded by 1 level due to inconsistency.
+Downgraded by 2 levels due to imprecision.",TRUE,TRUE,TRUE,FALSE,FALSE
+Adults with periodontitis (chronic/aggressive),Azithromycin + SRP,SRP,CAL,MD,0.59,1.27,0.08,FALSE,110,2,Very Low,"Downgraded by 1 level due to unclear risk of bias.
+Downgraded by 2 levels due to imprecision.
+Downgraded by 2 levels due to inconsistency.",TRUE,TRUE,TRUE,FALSE,FALSE
+Adults with periodontitis (chronic/aggressive),Azithromycin + SRP,SRP,Probing pocket depth,MD,0.77,2.33,0.79,FALSE,110,2,Very Low,"Downgraded by 1 level due to unclear risk of bias.
+Downgraded by 2 levels due to imprecision.
+Downgraded by 2 levels due to inconsistency.",TRUE,TRUE,TRUE,FALSE,FALSE
+Adults with periodontitis (chronic/aggressive),Azithromycin + SRP,SRP,Percentage of BOP,MD,1.28,4.32,1.76,FALSE,110,2,Very Low,"Downgraded by 1 level due to unclear risk of bias.
+Downgraded by 1 level due to inconsistency.
+Downgraded by 2 levels due to imprecision.",TRUE,TRUE,TRUE,FALSE,FALSE
+Adults with periodontitis (chronic/aggressive),Azithromycin + SRP,SRP,Antimicrobial resistance,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Adults with periodontitis (chronic/aggressive),Azithromycin + SRP,SRP,Adverse events,NA,NA,NA,NA,NA,110,2,Very Low,"Downgraded by 1 level due to unclear risk of bias.
+Downgraded by 2 levels due to imprecision.",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults with periodontitis (chronic/aggressive),Azithromycin + SRP,SRP,Patient-reported quality of life changes,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Adults with periodontitis (chronic),Amoxicillin + clavulanate + SRP,SRP,Percentage of closed pockets,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Adults with periodontitis (chronic),Amoxicillin + clavulanate + SRP,SRP,CAL,MD,0.1,0.51,0.71,FALSE,21,1,Very Low,"Downgraded by 1 level due to unclear risk of bias.
+Downgraded by 2 levels due to imprecision (single study with limited number of participants).",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults with periodontitis (chronic),Amoxicillin + clavulanate + SRP,SRP,Probing pocket depth,MD,0.1,0.17,0.37,FALSE,21,1,Very Low,"Downgraded by 1 level due to unclear risk of bias.
+Downgraded by 2 levels due to imprecision (single study with limited number of participants).",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults with periodontitis (chronic),Amoxicillin + clavulanate + SRP,SRP,Percentage of BOP,MD,0,0.09,0.09,FALSE,21,1,Very Low,"Downgraded by 1 level due to unclear risk of bias.
+Downgraded by 2 levels due to imprecision (single study with limited number of participants).",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults with periodontitis (chronic),Amoxicillin + clavulanate + SRP,SRP,Antimicrobial resistance,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Adults with periodontitis (chronic),Amoxicillin + clavulanate + SRP,SRP,Adverse events,NA,NA,NA,NA,NA,21,1,Very Low,"Downgraded by 1 level due to unclear risk of bias.
+Downgraded by 2 levels due to imprecision (single study with limited number of participants).",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults with periodontitis (chronic),Amoxicillin + clavulanate + SRP,SRP,Patient-reported quality of life changes,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Adults with periodontitis (aggressive),Doxycycline + SRP,SRP,Percentage of closed pockets,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Adults with periodontitis (aggressive),Doxycycline + SRP,SRP,CAL,MD,0.8,1.49,0.11,TRUE,22,1,Very Low,"Downgraded by 1 level due to unclear risk of bias.
+Downgraded by 2 levels due to imprecision (single study with limited number of participants).",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults with periodontitis (aggressive),Doxycycline + SRP,SRP,Probing pocket depth,MD,1,1.78,0.22,TRUE,22,1,Very Low,"Downgraded by 1 level due to unclear risk of bias.
+Downgraded by 2 levels due to imprecision (single study with limited number of participants).",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults with periodontitis (aggressive),Doxycycline + SRP,SRP,Percentage of BOP,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Adults with periodontitis (aggressive),Doxycycline + SRP,SRP,Antimicrobial resistance,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Adults with periodontitis (aggressive),Doxycycline + SRP,SRP,Adverse events,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Adults with periodontitis (aggressive),Doxycycline + SRP,SRP,Patient-reported quality of life changes,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Adults with periodontitis (aggressive),Tetracycline + SRP,SRP,Percentage of closed pockets,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Adults with periodontitis (aggressive),Tetracycline + SRP,SRP,CAL,MD,2.3,2.5,2.1,TRUE,26,1,Very Low,"Downgraded by 1 level due to unclear risk of bias.
+Downgraded by 2 levels due to imprecision (single study with limited number of participants).",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults with periodontitis (aggressive),Tetracycline + SRP,SRP,Probing pocket depth,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Adults with periodontitis (aggressive),Tetracycline + SRP,SRP,Percentage of BOP,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Adults with periodontitis (aggressive),Tetracycline + SRP,SRP,Antimicrobial resistance,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Adults with periodontitis (aggressive),Tetracycline + SRP,SRP,Adverse events,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Adults with periodontitis (aggressive),Tetracycline + SRP,SRP,Patient-reported quality of life changes,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Adults with periodontitis (aggressive),Clindamycin + SRP,SRP,Percentage of closed pockets,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Adults with periodontitis (aggressive),Clindamycin + SRP,SRP,CAL,MD,1.7,2.4,1,TRUE,21,1,Very Low,"Downgraded by 1 level due to unclear risk of bias.
+Downgraded by 2 levels due to imprecision (single study with limited number of participants).",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults with periodontitis (aggressive),Clindamycin + SRP,SRP,Probing pocket depth,MD,1.8,2.47,1.13,TRUE,21,1,Very Low,"Downgraded by 1 level due to unclear risk of bias.
+Downgraded by 2 levels due to imprecision (single study with limited number of participants).",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults with periodontitis (aggressive),Clindamycin + SRP,SRP,Percentage of BOP,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Adults with periodontitis (aggressive),Clindamycin + SRP,SRP,Antimicrobial resistance,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Adults with periodontitis (aggressive),Clindamycin + SRP,SRP,Adverse events,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Adults with periodontitis (aggressive),Clindamycin + SRP,SRP,Patient-reported quality of life changes,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Adults with periodontitis (aggressive),Doxycycline + SRP,Metronidazole + SRP,Percentage of closed pockets,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Adults with periodontitis (aggressive),Doxycycline + SRP,Metronidazole + SRP,CAL,MD,1.1,0.36,1.84,TRUE,27,1,Very Low,"Downgraded by 1 level due to unclear risk of bias.
+Downgraded by 2 levels due to imprecision (single study with limited number of participants).",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults with periodontitis (aggressive),Doxycycline + SRP,Metronidazole + SRP,Probing pocket depth,MD,1,0.3,1.7,TRUE,27,1,Very Low,"Downgraded by 1 level due to unclear risk of bias.
+Downgraded by 2 levels due to imprecision (single study with limited number of participants).",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults with periodontitis (aggressive),Doxycycline + SRP,Metronidazole + SRP,Percentage of BOP,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Adults with periodontitis (aggressive),Doxycycline + SRP,Metronidazole + SRP,Antimicrobial resistance,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Adults with periodontitis (aggressive),Doxycycline + SRP,Metronidazole + SRP,Adverse events,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Adults with periodontitis (aggressive),Doxycycline + SRP,Metronidazole + SRP,Patient-reported quality of life changes,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Adults with periodontitis (aggressive),Clindamycin + SRP,Metronidazole + SRP,Percentage of closed pockets,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Adults with periodontitis (aggressive),Clindamycin + SRP,Metronidazole + SRP,CAL,MD,0.2,0.55,0.95,FALSE,26,1,Very Low,"Downgraded by 1 level due to unclear risk of bias.
+Downgraded by 2 levels due to imprecision (single study with limited number of participants).",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults with periodontitis (aggressive),Clindamycin + SRP,Metronidazole + SRP,Probing pocket depth,MD,0.2,0.38,0.78,FALSE,26,1,Very Low,"Downgraded by 1 level due to unclear risk of bias.
+Downgraded by 2 levels due to imprecision (single study with limited number of participants).",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults with periodontitis (aggressive),Clindamycin + SRP,Metronidazole + SRP,Percentage of BOP,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Adults with periodontitis (aggressive),Clindamycin + SRP,Metronidazole + SRP,Antimicrobial resistance,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Adults with periodontitis (aggressive),Clindamycin + SRP,Metronidazole + SRP,Adverse events,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Adults with periodontitis (aggressive),Clindamycin + SRP,Metronidazole + SRP,Patient-reported quality of life changes,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Adults with periodontitis (aggressive),Clindamycin + SRP,Doxycycline + SRP,Percentage of closed pockets,MD,-0.9,-1.62,-0.18,FALSE,23,1,Very Low,"Downgraded by 1 level due to unclear risk of bias.
+Downgraded by 2 levels due to imprecision (single study with limited number of participants).",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults with periodontitis (aggressive),Clindamycin + SRP,Doxycycline + SRP,CAL,MD,-0.8,-1.58,-0.02,FALSE,23,1,Very Low,"Downgraded by 1 level due to unclear risk of bias.
+Downgraded by 2 levels due to imprecision (single study with limited number of participants).",TRUE,TRUE,FALSE,FALSE,FALSE
+Adults with periodontitis (aggressive),Clindamycin + SRP,Doxycycline + SRP,Probing pocket depth,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Adults with periodontitis (aggressive),Clindamycin + SRP,Doxycycline + SRP,Percentage of BOP,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Adults with periodontitis (aggressive),Clindamycin + SRP,Doxycycline + SRP,Antimicrobial resistance,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Adults with periodontitis (aggressive),Clindamycin + SRP,Doxycycline + SRP,Adverse events,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Adults with periodontitis (aggressive),Clindamycin + SRP,Doxycycline + SRP,Patient-reported quality of life changes,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA

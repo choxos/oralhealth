@@ -1,0 +1,20 @@
+Population,Intervention,Comparison,Outcome,Measure,Effect,CI Lower,CI Upper,Significant,Number of participants,Number of studies,Certainty of the evidence (GRADE),Reasons for GRADE if not High,Risk of bias,Imprecision,Inconsistency,Indirectness,Publication bias
+adolescents and adults undergoing orthodontic treatment,low-level laser therapy,placebo,Patient-reported pain intensity or pain relief (VAS 1-100mm) - 24 hours,MD,-20.27,-24.5,-16.04,TRUE,118,2,Low,"Downgraded one level for imprecision
+Downgraded one level for risk of bias",TRUE,TRUE,FALSE,FALSE,FALSE
+adolescents and adults undergoing orthodontic treatment,low-level laser therapy,placebo,Adverse effects,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+adolescents and adults undergoing orthodontic treatment,vibratory stimulation,no intervention or placebo vibration,Patient-reported pain intensity or pain relief (VAS 1-100mm) - 24 hours,MD,1.32,-11.79,14.43,FALSE,154,3,Very low,"Downgraded two levels for imprecision
+Downgraded one level for risk of bias",TRUE,TRUE,FALSE,FALSE,FALSE
+adolescents and adults undergoing orthodontic treatment,vibratory stimulation,no intervention or placebo vibration,Adverse effects,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+adolescents undergoing orthodontic treatment,chewing gum or wafer,placebo or no chewing gum,Patient-reported pain intensity or pain relief (VAS upon chewing 1-100mm) - 24 hours,MD,-15.38,-28.9,-1.86,TRUE,96,2,Very low,"Downgraded one level for imprecision
+Downgraded one level for risk of bias
+Downgraded one level for inconsistency. Otasevic 2006 did not provide data suitable for meta‐analysis but reported higher pain in intervention group than control.",TRUE,TRUE,TRUE,FALSE,FALSE
+adolescents undergoing orthodontic treatment,chewing gum or wafer,placebo or no chewing gum,Adverse effects,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+adults undergoing orthodontic treatment,brain wave music (BWM),no special instructions,Patient-reported pain intensity or pain relief (VAS 1-100mm) - 24 hours,MD,-26.65,-39.06,-14.24,TRUE,24,1,Very low,"Downgraded two levels for imprecision
+Downgraded one level for unclear risk of bias",TRUE,TRUE,FALSE,FALSE,FALSE
+adults undergoing orthodontic treatment,brain wave music (BWM),no special instructions,Adverse effects for BWM,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+adults undergoing orthodontic treatment,cognitive behavioural therapy (CBT),no special instructions,Patient-reported pain intensity or pain relief (VAS 1-100mm) - 24 hours,MD,-20.67,-32.12,-9.22,TRUE,24,1,Very low,"Downgraded two levels for imprecision
+Downgraded one level for unclear risk of bias",TRUE,TRUE,FALSE,FALSE,FALSE
+adults undergoing orthodontic treatment,cognitive behavioural therapy (CBT),no special instructions,Adverse effects for CBT,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+people undergoing orthodontic treatment,text message,no text message,Patient-reported pain intensity or pain relief (VAS 1-100mm) - 24 hours,NA,NA,NA,NA,NA,39,1,Very low,"Downgraded two levels for imprecision
+Downgraded one level for high risk of bias",TRUE,TRUE,FALSE,FALSE,FALSE
+people undergoing orthodontic treatment,text message,no text message,Adverse effects,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA

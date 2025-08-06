@@ -1,0 +1,40 @@
+Population,Intervention,Comparison,Outcome,Measure,Effect,CI Lower,CI Upper,Significant,Number of participants,Number of studies,Certainty of the evidence (GRADE),Reasons for GRADE if not High,Risk of bias,Imprecision,Inconsistency,Indirectness,Publication bias
+school children in UK and India,traditional screening,no screening,Dental attendance,NA,NA,NA,NA,NA,6281,4,Very low,"Downgraded two levels due to unclear risk of bias.
+Downgraded two levels due to inconsistency.",TRUE,FALSE,TRUE,FALSE,FALSE
+school children in UK and India,traditional screening,no screening,Proportion of children with treated/untreated caries,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+school children in UK and India,traditional screening,no screening,Proportion of children with other treated/untreated oral health need,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+school children in UK and India,traditional screening,no screening,Adverse events,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+school children in UK,criteria-based screening,no screening,Dental attendance,RR,1.07,0.99,1.16,FALSE,4980,2,Low,Downgraded two levels due to imprecision.,FALSE,TRUE,FALSE,FALSE,FALSE
+school children in UK,criteria-based screening,no screening,Proportion of children with treated/untreated caries,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+school children in UK,criteria-based screening,no screening,Proportion of children with other treated/untreated oral health need,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+school children in UK,criteria-based screening,no screening,Adverse events,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+school children in UK,criteria-based screening,traditional screening,Dental attendance,RR,1.01,0.94,1.08,FALSE,5316,2,Very low,"Downgraded two levels due to inconsistency.
+Downgraded two levels due to imprecision.",FALSE,TRUE,TRUE,FALSE,FALSE
+school children in UK,criteria-based screening,traditional screening,Proportion of children with treated/untreated caries,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+school children in UK,criteria-based screening,traditional screening,Proportion of children with other treated/untreated oral health need,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+school children in UK,criteria-based screening,traditional screening,Adverse events,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+school children in UK,criteria-based screening with specific referral,criteria-based screening with non-specific referral,Dental attendance at general dentist,RR,1.39,1.09,1.77,TRUE,201,1,Very low,"Downgraded one level due to unclear risk of bias.
+Downgraded two levels due to imprecision.",TRUE,TRUE,FALSE,FALSE,FALSE
+school children in UK,criteria-based screening with specific referral,criteria-based screening with non-specific referral,Dental attendance at orthodontist,RR,1.9,1.18,3.06,TRUE,201,1,Very low,"Downgraded one level due to unclear risk of bias.
+Downgraded two levels due to imprecision.",TRUE,TRUE,FALSE,FALSE,FALSE
+school children in UK,criteria-based screening with specific referral,criteria-based screening with non-specific referral,Proportion of children with treated/untreated caries,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+school children in UK,criteria-based screening with specific referral,criteria-based screening with non-specific referral,Proportion of children with other treated/untreated oral health need,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+school children in UK,criteria-based screening with specific referral,criteria-based screening with non-specific referral,Adverse events,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+school children in India,traditional screening with motivation,traditional screening,Dental attendance,RR,3.08,2.57,3.71,TRUE,2486,1,Very low,"Downgraded two levels due to high risk of bias.
+Downgraded two levels due to imprecision.",TRUE,TRUE,FALSE,FALSE,FALSE
+school children in India,traditional screening with motivation,traditional screening,Proportion of children with treated/untreated caries,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+school children in India,traditional screening with motivation,traditional screening,Proportion of children with other treated/untreated oral health need,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+school children in India,traditional screening with motivation,traditional screening,Adverse events,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+school children in USA,CSM referral letter,standard referral letter,Dental attendance,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+school children in USA,CSM referral letter,standard referral letter,Proportion of children with treated/untreated caries,OR,0.97,0.62,1.51,FALSE,388,1,Very low,"Downgraded two levels due to high risk of bias.
+Downgraded one level for indirectness.
+Downgraded two levels for imprecision.",TRUE,TRUE,FALSE,TRUE,FALSE
+school children in USA,CSM referral letter,standard referral letter,Proportion of children with other treated/untreated oral health need,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+school children in USA,CSM referral letter,standard referral letter,Adverse events,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+school children in Saudi Arabia,referral to specific treatment facility,advice letter to see a dentist,Dental attendance,RR,0.91,0.34,2.47,FALSE,362,1,Very low,"Downgraded two levels due to high risk of bias.
+Downgraded one level due to indirectness in the measurement of the outcome.
+Downgraded two levels due to imprecision.
+Downgraded one level due to inconsistency.",TRUE,TRUE,TRUE,TRUE,FALSE
+school children in Saudi Arabia,referral to specific treatment facility,advice letter to see a dentist,Proportion of children with treated/untreated caries,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+school children in Saudi Arabia,referral to specific treatment facility,advice letter to see a dentist,Proportion of children with other treated/untreated oral health need,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+school children in Saudi Arabia,referral to specific treatment facility,advice letter to see a dentist,Adverse events,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA

@@ -1,0 +1,13 @@
+Population,Intervention,Comparison,Outcome,Measure,Effect,CI Lower,CI Upper,Significant,Number of participants,Number of studies,Certainty of the evidence (GRADE),Reasons for GRADE if not High,Risk of bias,Imprecision,Inconsistency,Indirectness,Publication bias
+elderly people,professional oral care,usual oral care,Incidence rate of NHAP,HR,0.65,0.29,1.46,FALSE,2513,1,Low,"Downgraded one level due to serious risk of bias (performance bias)
+Downgraded one level due to serious imprecision",TRUE,TRUE,FALSE,FALSE,FALSE
+elderly people,professional oral care,usual oral care,Incidence proportion (cumulative incidence) of NHAP,RR,0.61,0.37,1.01,FALSE,366,1,Low,"Downgraded one level due to serious risk of bias (performance bias)
+Downgraded one level due to serious imprecision",TRUE,TRUE,FALSE,FALSE,FALSE
+elderly people,professional oral care,usual oral care,Mortality (pneumonia-associated),RR,0.41,0.24,0.72,TRUE,507,2,Low,Downgraded two levels due to serious risk of bias (performance bias and attrition bias),TRUE,FALSE,FALSE,FALSE,FALSE
+elderly people,professional oral care,usual oral care,Mortality (all-cause),RR,0.55,0.27,1.15,FALSE,141,1,Very low,"Downgraded one level due to serious imprecision
+Downgraded two levels due to serious risk of bias (performance bias and attrition bias)",TRUE,TRUE,FALSE,FALSE,FALSE
+elderly people,oral care,no oral care,Incidence rate of NHAP,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+elderly people,oral care,no oral care,Incidence proportion of NHAP,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+elderly people,oral care,no oral care,Mortality (pneumonia-associated),NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+elderly people,oral care,no oral care,Mortality (all-cause),NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+elderly people,oral care,no oral care,Adverse effects of interventions,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA

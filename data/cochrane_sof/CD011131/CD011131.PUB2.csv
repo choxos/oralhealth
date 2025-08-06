@@ -1,0 +1,28 @@
+Population,Intervention,Comparison,Outcome,Measure,Effect,CI Lower,CI Upper,Significant,Number of participants,Number of studies,Certainty of the evidence (GRADE),Reasons for GRADE if not High,Risk of bias,Imprecision,Inconsistency,Indirectness,Publication bias
+children with cleft lip,infraorbital nerve block,placebo,Pain score control (0 to 4 hours),SMD,-3.54,-6.13,-0.95,TRUE,120,3,Very low,"Downgraded one level: few studies with small sample size.
+Downgraded one level due to risk of bias: randomisation and allocation concealment procedures were unclear.
+Downgraded one level due to inconsistency: heterogeneity in analysis.",TRUE,TRUE,TRUE,FALSE,FALSE
+children with cleft lip,infraorbital nerve block,placebo,Duration of postoperative analgesia,MD,8.26,5.41,11.11,TRUE,60,1,Very low,"Downgraded one level: few studies with small sample size.
+Downgraded one level due to risk of bias: randomisation and allocation concealment procedures were unclear.
+Downgraded one level due to uncertainty in outcome measurement.",TRUE,TRUE,FALSE,TRUE,FALSE
+children with cleft lip,infraorbital nerve block,placebo,Adverse events,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+children with cleft lip,infraorbital nerve block,placebo,Supplemental analgesic requirements (at 4 hours),RR,0.05,0.01,0.18,TRUE,120,3,Low,"Downgraded one level: few studies with small sample size.
+Downgraded one level due to risk of bias: randomisation and allocation concealment procedures were unclear.",TRUE,TRUE,FALSE,FALSE,FALSE
+children with cleft lip,infraorbital nerve block,placebo,Time to feeding after surgery,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+children with cleft lip,infraorbital nerve block,intravenous analgesia,Pain score control (0 to 4 hours),SMD,-1.5,-2.4,-0.6,TRUE,107,2,Very low,"Downgraded one level: few studies with small sample size.
+Downgraded one level due to risk of bias: randomisation and allocation concealment procedures were unclear.
+Downgraded one level due to inconsistency: heterogeneity in analysis.",TRUE,TRUE,TRUE,FALSE,FALSE
+children with cleft lip,infraorbital nerve block,intravenous analgesia,Duration of postoperative analgesia,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+children with cleft lip,infraorbital nerve block,intravenous analgesia,Adverse events,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+children with cleft lip,infraorbital nerve block,intravenous analgesia,Supplemental analgesic requirements,RR,0.27,0.13,0.55,TRUE,82,1,Very low,"Downgraded one level: few studies with small sample size.
+Downgraded one level due to risk of bias: randomisation and allocation concealment procedures were unclear.
+Downgraded one level due to uncertainty in outcome measurement.",TRUE,TRUE,FALSE,TRUE,FALSE
+children with cleft lip,infraorbital nerve block,intravenous analgesia,Time to feeding after surgery,MD,-9.45,-17.37,-1.53,TRUE,128,2,Low,"Downgraded one level: few studies with small sample size.
+Downgraded one level due to risk of bias: randomisation and allocation concealment procedures were unclear.",TRUE,TRUE,FALSE,FALSE,FALSE
+children with cleft lip,infraorbital nerve block,infiltration of the incision,Pain score control,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+children with cleft lip,infraorbital nerve block,infiltration of the incision,Duration of postoperative analgesia,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+children with cleft lip,infraorbital nerve block,infiltration of the incision,Adverse events,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+children with cleft lip,infraorbital nerve block,infiltration of the incision,Supplemental analgesic requirements,RR,0.16,0.05,0.51,TRUE,30,1,Very low,"Downgraded one level: few studies with small sample size.
+Downgraded one level due to risk of bias: randomisation and allocation concealment procedures were unclear.
+Downgraded one level due to uncertainty in outcome measurement.",TRUE,TRUE,FALSE,TRUE,FALSE
+children with cleft lip,infraorbital nerve block,infiltration of the incision,Time to feeding after surgery,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA

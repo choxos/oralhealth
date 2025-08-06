@@ -1,0 +1,9 @@
+Population,Intervention,Comparison,Outcome,Measure,Effect,CI Lower,CI Upper,Significant,Number of participants,Number of studies,Certainty of the evidence (GRADE),Reasons for GRADE if not High,Risk of bias,Imprecision,Inconsistency,Indirectness,Publication bias
+general population,fluoridated milk,non-fluoridated milk,Caries in permanent teeth: DMFT (3 years),MD,-0.13,-0.24,-0.02,TRUE,166,1,Low,"Downgraded for risk of bias: sequence generation method unclear, and participants were not blinded.
+Downgraded for indirectness: applicability of evidence to different settings and populations unclear; there was not much baseline information about the population in the study.",TRUE,FALSE,FALSE,TRUE,FALSE
+general population,fluoridated milk,non-fluoridated milk,Caries in primary teeth: dmft (3 years),MD,-1.14,-1.86,-0.42,TRUE,166,1,Low,"Downgraded for risk of bias: sequence generation method unclear, and participants were not blinded.
+Downgraded for indirectness: applicability of evidence to different settings and populations unclear; there was not much baseline information about the population in the study.",TRUE,FALSE,FALSE,TRUE,FALSE
+general population,fluoridated milk,non-fluoridated milk,Adverse effects: dental fluorosis,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+general population,fluoridated milk,non-fluoridated milk,Dental pain due to decay,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+general population,fluoridated milk,non-fluoridated milk,Antibiotics due to dental infections,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+general population,fluoridated milk,non-fluoridated milk,Requirement for general anaesthesia due to dental procedures for caries,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA

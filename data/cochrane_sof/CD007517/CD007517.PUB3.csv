@@ -1,0 +1,7 @@
+Population,Intervention,Comparison,Outcome,Measure,Effect,CI Lower,CI Upper,Significant,Number of participants,Number of studies,Certainty of the evidence (GRADE),Reasons for GRADE if not High,Risk of bias,Imprecision,Inconsistency,Indirectness,Publication bias
+Patients with restorations of dental amalgam,Adhesive bonding,Control,Survival of the restoration,NA,NA,NA,NA,NA,31,1,Low,"Attrition bias, Low sample size not meeting optimal information size",TRUE,TRUE,FALSE,FALSE,FALSE
+Patients with restorations of dental amalgam,Adhesive bonding,Control,Post-insertion sensitivity or pain assessed by a validated pain scale,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Patients with restorations of dental amalgam,Adhesive bonding,Control,"Secondary caries, as diagnosed clinically",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Patients with restorations of dental amalgam,Adhesive bonding,Control,Marginal deterioration of the restoration and fracture of the remaining tooth tissue,NA,NA,NA,NA,NA,31,1,Low,"Attrition bias, Low sample size not meeting optimal information size",TRUE,TRUE,FALSE,FALSE,FALSE
+Patients with restorations of dental amalgam,Adhesive bonding,Control,Economic data: direct costs of materials and any reported associated indirect costs,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Patients with restorations of dental amalgam,Adhesive bonding,Control,Adverse effects: any event for which the causal relationship between the event and the amalgam restoration is at least a reasonable possibility,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA

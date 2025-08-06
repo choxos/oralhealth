@@ -1,0 +1,3 @@
+Population,Intervention,Comparison,Outcome,Measure,Effect,CI Lower,CI Upper,Significant,Number of participants,Number of studies,Certainty of the evidence (GRADE),Reasons for GRADE if not High,Risk of bias,Imprecision,Inconsistency,Indirectness,Publication bias
+people with diabetes mellitus and periodontitis,periodontal treatment,no active treatment/usual care,HbA1c (3 to 4 months follow-up),MD,-0.43,-0.59,-0.28,TRUE,2443,30,MODERATE,"Downgraded 1 level for high risk of bias, largely due to lack of blinding.",TRUE,FALSE,FALSE,FALSE,FALSE
+people with diabetes mellitus and periodontitis,periodontal treatment,no active treatment/usual care,Adverse effects,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA

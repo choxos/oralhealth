@@ -1,0 +1,6 @@
+Population,Intervention,Comparison,Outcome,Measure,Effect,CI Lower,CI Upper,Significant,Number of participants,Number of studies,Certainty of the evidence (GRADE),Reasons for GRADE if not High,Risk of bias,Imprecision,Inconsistency,Indirectness,Publication bias
+patients with replacing missing teeth,Long implants with sinus lift,Short implants,Prosthesis failures,OR,0.37,0.05,2.68,FALSE,109,3,Moderate,Imprecision (small number of events),FALSE,TRUE,FALSE,FALSE,FALSE
+patients with replacing missing teeth,Long implants with sinus lift,Short implants,Implant failures,OR,0.44,0.1,1.99,FALSE,137,4,Moderate,Imprecision (small number of events),FALSE,TRUE,FALSE,FALSE,FALSE
+patients with replacing missing teeth,Long implants with sinus lift,Short implants,Complications,OR,4.77,1.79,12.71,TRUE,137,4,Low,"Imprecision (small number of events), Inconsistency (statistical heterogeneity present P value = 0.04, I2= 64%)",FALSE,TRUE,TRUE,FALSE,FALSE
+patients with insufficient bone below maxillary sinus,sinus lift procedure,sinus lift procedure,Prosthesis failures,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+patients with insufficient bone below maxillary sinus,sinus lift procedure,sinus lift procedure,Implant failures,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA

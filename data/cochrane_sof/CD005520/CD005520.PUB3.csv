@@ -1,0 +1,22 @@
+Population,Intervention,Comparison,Outcome,Measure,Effect,CI Lower,CI Upper,Significant,Number of participants,Number of studies,Certainty of the evidence (GRADE),Reasons for GRADE if not High,Risk of bias,Imprecision,Inconsistency,Indirectness,Publication bias
+Children (age range 4 to 10 years old),Oral appliance,No treatment,Apnoea–hypopnoea index (AHI),RR,0.39,0.2,0.76,TRUE,23,1,Very Low,"Quasi randomised study, no allocation concealment, no blinding, attrition bias (overall high risk of bias).
+Low sample size and wide confidence interval (imprecision).
+Single, small study (may lack generalisability).",TRUE,TRUE,TRUE,FALSE,FALSE
+Children (age range 4 to 10 years old),Oral appliance,No treatment,Daytime symptoms: Sleepiness,RR,0.64,0.11,3.78,FALSE,23,1,Very Low,"Quasi randomised study, no allocation concealment, no blinding, attrition bias (overall high risk of bias).
+Low sample size and wide confidence interval (imprecision).
+Single, small study (may lack generalisability).",TRUE,TRUE,TRUE,FALSE,FALSE
+Children (age range 4 to 10 years old),Oral appliance,No treatment,Daytime symptoms: Irritability,RR,0.32,0.07,1.41,FALSE,23,1,Very Low,"Quasi randomised study, no allocation concealment, no blinding, attrition bias (overall high risk of bias).
+Low sample size and wide confidence interval (imprecision).
+Single, small study (may lack generalisability).",TRUE,TRUE,TRUE,FALSE,FALSE
+Children (age range 4 to 10 years old),Oral appliance,No treatment,Daytime symptoms: Tiredness,RR,0.26,0.06,1.05,FALSE,23,1,Very Low,"Quasi randomised study, no allocation concealment, no blinding, attrition bias (overall high risk of bias).
+Low sample size and wide confidence interval (imprecision).
+Single, small study (may lack generalisability).",TRUE,TRUE,TRUE,FALSE,FALSE
+Children (age range 4 to 10 years old),Oral appliance,No treatment,Daytime symptoms: School problems,RR,0.64,0.11,3.78,FALSE,23,1,Very Low,"Quasi randomised study, no allocation concealment, no blinding, attrition bias (overall high risk of bias).
+Low sample size and wide confidence interval (imprecision).
+Single, small study (may lack generalisability).",TRUE,TRUE,TRUE,FALSE,FALSE
+Children (age range 4 to 10 years old),Oral appliance,No treatment,Daytime symptoms: Morning headache,RR,0.39,0.12,1.23,FALSE,23,1,Very Low,"Quasi randomised study, no allocation concealment, no blinding, attrition bias (overall high risk of bias).
+Low sample size and wide confidence interval (imprecision).
+Single, small study (may lack generalisability).",TRUE,TRUE,TRUE,FALSE,FALSE
+Children (age range 4 to 10 years old),Oral appliance,No treatment,Daytime symptoms: Oral breathing,RR,0.16,0.04,0.59,TRUE,23,1,Very Low,"Quasi randomised study, no allocation concealment, no blinding, attrition bias (overall high risk of bias).
+Low sample size and wide confidence interval (imprecision).
+Single, small study (may lack generalisability).",TRUE,TRUE,TRUE,FALSE,FALSE
