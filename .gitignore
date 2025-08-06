@@ -186,4 +186,4 @@ htmlcov/
 
 # Local development
 local/
-dev/
+dev/!data/cochrane_sof
