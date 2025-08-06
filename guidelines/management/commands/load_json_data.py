@@ -14,6 +14,16 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         base_dir = Path(__file__).resolve().parent.parent.parent.parent
         
+        # Clear existing data first
+        self.stdout.write("Clearing existing data...")
+        from guidelines.models import Recommendation, RecommendationReference
+        from cochrane.models import CochraneReview, CochraneSoFEntry
+        
+        RecommendationReference.objects.all().delete()
+        Recommendation.objects.all().delete()
+        CochraneSoFEntry.objects.all().delete()
+        CochraneReview.objects.all().delete()
+        
         # Load UK Guidelines
         self.load_uk_guidelines(base_dir)
         
