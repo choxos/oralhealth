@@ -305,11 +305,18 @@ def extract_cochrane_sof():
     csv_files = list(cochrane_dir.glob("**/*.csv"))
     print(f"Found {len(csv_files)} Cochrane SoF CSV files")
     
-    for csv_file in csv_files[:10]:  # Process first 10 for testing
+    for csv_file in csv_files:  # Process ALL CSV files
         try:
             print(f"Processing {csv_file.name}...")
             
-            df = pd.read_csv(csv_file)
+            # Try different encodings for problematic files
+            try:
+                df = pd.read_csv(csv_file, encoding='utf-8')
+            except UnicodeDecodeError:
+                try:
+                    df = pd.read_csv(csv_file, encoding='latin-1')
+                except UnicodeDecodeError:
+                    df = pd.read_csv(csv_file, encoding='cp1252')
             
             # Extract review info from filename
             review_id = csv_file.stem.split('.')[0]  # e.g., CD000979
