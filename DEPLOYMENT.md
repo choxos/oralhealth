@@ -57,29 +57,29 @@ cd /var/www
 
 # Clone the repository
 sudo git clone https://github.com/choxos/oralhealth.git
-sudo chown -R www-data:www-data oralhealth
+sudo chown -R xeradb:xeradb oralhealth
 cd oralhealth
 
 # Create virtual environment
-sudo -u www-data python3 -m venv venv
-sudo -u www-data ./venv/bin/pip install --upgrade pip
+python -m venv venv
+./venv/bin/pip install --upgrade pip
 
 # Install dependencies
-sudo -u www-data ./venv/bin/pip install -r requirements.txt
-sudo -u www-data ./venv/bin/pip install gunicorn psycopg2-binary dj-database-url
+sudo -u xeradb ./venv/bin/pip install -r requirements.txt
+sudo -u xeradb ./venv/bin/pip install gunicorn psycopg2-binary dj-database-url
 ```
 
 ### Step 4: Configure Environment Variables
 
 ```bash
 # Create environment file
-sudo -u www-data touch /var/www/oralhealth/.env
+sudo -u xeradb touch /var/www/oralhealth/.env
 
 # Add configuration to .env file
 sudo tee /var/www/oralhealth/.env > /dev/null <<EOL
 # Production settings
 DEBUG=False
-SECRET_KEY=your-super-secret-key-here-change-this-in-production
+SECRET_KEY=XSkjfghjdfgdfbsdjfhg122473423523w!!31236327y
 ALLOWED_HOSTS=oralhealth.xeradb.com,localhost,127.0.0.1
 
 # Database configuration
@@ -91,7 +91,7 @@ MEDIA_ROOT=/var/www/oralhealth/media
 EOL
 
 # Set proper permissions
-sudo chown www-data:www-data /var/www/oralhealth/.env
+sudo chown xeradb:xeradb /var/www/oralhealth/.env
 sudo chmod 600 /var/www/oralhealth/.env
 ```
 
@@ -99,18 +99,18 @@ sudo chmod 600 /var/www/oralhealth/.env
 
 ```bash
 # Run migrations
-sudo -u www-data ./venv/bin/python manage.py makemigrations
-sudo -u www-data ./venv/bin/python manage.py migrate
+sudo -u xeradb ./venv/bin/python manage.py makemigrations
+sudo -u xeradb ./venv/bin/python manage.py migrate
 
 # Collect static files
-sudo -u www-data ./venv/bin/python manage.py collectstatic --noinput
+sudo -u xeradb ./venv/bin/python manage.py collectstatic --noinput
 
 # Create superuser (optional)
-sudo -u www-data ./venv/bin/python manage.py createsuperuser
+sudo -u xeradb ./venv/bin/python manage.py createsuperuser
 
 # Populate with initial data
-sudo -u www-data ./venv/bin/python manage.py populate_uk_guidelines
-sudo -u www-data ./venv/bin/python manage.py import_cochrane_sof
+sudo -u xeradb ./venv/bin/python manage.py populate_uk_guidelines
+sudo -u xeradb ./venv/bin/python manage.py import_cochrane_sof
 ```
 
 ### Step 6: Configure Gunicorn
@@ -121,7 +121,7 @@ sudo tee /var/www/oralhealth/gunicorn_config.py > /dev/null <<EOL
 import multiprocessing
 
 # Server socket
-bind = "127.0.0.1:8008"
+bind = "127.0.0.1:8013"
 backlog = 2048
 
 # Worker processes
@@ -146,8 +146,8 @@ proc_name = "oralhealth"
 # Server mechanics
 daemon = False
 pidfile = "/var/run/oralhealth.pid"
-user = "www-data"
-group = "www-data"
+user = "xeradb"
+group = "xeradb"
 tmp_upload_dir = None
 
 # Security
@@ -158,7 +158,7 @@ EOL
 
 # Create log directory
 sudo mkdir -p /var/log/oralhealth
-sudo chown www-data:www-data /var/log/oralhealth
+sudo chown xeradb:xeradb /var/log/oralhealth
 ```
 
 ### Step 7: Configure Supervisor
@@ -169,7 +169,7 @@ sudo tee /etc/supervisor/conf.d/oralhealth.conf > /dev/null <<EOL
 [program:oralhealth]
 command=/var/www/oralhealth/venv/bin/gunicorn --config gunicorn_config.py oralhealth.wsgi:application
 directory=/var/www/oralhealth
-user=www-data
+user=xeradb
 autostart=true
 autorestart=true
 stdout_logfile=/var/log/oralhealth/supervisor.log
@@ -189,7 +189,7 @@ sudo supervisorctl start oralhealth
 # Create Nginx configuration
 sudo tee /etc/nginx/sites-available/oralhealth.xeradb.com > /dev/null <<EOL
 upstream oralhealth_app {
-    server 127.0.0.1:8008;
+    server 127.0.0.1:8013;
 }
 
 server {
@@ -318,7 +318,7 @@ EOL
 
 # Make script executable
 sudo chmod +x /var/www/oralhealth/deploy.sh
-sudo chown www-data:www-data /var/www/oralhealth/deploy.sh
+sudo chown xeradb:xeradb /var/www/oralhealth/deploy.sh
 ```
 
 ### Step 11: Database Backup Script
@@ -379,13 +379,13 @@ sudo supervisorctl restart oralhealth
    sudo systemctl status postgresql
    
    # Test database connection
-   sudo -u www-data psql -h localhost -U oralhealth_user -d oralhealth_production
+   sudo -u xeradb psql -h localhost -U oralhealth_user -d oralhealth_production
    ```
 
 2. **Permission issues:**
    ```bash
    # Fix ownership
-   sudo chown -R www-data:www-data /var/www/oralhealth
+   sudo chown -R xeradb:xeradb /var/www/oralhealth
    
    # Fix permissions
    sudo chmod -R 755 /var/www/oralhealth
@@ -395,7 +395,7 @@ sudo supervisorctl restart oralhealth
 3. **Static files not loading:**
    ```bash
    # Collect static files
-   sudo -u www-data ./venv/bin/python manage.py collectstatic --noinput
+   sudo -u xeradb ./venv/bin/python manage.py collectstatic --noinput
    
    # Check nginx configuration
    sudo nginx -t

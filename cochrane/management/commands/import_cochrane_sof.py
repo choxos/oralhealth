@@ -1,148 +1,99 @@
 """
-Management command to import Cochrane SoF data from CSV files.
+Import Cochrane Summary of Findings data from CSV files.
 """
 
 import os
-import csv
+import pandas as pd
 from django.core.management.base import BaseCommand
-from django.db import transaction
-from cochrane.models import CochraneReview, SummaryOfFindings, Outcome
+from cochrane.models import CochraneReview, CochraneSoFEntry
+from datetime import datetime
 
 
 class Command(BaseCommand):
-    help = 'Import Cochrane Summary of Findings data from CSV files'
+    help = 'Import Cochrane Oral Health Summary of Findings from validated CSV files'
 
     def add_arguments(self, parser):
         parser.add_argument(
-            '--directory',
+            'sof_directory',
             type=str,
-            default='/Users/choxos/Documents/Github/CoE-Cochrane/validated/SoF',
-            help='Directory containing Cochrane SoF CSV files'
+            help='Path to the directory containing Cochrane SoF CSV files'
         )
 
     def handle(self, *args, **options):
-        directory = options['directory']
-        self.stdout.write(f'Starting import from: {directory}')
+        sof_directory = os.path.expanduser(options['sof_directory'])
         
-        if not os.path.exists(directory):
-            self.stderr.write(f'Directory does not exist: {directory}')
+        if not os.path.isdir(sof_directory):
+            self.stdout.write(self.style.ERROR(f"Directory not found: {sof_directory}"))
             return
-        
-        imported_count = 0
-        
-        # Iterate through each Cochrane ID directory
-        for cochrane_dir in os.listdir(directory):
-            if not cochrane_dir.startswith('CD'):
-                continue
-                
-            cochrane_path = os.path.join(directory, cochrane_dir)
-            if not os.path.isdir(cochrane_path):
-                continue
-            
-            self.stdout.write(f'Processing {cochrane_dir}...')
-            
-            # Find the latest CSV file in the directory
-            csv_files = [f for f in os.listdir(cochrane_path) if f.endswith('.csv')]
-            if not csv_files:
-                self.stdout.write(f'No CSV files found in {cochrane_dir}')
-                continue
-            
-            # Sort by version (PUB3 > PUB2, etc.)
-            csv_files.sort(reverse=True)
-            latest_csv = csv_files[0]
-            csv_path = os.path.join(cochrane_path, latest_csv)
-            
-            try:
-                with transaction.atomic():
-                    self.import_review_data(cochrane_dir, csv_path)
-                    imported_count += 1
-            except Exception as e:
-                self.stderr.write(f'Error importing {cochrane_dir}: {str(e)}')
-        
-        self.stdout.write(
-            self.style.SUCCESS(f'Successfully imported {imported_count} Cochrane reviews')
-        )
 
-    def import_review_data(self, cochrane_id, csv_path):
-        """Import data for a single Cochrane review."""
-        
-        # Create or get the review (placeholder data)
-        review, created = CochraneReview.objects.get_or_create(
-            cochrane_id=cochrane_id,
-            defaults={
-                'title': f'Cochrane Review {cochrane_id}',
-                'authors': 'Multiple authors',
-                'publication_year': 2020,
-                'last_updated': '2020-01-01',
-                'url': f'https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.{cochrane_id}.pub3/full',
-                'abstract': 'Cochrane systematic review of oral health interventions.',
-            }
-        )
-        
-        if created:
-            self.stdout.write(f'Created review: {review.cochrane_id}')
-        
-        # Read and import CSV data
-        with open(csv_path, 'r', encoding='utf-8') as csvfile:
-            reader = csv.DictReader(csvfile)
-            
-            current_sof = None
-            current_comparison = ""
-            
-            for row in reader:
-                # Extract key fields
-                population = row.get('Population', '')
-                intervention = row.get('Intervention', '')
-                comparison = row.get('Comparison', '')
-                outcome = row.get('Outcome', '')
-                
-                # Create comparison key
-                comparison_key = f"{intervention} vs {comparison}"
-                
-                # Create SoF table if needed
-                if comparison_key != current_comparison:
-                    current_sof, _ = SummaryOfFindings.objects.get_or_create(
-                        review=review,
-                        comparison_title=comparison_key,
-                        defaults={
-                            'population': population,
-                            'intervention': intervention,
-                            'comparison': comparison,
-                        }
-                    )
-                    current_comparison = comparison_key
-                
-                # Create outcome
-                outcome_obj = Outcome.objects.create(
-                    sof_table=current_sof,
-                    outcome_name=outcome,
-                    measure=row.get('Measure', ''),
-                    effect=row.get('Effect', ''),
-                    ci_lower=row.get('CI Lower', ''),
-                    ci_upper=row.get('CI Upper', ''),
-                    significant=self.parse_boolean(row.get('Significant')),
-                    number_of_participants=self.parse_integer(row.get('Number of participants')),
-                    number_of_studies=self.parse_integer(row.get('Number of studies')),
-                    certainty_of_evidence=row.get('Certainty of the evidence (GRADE)', ''),
-                    grade_reasons=row.get('Reasons for GRADE if not High', ''),
-                    risk_of_bias=self.parse_boolean(row.get('Risk of bias')),
-                    imprecision=self.parse_boolean(row.get('Imprecision')),
-                    inconsistency=self.parse_boolean(row.get('Inconsistency')),
-                    indirectness=self.parse_boolean(row.get('Indirectness')),
-                    publication_bias=self.parse_boolean(row.get('Publication bias')),
-                )
-    
-    def parse_boolean(self, value):
-        """Parse boolean values from CSV."""
-        if not value or value.upper() in ['NA', 'N/A', '']:
-            return None
-        return value.upper() in ['TRUE', 'YES', '1']
-    
-    def parse_integer(self, value):
-        """Parse integer values from CSV."""
-        if not value or value.upper() in ['NA', 'N/A', '']:
-            return None
-        try:
-            return int(value)
-        except ValueError:
-            return None
+        for root, dirs, files in os.walk(sof_directory):
+            for file in files:
+                if file.endswith('.csv'):
+                    file_path = os.path.join(root, file)
+                    review_id = os.path.basename(root)
+                    
+                    try:
+                        df = pd.read_csv(file_path)
+                        
+                        review, created = CochraneReview.objects.get_or_create(
+                            review_id=review_id,
+                            defaults={
+                                'title': f"Cochrane Review {review_id}",
+                                'url': f"https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.{review_id}.pub2/full",
+                                'publication_date': datetime.now().date(),
+                            }
+                        )
+                        
+                        for index, row in df.iterrows():
+                            significant = None
+                            if pd.notna(row.get('Significant')):
+                                significant = str(row['Significant']).lower() == 'true'
+
+                            risk_of_bias = None
+                            if pd.notna(row.get('Risk of bias')):
+                                risk_of_bias = str(row['Risk of bias']).lower() == 'true'
+
+                            imprecision = None
+                            if pd.notna(row.get('Imprecision')):
+                                imprecision = str(row['Imprecision']).lower() == 'true'
+
+                            inconsistency = None
+                            if pd.notna(row.get('Inconsistency')):
+                                inconsistency = str(row['Inconsistency']).lower() == 'true'
+
+                            indirectness = None
+                            if pd.notna(row.get('Indirectness')):
+                                indirectness = str(row['Indirectness']).lower() == 'true'
+
+                            publication_bias = None
+                            if pd.notna(row.get('Publication bias')):
+                                publication_bias = str(row['Publication bias']).lower() == 'true'
+
+                            CochraneSoFEntry.objects.create(
+                                review=review,
+                                population=row.get('Population'),
+                                intervention=row.get('Intervention'),
+                                comparison=row.get('Comparison'),
+                                outcome=row.get('Outcome'),
+                                measure=row.get('Measure'),
+                                effect=row.get('Effect'),
+                                ci_lower=str(row.get('CI Lower')) if pd.notna(row.get('CI Lower')) else None,
+                                ci_upper=str(row.get('CI Upper')) if pd.notna(row.get('CI Upper')) else None,
+                                significant=significant,
+                                num_participants=str(row.get('Number of participants')) if pd.notna(row.get('Number of participants')) else None,
+                                num_studies=str(row.get('Number of studies')) if pd.notna(row.get('Number of studies')) else None,
+                                certainty_of_evidence=row.get('Certainty of the evidence (GRADE)'),
+                                reasons_for_grade=row.get('Reasons for GRADE if not High'),
+                                risk_of_bias=risk_of_bias,
+                                imprecision=imprecision,
+                                inconsistency=inconsistency,
+                                indirectness=indirectness,
+                                publication_bias=publication_bias,
+                            )
+                        
+                        self.stdout.write(f'Imported {len(df)} entries for {review_id}')
+                        
+                    except Exception as e:
+                        self.stdout.write(self.style.ERROR(f'Error processing {file_path}: {e}'))
+
+        self.stdout.write(self.style.SUCCESS('Finished importing Cochrane SoF data'))
