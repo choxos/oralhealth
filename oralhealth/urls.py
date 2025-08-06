@@ -7,14 +7,12 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from django.views.generic import TemplateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('guidelines.urls')),
     path('cochrane/', include('cochrane.urls')),
     path('search/', include('search.urls')),
-    path('api/', include('guidelines.api_urls')),
 ]
 
 # Serve static files during development
