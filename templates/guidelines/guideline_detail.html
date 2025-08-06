@@ -1,0 +1,524 @@
+{% extends 'oralhealth_base.html' %}
+{% load static %}
+{% load recommendation_filters %}
+
+{% block page_title %}{{ guideline.title|truncatechars:80 }} | {{ block.super }}{% endblock %}
+
+{% block page_description %}{{ guideline.description|truncatewords:30 }}{% endblock %}
+
+{% block content %}
+<div class="container">
+    <!-- Breadcrumb Navigation -->
+    <nav aria-label="breadcrumb" class="mb-4">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="{% url 'guidelines:home' %}">
+                    <i class="fas fa-home me-1"></i>Home
+                </a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="{% url 'guidelines:guideline_list' %}">
+                    <i class="fas fa-book me-1"></i>Guidelines
+                </a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">
+                {{ guideline.title|truncatechars:50 }}
+            </li>
+        </ol>
+    </nav>
+
+    <!-- Main Content - 2 Column Layout -->
+    <div class="row">
+        <!-- Left Column - Main Guideline Content -->
+        <div class="col-lg-8">
+            <!-- Guideline Overview -->
+            <div class="xera-card mb-4">
+                <div class="xera-card-header bg-primary text-white">
+                    <div class="d-flex justify-content-between align-items-start">
+                        <div class="flex-grow-1">
+                            <h1 class="h3 mb-2 text-white">
+                                <i class="fas fa-book me-2"></i>
+                                Clinical Guideline
+                            </h1>
+                            <p class="mb-0 small opacity-75">
+                                {{ guideline.organization.country.flag_emoji }} 
+                                {{ guideline.organization.country.name }} • 
+                                {{ guideline.organization.name }}
+                            </p>
+                        </div>
+                        
+                        <!-- Quick Action Buttons -->
+                        <div class="text-end">
+                            <div class="btn-group" role="group">
+                                <button type="button" class="btn btn-light btn-sm" onclick="shareGuideline()" title="Share">
+                                    <i class="fas fa-share-alt"></i>
+                                </button>
+                                <button type="button" class="btn btn-light btn-sm" onclick="printGuideline()" title="Print">
+                                    <i class="fas fa-print"></i>
+                                </button>
+                                <a href="{{ guideline.url }}" target="_blank" class="btn btn-light btn-sm" title="View Original">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="xera-card-body">
+                    <!-- Guideline Title -->
+                    <div class="mb-4">
+                        <h2 class="h4 text-primary mb-3">
+                            <i class="fas fa-quote-left me-2"></i>
+                            Guideline Title
+                        </h2>
+                        <div class="guideline-title-box p-3 bg-light border-start border-primary border-4">
+                            <h3 class="h5 mb-0 text-dark">{{ guideline.title }}</h3>
+                        </div>
+                    </div>
+                    
+                    <!-- Guideline Description -->
+                    {% if guideline.description %}
+                    <div class="guideline-description mb-4">
+                        <h5 class="text-primary mb-3">
+                            <i class="fas fa-info-circle me-2"></i>
+                            Description
+                        </h5>
+                        <div class="description-text">
+                            {{ guideline.description|linebreaks }}
+                        </div>
+                    </div>
+                    {% endif %}
+                    
+                    <!-- Recommendations Summary -->
+                    <div class="recommendations-summary mb-4">
+                        <h5 class="text-primary mb-3">
+                            <i class="fas fa-list-alt me-2"></i>
+                            Recommendations Summary
+                        </h5>
+                        <div class="row g-3">
+                            <div class="col-md-4">
+                                <div class="stat-card text-center p-3 bg-light rounded">
+                                    <div class="display-6 text-primary fw-bold">{{ guideline.recommendations.count }}</div>
+                                    <small class="text-muted">Total Recommendations</small>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="stat-card text-center p-3 bg-light rounded">
+                                    <div class="display-6 text-success fw-bold">{{ guideline.chapters.count }}</div>
+                                    <small class="text-muted">Chapters</small>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="stat-card text-center p-3 bg-light rounded">
+                                    <div class="display-6 text-info fw-bold">{{ guideline.publication_year }}</div>
+                                    <small class="text-muted">Publication Year</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Recommendations by Chapter -->
+            {% if recommendations_by_chapter %}
+            <div class="xera-card mb-4">
+                <div class="xera-card-header">
+                    <h3 class="xera-card-title">
+                        <i class="fas fa-bookmark me-2"></i>Recommendations by Chapter
+                    </h3>
+                </div>
+                <div class="xera-card-body">
+                    {% for chapter, recommendations in recommendations_by_chapter.items %}
+                    <div class="chapter-section mb-4">
+                        <h4 class="h5 text-primary mb-3 border-bottom pb-2">
+                            <i class="fas fa-file-alt me-2"></i>
+                            {{ chapter.title }}
+                        </h4>
+                        
+                        <div class="recommendations-list">
+                            {% for recommendation in recommendations %}
+                            <div class="recommendation-item mb-3 p-3 border-start border-primary border-3 bg-light">
+                                <h5 class="h6 mb-2">
+                                    <a href="{% url 'guidelines:recommendation_detail' recommendation.pk %}" 
+                                       class="text-decoration-none text-primary">
+                                        {{ recommendation.title }}
+                                    </a>
+                                </h5>
+                                
+                                <!-- Evidence Quality and Strength -->
+                                <div class="d-flex gap-3 mb-2">
+                                    {% if recommendation.evidence_quality %}
+                                    <div>
+                                        {{ recommendation.evidence_quality|format_evidence_quality }}
+                                    </div>
+                                    {% endif %}
+                                    {% if recommendation.strength %}
+                                    <div>
+                                        {{ recommendation.strength|format_recommendation_strength }}
+                                    </div>
+                                    {% endif %}
+                                </div>
+                                
+                                <!-- Recommendation Preview -->
+                                <p class="text-muted small mb-2">
+                                    {{ recommendation.text|truncatewords:30 }}
+                                </p>
+                                
+                                <!-- Topics -->
+                                {% if recommendation.topics.all %}
+                                <div class="topics-preview">
+                                    {% for topic in recommendation.topics.all|slice:":3" %}
+                                    <span class="badge bg-secondary me-1">{{ topic.name }}</span>
+                                    {% endfor %}
+                                    {% if recommendation.topics.count > 3 %}
+                                    <span class="text-muted small">+{{ recommendation.topics.count|add:"-3" }} more</span>
+                                    {% endif %}
+                                </div>
+                                {% endif %}
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+            
+            <!-- All Recommendations (if no chapters) -->
+            {% if not recommendations_by_chapter and guideline.recommendations.all %}
+            <div class="xera-card mb-4">
+                <div class="xera-card-header">
+                    <h3 class="xera-card-title">
+                        <i class="fas fa-list-alt me-2"></i>All Recommendations
+                    </h3>
+                </div>
+                <div class="xera-card-body">
+                    {% for recommendation in guideline.recommendations.all %}
+                    <div class="recommendation-item mb-3 p-3 border-start border-primary border-3 bg-light">
+                        <h5 class="h6 mb-2">
+                            <a href="{% url 'guidelines:recommendation_detail' recommendation.pk %}" 
+                               class="text-decoration-none text-primary">
+                                {{ recommendation.title }}
+                            </a>
+                        </h5>
+                        
+                        <!-- Evidence Quality and Strength -->
+                        <div class="d-flex gap-3 mb-2">
+                            {% if recommendation.evidence_quality %}
+                            <div>
+                                {{ recommendation.evidence_quality|format_evidence_quality }}
+                            </div>
+                            {% endif %}
+                            {% if recommendation.strength %}
+                            <div>
+                                {{ recommendation.strength|format_recommendation_strength }}
+                            </div>
+                            {% endif %}
+                        </div>
+                        
+                        <!-- Recommendation Preview -->
+                        <p class="text-muted small mb-2">
+                            {{ recommendation.text|truncatewords:30 }}
+                        </p>
+                        
+                        <!-- Topics -->
+                        {% if recommendation.topics.all %}
+                        <div class="topics-preview">
+                            {% for topic in recommendation.topics.all|slice:":3" %}
+                            <span class="badge bg-secondary me-1">{{ topic.name }}</span>
+                            {% endfor %}
+                            {% if recommendation.topics.count > 3 %}
+                            <span class="text-muted small">+{{ recommendation.topics.count|add:"-3" }} more</span>
+                            {% endif %}
+                        </div>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+        </div>
+        
+        <!-- Right Column - Sidebar Information -->
+        <div class="col-lg-4">
+            <!-- Source Information -->
+            <div class="xera-card mb-4">
+                <div class="xera-card-header bg-info text-white">
+                    <h4 class="xera-card-title text-white mb-0">
+                        <i class="fas fa-info-circle me-2"></i>Source Information
+                    </h4>
+                </div>
+                <div class="xera-card-body">
+                    <div class="source-info-grid">
+                        <div class="info-item mb-3">
+                            <div class="info-label text-muted">Organization</div>
+                            <div class="info-value fw-bold">{{ guideline.organization.name }}</div>
+                        </div>
+                        
+                        <div class="info-item mb-3">
+                            <div class="info-label text-muted">Country</div>
+                            <div class="info-value">
+                                {{ guideline.organization.country.flag_emoji }} {{ guideline.organization.country.name }}
+                            </div>
+                        </div>
+                        
+                        <div class="info-item mb-3">
+                            <div class="info-label text-muted">Publication Year</div>
+                            <div class="info-value">{{ guideline.publication_year }}</div>
+                        </div>
+                        
+                        {% if guideline.last_updated %}
+                        <div class="info-item mb-3">
+                            <div class="info-label text-muted">Last Updated</div>
+                            <div class="info-value">{{ guideline.last_updated|date:"Y-m-d" }}</div>
+                        </div>
+                        {% endif %}
+                        
+                        <div class="info-item mb-3">
+                            <div class="info-label text-muted">Total Recommendations</div>
+                            <div class="info-value">{{ guideline.recommendations.count }}</div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <div class="info-label text-muted">Original Source</div>
+                            <div class="info-value">
+                                <a href="{{ guideline.url }}" target="_blank" class="btn btn-outline-primary btn-sm">
+                                    <i class="fas fa-external-link-alt me-1"></i>View Original
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Quick Actions -->
+            <div class="xera-card mb-4">
+                <div class="xera-card-header bg-warning text-dark">
+                    <h4 class="xera-card-title mb-0">
+                        <i class="fas fa-tools me-2"></i>Quick Actions
+                    </h4>
+                </div>
+                <div class="xera-card-body">
+                    <div class="d-grid gap-2">
+                        <button type="button" class="btn btn-outline-info" onclick="copyGuideline()">
+                            <i class="fas fa-copy me-1"></i>Copy Reference
+                        </button>
+                        <button type="button" class="btn btn-outline-success" onclick="shareGuideline()">
+                            <i class="fas fa-share-alt me-1"></i>Share Guideline
+                        </button>
+                        <button type="button" class="btn btn-outline-secondary" onclick="printGuideline()">
+                            <i class="fas fa-print me-1"></i>Print Guideline
+                        </button>
+                        <a href="/recommendations/?guideline={{ guideline.id }}" class="btn btn-outline-primary">
+                            <i class="fas fa-list-alt me-1"></i>View All Recommendations
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Statistics -->
+            <div class="xera-card mb-4">
+                <div class="xera-card-header bg-success text-white">
+                    <h4 class="xera-card-title text-white mb-0">
+                        <i class="fas fa-chart-bar me-2"></i>Statistics
+                    </h4>
+                </div>
+                <div class="xera-card-body">
+                    <div class="stats-grid">
+                        <div class="stat-item d-flex justify-content-between align-items-center mb-2">
+                            <span class="text-muted">Recommendations:</span>
+                            <span class="fw-bold text-primary">{{ guideline.recommendations.count }}</span>
+                        </div>
+                        
+                        <div class="stat-item d-flex justify-content-between align-items-center mb-2">
+                            <span class="text-muted">Chapters:</span>
+                            <span class="fw-bold text-success">{{ guideline.chapters.count }}</span>
+                        </div>
+                        
+                        {% comment %}
+                        <div class="stat-item d-flex justify-content-between align-items-center mb-2">
+                            <span class="text-muted">Topics Covered:</span>
+                            <span class="fw-bold text-warning">Multiple</span>
+                        </div>
+                        {% endcomment %}
+                        
+                        <div class="stat-item d-flex justify-content-between align-items-center">
+                            <span class="text-muted">Publication Year:</span>
+                            <span class="fw-bold text-info">{{ guideline.publication_year }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+// Track guideline view on page load
+document.addEventListener('DOMContentLoaded', function() {
+    if (window.trackEvent) {
+        window.trackEvent('page_view', 'guideline_detail', 'guideline_{{ guideline.id }}');
+    }
+});
+
+// Share functionality
+function shareGuideline() {
+    if (navigator.share) {
+        navigator.share({
+            title: '{{ guideline.title|escapejs }}',
+            text: '{{ guideline.title|escapejs }} - {{ guideline.organization.name|escapejs }}',
+            url: window.location.href
+        }).catch(console.error);
+    } else {
+        // Fallback: copy URL to clipboard
+        navigator.clipboard.writeText(window.location.href).then(function() {
+            alert('URL copied to clipboard!');
+        });
+    }
+    
+    // Track sharing
+    if (window.trackEvent) {
+        window.trackEvent('share_guideline', 'engagement', 'guideline_{{ guideline.id }}');
+    }
+}
+
+// Print functionality
+function printGuideline() {
+    window.print();
+    
+    // Track printing
+    if (window.trackEvent) {
+        window.trackEvent('print_guideline', 'engagement', 'guideline_{{ guideline.id }}');
+    }
+}
+
+// Copy guideline reference
+function copyGuideline() {
+    const guidelineReference = `{{ guideline.title|escapejs }}
+
+Organization: {{ guideline.organization.name|escapejs }}
+Country: {{ guideline.organization.country.name|escapejs }}
+Publication Year: {{ guideline.publication_year }}
+{% if guideline.last_updated %}Last Updated: {{ guideline.last_updated|date:"Y-m-d" }}{% endif %}
+Total Recommendations: {{ guideline.recommendations.count }}
+
+URL: ${window.location.href}
+Original Source: {{ guideline.url }}`;
+
+    navigator.clipboard.writeText(guidelineReference).then(function() {
+        // Show success message
+        const button = event.target.closest('button');
+        const originalText = button.innerHTML;
+        button.innerHTML = '<i class="fas fa-check me-1"></i>Copied!';
+        button.classList.remove('btn-outline-info');
+        button.classList.add('btn-success');
+        
+        setTimeout(() => {
+            button.innerHTML = originalText;
+            button.classList.remove('btn-success');
+            button.classList.add('btn-outline-info');
+        }, 2000);
+    }).catch(function(err) {
+        console.error('Failed to copy text: ', err);
+        alert('Failed to copy text to clipboard');
+    });
+    
+    // Track copying
+    if (window.trackEvent) {
+        window.trackEvent('copy_guideline', 'engagement', 'guideline_{{ guideline.id }}');
+    }
+}
+</script>
+
+<style>
+/* Guideline-specific styles */
+.guideline-title-box {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 8px;
+}
+
+.source-info-grid .info-item {
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 0.75rem;
+}
+
+.source-info-grid .info-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.info-label {
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.75rem;
+}
+
+.info-value {
+    font-size: 0.95rem;
+}
+
+.stat-card {
+    transition: transform 0.2s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-2px);
+}
+
+.recommendation-item {
+    transition: all 0.2s ease;
+}
+
+.recommendation-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.chapter-section {
+    position: relative;
+}
+
+.chapter-section::before {
+    content: '';
+    position: absolute;
+    left: -15px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--xera-primary), transparent);
+}
+
+/* Print styles */
+@media print {
+    .xera-header, .xera-footer, .breadcrumb, 
+    .dropdown, .btn, .col-lg-4 { 
+        display: none !important; 
+    }
+    
+    .container { 
+        max-width: 100% !important; 
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    .col-lg-8 {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    .xera-card { 
+        border: 1px solid #ddd !important; 
+        box-shadow: none !important; 
+        margin-bottom: 1rem !important;
+    }
+    
+    .xera-card-header {
+        background: #f8f9fa !important;
+        color: #333 !important;
+    }
+}
+</style>
+{% endblock %}
