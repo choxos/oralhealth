@@ -34,7 +34,7 @@ def home(request):
     
     # Get recent recommendations
     recent_recommendations = Recommendation.objects.select_related(
-        'guideline__organization__country', 'strength', 'evidence_quality'
+        'guideline__organization__country'
     ).prefetch_related('topics')[:5]
     
     # Get featured countries
@@ -67,7 +67,7 @@ class RecommendationListView(ListView):
     
     def get_queryset(self):
         queryset = Recommendation.objects.select_related(
-            'guideline__organization__country', 'strength', 'evidence_quality'
+            'guideline__organization__country'
         ).prefetch_related('topics')
         
         # Apply search filters
@@ -116,7 +116,7 @@ class RecommendationDetailView(DetailView):
     
     def get_queryset(self):
         return Recommendation.objects.select_related(
-            'guideline__organization__country', 'strength', 'evidence_quality', 'chapter'
+            'guideline__organization__country', 'chapter'
         ).prefetch_related('topics', 'references')
     
     def get_context_data(self, **kwargs):
@@ -174,7 +174,7 @@ class GuidelineDetailView(DetailView):
         return Guideline.objects.filter(is_active=True).select_related(
             'organization__country'
         ).prefetch_related(
-            'chapters', 'recommendations__strength', 'recommendations__evidence_quality'
+            'chapters'
         )
     
     def get_context_data(self, **kwargs):
@@ -238,7 +238,7 @@ class TopicDetailView(DetailView):
         recommendations = Recommendation.objects.filter(
             topics=topic
         ).select_related(
-            'guideline__organization__country', 'strength', 'evidence_quality'
+            'guideline__organization__country'
         ).order_by('-created_at')
         
         # Paginate recommendations
