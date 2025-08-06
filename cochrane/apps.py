@@ -1,7 +1,7 @@
 from django.apps import AppConfig
 
 
-class GuidelinesConfig(AppConfig):
+class CochraneConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'guidelines'
-    verbose_name = 'Guidelines'
+    name = 'cochrane'
+    verbose_name = 'Cochrane Reviews'
