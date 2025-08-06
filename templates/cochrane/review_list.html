@@ -1,0 +1,393 @@
+{% extends 'oralhealth_base.html' %}
+{% load static %}
+
+{% block page_title %}Cochrane Oral Health Reviews | {{ block.super }}{% endblock %}
+
+{% block page_description %}Browse Cochrane systematic reviews in oral health. Access evidence synthesis, summary of findings tables, and quality assessments from the world's leading source of healthcare evidence.{% endblock %}
+
+{% block main_content %}
+<div class="container">
+    <!-- Page Header -->
+    <div class="xera-card mb-4">
+        <div class="xera-card-header">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <h1 class="xera-card-title mb-2">
+                        <i class="fas fa-flask me-2 text-primary"></i>
+                        Cochrane Oral Health Reviews
+                    </h1>
+                    <p class="mb-0 text-muted">
+                        Systematic reviews and meta-analyses providing the highest quality evidence for oral health interventions.
+                    </p>
+                </div>
+                <div class="text-end">
+                    <div class="badge bg-info fs-6">
+                        {{ reviews.paginator.count }} Reviews
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Search and Filter Section -->
+    <div class="xera-card mb-4">
+        <div class="xera-card-body">
+            <form method="GET" class="row align-items-center" onsubmit="trackCochraneSearch()">
+                <div class="col-md-8">
+                    <div class="input-group">
+                        <span class="input-group-text">
+                            <i class="fas fa-search"></i>
+                        </span>
+                        <input type="text" 
+                               class="form-control" 
+                               name="search"
+                               value="{{ request.GET.search }}"
+                               placeholder="Search Cochrane reviews (e.g., fluoride, caries, periodontal)...">
+                    </div>
+                </div>
+                <div class="col-md-4 mt-2 mt-md-0">
+                    <div class="d-flex gap-2">
+                        <button type="submit" class="btn btn-primary flex-grow-1">
+                            <i class="fas fa-search me-1"></i>Search
+                        </button>
+                        {% if request.GET.search %}
+                        <a href="{% url 'cochrane:cochrane_review_list' %}" class="btn btn-outline-secondary">
+                            <i class="fas fa-times"></i>
+                        </a>
+                        {% endif %}
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Reviews Grid -->
+    <div class="row">
+        {% for review in reviews %}
+        <div class="col-lg-6 mb-4">
+            <div class="xera-card h-100 cochrane-review-card">
+                <div class="xera-card-body d-flex flex-column">
+                    <!-- Review Header -->
+                    <div class="mb-3">
+                        <h5 class="xera-card-title mb-2">
+                            <a href="{% url 'cochrane:cochrane_review_detail' review.review_id %}" 
+                               class="text-decoration-none">
+                                {{ review.title }}
+                            </a>
+                        </h5>
+                        
+                        <!-- Meta Information -->
+                        <div class="d-flex flex-wrap gap-2 mb-2">
+                            <span class="badge bg-primary">
+                                <i class="fas fa-microscope me-1"></i>
+                                Cochrane Review
+                            </span>
+                            {% if review.publication_date %}
+                            <span class="badge bg-secondary">
+                                <i class="fas fa-calendar me-1"></i>
+                                {{ review.publication_date|date:"Y" }}
+                            </span>
+                            {% endif %}
+                            {% if review.sof_entries.count %}
+                            <span class="badge bg-success">
+                                <i class="fas fa-table me-1"></i>
+                                {{ review.sof_entries.count }} SoF Entries
+                            </span>
+                            {% endif %}
+                        </div>
+                    </div>
+
+                    <!-- Review Content -->
+                    <div class="flex-grow-1 mb-3">
+                        {% if review.abstract %}
+                        <p class="text-muted small">
+                            {{ review.abstract|truncatewords:30 }}
+                        </p>
+                        {% endif %}
+                        
+                        <!-- Authors -->
+                        {% if review.authors %}
+                        <div class="mb-2">
+                            <strong class="small text-muted">Authors:</strong>
+                            <p class="small mb-0">{{ review.authors|truncatewords:10 }}</p>
+                        </div>
+                        {% endif %}
+                        
+                        <!-- DOI -->
+                        {% if review.doi %}
+                        <div class="mb-2">
+                            <strong class="small text-muted">DOI:</strong>
+                            <a href="https://doi.org/{{ review.doi }}" target="_blank" class="small text-decoration-none">
+                                {{ review.doi }}
+                                <i class="fas fa-external-link-alt ms-1"></i>
+                            </a>
+                        </div>
+                        {% endif %}
+                    </div>
+
+                    <!-- Summary of Findings Preview -->
+                    {% if review.sof_entries.all %}
+                    <div class="border-top pt-3 mb-3">
+                        <h6 class="text-muted small mb-2">Summary of Findings Preview:</h6>
+                        {% for sof in review.sof_entries.all|slice:":2" %}
+                        <div class="border-start border-info border-2 ps-2 mb-2 small">
+                            <strong>{{ sof.outcome|truncatechars:50 }}</strong>
+                            {% if sof.effect %}
+                            <br><span class="text-muted">Effect: {{ sof.effect|truncatewords:8 }}</span>
+                            {% endif %}
+                            {% if sof.certainty %}
+                            <br><span class="badge badge-sm bg-warning text-dark">{{ sof.certainty }} certainty</span>
+                            {% endif %}
+                        </div>
+                        {% endfor %}
+                        {% if review.sof_entries.count > 2 %}
+                        <small class="text-muted">...and {{ review.sof_entries.count|add:"-2" }} more</small>
+                        {% endif %}
+                    </div>
+                    {% endif %}
+
+                    <!-- Action Buttons -->
+                    <div class="mt-auto">
+                        <div class="d-flex gap-2">
+                            <a href="{% url 'cochrane:cochrane_review_detail' review.review_id %}" 
+                               class="btn btn-primary btn-sm flex-grow-1">
+                                <i class="fas fa-eye me-1"></i>
+                                View Review
+                            </a>
+                            {% if review.doi %}
+                            <a href="https://doi.org/{{ review.doi }}" 
+                               target="_blank"
+                               class="btn btn-outline-secondary btn-sm">
+                                <i class="fas fa-external-link-alt me-1"></i>
+                                Cochrane Library
+                            </a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <div class="col-12">
+            <div class="xera-card">
+                <div class="xera-card-body text-center py-5">
+                    {% if request.GET.search %}
+                    <i class="fas fa-search fa-3x text-muted mb-3"></i>
+                    <h5>No Reviews Found</h5>
+                    <p class="text-muted">
+                        No Cochrane reviews match your search for "{{ request.GET.search }}".
+                    </p>
+                    <a href="{% url 'cochrane:cochrane_review_list' %}" class="btn btn-outline-primary">
+                        <i class="fas fa-list me-1"></i>View All Reviews
+                    </a>
+                    {% else %}
+                    <i class="fas fa-flask fa-3x text-muted mb-3"></i>
+                    <h5>No Cochrane Reviews</h5>
+                    <p class="text-muted">Cochrane reviews will appear here as they are added to the database.</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <!-- Pagination -->
+    {% if reviews.has_other_pages %}
+    <div class="d-flex justify-content-center mt-4">
+        <nav aria-label="Cochrane reviews pagination">
+            <ul class="pagination">
+                {% if reviews.has_previous %}
+                <li class="page-item">
+                    <a class="page-link" href="?{% if request.GET.search %}search={{ request.GET.search }}&{% endif %}page=1">
+                        <i class="fas fa-angle-double-left"></i>
+                    </a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="?{% if request.GET.search %}search={{ request.GET.search }}&{% endif %}page={{ reviews.previous_page_number }}">
+                        <i class="fas fa-angle-left"></i>
+                    </a>
+                </li>
+                {% endif %}
+
+                {% for num in reviews.paginator.page_range %}
+                {% if reviews.number == num %}
+                <li class="page-item active">
+                    <span class="page-link">{{ num }}</span>
+                </li>
+                {% elif num > reviews.number|add:'-3' and num < reviews.number|add:'3' %}
+                <li class="page-item">
+                    <a class="page-link" href="?{% if request.GET.search %}search={{ request.GET.search }}&{% endif %}page={{ num }}">{{ num }}</a>
+                </li>
+                {% endif %}
+                {% endfor %}
+
+                {% if reviews.has_next %}
+                <li class="page-item">
+                    <a class="page-link" href="?{% if request.GET.search %}search={{ request.GET.search }}&{% endif %}page={{ reviews.next_page_number }}">
+                        <i class="fas fa-angle-right"></i>
+                    </a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="?{% if request.GET.search %}search={{ request.GET.search }}&{% endif %}page={{ reviews.paginator.num_pages }}">
+                        <i class="fas fa-angle-double-right"></i>
+                    </a>
+                </li>
+                {% endif %}
+            </ul>
+        </nav>
+    </div>
+    {% endif %}
+
+    <!-- Information Section -->
+    {% if reviews %}
+    <div class="row mt-5">
+        <div class="col-12">
+            <div class="xera-card">
+                <div class="xera-card-header">
+                    <h3 class="xera-card-title">
+                        <i class="fas fa-info-circle me-2"></i>
+                        About Cochrane Reviews
+                    </h3>
+                </div>
+                <div class="xera-card-body">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <p>
+                                Cochrane reviews are systematic reviews of healthcare interventions that follow the highest methodological standards. 
+                                They provide reliable evidence for clinical decision-making and are considered the gold standard for evidence synthesis.
+                            </p>
+                            <p class="mb-0">
+                                The Summary of Findings (SoF) tables presented here provide key results and quality assessments 
+                                using the GRADE approach, helping clinicians understand the certainty of evidence for each outcome.
+                            </p>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="text-center">
+                                <h5 class="text-primary">{{ reviews.paginator.count }}</h5>
+                                <p class="small text-muted mb-2">Total Reviews</p>
+                                
+                                {% with total_sof=0 %}
+                                {% for review in reviews.paginator.object_list %}
+                                    {% with total_sof=total_sof|add:review.sof_entries.count %}{% endwith %}
+                                {% endfor %}
+                                <h5 class="text-success">{{ total_sof }}</h5>
+                                <p class="small text-muted mb-0">SoF Entries</p>
+                                {% endwith %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+/* Cochrane review cards styling */
+.cochrane-review-card {
+    transition: all 0.3s ease;
+    border: 1px solid #e9ecef;
+}
+
+.cochrane-review-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    border-color: #007bff;
+}
+
+.cochrane-review-card .xera-card-title a {
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+.cochrane-review-card:hover .xera-card-title a {
+    color: #007bff;
+}
+
+/* Badge styling */
+.badge-sm {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+}
+
+/* Pagination styling */
+.pagination .page-link {
+    color: #007bff;
+    border-color: #dee2e6;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+/* Search form styling */
+.input-group-text {
+    background: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .cochrane-review-card .d-flex.gap-2 {
+        flex-direction: column;
+    }
+    
+    .cochrane-review-card .d-flex.gap-2 > * {
+        margin-bottom: 0.5rem;
+    }
+    
+    .cochrane-review-card .d-flex.gap-2 > *:last-child {
+        margin-bottom: 0;
+    }
+}
+</style>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+// Track page view
+document.addEventListener('DOMContentLoaded', function() {
+    if (window.trackEvent) {
+        window.trackEvent('page_view', 'navigation', 'cochrane');
+    }
+});
+
+// Track search
+function trackCochraneSearch() {
+    const searchInput = document.querySelector('input[name="search"]');
+    const query = searchInput ? searchInput.value : '';
+    
+    if (window.trackSearch && query) {
+        window.trackSearch(query, {{ reviews.paginator.count }});
+    }
+    
+    if (window.trackEvent) {
+        window.trackEvent('search_cochrane', 'engagement', query);
+    }
+}
+
+// Track review clicks
+document.addEventListener('click', function(e) {
+    if (e.target.closest('a[href*="/cochrane/"]')) {
+        const reviewTitle = e.target.closest('.cochrane-review-card')?.querySelector('.xera-card-title a')?.textContent;
+        if (window.trackEvent && reviewTitle) {
+            window.trackEvent('cochrane_review_click', 'navigation', reviewTitle.substring(0, 50));
+        }
+    }
+});
+
+// Track external Cochrane Library links
+document.addEventListener('click', function(e) {
+    if (e.target.closest('a[href*="doi.org"]')) {
+        if (window.trackEvent) {
+            window.trackEvent('external_link', 'engagement', 'cochrane_library');
+        }
+    }
+});
+</script>
+{% endblock %}

@@ -1,0 +1,369 @@
+{% extends 'oralhealth_base.html' %}
+{% load static %}
+
+{% block page_title %}{{ review.title|truncatechars:80 }} | {{ block.super }}{% endblock %}
+
+{% block page_description %}{{ review.abstract|truncatewords:30 }}{% endblock %}
+
+{% block main_content %}
+<div class="container">
+    <!-- Breadcrumb Navigation -->
+    <nav aria-label="breadcrumb" class="mb-4">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="{% url 'guidelines:home' %}">
+                    <i class="fas fa-home me-1"></i>Home
+                </a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="{% url 'cochrane:cochrane_review_list' %}">
+                    <i class="fas fa-flask me-1"></i>Cochrane Reviews
+                </a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">
+                {{ review.title|truncatechars:50 }}
+            </li>
+        </ol>
+    </nav>
+
+    <div class="row">
+        <!-- Main Content -->
+        <div class="col-lg-8">
+            <!-- Review Header -->
+            <div class="xera-card mb-4">
+                <div class="xera-card-header">
+                    <div class="d-flex justify-content-between align-items-start">
+                        <div class="flex-grow-1">
+                            <h1 class="xera-card-title mb-3">
+                                {{ review.title }}
+                            </h1>
+                            
+                            <!-- Meta Information -->
+                            <div class="d-flex flex-wrap gap-2 mb-3">
+                                <span class="badge bg-primary fs-6">
+                                    <i class="fas fa-microscope me-1"></i>
+                                    Cochrane Review
+                                </span>
+                                
+                                {% if review.publication_date %}
+                                <span class="badge bg-secondary fs-6">
+                                    <i class="fas fa-calendar me-1"></i>
+                                    {{ review.publication_date|date:"F Y" }}
+                                </span>
+                                {% endif %}
+                                
+                                {% if sof_entries %}
+                                <span class="badge bg-success fs-6">
+                                    <i class="fas fa-table me-1"></i>
+                                    {{ sof_entries.count }} SoF Entries
+                                </span>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="xera-card-body">
+                    <!-- Abstract -->
+                    {% if review.abstract %}
+                    <div class="mb-4">
+                        <h5 class="text-muted">Abstract</h5>
+                        <p class="lead">{{ review.abstract }}</p>
+                    </div>
+                    {% endif %}
+                    
+                    <!-- Authors -->
+                    {% if review.authors %}
+                    <div class="mb-4">
+                        <h6 class="text-muted">Authors</h6>
+                        <p>{{ review.authors }}</p>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+            
+            <!-- Summary of Findings Table -->
+            {% if sof_entries %}
+            <div class="xera-card mb-4">
+                <div class="xera-card-header">
+                    <h3 class="xera-card-title">
+                        <i class="fas fa-table me-2"></i>Summary of Findings
+                    </h3>
+                    <p class="mb-0 text-muted">
+                        Key results and quality assessments using GRADE methodology
+                    </p>
+                </div>
+                <div class="xera-card-body">
+                    <div class="table-responsive">
+                        <table class="table table-striped table-hover">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th style="width: 30%;">Outcome</th>
+                                    <th style="width: 25%;">Effect</th>
+                                    <th style="width: 15%;">Participants</th>
+                                    <th style="width: 15%;">Studies</th>
+                                    <th style="width: 15%;">Certainty</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for sof in sof_entries %}
+                                <tr>
+                                    <td>
+                                        <strong>{{ sof.outcome }}</strong>
+                                        {% if sof.comparison %}
+                                        <br><small class="text-muted">{{ sof.comparison }}</small>
+                                        {% endif %}
+                                    </td>
+                                    <td>
+                                        {% if sof.effect %}
+                                            {{ sof.effect }}
+                                        {% else %}
+                                            <span class="text-muted">Not reported</span>
+                                        {% endif %}
+                                        {% if sof.confidence_interval %}
+                                        <br><small class="text-muted">CI: {{ sof.confidence_interval }}</small>
+                                        {% endif %}
+                                    </td>
+                                    <td class="text-center">
+                                        {% if sof.participants %}
+                                            <strong>{{ sof.participants }}</strong>
+                                        {% else %}
+                                            <span class="text-muted">-</span>
+                                        {% endif %}
+                                    </td>
+                                    <td class="text-center">
+                                        {% if sof.studies %}
+                                            <strong>{{ sof.studies }}</strong>
+                                        {% else %}
+                                            <span class="text-muted">-</span>
+                                        {% endif %}
+                                    </td>
+                                    <td>
+                                        {% if sof.certainty %}
+                                            {% if sof.certainty == 'High' %}
+                                                <span class="badge bg-success">{{ sof.certainty }}</span>
+                                            {% elif sof.certainty == 'Moderate' %}
+                                                <span class="badge bg-primary">{{ sof.certainty }}</span>
+                                            {% elif sof.certainty == 'Low' %}
+                                                <span class="badge bg-warning text-dark">{{ sof.certainty }}</span>
+                                            {% elif sof.certainty == 'Very low' or sof.certainty == 'Very Low' %}
+                                                <span class="badge bg-danger">{{ sof.certainty }}</span>
+                                            {% else %}
+                                                <span class="badge bg-secondary">{{ sof.certainty }}</span>
+                                            {% endif %}
+                                        {% else %}
+                                            <span class="text-muted">Not assessed</span>
+                                        {% endif %}
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <!-- GRADE Explanation -->
+                    <div class="mt-3">
+                        <h6 class="text-muted small">GRADE Certainty of Evidence:</h6>
+                        <div class="row small">
+                            <div class="col-md-6">
+                                <div class="d-flex align-items-center mb-1">
+                                    <span class="badge bg-success me-2">High</span>
+                                    <span>Very confident in the effect estimate</span>
+                                </div>
+                                <div class="d-flex align-items-center mb-1">
+                                    <span class="badge bg-primary me-2">Moderate</span>
+                                    <span>Moderately confident in the effect estimate</span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="d-flex align-items-center mb-1">
+                                    <span class="badge bg-warning text-dark me-2">Low</span>
+                                    <span>Limited confidence in the effect estimate</span>
+                                </div>
+                                <div class="d-flex align-items-center mb-1">
+                                    <span class="badge bg-danger me-2">Very Low</span>
+                                    <span>Very little confidence in the effect estimate</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+        
+        <!-- Sidebar -->
+        <div class="col-lg-4">
+            <!-- Review Information -->
+            <div class="xera-card mb-4">
+                <div class="xera-card-header">
+                    <h4 class="xera-card-title">
+                        <i class="fas fa-info-circle me-2"></i>Review Information
+                    </h4>
+                </div>
+                <div class="xera-card-body">
+                    <table class="table table-sm table-borderless">
+                        <tr>
+                            <td class="text-muted"><strong>Review ID:</strong></td>
+                            <td>{{ review.review_id }}</td>
+                        </tr>
+                        {% if review.publication_date %}
+                        <tr>
+                            <td class="text-muted"><strong>Published:</strong></td>
+                            <td>{{ review.publication_date|date:"F j, Y" }}</td>
+                        </tr>
+                        {% endif %}
+                        {% if review.doi %}
+                        <tr>
+                            <td class="text-muted"><strong>DOI:</strong></td>
+                            <td>
+                                <a href="https://doi.org/{{ review.doi }}" target="_blank" class="text-decoration-none">
+                                    {{ review.doi }}
+                                    <i class="fas fa-external-link-alt ms-1 small"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        {% endif %}
+                        {% if sof_entries %}
+                        <tr>
+                            <td class="text-muted"><strong>Outcomes:</strong></td>
+                            <td>{{ sof_entries.count }} assessed</td>
+                        </tr>
+                        {% endif %}
+                    </table>
+                    
+                    <!-- Action Buttons -->
+                    <div class="mt-3">
+                        <div class="d-grid gap-2">
+                            {% if review.doi %}
+                            <a href="https://doi.org/{{ review.doi }}" target="_blank" class="btn btn-primary btn-sm">
+                                <i class="fas fa-external-link-alt me-1"></i>
+                                View in Cochrane Library
+                            </a>
+                            {% endif %}
+                            
+                            <button class="btn btn-outline-info btn-sm" onclick="shareReview()">
+                                <i class="fas fa-share me-1"></i>Share Review
+                            </button>
+                            
+                            <button class="btn btn-outline-dark btn-sm" onclick="printReview()">
+                                <i class="fas fa-print me-1"></i>Print Summary
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Related Content -->
+            <div class="xera-card">
+                <div class="xera-card-header">
+                    <h4 class="xera-card-title">
+                        <i class="fas fa-link me-2"></i>Related Content
+                    </h4>
+                </div>
+                <div class="xera-card-body">
+                    <div class="d-grid gap-2">
+                        <a href="{% url 'cochrane:cochrane_review_list' %}" class="btn btn-outline-primary btn-sm">
+                            <i class="fas fa-list me-1"></i>
+                            All Cochrane Reviews
+                        </a>
+                        
+                        <a href="{% url 'guidelines:recommendation_list' %}" class="btn btn-outline-secondary btn-sm">
+                            <i class="fas fa-thumbs-up me-1"></i>
+                            Clinical Recommendations
+                        </a>
+                        
+                        <a href="{% url 'api:cochrane' %}" class="btn btn-outline-info btn-sm">
+                            <i class="fas fa-code me-1"></i>
+                            API Access
+                        </a>
+                    </div>
+                    
+                    <!-- Quick Stats -->
+                    {% if sof_entries %}
+                    <div class="mt-3 pt-3 border-top">
+                        <h6 class="small text-muted mb-2">Evidence Quality Distribution:</h6>
+                        {% regroup sof_entries by certainty as certainty_groups %}
+                        {% for certainty in certainty_groups %}
+                        <div class="d-flex justify-content-between small mb-1">
+                            <span>{{ certainty.grouper|default:"Not assessed" }}:</span>
+                            <strong>{{ certainty.list|length }}</strong>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+// Track review view on page load
+document.addEventListener('DOMContentLoaded', function() {
+    if (window.trackEvent) {
+        window.trackEvent('cochrane_review_view', 'content', '{{ review.review_id }}');
+        window.trackEvent('page_view', 'cochrane_detail', '{{ review.review_id }}');
+    }
+});
+
+// Share functionality
+function shareReview() {
+    if (navigator.share) {
+        navigator.share({
+            title: '{{ review.title|addslashes }}',
+            text: 'Cochrane Review: {{ review.abstract|truncatewords:20|addslashes }}',
+            url: window.location.href
+        }).catch(console.error);
+    } else {
+        // Fallback: copy URL to clipboard
+        navigator.clipboard.writeText(window.location.href).then(function() {
+            alert('Review URL copied to clipboard!');
+        });
+    }
+    
+    // Track sharing
+    if (window.trackEvent) {
+        window.trackEvent('share_cochrane_review', 'engagement', '{{ review.review_id }}');
+    }
+}
+
+// Print functionality
+function printReview() {
+    window.print();
+    
+    // Track printing
+    if (window.trackEvent) {
+        window.trackEvent('print_cochrane_review', 'engagement', '{{ review.review_id }}');
+    }
+}
+
+// Track external links
+document.addEventListener('click', function(e) {
+    if (e.target.closest('a[href*="doi.org"]')) {
+        if (window.trackEvent) {
+            window.trackEvent('external_link', 'engagement', 'cochrane_library_detail');
+        }
+    }
+});
+
+// Print styles
+const printStyles = `
+@media print {
+    .xera-header, .xera-footer, .breadcrumb, 
+    .btn, .d-grid { 
+        display: none !important; 
+    }
+    .container { max-width: 100% !important; }
+    .xera-card { border: 1px solid #ddd !important; box-shadow: none !important; }
+    .table { font-size: 12px; }
+}`;
+
+// Add print styles to head
+const styleSheet = document.createElement('style');
+styleSheet.textContent = printStyles;
+document.head.appendChild(styleSheet);
+</script>
+{% endblock %}
