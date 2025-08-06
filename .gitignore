@@ -156,10 +156,12 @@ Thumbs.db
 # Project specific
 guidelines/uk_chapters/*.html
 cochrane/data/
-*.csv
-data/
 dumps/
 backups/
+
+# Include essential JSON data files
+!data/uk_guidelines/uk_guidelines.json
+!data/cochrane_sof/cochrane_sof.json
 
 # Secrets and private keys
 *.key
