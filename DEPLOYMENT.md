@@ -61,12 +61,13 @@ sudo chown -R xeradb:xeradb oralhealth
 cd oralhealth
 
 # Create virtual environment
-python -m venv venv
-./venv/bin/pip install --upgrade pip
+python3 -m venv venv
+source venv/bin/activate
+pip install --upgrade pip
 
 # Install dependencies
-sudo -u xeradb ./venv/bin/pip install -r requirements.txt
-sudo -u xeradb ./venv/bin/pip install gunicorn psycopg2-binary dj-database-url
+pip install -r requirements.txt
+pip install gunicorn psycopg2-binary dj-database-url requests beautifulsoup4 pandas
 ```
 
 ### Step 4: Configure Environment Variables
@@ -98,19 +99,23 @@ sudo chmod 600 /var/www/oralhealth/.env
 ### Step 5: Initialize Django Application
 
 ```bash
+# Activate virtual environment
+source venv/bin/activate
+
 # Run migrations
-sudo -u xeradb ./venv/bin/python manage.py makemigrations
-sudo -u xeradb ./venv/bin/python manage.py migrate
+python manage.py makemigrations guidelines
+python manage.py makemigrations cochrane
+python manage.py migrate
 
 # Collect static files
-sudo -u xeradb ./venv/bin/python manage.py collectstatic --noinput
+python manage.py collectstatic --noinput
 
 # Create superuser (optional)
-sudo -u xeradb ./venv/bin/python manage.py createsuperuser
+python manage.py createsuperuser
 
 # Populate with initial data
-sudo -u xeradb ./venv/bin/python manage.py populate_uk_guidelines
-sudo -u xeradb ./venv/bin/python manage.py import_cochrane_sof
+python manage.py populate_uk_guidelines
+python manage.py import_cochrane_sof data/cochrane_sof
 ```
 
 ### Step 6: Configure Gunicorn
@@ -298,6 +303,8 @@ source venv/bin/activate
 pip install -r requirements.txt
 
 # Run migrations
+python manage.py makemigrations guidelines
+python manage.py makemigrations cochrane
 python manage.py migrate
 
 # Collect static files
@@ -305,7 +312,7 @@ python manage.py collectstatic --noinput
 
 # Update data if needed
 python manage.py populate_uk_guidelines
-python manage.py import_cochrane_sof
+python manage.py import_cochrane_sof data/cochrane_sof
 
 # Restart application
 sudo supervisorctl restart oralhealth
@@ -394,8 +401,9 @@ sudo supervisorctl restart oralhealth
 
 3. **Static files not loading:**
    ```bash
-   # Collect static files
-   sudo -u xeradb ./venv/bin/python manage.py collectstatic --noinput
+   # Activate virtual environment and collect static files
+   source venv/bin/activate
+   python manage.py collectstatic --noinput
    
    # Check nginx configuration
    sudo nginx -t
